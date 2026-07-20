@@ -1,38 +1,21 @@
-# ============================================================
-# Godot 4.7 - .gitignore
-# ============================================================
-# Combines the official community templates from
-# github.com/github/gitignore:
-#   - Godot.gitignore
-#   - Global/macOS.gitignore
-#   - Global/Windows.gitignore
-# plus additions for a Blender-based 3D asset workflow.
-# ============================================================
-
-# Godot 4.2+ specific ignores
-~*.dll
-
-# Godot 4+ specific ignores
+# ===========================
+# GODOT 4+ ENGINE
+# ===========================
 .godot/
 .nomedia
-
-# Godot-specific ignores
 .import/
 export.cfg
 export_credentials.cfg
-*.tmp
-
-# Imported translations (automatically generated from CSV files)
 *.translation
 
-# Mono-specific ignores
+# Mono/C#
 .mono/
 data_*/
 mono_crash.*.json
 
-# ------------------------------------------------------------------
-# 3D asset pipeline (Blender)
-# ------------------------------------------------------------------
+# ===========================
+# 3D ASSET PIPELINE (BLENDER)
+# ===========================
 # Godot 4 imports .blend files directly by calling a local Blender
 # install in the background. The resulting import cache is written
 # to .godot/imported/, already covered by the .godot/ rule above.
@@ -41,95 +24,122 @@ mono_crash.*.json
 *.blend[0-9]
 *.blend@
 
-# ============================================================
-# macOS
-# ============================================================
+# ===========================
+# GODOT ANDROID BUILD
+# ===========================
+.bfg-report/
+android/build/
+android/.build_version
+old_android/build/
+old_android/.build_version
+*.aar
 
-# General
+# ===========================
+# MACOS / APPLE
+# ===========================
 .DS_Store
-.localized
-__MACOSX/
+.DS_Store?
 .AppleDouble
 .LSOverride
-Icon[
-]
-
-# Resource forks
 ._*
-
-# Files and directories that might appear in the root of a volume
-.DocumentRevisions-V100
-.fseventsd
 .Spotlight-V100
-.TemporaryItems
 .Trashes
+.fseventsd
+.TemporaryItems
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
-.com.apple.timemachine.supported
-.PKInstallSandboxManager
-.PKInstallSandboxManager-SystemSoftware
-.hotfiles.btree
-.vol
-.file
-.disk_label*
-lost+found
-.HFS+ Private Directory Data[
-]
+*.icloud
 
-# Directories potentially created on remote AFP share
-.AppleDB
-.AppleDesktop
-Network Trash Folder
-Temporary Items
-.apdisk
-
-# Mac OS 6 to 9
-Desktop DB
-Desktop DF
-TheFindByContentFolder
-TheVolumeSettingsFolder
-.FBCIndex
-.FBCSemaphoreFile
-.FBCLockFolder
-
-# Quota system
-.quota.group
-.quota.user
-.quota.ops.group
-.quota.ops.user
-
-# TimeMachine
-Backups.backupdb
-.MobileBackups
-.MobileBackups.trash
-MobileBackups.trash
-tmbootpicker.efi
-
-# ============================================================
-# Windows
-# ============================================================
-
-# Windows thumbnail cache files
+# ===========================
+# WINDOWS
+# ===========================
 Thumbs.db
-Thumbs.db:encryptable
+Thumbs.db:encdata
 ehthumbs.db
 ehthumbs_vista.db
-
-# Dump file
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
 *.stackdump
 
-# Folder config file
+# Windows image file caches
 [Dd]esktop.ini
 
-# Recycle Bin used on file shares
-$RECYCLE.BIN/
+# ===========================
+# EDITORS — VISUAL STUDIO
+# ===========================
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.pidb
+*.booproj
+*.svd
+*.pdb
+*.opendb
+*.VC.db
 
-# Windows Installer files
-*.cab
-*.msi
-*.msix
-*.msm
-*.msp
+# ===========================
+# EDITORS — VSCODE
+# ===========================
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# Windows shortcuts
-*.lnk
+# ===========================
+# EDITORS — JETBRAINS / RIDER
+# ===========================
+.idea/
+*.sln
+*.csproj.user
+
+# ===========================
+# EDITORS — XCODE
+# ===========================
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+DerivedData/
+*.moved-aside
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+
+# ===========================
+# BUILD OUTPUTS
+# ===========================
+builds/
+build/
+dist/
+*.apk
+*.aab
+*.ipa
+*.exe
+*.app
+*.zip
+*.tar.gz
+
+# ===========================
+# LOGS & TEMP FILES
+# ===========================
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# ===========================
+# SYSTEM / NETWORK
+# ===========================
+.nfs*
+.fuse_hidden*
