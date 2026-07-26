@@ -1,9 +1,11 @@
 class_name InteractionRaycast extends RayCast3D
 
 @export var player : Player
-@onready var head: Node3D = %Head
+
 
 func _physics_process(_delta: float) -> void:
+	self.force_raycast_update()
+	
 	if !is_colliding():
 		return
 	
