@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://ck14gy6b7mpyl"]
 
 [ext_resource type="Script" uid="uid://bdl04qriukkvu" path="res://Player/player.gd" id="1_l8h54"]
+[ext_resource type="Script" uid="uid://jabragni10eb" path="res://Player/StateMachine/BaseClasses/player_state_machine.gd" id="2_4ntmi"]
+[ext_resource type="Script" uid="uid://ca6fijaiyxwnt" path="res://Player/StateMachine/States/falling_player_state.gd" id="3_k53q1"]
+[ext_resource type="Script" uid="uid://co6ke3c5cyosq" path="res://Player/StateMachine/States/idle_player_state.gd" id="4_fhl08"]
+[ext_resource type="Script" uid="uid://bcl8id8bj8x3m" path="res://Player/StateMachine/States/walking_player_state.gd" id="5_vtle1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 
@@ -15,3 +19,22 @@ unique_name_in_owner = true
 
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=584939132]
 unique_name_in_owner = true
+
+[node name="PlayerStateMachine" type="Node" parent="." unique_id=1884200142 node_paths=PackedStringArray("player", "states")]
+unique_name_in_owner = true
+script = ExtResource("2_4ntmi")
+player = NodePath("..")
+states = [NodePath("FallingPlayerState"), NodePath("IdlePlayerState"), NodePath("WalkingPlayerState")]
+metadata/_custom_type_script = "uid://jabragni10eb"
+
+[node name="FallingPlayerState" type="Node" parent="PlayerStateMachine" unique_id=1860390504]
+script = ExtResource("3_k53q1")
+metadata/_custom_type_script = "uid://ca6fijaiyxwnt"
+
+[node name="IdlePlayerState" type="Node" parent="PlayerStateMachine" unique_id=442353838]
+script = ExtResource("4_fhl08")
+metadata/_custom_type_script = "uid://co6ke3c5cyosq"
+
+[node name="WalkingPlayerState" type="Node" parent="PlayerStateMachine" unique_id=729918782]
+script = ExtResource("5_vtle1")
+metadata/_custom_type_script = "uid://bcl8id8bj8x3m"

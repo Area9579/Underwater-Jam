@@ -24,3 +24,7 @@ func _custom_process(delta : float) -> void:
 @warning_ignore("unused_parameter")
 func _custom_physics_process(delta : float) -> void:
 	pass
+
+
+func check_for_transition_criteria() -> void:
+	pass
