@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://dy5url2aa2syh"]
 
-[ext_resource type="Script" uid="uid://cbf7scghvtpbk" path="res://Player/Gym/player_gym.gd" id="1_8bw2k"]
-[ext_resource type="PackedScene" uid="uid://ck14gy6b7mpyl" path="res://Player/player.tscn" id="1_h8ty0"]
-[ext_resource type="Texture2D" uid="uid://cn4p5lf82faki" path="res://Player/Gym/Assets/Horror_Floor_12-128x128.png" id="2_qpgtp"]
+[ext_resource type="Script" uid="uid://cbf7scghvtpbk" path="res://Gym/gym.gd" id="1_rh7av"]
+[ext_resource type="Texture2D" uid="uid://cn4p5lf82faki" path="res://Gym/Assets/Horror_Floor_12-128x128.png" id="2_d8kd1"]
+[ext_resource type="PackedScene" uid="uid://ck14gy6b7mpyl" path="res://Player/player.tscn" id="3_1er27"]
+[ext_resource type="PackedScene" uid="uid://co2ljeot3jbkr" path="res://Gym/Interactables/test_interactable.tscn" id="4_n475g"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
 
@@ -11,12 +12,14 @@ size = Vector2(50, 50)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgtp"]
 albedo_color = Color(0.67481464, 0.67481464, 0.6748146, 1)
-albedo_texture = ExtResource("2_qpgtp")
+albedo_texture = ExtResource("2_d8kd1")
 
 [node name="PlayerGym" type="Node3D" unique_id=1618404820]
-script = ExtResource("1_8bw2k")
+script = ExtResource("1_rh7av")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1489174417]
+collision_layer = 4
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=153202657]
 shape = SubResource("WorldBoundaryShape3D_g4v7s")
@@ -26,7 +29,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 mesh = SubResource("PlaneMesh_g4v7s")
 surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")
 
-[node name="Player" parent="." unique_id=1495724798 instance=ExtResource("1_h8ty0")]
+[node name="Player" parent="." unique_id=1495724798 instance=ExtResource("3_1er27")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.543605, 0)
 
@@ -63,3 +66,6 @@ offset_bottom = 0.2559967
 bbcode_enabled = true
 text = "Input enabled: "
 fit_content = true
+
+[node name="TestInteractable" parent="." unique_id=1178644056 instance=ExtResource("4_n475g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6713595, 0.5, -0.15340614)

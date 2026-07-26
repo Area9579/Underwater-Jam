@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bdl04qriukkvu" path="res://Player/player.gd" id="1_l8h54"]
 [ext_resource type="Script" uid="uid://jabragni10eb" path="res://Player/StateMachine/BaseClasses/player_state_machine.gd" id="2_4ntmi"]
+[ext_resource type="Script" uid="uid://v7cw3raovs7" path="res://Player/Scripts/interaction_raycast.gd" id="2_fhl08"]
 [ext_resource type="Script" uid="uid://ca6fijaiyxwnt" path="res://Player/StateMachine/States/falling_player_state.gd" id="3_k53q1"]
 [ext_resource type="Script" uid="uid://co6ke3c5cyosq" path="res://Player/StateMachine/States/idle_player_state.gd" id="4_fhl08"]
 [ext_resource type="Script" uid="uid://bcl8id8bj8x3m" path="res://Player/StateMachine/States/walking_player_state.gd" id="5_vtle1"]
@@ -9,6 +10,8 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1495724798]
+collision_layer = 2
+collision_mask = 6
 script = ExtResource("1_l8h54")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2067619712]
@@ -17,8 +20,18 @@ shape = SubResource("CapsuleShape3D_g4v7s")
 [node name="Head" type="Node3D" parent="." unique_id=37865752]
 unique_name_in_owner = true
 
+[node name="InteractionRaycast" type="RayCast3D" parent="Head" unique_id=67140288 node_paths=PackedStringArray("player")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.50979733, 0)
+target_position = Vector3(0, 0, -3)
+collision_mask = 8
+collide_with_areas = true
+script = ExtResource("2_fhl08")
+player = NodePath("../..")
+
 [node name="Camera3D" type="Camera3D" parent="Head" unique_id=584939132]
 unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50979733, 0)
 
 [node name="PlayerStateMachine" type="Node" parent="." unique_id=1884200142 node_paths=PackedStringArray("player", "states")]
 unique_name_in_owner = true
