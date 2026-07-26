@@ -18,7 +18,7 @@ func _ready() -> void:
 
 
 ## Head rotation for first-person controls
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
 	# show cursor in first person mode
 	if event.is_action_pressed("ui_cancel"):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

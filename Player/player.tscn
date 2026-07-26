@@ -6,8 +6,11 @@
 [ext_resource type="Script" uid="uid://ca6fijaiyxwnt" path="res://Player/StateMachine/States/falling_player_state.gd" id="3_k53q1"]
 [ext_resource type="Script" uid="uid://co6ke3c5cyosq" path="res://Player/StateMachine/States/idle_player_state.gd" id="4_fhl08"]
 [ext_resource type="Script" uid="uid://bcl8id8bj8x3m" path="res://Player/StateMachine/States/walking_player_state.gd" id="5_vtle1"]
+[ext_resource type="Texture2D" uid="uid://dkfjcve6jp0oj" path="res://Player/Assets/crosshair037.png" id="7_vtle1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4v7s"]
 
 [node name="Player" type="CharacterBody3D" unique_id=1495724798]
 collision_layer = 2
@@ -53,3 +56,26 @@ metadata/_custom_type_script = "uid://co6ke3c5cyosq"
 [node name="WalkingPlayerState" type="Node" parent="PlayerStateMachine" unique_id=729918782]
 script = ExtResource("5_vtle1")
 metadata/_custom_type_script = "uid://bcl8id8bj8x3m"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1004340678]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1647430292]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_g4v7s")
+
+[node name="Crosshair" type="TextureRect" parent="CanvasLayer/PanelContainer" unique_id=905821]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("7_vtle1")
+expand_mode = 1
+stretch_mode = 5
