@@ -6,7 +6,7 @@ class_name Player extends CharacterBody3D
 @export var acceleration: float = 10.0
 @export var look_enabled : bool = true
 @export var movement_enabled : bool = true
-
+@export var interaction_enabled : bool = true
 ## Rotation helper to make head rotation not break :)
 @onready var head: Node3D = %Head
 ## The player state machine contains all logic for player movement & look logic

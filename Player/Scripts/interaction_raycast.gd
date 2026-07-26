@@ -6,7 +6,7 @@ class_name InteractionRaycast extends RayCast3D
 func _physics_process(_delta: float) -> void:
 	self.force_raycast_update()
 	
-	if !is_colliding():
+	if !is_colliding() || !player.interaction_enabled:
 		return
 	
 	var collider : Object = get_collider()
