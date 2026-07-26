@@ -1,10 +1,7 @@
-class_name TestHoldInteractionHandler extends AbstractInteractionHandler
+class_name TestHoldInteractionHandler extends AbstractHoldInteractionHandler
 
-const HOLD_THRESHOLD_MS : float = 1500
 
 var test_interactable : TestHoldInteractable
-var is_holding : bool = false
-var hold_start_timestamp : float = INF
 
 
 func _init(interactable_node : TestHoldInteractable) -> void:
@@ -12,16 +9,15 @@ func _init(interactable_node : TestHoldInteractable) -> void:
 	test_interactable = interactable_node
 
 
-func is_correct_input_given() -> bool:
+func is_correct_input_just_pressed() -> bool:
 	if Input.is_action_just_pressed("interact"):
-		hold_start_timestamp = Time.get_ticks_msec()
-		return false
-	
+		return true
+	return false
+
+
+func is_correct_input_held() -> bool:
 	if Input.is_action_pressed("interact"):
-		if Time.get_ticks_msec() - hold_start_timestamp > HOLD_THRESHOLD_MS:
-			hold_start_timestamp = INF
-			return true
-	
+		return true
 	return false
 
 
