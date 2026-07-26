@@ -23,4 +23,4 @@ func _physics_process(_delta: float) -> void:
 		printerr("%s: Player's interaction raycast is colliding with %s which does not have a interaction_handler" % [self.name, collider])
 		return
 	
-	(collider.interaction_handler as AbstractInteractionHandler).call_interact(player)
+	(collider.interaction_handler as AbstractInteractionHandler).handle_raycast_collision(player)

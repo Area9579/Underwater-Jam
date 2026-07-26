@@ -17,9 +17,17 @@ shape = SubResource("BoxShape3D_g4v7s")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=914040546]
 mesh = SubResource("BoxMesh_g4v7s")
 
-[node name="Label3D" type="Label3D" parent="." unique_id=475890366]
+[node name="InteractionLabel" type="Label3D" parent="." unique_id=475890366]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78081644, 0)
 visible = false
 billboard = 2
 text = "oh my god you interacted with me"
+uppercase = true
+
+[node name="HoverLabel" type="Label3D" parent="." unique_id=2064436134]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78081644, 0)
+visible = false
+billboard = 2
+text = "why are you looking at me"

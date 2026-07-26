@@ -23,19 +23,19 @@ shape = SubResource("CapsuleShape3D_g4v7s")
 [node name="Head" type="Node3D" parent="." unique_id=37865752]
 unique_name_in_owner = true
 
-[node name="InteractionRaycast" type="RayCast3D" parent="Head" unique_id=67140288 node_paths=PackedStringArray("player")]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=584939132]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.50979733, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50979733, 0)
+
+[node name="InteractionRaycast" type="RayCast3D" parent="Head/Camera3D" unique_id=67140288 node_paths=PackedStringArray("player")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 target_position = Vector3(0, 0, -3)
 collision_mask = 8
 collide_with_areas = true
 debug_shape_thickness = 1
 script = ExtResource("2_fhl08")
-player = NodePath("../..")
-
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=584939132]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50979733, 0)
+player = NodePath("../../..")
 
 [node name="PlayerStateMachine" type="Node" parent="." unique_id=1884200142 node_paths=PackedStringArray("player", "states")]
 unique_name_in_owner = true
