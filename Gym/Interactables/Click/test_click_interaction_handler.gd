@@ -1,4 +1,4 @@
-class_name TestInteractionHandler extends AbstractInteractionHandler
+class_name TestClickInteractionHandler extends AbstractInteractionHandler
 
 var test_interactable : TestInteractable
 

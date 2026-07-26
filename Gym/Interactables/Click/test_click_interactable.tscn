@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://co2ljeot3jbkr"]
+
+[ext_resource type="Script" uid="uid://bllsov06m3ajr" path="res://Gym/Interactables/Click/test_click_interactable.gd" id="1_wt4gu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+
+[node name="TestClickInteractable" type="RigidBody3D" unique_id=1178644056]
+collision_layer = 12
+collision_mask = 4
+script = ExtResource("1_wt4gu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=460386011]
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=914040546]
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="InteractionLabel" type="Label3D" parent="." unique_id=475890366]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78081644, 0)
+visible = false
+billboard = 2
+text = "oh my god you interacted with me"
+uppercase = true
+
+[node name="HoverLabel" type="Label3D" parent="." unique_id=2064436134]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78081644, 0)
+visible = false
+billboard = 2
+text = "oh no please dont left click on me"
