@@ -6,8 +6,7 @@ var is_interacting : bool = false
 var is_hovering : bool = false
 var raycast_last_handled_timestamp : float
 
-# 3 seconds, multiplied by 1000 to get ms
-const HOVER_FADE_THESHOLD_MS : float = 1 * 1000
+const HOVER_FADE_THESHOLD_MS : float = 200
 
 ## Returns the const value defining the group name for this class
 ##

@@ -51,7 +51,6 @@ offset_bottom = -0.02400589
 bbcode_enabled = true
 text = "Press 'E' to enable/disable input"
 fit_content = true
-metadata/_edit_use_anchors_ = true
 
 [node name="StateStatusText" type="RichTextLabel" parent="CanvasLayer" unique_id=1584067171]
 unique_name_in_owner = true
@@ -69,7 +68,7 @@ text = "Input enabled: "
 fit_content = true
 
 [node name="TestInteractable" parent="." unique_id=1178644056 instance=ExtResource("4_n475g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6713595, 0.5, -0.15340614)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6713595, 0.8404169, -0.15340614)
 
 [node name="TestHoldInteractable" parent="." unique_id=1075163943 instance=ExtResource("5_d8kd1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.945922, 0.67565703, -2.9100409)

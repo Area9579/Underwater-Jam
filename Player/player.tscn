@@ -30,6 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50979733, 0)
 [node name="InteractionRaycast" type="RayCast3D" parent="Head/Camera3D" unique_id=67140288 node_paths=PackedStringArray("player")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+visible = false
 target_position = Vector3(0, 0, -3)
 collision_mask = 8
 collide_with_areas = true
