@@ -13,12 +13,10 @@ func _init(interactable_node : HandCrank) -> void:
 	hand_crank = interactable_node
 
 
-
 func is_correct_input_given() -> bool:
 	if Input.is_action_pressed("interact") || Input.is_action_pressed("alt_interact"):
 		return true
 	return false
-
 
 
 func do_interaction(_entity : FirstPersonEntityController) -> void:
@@ -36,10 +34,12 @@ func do_interaction(_entity : FirstPersonEntityController) -> void:
 
 func add_to_rotation(value : float) -> void:
 	hand_crank.rotation.y += deg_to_rad(value)
+	hand_crank.increment_value.emit()
 
 
 func subtract_from_rotation(value : float) -> void:
 	hand_crank.rotation.y -= deg_to_rad(value)
+	hand_crank.decrement_value.emit()
 
 
 func fade_in_hover_effect() -> void:

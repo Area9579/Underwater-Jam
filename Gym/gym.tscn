@@ -5,7 +5,23 @@
 [ext_resource type="PackedScene" uid="uid://c7fwgmmrjf53x" path="res://Content/Player/player.tscn" id="3_1er27"]
 [ext_resource type="PackedScene" uid="uid://co2ljeot3jbkr" path="res://Gym/Interactables/Click/test_click_interactable.tscn" id="4_n475g"]
 [ext_resource type="PackedScene" uid="uid://hr32o2ebjj8a" path="res://Gym/Interactables/Hold/test_hold_interactable.tscn" id="5_d8kd1"]
-[ext_resource type="PackedScene" uid="uid://ck6va6usf5n3w" path="res://Content/InteractableItems/ValveControlPanel/HandCrank/hand_crank.tscn" id="6_1er27"]
+[ext_resource type="PackedScene" uid="uid://bika1w8r7wj1h" path="res://Content/ValveControlPanel/valve_control_panel.tscn" id="6_1er27"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k4sav"]
+sky_top_color = Color(0.10126414, 0.18837109, 0.17648992, 1)
+sky_horizon_color = Color(0.001894108, 0.014615561, 0.011847434, 1)
+sky_curve = 0.20490597
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0.001894108, 0.014615561, 0.011847434, 1)
+
+[sub_resource type="Sky" id="Sky_gbaq8"]
+sky_material = SubResource("ProceduralSkyMaterial_k4sav")
+
+[sub_resource type="Environment" id="Environment_nck1r"]
+background_mode = 2
+sky = SubResource("Sky_gbaq8")
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.84460616, 0.7612667, 0.6923587, 1)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
 
@@ -18,6 +34,9 @@ albedo_texture = ExtResource("2_d8kd1")
 
 [node name="PlayerGym" type="Node3D" unique_id=1618404820]
 script = ExtResource("1_rh7av")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1630965879]
+environment = SubResource("Environment_nck1r")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1489174417]
 collision_layer = 4
@@ -75,5 +94,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6713595, 0.8404169, -0.1534
 [node name="TestHoldInteractable" parent="." unique_id=1075163943 instance=ExtResource("5_d8kd1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.945922, 0.67565703, -2.9100409)
 
-[node name="HandCrank" parent="." unique_id=922139481 instance=ExtResource("6_1er27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53885794, 0.20196843, -3.8353767)
+[node name="ValveControlPanel" parent="." unique_id=118694957 instance=ExtResource("6_1er27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5181625, 0, 0)
