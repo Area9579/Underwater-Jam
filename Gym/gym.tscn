@@ -2,9 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cbf7scghvtpbk" path="res://Gym/gym.gd" id="1_rh7av"]
 [ext_resource type="Texture2D" uid="uid://cn4p5lf82faki" path="res://Gym/Assets/Horror_Floor_12-128x128.png" id="2_d8kd1"]
-[ext_resource type="PackedScene" uid="uid://ck14gy6b7mpyl" path="res://Content/Player/player.tscn" id="3_1er27"]
+[ext_resource type="PackedScene" uid="uid://c7fwgmmrjf53x" path="res://Content/Player/player.tscn" id="3_1er27"]
 [ext_resource type="PackedScene" uid="uid://co2ljeot3jbkr" path="res://Gym/Interactables/Click/test_click_interactable.tscn" id="4_n475g"]
 [ext_resource type="PackedScene" uid="uid://hr32o2ebjj8a" path="res://Gym/Interactables/Hold/test_hold_interactable.tscn" id="5_d8kd1"]
+[ext_resource type="PackedScene" uid="uid://ck6va6usf5n3w" path="res://Content/InteractableItems/ValveControlPanel/HandCrank/hand_crank.tscn" id="6_1er27"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
 
@@ -73,3 +74,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6713595, 0.8404169, -0.1534
 
 [node name="TestHoldInteractable" parent="." unique_id=1075163943 instance=ExtResource("5_d8kd1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.945922, 0.67565703, -2.9100409)
+
+[node name="HandCrank" parent="." unique_id=922139481 instance=ExtResource("6_1er27")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53885794, 0.20196843, -3.8353767)
