@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://dy5url2aa2syh"]
+
+[ext_resource type="Script" uid="uid://cbf7scghvtpbk" path="res://Gym/gym.gd" id="1_rh7av"]
+[ext_resource type="Texture2D" uid="uid://cn4p5lf82faki" path="res://Gym/Assets/Horror_Floor_12-128x128.png" id="2_d8kd1"]
+[ext_resource type="PackedScene" uid="uid://ck14gy6b7mpyl" path="res://Content/Player/player.tscn" id="3_1er27"]
+[ext_resource type="PackedScene" uid="uid://co2ljeot3jbkr" path="res://Gym/Interactables/Click/test_click_interactable.tscn" id="4_n475g"]
+[ext_resource type="PackedScene" uid="uid://hr32o2ebjj8a" path="res://Gym/Interactables/Hold/test_hold_interactable.tscn" id="5_d8kd1"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
+size = Vector2(50, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgtp"]
+albedo_color = Color(0.67481464, 0.67481464, 0.6748146, 1)
+albedo_texture = ExtResource("2_d8kd1")
+
+[node name="PlayerGym" type="Node3D" unique_id=1618404820]
+script = ExtResource("1_rh7av")
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1489174417]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=153202657]
+shape = SubResource("WorldBoundaryShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=826798761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("PlaneMesh_g4v7s")
+surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")
+
+[node name="Player" parent="." unique_id=1495724798 instance=ExtResource("3_1er27")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.543605, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Player" unique_id=1407712170]
+omni_range = 8.380016
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2139230288]
+
+[node name="InputHint" type="RichTextLabel" parent="CanvasLayer" unique_id=1355238897]
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.028
+anchor_right = 0.26500002
+anchor_bottom = 0.06948149
+offset_left = 0.048000336
+offset_top = -0.144001
+offset_right = -0.2800293
+offset_bottom = -0.02400589
+bbcode_enabled = true
+text = "Press 'E' to enable/disable input"
+fit_content = true
+
+[node name="StateStatusText" type="RichTextLabel" parent="CanvasLayer" unique_id=1584067171]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = 0.026
+anchor_top = 0.063
+anchor_right = 0.20700002
+anchor_bottom = 0.10300001
+offset_left = 0.048000336
+offset_top = 0.17599869
+offset_right = -0.46401978
+offset_bottom = 0.2559967
+bbcode_enabled = true
+text = "Input enabled: "
+fit_content = true
+
+[node name="TestInteractable" parent="." unique_id=1178644056 instance=ExtResource("4_n475g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6713595, 0.8404169, -0.15340614)
+
+[node name="TestHoldInteractable" parent="." unique_id=1075163943 instance=ExtResource("5_d8kd1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.945922, 0.67565703, -2.9100409)

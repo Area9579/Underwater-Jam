@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://c7fwgmmrjf53x"]
+
+[ext_resource type="PackedScene" uid="uid://tfl8fm3k6g0h" path="res://Systems/FirstPersonEntityController/first_person_entity_controller.tscn" id="1_thq5r"]
+[ext_resource type="Texture2D" uid="uid://dkfjcve6jp0oj" path="res://Content/Player/Assets/crosshair037.png" id="7_2fsga"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbsyd"]
+
+[node name="Player" unique_id=1495724798 instance=ExtResource("1_thq5r")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="3" unique_id=1705754704]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" index="0" unique_id=703005182]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kbsyd")
+
+[node name="Crosshair" type="TextureRect" parent="CanvasLayer/PanelContainer" index="0" unique_id=1792073680]
+custom_minimum_size = Vector2(30, 30)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+texture = ExtResource("7_2fsga")
+expand_mode = 1
+stretch_mode = 5
