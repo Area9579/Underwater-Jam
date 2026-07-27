@@ -1,65 +1,15 @@
-[gd_scene format=3 uid="uid://ck14gy6b7mpyl"]
+[gd_scene format=3 uid="uid://c7fwgmmrjf53x"]
 
-[ext_resource type="Script" uid="uid://bdl04qriukkvu" path="res://Content/Player/player.gd" id="1_l8h54"]
-[ext_resource type="Script" uid="uid://jabragni10eb" path="res://Content/Player/StateMachine/BaseClasses/player_state_machine.gd" id="2_4ntmi"]
-[ext_resource type="Script" uid="uid://v7cw3raovs7" path="res://Content/Player/Scripts/interaction_raycast.gd" id="2_fhl08"]
-[ext_resource type="Script" uid="uid://ca6fijaiyxwnt" path="res://Content/Player/StateMachine/States/falling_player_state.gd" id="3_k53q1"]
-[ext_resource type="Script" uid="uid://co6ke3c5cyosq" path="res://Content/Player/StateMachine/States/idle_player_state.gd" id="4_fhl08"]
-[ext_resource type="Script" uid="uid://bcl8id8bj8x3m" path="res://Content/Player/StateMachine/States/walking_player_state.gd" id="5_vtle1"]
+[ext_resource type="PackedScene" uid="uid://tfl8fm3k6g0h" path="res://Systems/FirstPersonEntityController/first_person_entity_controller.tscn" id="1_thq5r"]
 [ext_resource type="Texture2D" uid="uid://dkfjcve6jp0oj" path="res://Content/Player/Assets/crosshair037.png" id="7_2fsga"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbsyd"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4v7s"]
+[node name="Player" unique_id=1495724798 instance=ExtResource("1_thq5r")]
 
-[node name="Player" type="CharacterBody3D" unique_id=1495724798]
-collision_layer = 2
-collision_mask = 6
-script = ExtResource("1_l8h54")
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="3" unique_id=1705754704]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2067619712]
-shape = SubResource("CapsuleShape3D_g4v7s")
-
-[node name="Head" type="Node3D" parent="." unique_id=37865752]
-unique_name_in_owner = true
-
-[node name="Camera3D" type="Camera3D" parent="Head" unique_id=584939132]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.50979733, 0)
-
-[node name="InteractionRaycast" type="RayCast3D" parent="Head/Camera3D" unique_id=67140288 node_paths=PackedStringArray("player")]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
-visible = false
-target_position = Vector3(0, 0, -3)
-collision_mask = 8
-collide_with_areas = true
-debug_shape_thickness = 1
-script = ExtResource("2_fhl08")
-player = NodePath("../../..")
-
-[node name="PlayerStateMachine" type="Node" parent="." unique_id=1884200142 node_paths=PackedStringArray("player", "states")]
-unique_name_in_owner = true
-script = ExtResource("2_4ntmi")
-player = NodePath("..")
-states = [NodePath("FallingPlayerState"), NodePath("IdlePlayerState"), NodePath("WalkingPlayerState")]
-metadata/_custom_type_script = "uid://jabragni10eb"
-
-[node name="FallingPlayerState" type="Node" parent="PlayerStateMachine" unique_id=1860390504]
-script = ExtResource("3_k53q1")
-metadata/_custom_type_script = "uid://ca6fijaiyxwnt"
-
-[node name="IdlePlayerState" type="Node" parent="PlayerStateMachine" unique_id=442353838]
-script = ExtResource("4_fhl08")
-metadata/_custom_type_script = "uid://co6ke3c5cyosq"
-
-[node name="WalkingPlayerState" type="Node" parent="PlayerStateMachine" unique_id=729918782]
-script = ExtResource("5_vtle1")
-metadata/_custom_type_script = "uid://bcl8id8bj8x3m"
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1004340678]
-
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" unique_id=1647430292]
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" index="0" unique_id=703005182]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -68,9 +18,9 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 mouse_filter = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_g4v7s")
+theme_override_styles/panel = SubResource("StyleBoxEmpty_kbsyd")
 
-[node name="Crosshair" type="TextureRect" parent="CanvasLayer/PanelContainer" unique_id=905821]
+[node name="Crosshair" type="TextureRect" parent="CanvasLayer/PanelContainer" index="0" unique_id=1792073680]
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 4

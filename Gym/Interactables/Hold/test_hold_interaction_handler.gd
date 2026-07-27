@@ -31,7 +31,7 @@ func fade_out_hover_effect() -> void:
 	test_interactable.interaction_label.visible = false
 
 
-func do_interaction(_player : Player) -> void:
+func do_interaction(_entity : FirstPersonEntityController) -> void:
 	is_interacting = true
 	test_interactable.hover_label.visible = false
 	test_interactable.interaction_label.visible = !test_interactable.interaction_label.visible

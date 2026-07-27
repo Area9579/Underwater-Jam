@@ -20,7 +20,7 @@ static func get_group_name() -> String:
 
 @abstract func fade_out_hover_effect() -> void
 
-@abstract func do_interaction(player : Player) -> void
+@abstract func do_interaction(entity : FirstPersonEntityController) -> void
 
 
 ## Add interactable node to proper group to ensure that its interactable
@@ -41,7 +41,7 @@ func _physics_process(_delta: float) -> void:
 
 
 ## Called by the players InteractionRaycast raycast
-func handle_raycast_collision(player : Player) -> void:
+func handle_raycast_collision(player : FirstPersonEntityController) -> void:
 	# store time that we handled the raycast, later checked against later to check if the player is still hovering
 	raycast_last_handled_timestamp = Time.get_ticks_msec()
 	# lock out interaction calls if player is currently interacting
