@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bkj28qpfl2n7k"]
+
+[ext_resource type="Script" uid="uid://bucf6g0tnsjlp" path="res://Content/InteractableItems/DailyOrder/daily_order_sheet.gd" id="1_h6vgs"]
+
+[node name="DailyOrderSheet" type="Node3D" unique_id=1952071443]
+script = ExtResource("1_h6vgs")

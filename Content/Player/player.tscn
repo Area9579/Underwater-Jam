@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://ck14gy6b7mpyl"]
 
-[ext_resource type="Script" uid="uid://bdl04qriukkvu" path="res://Player/player.gd" id="1_l8h54"]
-[ext_resource type="Script" uid="uid://jabragni10eb" path="res://Player/StateMachine/BaseClasses/player_state_machine.gd" id="2_4ntmi"]
-[ext_resource type="Script" uid="uid://v7cw3raovs7" path="res://Player/Scripts/interaction_raycast.gd" id="2_fhl08"]
-[ext_resource type="Script" uid="uid://ca6fijaiyxwnt" path="res://Player/StateMachine/States/falling_player_state.gd" id="3_k53q1"]
-[ext_resource type="Script" uid="uid://co6ke3c5cyosq" path="res://Player/StateMachine/States/idle_player_state.gd" id="4_fhl08"]
-[ext_resource type="Script" uid="uid://bcl8id8bj8x3m" path="res://Player/StateMachine/States/walking_player_state.gd" id="5_vtle1"]
-[ext_resource type="Texture2D" uid="uid://dkfjcve6jp0oj" path="res://Player/Assets/crosshair037.png" id="7_vtle1"]
+[ext_resource type="Script" uid="uid://bdl04qriukkvu" path="res://Content/Player/player.gd" id="1_l8h54"]
+[ext_resource type="Script" uid="uid://jabragni10eb" path="res://Content/Player/StateMachine/BaseClasses/player_state_machine.gd" id="2_4ntmi"]
+[ext_resource type="Script" uid="uid://v7cw3raovs7" path="res://Content/Player/Scripts/interaction_raycast.gd" id="2_fhl08"]
+[ext_resource type="Script" uid="uid://ca6fijaiyxwnt" path="res://Content/Player/StateMachine/States/falling_player_state.gd" id="3_k53q1"]
+[ext_resource type="Script" uid="uid://co6ke3c5cyosq" path="res://Content/Player/StateMachine/States/idle_player_state.gd" id="4_fhl08"]
+[ext_resource type="Script" uid="uid://bcl8id8bj8x3m" path="res://Content/Player/StateMachine/States/walking_player_state.gd" id="5_vtle1"]
+[ext_resource type="Texture2D" uid="uid://dkfjcve6jp0oj" path="res://Content/Player/Assets/crosshair037.png" id="7_2fsga"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
 
@@ -76,6 +76,6 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
-texture = ExtResource("7_vtle1")
+texture = ExtResource("7_2fsga")
 expand_mode = 1
 stretch_mode = 5

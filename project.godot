@@ -23,18 +23,18 @@ window/stretch/aspect="expand"
 [file_customization]
 
 folder_colors={
-"res://AbstractStateMachine/": "gray",
+"res://Addons/AbstractStateMachine/": "gray",
+"res://Content/Player/": "red",
+"res://Content/Player/Assets/": "purple",
+"res://Content/Player/Scripts/": "yellow",
+"res://Content/Player/StateMachine/": "gray",
 "res://Debug Character/": "gray",
 "res://Gym/": "green",
 "res://Gym/Assets/": "purple",
 "res://Gym/Interactables/": "yellow",
-"res://Interactions/": "yellow",
 "res://Minigames/": "teal",
 "res://Minigames/Valve Control Panel/": "yellow",
-"res://Player/": "red",
-"res://Player/Assets/": "purple",
-"res://Player/Scripts/": "yellow",
-"res://Player/StateMachine/": "gray"
+"res://Systems/Interactions/": "yellow"
 }
 
 [input]

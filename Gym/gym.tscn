@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cbf7scghvtpbk" path="res://Gym/gym.gd" id="1_rh7av"]
 [ext_resource type="Texture2D" uid="uid://cn4p5lf82faki" path="res://Gym/Assets/Horror_Floor_12-128x128.png" id="2_d8kd1"]
-[ext_resource type="PackedScene" uid="uid://ck14gy6b7mpyl" path="res://Player/player.tscn" id="3_1er27"]
+[ext_resource type="PackedScene" uid="uid://ck14gy6b7mpyl" path="res://Content/Player/player.tscn" id="3_1er27"]
 [ext_resource type="PackedScene" uid="uid://co2ljeot3jbkr" path="res://Gym/Interactables/Click/test_click_interactable.tscn" id="4_n475g"]
 [ext_resource type="PackedScene" uid="uid://hr32o2ebjj8a" path="res://Gym/Interactables/Hold/test_hold_interactable.tscn" id="5_d8kd1"]
 
