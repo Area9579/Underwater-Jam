@@ -32,8 +32,6 @@ folder_colors={
 "res://Gym/": "green",
 "res://Gym/Assets/": "purple",
 "res://Gym/Interactables/": "yellow",
-"res://Minigames/": "teal",
-"res://Minigames/Valve Control Panel/": "yellow",
 "res://Systems/": "blue",
 "res://Systems/FirstPersonEntityController/": "red",
 "res://Systems/FirstPersonEntityController/Scripts/": "yellow",
