@@ -50,12 +50,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 mesh = SubResource("PlaneMesh_g4v7s")
 surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1407712170]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4823227, 2.9413385, 0)
+omni_range = 8.380016
+
 [node name="Player" parent="." unique_id=1495724798 instance=ExtResource("3_1er27")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.543605, 0)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Player" unique_id=1407712170]
-omni_range = 8.380016
+[node name="OmniLight3D" type="OmniLight3D" parent="Player" unique_id=1996794758]
+light_color = Color(0.89972174, 0.7158881, 0.33937347, 1)
+light_energy = 0.379
+omni_range = 4.2144146
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2139230288]
 
