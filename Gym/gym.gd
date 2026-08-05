@@ -12,7 +12,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# 'E' key
 	if Input.is_action_just_pressed("debug_toggle"):
 		player.look_enabled = !player.look_enabled
