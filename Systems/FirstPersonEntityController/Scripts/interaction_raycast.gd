@@ -2,6 +2,7 @@ class_name InteractionRaycast extends RayCast3D
 
 @export var player : Player
 
+signal colliding_with_interactable
 
 func _physics_process(_delta: float) -> void:
 	self.force_raycast_update()
@@ -23,4 +24,5 @@ func _physics_process(_delta: float) -> void:
 		printerr("%s: Player's interaction raycast is colliding with %s which does not have a interaction_handler" % [self.name, collider])
 		return
 	
+	colliding_with_interactable.emit()
 	(collider.interaction_handler as AbstractInteractionHandler).handle_raycast_collision(player)

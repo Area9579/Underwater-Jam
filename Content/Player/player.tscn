@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://c7fwgmmrjf53x"]
 
 [ext_resource type="PackedScene" uid="uid://tfl8fm3k6g0h" path="res://Systems/FirstPersonEntityController/first_person_entity_controller.tscn" id="1_thq5r"]
+[ext_resource type="Texture2D" uid="uid://d1bht2p36xbyw" path="res://Content/Player/Assets/hand_open.png" id="3_x8iml"]
 [ext_resource type="Texture2D" uid="uid://dkfjcve6jp0oj" path="res://Content/Player/Assets/crosshair037.png" id="7_2fsga"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbsyd"]
@@ -24,11 +25,23 @@ mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_kbsyd")
 
 [node name="Crosshair" type="TextureRect" parent="CanvasLayer/PanelContainer" index="0" unique_id=1792073680]
+visible = false
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 texture = ExtResource("7_2fsga")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HandIcon" type="TextureRect" parent="CanvasLayer/PanelContainer" index="1" unique_id=1006203863]
+visible = false
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+texture = ExtResource("3_x8iml")
 expand_mode = 1
 stretch_mode = 5
