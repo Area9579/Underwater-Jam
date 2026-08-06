@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://co2ljeot3jbkr" path="res://Gym/Interactables/Click/test_click_interactable.tscn" id="4_n475g"]
 [ext_resource type="PackedScene" uid="uid://hr32o2ebjj8a" path="res://Gym/Interactables/Hold/test_hold_interactable.tscn" id="5_d8kd1"]
 [ext_resource type="PackedScene" uid="uid://bkj28qpfl2n7k" path="res://Content/InteractableItems/DailyOrder/daily_order_sheet.tscn" id="6_1er27"]
+[ext_resource type="PackedScene" uid="uid://dsowx26n2s2kr" path="res://Gym/BlockOutModels/wall.tscn" id="7_7jjb4"]
+[ext_resource type="PackedScene" uid="uid://dgndvisekno7p" path="res://Gym/BlockOutModels/roof.tscn" id="8_eou5s"]
+[ext_resource type="PackedScene" uid="uid://cq5osxsjf602p" path="res://Gym/Parker/window_port.tscn" id="9_aa15y"]
+[ext_resource type="PackedScene" uid="uid://bl3jromm4a7fk" path="res://Gym/BlockOutModels/pillar.tscn" id="9_frjl4"]
+[ext_resource type="Environment" uid="uid://dbmdvxf2yryev" path="res://Gym/Parker/volumetricFog.tres" id="10_eou5s"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
 
@@ -77,3 +82,136 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.945922, 0.67565703, -2.9100
 
 [node name="DailyOrderSheet" parent="." unique_id=1952071443 instance=ExtResource("6_1er27")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 5, 1.562298, 2)
+
+[node name="BlockOutModels" type="Node" parent="." unique_id=1339888686]
+
+[node name="LightTestRoom" type="Node" parent="BlockOutModels" unique_id=1191693536]
+
+[node name="Lights" type="Node" parent="BlockOutModels/LightTestRoom" unique_id=2069319384]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="BlockOutModels/LightTestRoom/Lights" unique_id=695727340]
+transform = Transform3D(1, 0, 0, 0, 0.43824142, 0.89885736, 0, -0.89885736, 0.43824142, -0.85868216, 5.319504, 11.742374)
+light_color = Color(1, 1, 0.8156863, 1)
+light_energy = 15.0
+spot_range = 12.148748
+spot_angle = 26.893122
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="BlockOutModels/LightTestRoom/Lights" unique_id=1642030275]
+transform = Transform3D(1, 0, 0, 0, 0.43824142, 0.89885736, 0, -0.89885736, 0.43824142, 3.3175879, 5.319504, 12.022443)
+light_color = Color(1, 1, 0.8156863, 1)
+light_energy = 15.0
+spot_range = 12.733773
+spot_angle = 26.893122
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="BlockOutModels/LightTestRoom/Lights" unique_id=1128022142]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -7.025701, 4.346142, 18.839558)
+light_energy = 0.95
+spot_range = 8.58474
+spot_angle = 53.621307
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="BlockOutModels/LightTestRoom/Lights" unique_id=1136291265]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.050951, 4.4642906, 18.839558)
+light_energy = 0.612
+spot_range = 10.726019
+spot_angle = 52.78369
+
+[node name="OmniLight3D" type="OmniLight3D" parent="BlockOutModels/LightTestRoom/Lights" unique_id=1914825208]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.86455667, 4.021618, 19.152386)
+light_energy = 0.273
+
+[node name="Geometry" type="Node" parent="BlockOutModels/LightTestRoom" unique_id=2124015982]
+
+[node name="Wall" parent="BlockOutModels/LightTestRoom/Geometry" unique_id=2061528244 instance=ExtResource("7_7jjb4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.874172, 0, 24.472958)
+
+[node name="Wall2" parent="BlockOutModels/LightTestRoom/Geometry" unique_id=1078215638 instance=ExtResource("7_7jjb4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.68886, 0, 24.472958)
+
+[node name="Wall3" parent="BlockOutModels/LightTestRoom/Geometry" unique_id=407152920 instance=ExtResource("7_7jjb4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.484676, 0, 24.472958)
+
+[node name="Wall4" parent="BlockOutModels/LightTestRoom/Geometry" unique_id=667816536 instance=ExtResource("7_7jjb4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.109391, 0, 24.472958)
+
+[node name="Wall5" parent="BlockOutModels/LightTestRoom/Geometry" unique_id=1566287731 instance=ExtResource("7_7jjb4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4021101, -4.9677663, 24.472958)
+
+[node name="Wall6" parent="BlockOutModels/LightTestRoom/Geometry" unique_id=1907772694 instance=ExtResource("7_7jjb4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.8541489, 4.6435165, 24.472958)
+
+[node name="Wall7" parent="BlockOutModels/LightTestRoom/Geometry" unique_id=834405513 instance=ExtResource("7_7jjb4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 14.785667, 0, 18.837149)
+
+[node name="Wall8" parent="BlockOutModels/LightTestRoom/Geometry" unique_id=1976586194 instance=ExtResource("7_7jjb4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.44458, 0, 18.837149)
+
+[node name="Wall9" parent="BlockOutModels/LightTestRoom/Geometry" unique_id=1263907044 instance=ExtResource("7_7jjb4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.68886, 0, 12.881096)
+
+[node name="Wall10" parent="BlockOutModels/LightTestRoom/Geometry" unique_id=1457063135 instance=ExtResource("7_7jjb4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.109391, 0, 12.881096)
+
+[node name="Roof" parent="BlockOutModels/LightTestRoom/Geometry" unique_id=1605699549 instance=ExtResource("8_eou5s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.465742, 19.388266)
+
+[node name="WindowPort" parent="BlockOutModels/LightTestRoom/Geometry" unique_id=605617474 instance=ExtResource("9_aa15y")]
+transform = Transform3D(-2.185, -8.742278e-08, 0, -8.349695e-15, 4.371139e-08, -1.855, 1.9101876e-07, -1, -8.108463e-08, 0.98864305, 2.5825539, 24.970428)
+
+[node name="FarOffModelsTest" type="Node" parent="BlockOutModels" unique_id=1208106822]
+
+[node name="Pillar" parent="BlockOutModels/FarOffModelsTest" unique_id=2105240056 instance=ExtResource("9_frjl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.026775, 0, 75.05739)
+
+[node name="Pillar2" parent="BlockOutModels/FarOffModelsTest" unique_id=820368346 instance=ExtResource("9_frjl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.142307, 0, 100.48015)
+
+[node name="Pillar3" parent="BlockOutModels/FarOffModelsTest" unique_id=1283231681 instance=ExtResource("9_frjl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.9452133, 0, 124.48989)
+
+[node name="Pillar4" parent="BlockOutModels/FarOffModelsTest" unique_id=905096040 instance=ExtResource("9_frjl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.405605, 1.9073486e-06, 49.89526)
+
+[node name="Pillar5" parent="BlockOutModels/FarOffModelsTest" unique_id=1641815917 instance=ExtResource("9_frjl4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.515987, 0, 167.12228)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=967025472]
+environment = ExtResource("10_eou5s")
+
+[node name="Floor2" type="StaticBody3D" parent="." unique_id=1529848625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 49.455185)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2" unique_id=2073719438]
+shape = SubResource("WorldBoundaryShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor2" unique_id=1496417884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("PlaneMesh_g4v7s")
+surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")
+
+[node name="Floor3" type="StaticBody3D" parent="." unique_id=1776358811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 99.50838)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor3" unique_id=1078004623]
+shape = SubResource("WorldBoundaryShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor3" unique_id=887525268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("PlaneMesh_g4v7s")
+surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")
+
+[node name="Floor4" type="StaticBody3D" parent="." unique_id=971751807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 148.49648)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor4" unique_id=1739440656]
+shape = SubResource("WorldBoundaryShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor4" unique_id=1603604577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("PlaneMesh_g4v7s")
+surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")

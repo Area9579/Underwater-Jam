@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://dsowx26n2s2kr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_12j5o"]
+size = Vector3(12.456787, 6.4561768, 1)
+
+[node name="Wall" type="StaticBody3D" unique_id=2061528244]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1047795409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.099243164, 2.7280884, 0)
+mesh = SubResource("BoxMesh_12j5o")
