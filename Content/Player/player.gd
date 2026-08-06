@@ -12,7 +12,7 @@ var has_sheet : bool = false
 var sheet_equiped : bool = false
 
 
-func _process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if interaction_raycast.is_colliding() and Input.is_action_pressed("interact"):
 		hand_icon.texture = HAND_CLOSED
 		hand_icon.show()
