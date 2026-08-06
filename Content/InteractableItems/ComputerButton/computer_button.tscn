@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://le13j0ifbogu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mcxa5"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="ComputerButton" type="Area3D" unique_id=1562565514]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1383067714]
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1216657297]
+shape = SubResource("BoxShape3D_mcxa5")
