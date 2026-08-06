@@ -36,6 +36,7 @@ folder_colors={
 "res://Minigames/": "teal",
 "res://Minigames/Valve Control Panel/": "yellow",
 "res://Systems/": "blue",
+"res://Systems/Event Queue/": "green",
 "res://Systems/FirstPersonEntityController/": "red",
 "res://Systems/FirstPersonEntityController/Scripts/": "yellow",
 "res://Systems/FirstPersonEntityController/StateMachine/": "gray",
