@@ -22,6 +22,8 @@ end_position = Vector3(inf, 0, inf)
 metadata/_custom_type_script = "uid://bvekgf6tgcfay"
 
 [node name="ComputerButton" type="Area3D" unique_id=1562565514]
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("1_057oy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1383067714]
@@ -32,7 +34,7 @@ shape = SubResource("BoxShape3D_mcxa5")
 
 [node name="Node3DTweenSequencer" type="Node" parent="." unique_id=2104449840 node_paths=PackedStringArray("affected_node", "tween_array")]
 script = ExtResource("1_0wu6m")
-affected_node = NodePath("..")
+affected_node = NodePath("../MeshInstance3D")
 tween_array = [NodePath("ButtonDown"), NodePath("ButtonUp")]
 metadata/_custom_type_script = "uid://teubb6vs0mf1"
 
@@ -52,6 +54,7 @@ ease_type = 2
 tween_duration = 0.1
 metadata/_custom_type_script = "uid://dk6ci6cn8li37"
 
-[node name="Label3D" type="Label3D" parent="." unique_id=517684568]
+[node name="HoverText" type="Label3D" parent="." unique_id=517684568]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+visible = false
 text = "Button :)"

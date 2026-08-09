@@ -10,6 +10,7 @@ func _init(interactable_node : ComputerButton) -> void:
 func do_interaction(_player : FirstPersonEntityController) -> void:
 	is_interacting = true
 	computer_button.play_button_tween()
+	computer_button.button_press()
 	is_interacting = false
 
 
@@ -20,8 +21,8 @@ func is_correct_input_given() -> bool:
 
 
 func fade_in_hover_effect() -> void:
-	computer_button.label_3d.visible = true
+	computer_button.hover_text_label.visible = true
 
 
 func fade_out_hover_effect() -> void:
-	computer_button.label_3d.visible = false
+	computer_button.hover_text_label.visible = false
