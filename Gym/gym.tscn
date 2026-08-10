@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bkj28qpfl2n7k" path="res://Content/InteractableItems/DailyOrder/daily_order_sheet.tscn" id="6_1er27"]
 [ext_resource type="Shader" uid="uid://cunvmsic2t2a6" path="res://3D Assets/Shaders/blob.gdshader" id="7_n475g"]
 [ext_resource type="ArrayMesh" uid="uid://cvwcipxyyfx16" path="res://3D Assets/BLOB.obj" id="8_ndoub"]
+[ext_resource type="PackedScene" uid="uid://cmuk8q4nj8nd" path="res://Content/InteractableItems/Computer/computer.tscn" id="9_7jjb4"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
 
@@ -131,3 +132,6 @@ environment = SubResource("Environment_g4v7s")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07599783, 3.1635613, 1.5170021)
 mesh = ExtResource("8_ndoub")
 surface_material_override/0 = SubResource("ShaderMaterial_n475g")
+
+[node name="Computer" parent="." unique_id=1318926826 instance=ExtResource("9_7jjb4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 1, 3)
