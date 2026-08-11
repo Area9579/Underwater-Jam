@@ -11,7 +11,6 @@ var enabled : bool = false
 
 func finish() -> void:
 	event_finished.emit(self)
-	disable()
 
 
 func enable() -> void:

@@ -17,8 +17,6 @@ func start() -> void:
 		push_warning("%s: event_queue is empty and the queue didn't start, add events to make this system start!" % self)
 		return
 	
-	print(event_queue)
-	
 	# ensure all events are disabled as starting default
 	for event in event_queue:
 		if event == null:
@@ -26,7 +24,7 @@ func start() -> void:
 			continue
 		
 		if !event.is_node_ready():
-			print('waiting for: %s' % event)
+			push_warning("%s: EventQueue has to wait for event: %s to be ready" % [self, event])
 			await event.ready
 		
 		event.disable()
@@ -53,7 +51,9 @@ func disconnect_signals_from(event : Event) -> void:
 
 
 func _on_event_finished(event : Event) -> void:
-	disconnect_signals_from(event)
+	if event != null:
+		disconnect_signals_from(event)
+		event.disable()
 	advance_to_next_stage()
 
 
@@ -61,11 +61,10 @@ func advance_to_next_stage() -> void:
 	# grab stages in-order
 	var current_stage : Event = event_queue.pop_front()
 	
-	print(current_stage)
-	
 	# check if no more stages exist
 	if current_stage == null:
 		event_queue_finished.emit()
+		print_rich("[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0][wave amp=20.0 freq=2.0 connected=1]YOU FINISHED ALL YOUR TASKS :)")
 		return
 	
 	# adv to next stage if we can

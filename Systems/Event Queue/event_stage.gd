@@ -11,7 +11,8 @@ func enable() -> void:
 		return
 	
 	connect_signals_to_all_tasks()
-	start_all_tasks()
+	events_to_finish = events_in_stage.duplicate(false)
+	enable_all_tasks()
 
 
 func disable() -> void:
@@ -19,30 +20,22 @@ func disable() -> void:
 	disable_all_tasks()
 
 
-func start_all_tasks() -> void:
-	# take copy of tasks so that removing tasks from this list don't result in losing data
-	events_to_finish = events_in_stage.duplicate()
-	enable_all_tasks()
-
-
 ## Only enables tasks that are currently disabled
 func enable_all_tasks() -> void:
 	for event in events_in_stage:
-		if event.enabled:
-			continue
 		event.enable()
 
 
 ## Only disables tasks that are currently enabled
 func disable_all_tasks() -> void:
 	for event in events_in_stage:
-		if !event.enabled:
-			continue
 		event.disable()
 
 
 func connect_signals_to_all_tasks() -> void:
 	for event in events_in_stage:
+		if event.event_finished.is_connected(_on_event_finished):
+			continue
 		event.event_finished.connect(_on_event_finished)
 
 
@@ -50,7 +43,7 @@ func disconnect_signals_from_all_tasks() -> void:
 	for event in events_in_stage:
 		if !event.event_finished.is_connected(_on_event_finished):
 			continue
-		event.event_finished.connect(_on_event_finished)
+		event.event_finished.disconnect(_on_event_finished)
 
 
 func check_for_stage_finished() -> void:
@@ -62,4 +55,5 @@ func check_for_stage_finished() -> void:
 
 func _on_event_finished(event : Event) -> void:
 	events_to_finish.erase(event)
+	event.disable()
 	check_for_stage_finished()
