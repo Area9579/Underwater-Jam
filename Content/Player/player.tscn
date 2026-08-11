@@ -13,7 +13,7 @@ transform = Transform3D(0.8241262, 0, 0.56640625, 0, 1, 0, -0.56640625, 0, 0.824
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="3" unique_id=1705754704]
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer" index="0" unique_id=703005182]
+[node name="CrosshairPanel" type="PanelContainer" parent="CanvasLayer" index="0" unique_id=703005182]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -24,7 +24,7 @@ size_flags_vertical = 3
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxEmpty_kbsyd")
 
-[node name="Crosshair" type="TextureRect" parent="CanvasLayer/PanelContainer" index="0" unique_id=1792073680]
+[node name="Crosshair" type="TextureRect" parent="CanvasLayer/CrosshairPanel" index="0" unique_id=1792073680]
 visible = false
 custom_minimum_size = Vector2(30, 30)
 layout_mode = 2
@@ -35,7 +35,8 @@ texture = ExtResource("7_2fsga")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="HandIcon" type="TextureRect" parent="CanvasLayer/PanelContainer" index="1" unique_id=1006203863]
+[node name="HandIcon" type="TextureRect" parent="CanvasLayer/CrosshairPanel" index="1" unique_id=1006203863]
+unique_name_in_owner = true
 visible = false
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2

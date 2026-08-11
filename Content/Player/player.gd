@@ -1,8 +1,8 @@
 class_name Player extends FirstPersonEntityController
 
 @onready var sheet_marker: Marker3D = $Head/Camera3D/SheetMarker as Marker3D
-@onready var hand_icon: TextureRect = $CanvasLayer/PanelContainer/HandIcon as TextureRect
 @onready var interaction_raycast: InteractionRaycast = %InteractionRaycast
+@onready var hand_icon: TextureRect = %HandIcon
 
 const HAND_OPEN = preload("uid://d1bht2p36xbyw")
 const HAND_CLOSED = preload("uid://disykxjnkewfx")

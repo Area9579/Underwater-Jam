@@ -7,14 +7,20 @@ class_name Computer extends Node3D
 @onready var computer_button_3: ComputerButton = $ComputerButton3 as ComputerButton
 @onready var label_3d: Label3D = $Label3D as Label3D
 
+var computer_button_arr : Array[ComputerButton]
+
 const max_inputs : int = 3
 var goal_input : String = 'ABC'
 
 func _ready() -> void:
-	computer_button.button_pressed.connect(add_value_to_string)
-	computer_button_2.button_pressed.connect(add_value_to_string)
-	computer_button_3.button_pressed.connect(add_value_to_string)
-
+	computer_button_arr = [
+		computer_button,
+		computer_button_2,
+		computer_button_3,
+	]
+	
+	for button in computer_button_arr:
+		button.button_pressed.connect(add_value_to_string)
 
 
 func add_value_to_string(new_input : String) -> void:
@@ -30,8 +36,10 @@ func add_value_to_string(new_input : String) -> void:
 
 
 func _on_event_event_disabled() -> void:
-	computer_button.interaction_handler.disable()
+	for button in computer_button_arr:
+		button.interaction_handler.disable()
 
 
 func _on_event_event_enabled() -> void:
-	computer_button.interaction_handler.enable()
+	for button in computer_button_arr:
+		button.interaction_handler.enable()

@@ -140,7 +140,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 1
 
 [node name="EventQueue" type="Node" parent="." unique_id=1180674234 node_paths=PackedStringArray("event_queue")]
 script = ExtResource("10_frjl4")
-event_queue = [NodePath("../TestClickInteractable/TestClickInteractableEvent"), NodePath("../TestHoldInteractable/TestHoldInteractableEvent"), NodePath("EventStage"), NodePath("../TestClickInteractable/TestClickInteractableEvent")]
+event_queue = [NodePath("../TestClickInteractable/TestClickInteractableEvent"), NodePath("EventStage"), NodePath("../Computer/ComputerEvent")]
 metadata/_custom_type_script = "uid://cua2uk64ok3vg"
 
 [node name="EventStage" type="Node" parent="EventQueue" unique_id=137883755 node_paths=PackedStringArray("events_in_stage")]
@@ -150,3 +150,4 @@ metadata/_custom_type_script = "uid://r70s6flykuow"
 
 [editable path="TestHoldInteractable"]
 [editable path="TestClickInteractable"]
+[editable path="Computer"]
