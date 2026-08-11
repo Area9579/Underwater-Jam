@@ -1,5 +1,7 @@
 class_name Computer extends Node3D
 
+@export var event : Event
+
 @onready var computer_button: ComputerButton = $ComputerButton as ComputerButton
 @onready var computer_button_2: ComputerButton = $ComputerButton2 as ComputerButton
 @onready var computer_button_3: ComputerButton = $ComputerButton3 as ComputerButton
@@ -20,7 +22,16 @@ func add_value_to_string(new_input : String) -> void:
 		label_3d.text = label_3d.text + new_input
 	if label_3d.text == goal_input:
 		label_3d.text = 'COMPLETED'
+		event.finish()
 	elif label_3d.text.length() == max_inputs:
 		label_3d.text = 'RESET'
 		await get_tree().create_timer(0.5).timeout
 		label_3d.text = ''
+
+
+func _on_event_event_disabled() -> void:
+	computer_button.interaction_handler.disable()
+
+
+func _on_event_event_enabled() -> void:
+	computer_button.interaction_handler.enable()

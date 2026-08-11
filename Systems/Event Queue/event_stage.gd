@@ -1,59 +1,65 @@
-class_name EventStage extends Node
+class_name EventStage extends Event
 
-signal stage_finished
+@export var events_in_stage : Array[Event]
 
-@export var tasks : Array[EventTask]
+var events_to_finish : Array[Event]
 
-var tasks_to_finish : Array[EventTask]
-
-
-func start_stage() -> void:
-	if tasks.is_empty():
+func enable() -> void:
+	if events_in_stage.is_empty():
 		push_error("%s: Stage has no tasks! Continuing to next stage" % self )
-		stage_finished.emit()
+		finish()
 		return
+	
 	connect_signals_to_all_tasks()
+	start_all_tasks()
+
+
+func disable() -> void:
+	disconnect_signals_from_all_tasks()
+	disable_all_tasks()
+
+
+func start_all_tasks() -> void:
 	# take copy of tasks so that removing tasks from this list don't result in losing data
-	tasks_to_finish = tasks.duplicate()
-	for task in tasks_to_finish:
-		task.start()
+	events_to_finish = events_in_stage.duplicate()
+	enable_all_tasks()
 
 
 ## Only enables tasks that are currently disabled
 func enable_all_tasks() -> void:
-	for task in tasks:
-		if task.enabled:
+	for event in events_in_stage:
+		if event.enabled:
 			continue
-		task.enable()
+		event.enable()
 
 
 ## Only disables tasks that are currently enabled
 func disable_all_tasks() -> void:
-	for task in tasks:
-		if !task.enabled:
+	for event in events_in_stage:
+		if !event.enabled:
 			continue
-		task.disable()
+		event.disable()
 
 
 func connect_signals_to_all_tasks() -> void:
-	for task in tasks:
-		task.task_finished.connect(_on_task_finished)
+	for event in events_in_stage:
+		event.event_finished.connect(_on_event_finished)
 
 
 func disconnect_signals_from_all_tasks() -> void:
-	for task in tasks:
-		if !task.task_finished.is_connected(_on_task_finished):
+	for event in events_in_stage:
+		if !event.event_finished.is_connected(_on_event_finished):
 			continue
-		task.task_finished.connect(_on_task_finished)
+		event.event_finished.connect(_on_event_finished)
 
 
 func check_for_stage_finished() -> void:
-	if !tasks_to_finish.is_empty():
+	if !events_to_finish.is_empty():
 		return
 	disconnect_signals_from_all_tasks()
-	stage_finished.emit()
+	finish()
 
 
-func _on_task_finished(task : EventTask) -> void:
-	tasks_to_finish.erase(task)
+func _on_event_finished(event : Event) -> void:
+	events_to_finish.erase(event)
 	check_for_stage_finished()
