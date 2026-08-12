@@ -20,13 +20,11 @@ func disable() -> void:
 	disable_all_tasks()
 
 
-## Only enables tasks that are currently disabled
 func enable_all_tasks() -> void:
 	for event in events_in_stage:
 		event.enable()
 
 
-## Only disables tasks that are currently enabled
 func disable_all_tasks() -> void:
 	for event in events_in_stage:
 		event.disable()

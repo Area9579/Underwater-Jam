@@ -32,6 +32,21 @@ func start() -> void:
 	advance_to_next_stage()
 
 
+func advance_to_next_stage() -> void:
+	# grab stages in-order
+	var current_stage : Event = event_queue.pop_front()
+	
+	# check if no more stages exist
+	if current_stage == null:
+		event_queue_finished.emit()
+		print_rich("[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0][wave amp=20.0 freq=2.0 connected=1]YOU FINISHED ALL YOUR TASKS :)")
+		return
+	
+	# adv to next stage if we can
+	connect_signals_from(current_stage)
+	current_stage.enable()
+
+
 func connect_signals_from(event : Event) -> void:
 	if event == null:
 		printerr("%s: Cannot connect signals from null event" % self)
@@ -55,18 +70,3 @@ func _on_event_finished(event : Event) -> void:
 		disconnect_signals_from(event)
 		event.disable()
 	advance_to_next_stage()
-
-
-func advance_to_next_stage() -> void:
-	# grab stages in-order
-	var current_stage : Event = event_queue.pop_front()
-	
-	# check if no more stages exist
-	if current_stage == null:
-		event_queue_finished.emit()
-		print_rich("[rainbow freq=1.0 sat=0.8 val=0.8 speed=1.0][wave amp=20.0 freq=2.0 connected=1]YOU FINISHED ALL YOUR TASKS :)")
-		return
-	
-	# adv to next stage if we can
-	connect_signals_from(current_stage)
-	current_stage.enable()
