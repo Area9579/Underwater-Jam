@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c4dmwq2wsa657"]
 
 [ext_resource type="Script" uid="uid://teubb6vs0mf1" path="res://Addons/Tween Components/Scripts/Effect Sequencers/node_3D_tween_sequencer.gd" id="1_0wu6m"]
-[ext_resource type="Script" uid="uid://dur022te3nwv6" path="res://Content/InteractableItems/ComputerButton/computer_button.gd" id="1_057oy"]
+[ext_resource type="Script" uid="uid://dur022te3nwv6" path="res://Content/InteractableItems/Computer/ComputerButton/computer_button.gd" id="1_057oy"]
 [ext_resource type="Script" uid="uid://dk6ci6cn8li37" path="res://Addons/Tween Components/Scripts/Components/node3D_tween.gd" id="2_057oy"]
 [ext_resource type="Script" uid="uid://bvekgf6tgcfay" path="res://Addons/Tween Components/Scripts/TweenResources/transform3d_tween.gd" id="3_qrdvf"]
 

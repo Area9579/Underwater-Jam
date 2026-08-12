@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cmuk8q4nj8nd"]
 
-[ext_resource type="PackedScene" uid="uid://c4dmwq2wsa657" path="res://Content/InteractableItems/ComputerButton/computer_button.tscn" id="1_c4eha"]
+[ext_resource type="PackedScene" uid="uid://c4dmwq2wsa657" path="res://Content/InteractableItems/Computer/ComputerButton/computer_button.tscn" id="1_c4eha"]
 [ext_resource type="Script" uid="uid://dp6xydwjwsx0y" path="res://Content/InteractableItems/Computer/computer.gd" id="1_nwl00"]
 [ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="3_47qs5"]
 

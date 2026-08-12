@@ -28,6 +28,8 @@ folder_colors={
 "res://Addons/": "gray",
 "res://Addons/AbstractStateMachine/": "gray",
 "res://Content/": "orange",
+"res://Content/Levels/": "green",
+"res://Content/Levels/Base Map/": "gray",
 "res://Content/Player/": "red",
 "res://Content/Player/Assets/": "purple",
 "res://Debug Character/": "gray",

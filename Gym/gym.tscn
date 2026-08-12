@@ -12,6 +12,13 @@
 [ext_resource type="Script" uid="uid://cua2uk64ok3vg" path="res://Systems/Event Queue/event_queue.gd" id="10_frjl4"]
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="14_j07sc"]
 
+[sub_resource type="Environment" id="Environment_g4v7s"]
+glow_enabled = true
+glow_intensity = 0.68
+glow_bloom = 0.15
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0028
+
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
@@ -53,15 +60,11 @@ shader_parameter/color2 = Color(0.53391707, 0.44811642, 0.7950995, 1)
 shader_parameter/color3 = Color(0.0046855886, 0.117006265, 0.30003342, 1)
 shader_parameter/color4 = Color(0.19955236, 0.4575218, 0.29545337, 1)
 
-[sub_resource type="Environment" id="Environment_g4v7s"]
-glow_enabled = true
-glow_intensity = 0.68
-glow_bloom = 0.15
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0028
-
 [node name="PlayerGym" type="Node3D" unique_id=1618404820]
 script = ExtResource("1_rh7av")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=502045691]
+environment = SubResource("Environment_g4v7s")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1489174417]
 collision_layer = 4
@@ -126,9 +129,6 @@ transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 5, 1
 transform = Transform3D(0.49041525, 0.87148887, 0, -0.87148887, 0.49041525, 0, 0, 0, 1, -4.1784525, 2.6438553, -0.022537988)
 mesh = SubResource("TorusMesh_aa15y")
 surface_material_override/0 = SubResource("ShaderMaterial_n475g")
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=502045691]
-environment = SubResource("Environment_g4v7s")
 
 [node name="Blob <3" type="MeshInstance3D" parent="." unique_id=198549879]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07599783, 3.1635613, 1.5170021)
