@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c1xpadt2ly1ov"
+path="res://.godot/imported/AMB_ocean_drone_01.wav-719a734d9728aadb7731e66c1f49989f.sample"
+
+[deps]
+
+source_file="res://AUDIO/SFX/FACILITY AMBIENCE/AMB_ocean_drone_01.wav"
+dest_files=["res://.godot/imported/AMB_ocean_drone_01.wav-719a734d9728aadb7731e66c1f49989f.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

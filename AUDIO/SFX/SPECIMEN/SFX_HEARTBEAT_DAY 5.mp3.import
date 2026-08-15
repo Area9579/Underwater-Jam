@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b3flm1bs0td8b"
+path="res://.godot/imported/SFX_HEARTBEAT_DAY 5.mp3-b0695423f0297a49e835003294f61938.mp3str"
+
+[deps]
+
+source_file="res://AUDIO/SFX/SPECIMEN/SFX_HEARTBEAT_DAY 5.mp3"
+dest_files=["res://.godot/imported/SFX_HEARTBEAT_DAY 5.mp3-b0695423f0297a49e835003294f61938.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

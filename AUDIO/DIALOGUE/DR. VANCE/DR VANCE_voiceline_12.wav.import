@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://xnpdk4lp4bya"
+path="res://.godot/imported/DR VANCE_voiceline_12.wav-bac214a2a87a0f5646aa573dc82de682.sample"
+
+[deps]
+
+source_file="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_12.wav"
+dest_files=["res://.godot/imported/DR VANCE_voiceline_12.wav-bac214a2a87a0f5646aa573dc82de682.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
