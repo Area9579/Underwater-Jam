@@ -38,6 +38,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.543605, 0)
 [node name="OmniLight3D" type="OmniLight3D" parent="Player" unique_id=1407712170]
 omni_range = 8.380016
 
+[node name="Footstep_Player" type="AudioStreamPlayer" parent="Player" unique_id=720357563]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2139230288]
 
 [node name="InputHint" type="RichTextLabel" parent="CanvasLayer" unique_id=1355238897]
