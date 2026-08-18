@@ -56,5 +56,6 @@ stretch_mode = 5
 [node name="FootstepPlayer" type="AudioStreamPlayer" parent="Audio" index="1" unique_id=9134779 node_paths=PackedStringArray("state_machine")]
 unique_name_in_owner = true
 stream = ExtResource("4_rn1qw")
+bus = &"FACILITY BUS"
 script = ExtResource("4_7d8p2")
 state_machine = NodePath("../../EntityStateMachine")

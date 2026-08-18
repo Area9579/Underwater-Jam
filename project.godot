@@ -15,6 +15,10 @@ run/main_scene="uid://dy5url2aa2syh"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="res://Content/AudioSystem/default_bus_layout.tres"
+
 [display]
 
 window/stretch/mode="viewport"
@@ -28,6 +32,7 @@ folder_colors={
 "res://Addons/": "gray",
 "res://Addons/AbstractStateMachine/": "gray",
 "res://Content/": "orange",
+"res://Content/AudioSystems/": "teal",
 "res://Content/Levels/": "green",
 "res://Content/Levels/Base Map/": "gray",
 "res://Content/Player/": "red",
