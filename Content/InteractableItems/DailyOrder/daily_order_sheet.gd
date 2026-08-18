@@ -1,3 +1,5 @@
-class_name DailyOrderSheet extends Node3D
+class_name DailyOrderSheet extends Area3D
 
-var inter
+@onready var test_label: Label3D = $TestLabel as Label3D #NOTE: to be removed after testing
+
+var interaction_handler : DailyOrderInteractionHandler = DailyOrderInteractionHandler.new(self)

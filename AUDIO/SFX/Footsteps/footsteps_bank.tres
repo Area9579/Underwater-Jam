@@ -1,0 +1,27 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://g8n5lo008cl6"]
+
+[ext_resource type="AudioStream" uid="uid://bf7vfg47mw4ir" path="res://AUDIO/SFX/Footsteps/foley_footsteps_01.wav" id="1_gi5fd"]
+[ext_resource type="AudioStream" uid="uid://b710fjbt0ihi7" path="res://AUDIO/SFX/Footsteps/foley_footsteps_02.wav" id="2_nvxaf"]
+[ext_resource type="AudioStream" uid="uid://cmneq6yijlqfv" path="res://AUDIO/SFX/Footsteps/foley_footsteps_03.wav" id="3_s43n4"]
+[ext_resource type="AudioStream" uid="uid://cef0y2oopqlmh" path="res://AUDIO/SFX/Footsteps/foley_footsteps_04.wav" id="4_vyill"]
+[ext_resource type="AudioStream" uid="uid://b2jm3mw6cohan" path="res://AUDIO/SFX/Footsteps/foley_footsteps_05.wav" id="5_0sayu"]
+[ext_resource type="AudioStream" uid="uid://chri8sqnmowte" path="res://AUDIO/SFX/Footsteps/foley_footsteps_06.wav" id="6_l3nw8"]
+[ext_resource type="AudioStream" uid="uid://ikxba6kv4p6g" path="res://AUDIO/SFX/Footsteps/foley_footsteps_07.wav" id="7_1aynp"]
+[ext_resource type="AudioStream" uid="uid://b2nvp2grdl1io" path="res://AUDIO/SFX/Footsteps/foley_footsteps_08.wav" id="8_hirb6"]
+[ext_resource type="AudioStream" uid="uid://1x6x3aao2lkn" path="res://AUDIO/SFX/Footsteps/foley_footsteps_09.wav" id="9_rd08d"]
+[ext_resource type="AudioStream" uid="uid://c4ikn56iawgcc" path="res://AUDIO/SFX/Footsteps/foley_footsteps_10.wav" id="10_dqk68"]
+
+[resource]
+random_pitch = 1.0603814
+random_volume_offset_db = 1.38
+streams_count = 10
+stream_0/stream = ExtResource("1_gi5fd")
+stream_1/stream = ExtResource("2_nvxaf")
+stream_2/stream = ExtResource("3_s43n4")
+stream_3/stream = ExtResource("4_vyill")
+stream_4/stream = ExtResource("5_0sayu")
+stream_5/stream = ExtResource("6_l3nw8")
+stream_6/stream = ExtResource("7_1aynp")
+stream_7/stream = ExtResource("8_hirb6")
+stream_8/stream = ExtResource("9_rd08d")
+stream_9/stream = ExtResource("10_dqk68")

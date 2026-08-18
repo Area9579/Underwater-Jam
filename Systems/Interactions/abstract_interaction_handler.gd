@@ -2,6 +2,7 @@
 
 const INTERACTABLE_GROUP_NAME : String = "Interactable"
 
+var is_enabled : bool = true
 var is_interacting : bool = false
 var is_hovering : bool = false
 var raycast_last_handled_timestamp : float
@@ -42,6 +43,8 @@ func _physics_process(_delta: float) -> void:
 
 ## Called by the players InteractionRaycast raycast
 func handle_raycast_collision(player : FirstPersonEntityController) -> void:
+	if !is_enabled:
+		return
 	# store time that we handled the raycast, later checked against later to check if the player is still hovering
 	raycast_last_handled_timestamp = Time.get_ticks_msec()
 	# lock out interaction calls if player is currently interacting
@@ -59,3 +62,11 @@ func handle_raycast_collision(player : FirstPersonEntityController) -> void:
 	
 	# case: player is interacting!
 	do_interaction(player)
+
+
+func enable() -> void:
+	is_enabled = true
+
+
+func disable() -> void:
+	is_enabled = false

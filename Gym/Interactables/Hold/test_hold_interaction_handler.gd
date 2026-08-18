@@ -35,5 +35,6 @@ func do_interaction(_entity : FirstPersonEntityController) -> void:
 	is_interacting = true
 	test_interactable.hover_label.visible = false
 	test_interactable.interaction_label.visible = !test_interactable.interaction_label.visible
+	test_interactable.event.finish()
 	await get_tree().create_timer(0.5).timeout
 	is_interacting = false

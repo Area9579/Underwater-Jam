@@ -2,5 +2,24 @@
 
 [ext_resource type="Script" uid="uid://bucf6g0tnsjlp" path="res://Content/InteractableItems/DailyOrder/daily_order_sheet.gd" id="1_h6vgs"]
 
-[node name="DailyOrderSheet" type="Node3D" unique_id=1952071443]
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+size = Vector3(0.2, 0.3, 0.01)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_h6vgs"]
+size = Vector3(0.2, 0.3, 0.01)
+
+[node name="DailyOrderSheet" type="Area3D" unique_id=1554151595]
+collision_layer = 8
+collision_mask = 0
 script = ExtResource("1_h6vgs")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=289898352]
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="TestLabel" type="Label3D" parent="." unique_id=1685602336]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+visible = false
+text = "Click to pick me up :3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=277848381]
+shape = SubResource("BoxShape3D_h6vgs")

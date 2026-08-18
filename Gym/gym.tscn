@@ -5,23 +5,19 @@
 [ext_resource type="PackedScene" uid="uid://c7fwgmmrjf53x" path="res://Content/Player/player.tscn" id="3_1er27"]
 [ext_resource type="PackedScene" uid="uid://co2ljeot3jbkr" path="res://Gym/Interactables/Click/test_click_interactable.tscn" id="4_n475g"]
 [ext_resource type="PackedScene" uid="uid://hr32o2ebjj8a" path="res://Gym/Interactables/Hold/test_hold_interactable.tscn" id="5_d8kd1"]
-[ext_resource type="PackedScene" uid="uid://bika1w8r7wj1h" path="res://Content/ValveControlPanel/valve_control_panel.tscn" id="6_1er27"]
+[ext_resource type="PackedScene" uid="uid://bkj28qpfl2n7k" path="res://Content/InteractableItems/DailyOrder/daily_order_sheet.tscn" id="6_1er27"]
+[ext_resource type="Shader" uid="uid://cunvmsic2t2a6" path="res://3D Assets/Shaders/blob.gdshader" id="7_n475g"]
+[ext_resource type="ArrayMesh" uid="uid://cvwcipxyyfx16" path="res://3D Assets/BLOB.obj" id="8_ndoub"]
+[ext_resource type="PackedScene" uid="uid://cmuk8q4nj8nd" path="res://Content/InteractableItems/Computer/computer.tscn" id="9_7jjb4"]
+[ext_resource type="Script" uid="uid://cua2uk64ok3vg" path="res://Systems/Event Queue/event_queue.gd" id="10_frjl4"]
+[ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="14_j07sc"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k4sav"]
-sky_top_color = Color(0.10126414, 0.18837109, 0.17648992, 1)
-sky_horizon_color = Color(0.001894108, 0.014615561, 0.011847434, 1)
-sky_curve = 0.20490597
-ground_bottom_color = Color(0, 0, 0, 1)
-ground_horizon_color = Color(0.001894108, 0.014615561, 0.011847434, 1)
-
-[sub_resource type="Sky" id="Sky_gbaq8"]
-sky_material = SubResource("ProceduralSkyMaterial_k4sav")
-
-[sub_resource type="Environment" id="Environment_nck1r"]
-background_mode = 2
-sky = SubResource("Sky_gbaq8")
+[sub_resource type="Environment" id="Environment_g4v7s"]
+glow_enabled = true
+glow_intensity = 0.68
+glow_bloom = 0.15
 volumetric_fog_enabled = true
-volumetric_fog_albedo = Color(0.84460616, 0.7612667, 0.6923587, 1)
+volumetric_fog_density = 0.0028
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
 
@@ -32,11 +28,43 @@ size = Vector2(50, 50)
 albedo_color = Color(0.67481464, 0.67481464, 0.6748146, 1)
 albedo_texture = ExtResource("2_d8kd1")
 
+[sub_resource type="TorusMesh" id="TorusMesh_aa15y"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7jjb4"]
+noise_type = 3
+frequency = 0.0014
+fractal_octaves = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n475g"]
+noise = SubResource("FastNoiseLite_7jjb4")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n475g"]
+render_priority = 0
+shader = ExtResource("7_n475g")
+shader_parameter/time_speed = 0.05
+shader_parameter/surface_speed = 1.0
+shader_parameter/spin = 7.4
+shader_parameter/brightness = 0.6
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 2.0
+shader_parameter/size = 3.0
+shader_parameter/banding_bias = 0.56
+shader_parameter/wave_texture = SubResource("NoiseTexture2D_n475g")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_n475g")
+shader_parameter/wave_height = 0.055
+shader_parameter/texture_height = 0.23
+shader_parameter/color1 = Color(0.46012205, 0.9707323, 0.6626054, 1)
+shader_parameter/color2 = Color(0.53391707, 0.44811642, 0.7950995, 1)
+shader_parameter/color3 = Color(0.0046855886, 0.117006265, 0.30003342, 1)
+shader_parameter/color4 = Color(0.19955236, 0.4575218, 0.29545337, 1)
+
 [node name="PlayerGym" type="Node3D" unique_id=1618404820]
 script = ExtResource("1_rh7av")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1630965879]
-environment = SubResource("Environment_nck1r")
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=502045691]
+environment = SubResource("Environment_g4v7s")
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=1489174417]
 collision_layer = 4
@@ -50,18 +78,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 mesh = SubResource("PlaneMesh_g4v7s")
 surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1407712170]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4823227, 2.9413385, 0)
-omni_range = 8.380016
-
 [node name="Player" parent="." unique_id=1495724798 instance=ExtResource("3_1er27")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.543605, 0)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="Player" unique_id=1996794758]
-light_color = Color(0.89972174, 0.7158881, 0.33937347, 1)
-light_energy = 0.379
-omni_range = 4.2144146
+[node name="OmniLight3D" type="OmniLight3D" parent="Player" unique_id=1407712170]
+omni_range = 8.380016
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2139230288]
 
@@ -94,11 +116,38 @@ bbcode_enabled = true
 text = "Input enabled: "
 fit_content = true
 
-[node name="TestInteractable" parent="." unique_id=1178644056 instance=ExtResource("4_n475g")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6713595, 0.8404169, -0.15340614)
-
 [node name="TestHoldInteractable" parent="." unique_id=1075163943 instance=ExtResource("5_d8kd1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.945922, 0.67565703, -2.9100409)
 
-[node name="ValveControlPanel" parent="." unique_id=118694957 instance=ExtResource("6_1er27")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5181625, 0, 0)
+[node name="TestClickInteractable" parent="." unique_id=1178644056 instance=ExtResource("4_n475g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8273606, 0.8331819, -0.98888195)
+
+[node name="DailyOrderSheet" parent="." unique_id=1952071443 instance=ExtResource("6_1er27")]
+transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 5, 1.562298, 2)
+
+[node name="Donut" type="MeshInstance3D" parent="." unique_id=1443713786]
+transform = Transform3D(0.49041525, 0.87148887, 0, -0.87148887, 0.49041525, 0, 0, 0, 1, -4.1784525, 2.6438553, -0.022537988)
+mesh = SubResource("TorusMesh_aa15y")
+surface_material_override/0 = SubResource("ShaderMaterial_n475g")
+
+[node name="Blob <3" type="MeshInstance3D" parent="." unique_id=198549879]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07599783, 3.1635613, 1.5170021)
+mesh = ExtResource("8_ndoub")
+surface_material_override/0 = SubResource("ShaderMaterial_n475g")
+
+[node name="Computer" parent="." unique_id=1318926826 instance=ExtResource("9_7jjb4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 1, 3)
+
+[node name="EventQueue" type="Node" parent="." unique_id=1180674234 node_paths=PackedStringArray("event_queue")]
+script = ExtResource("10_frjl4")
+event_queue = [NodePath("../TestClickInteractable/TestClickInteractableEvent"), NodePath("EventStage"), NodePath("../Computer/ComputerEvent")]
+metadata/_custom_type_script = "uid://cua2uk64ok3vg"
+
+[node name="EventStage" type="Node" parent="EventQueue" unique_id=137883755 node_paths=PackedStringArray("events_in_stage")]
+script = ExtResource("14_j07sc")
+events_in_stage = [NodePath("../../TestClickInteractable/TestClickInteractableEvent"), NodePath("../../TestHoldInteractable/TestHoldInteractableEvent")]
+metadata/_custom_type_script = "uid://r70s6flykuow"
+
+[editable path="TestHoldInteractable"]
+[editable path="TestClickInteractable"]
+[editable path="Computer"]

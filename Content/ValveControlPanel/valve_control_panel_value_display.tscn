@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://btqo87i6iavnt"]
+[gd_scene format=3 uid="uid://cncvw8cva3l56"]
 
-[ext_resource type="Texture2D" uid="uid://yy8cov5i0jg4" path="res://Content/ValveControlPanel/Assets/dial_bg.png" id="1_f3r5k"]
-[ext_resource type="Texture2D" uid="uid://b6v2n2r4na3mf" path="res://Content/ValveControlPanel/Assets/dial_fill.png" id="2_lpr8y"]
+[ext_resource type="Texture2D" path="res://Content/ValveControlPanel/Assets/dial_bg.png" id="1_f3r5k"]
+[ext_resource type="Texture2D" path="res://Content/ValveControlPanel/Assets/dial_fill.png" id="2_lpr8y"]
 
 [node name="SubViewportContainer" type="SubViewportContainer" unique_id=1275174229]
 offset_right = 40.0
