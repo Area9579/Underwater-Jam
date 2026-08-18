@@ -24,7 +24,7 @@ window/stretch/aspect="expand"
 
 folder_colors={
 "res://3D Assets/": "purple",
-"res://AUDIO ASSESTS/": "purple",
+"res://AUDIO/": "purple",
 "res://Addons/": "gray",
 "res://Addons/AbstractStateMachine/": "gray",
 "res://Content/": "orange",
