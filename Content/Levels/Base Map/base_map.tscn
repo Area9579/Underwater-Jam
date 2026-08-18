@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://duqqc07ub3xhu"]
+
+[ext_resource type="Texture2D" uid="uid://cn4p5lf82faki" path="res://Gym/Assets/Horror_Floor_12-128x128.png" id="1_pwexk"]
+[ext_resource type="Script" uid="uid://r2c5y3hynqcf" path="res://Content/Levels/Base Map/base_map_orchestrator.gd" id="1_y24es"]
+[ext_resource type="PackedScene" uid="uid://c7fwgmmrjf53x" path="res://Content/Player/player.tscn" id="2_5e2fw"]
+[ext_resource type="Script" uid="uid://cua2uk64ok3vg" path="res://Systems/Event Queue/event_queue.gd" id="3_lul3p"]
+[ext_resource type="PackedScene" uid="uid://bkj28qpfl2n7k" path="res://Content/InteractableItems/DailyOrder/daily_order_sheet.tscn" id="5_y24es"]
+
+[sub_resource type="Environment" id="Environment_o3k8e"]
+ambient_light_source = 3
+ambient_light_color = Color(0.33708254, 0.49799025, 0.55996305, 1)
+glow_enabled = true
+glow_intensity = 0.68
+glow_bloom = 0.15
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0028
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_5e2fw"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_lul3p"]
+size = Vector2(50, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o3k8e"]
+albedo_color = Color(0.67481464, 0.67481464, 0.6748146, 1)
+albedo_texture = ExtResource("1_pwexk")
+
+[node name="BaseMap" type="Node3D" unique_id=1228570231]
+
+[node name="BaseMapOrchestrator" type="Node3D" parent="." unique_id=43420996]
+script = ExtResource("1_y24es")
+
+[node name="EventQueue" type="Node" parent="." unique_id=1831471164]
+unique_name_in_owner = true
+script = ExtResource("3_lul3p")
+metadata/_custom_type_script = "uid://cua2uk64ok3vg"
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=884312926]
+environment = SubResource("Environment_o3k8e")
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=1485311813]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1112275716]
+shape = SubResource("WorldBoundaryShape3D_5e2fw")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=260819505]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("PlaneMesh_lul3p")
+surface_material_override/0 = SubResource("StandardMaterial3D_o3k8e")
+
+[node name="Player" parent="." unique_id=1495724798 instance=ExtResource("2_5e2fw")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.543605, 0)
+
+[node name="DailyOrderSheet" parent="." unique_id=1554151595 instance=ExtResource("5_y24es")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.575139, -3.375377)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1544371011]

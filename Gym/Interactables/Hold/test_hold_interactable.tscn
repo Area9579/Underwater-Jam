@@ -1,15 +1,17 @@
 [gd_scene format=3 uid="uid://hr32o2ebjj8a"]
 
 [ext_resource type="Script" uid="uid://d3i1giqd6pqy3" path="res://Gym/Interactables/Hold/test_hold_interactable.gd" id="1_jc2aq"]
+[ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="2_55d6f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
 
-[node name="TestHoldInteractable" type="RigidBody3D" unique_id=1178644056]
+[node name="TestHoldInteractable" type="RigidBody3D" unique_id=1178644056 node_paths=PackedStringArray("event")]
 collision_layer = 12
 collision_mask = 4
 script = ExtResource("1_jc2aq")
+event = NodePath("TestHoldInteractableEvent")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=460386011]
 shape = SubResource("BoxShape3D_g4v7s")
@@ -31,3 +33,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.78081644, 0)
 visible = false
 billboard = 2
 text = "oh no please don't hold left click on me"
+
+[node name="TestHoldInteractableEvent" type="Node" parent="." unique_id=177764548]
+script = ExtResource("2_55d6f")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[connection signal="event_disabled" from="TestHoldInteractableEvent" to="." method="_on_event_event_disabled"]
+[connection signal="event_enabled" from="TestHoldInteractableEvent" to="." method="_on_event_event_enabled"]

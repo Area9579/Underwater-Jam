@@ -1,0 +1,1 @@
+class_name BaseMapOrchestrator extends Node3D

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ctabbg5qrgmf5"
+path="res://.godot/imported/DR.VANCE_TRACK_13.mp3-57d97bc7c9d0d4bbd7bee019b7b171ea.mp3str"
+
+[deps]
+
+source_file="res://AUDIO ASSESTS/VOICELINES/DIALOGUE/DR. VANCE/Updated/DR.VANCE_TRACK_13.mp3"
+dest_files=["res://.godot/imported/DR.VANCE_TRACK_13.mp3-57d97bc7c9d0d4bbd7bee019b7b171ea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

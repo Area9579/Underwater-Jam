@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://cmuk8q4nj8nd"]
+
+[ext_resource type="PackedScene" uid="uid://c4dmwq2wsa657" path="res://Content/InteractableItems/Computer/ComputerButton/computer_button.tscn" id="1_c4eha"]
+[ext_resource type="Script" uid="uid://dp6xydwjwsx0y" path="res://Content/InteractableItems/Computer/computer.gd" id="1_nwl00"]
+[ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="3_47qs5"]
+
+[node name="Computer" type="Node3D" unique_id=1318926826 node_paths=PackedStringArray("event")]
+script = ExtResource("1_nwl00")
+event = NodePath("ComputerEvent")
+
+[node name="ComputerButton" parent="." unique_id=1562565514 instance=ExtResource("1_c4eha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
+hover_text = "A"
+value = "A"
+
+[node name="ComputerButton2" parent="." unique_id=819159958 instance=ExtResource("1_c4eha")]
+hover_text = "B"
+value = "B"
+
+[node name="ComputerButton3" parent="." unique_id=1787975395 instance=ExtResource("1_c4eha")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+hover_text = "C"
+value = "C"
+
+[node name="Yappa" type="Label3D" parent="." unique_id=1283133865]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
+text = "Enter Code : ABC"
+
+[node name="Label3D" type="Label3D" parent="." unique_id=208973703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
+
+[node name="ComputerEvent" type="Node" parent="." unique_id=1559844608]
+script = ExtResource("3_47qs5")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[connection signal="event_disabled" from="ComputerEvent" to="." method="_on_event_event_disabled"]
+[connection signal="event_enabled" from="ComputerEvent" to="." method="_on_event_event_enabled"]
