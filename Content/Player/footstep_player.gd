@@ -8,6 +8,8 @@ var player_is_walking : bool = false
 
 func _ready() -> void:
 	self.finished.connect(_on_footstep_player_finished)
+	if stream == null:
+		push_warning("%s: Player footstep audio player has no stream set" % self)
 
 
 func _physics_process(_delta: float) -> void:
