@@ -1,17 +1,16 @@
 class_name Player extends FirstPersonEntityController
 
 @onready var sheet_marker: Marker3D = $Head/Camera3D/SheetMarker as Marker3D
+@onready var footstep_player: AudioStreamPlayer = %FootstepPlayer
 
 
 var has_sheet : bool = false
 var sheet_equiped : bool = false
 
-
 func _input(event: InputEvent) -> void:
 	super(event)
 	if event.is_action_pressed("equip") and interaction_enabled and has_sheet:
 		change_sheet_equip()
-
 
 
 func change_sheet_equip() -> void:

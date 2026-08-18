@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://c7fwgmmrjf53x"]
 
 [ext_resource type="PackedScene" uid="uid://tfl8fm3k6g0h" path="res://Systems/FirstPersonEntityController/first_person_entity_controller.tscn" id="1_thq5r"]
+[ext_resource type="AudioStream" uid="uid://g8n5lo008cl6" path="res://AUDIO/SFX/Footsteps/footsteps_bank.tres" id="3_x8iml"]
+[ext_resource type="Script" uid="uid://d1vfdumfqa5ov" path="res://Content/Player/footstep_player.gd" id="4_7d8p2"]
 [ext_resource type="Texture2D" uid="uid://dkfjcve6jp0oj" path="res://Content/Player/Assets/crosshair037.png" id="7_2fsga"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbsyd"]
@@ -32,3 +34,9 @@ mouse_filter = 2
 texture = ExtResource("7_2fsga")
 expand_mode = 1
 stretch_mode = 5
+
+[node name="FootstepPlayer" type="AudioStreamPlayer" parent="." index="4" unique_id=9134779 node_paths=PackedStringArray("state_machine")]
+unique_name_in_owner = true
+stream = ExtResource("3_x8iml")
+script = ExtResource("4_7d8p2")
+state_machine = NodePath("../EntityStateMachine")
