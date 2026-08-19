@@ -10,6 +10,7 @@
 [ext_resource type="ArrayMesh" uid="uid://cvwcipxyyfx16" path="res://3D Assets/BLOB.obj" id="8_ndoub"]
 [ext_resource type="PackedScene" uid="uid://cmuk8q4nj8nd" path="res://Content/InteractableItems/Computer/computer.tscn" id="9_7jjb4"]
 [ext_resource type="Script" uid="uid://cua2uk64ok3vg" path="res://Systems/Event Queue/event_queue.gd" id="10_frjl4"]
+[ext_resource type="PackedScene" uid="uid://blscnow6u561l" path="res://Content/ValveControlPanel/control_panel.tscn" id="12_aa15y"]
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="14_j07sc"]
 
 [sub_resource type="Environment" id="Environment_g4v7s"]
@@ -147,6 +148,9 @@ metadata/_custom_type_script = "uid://cua2uk64ok3vg"
 script = ExtResource("14_j07sc")
 events_in_stage = [NodePath("../../TestClickInteractable/TestClickInteractableEvent"), NodePath("../../TestHoldInteractable/TestHoldInteractableEvent")]
 metadata/_custom_type_script = "uid://r70s6flykuow"
+
+[node name="ValveControlPanel" parent="." unique_id=118694957 instance=ExtResource("12_aa15y")]
+transform = Transform3D(-0.5285424, 0, 0.8489068, 0, 1, 0, -0.8489068, 0, -0.5285424, 3.6405199, 0.16771579, 5.5798755)
 
 [editable path="TestHoldInteractable"]
 [editable path="TestClickInteractable"]
