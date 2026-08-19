@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://bika1w8r7wj1h"]
+[gd_scene format=3 uid="uid://blscnow6u561l"]
 
-[ext_resource type="PackedScene" uid="uid://ck6va6usf5n3w" path="res://Content/InteractableItems/ValveControlPanel/HandCrank/hand_crank.tscn" id="1_nck1r"]
-[ext_resource type="PackedScene" uid="uid://btqo87i6iavnt" path="res://Content/ValveControlPanel/valve_control_panel_value_display.tscn" id="2_gbaq8"]
+[ext_resource type="PackedScene" uid="uid://ck6va6usf5n3w" path="res://Content/InteractableItems/ValveControlPanel/HandCrank/hand_crank.tscn" id="1_uect1"]
+[ext_resource type="PackedScene" uid="uid://cncvw8cva3l56" path="res://Content/ValveControlPanel/valve_control_panel_value_display.tscn" id="2_buem2"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_g4v7s"]
 size = Vector3(0.855, 1.365, 2.71)
@@ -22,10 +22,10 @@ surface_material_override/0 = SubResource("StandardMaterial3D_g4v7s")
 [node name="RotationHelper" type="Node3D" parent="." unique_id=1653929392]
 transform = Transform3D(0.32919097, 0.94426334, 0, -0.94426334, 0.32919097, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="HandCrank" parent="RotationHelper" unique_id=922139481 instance=ExtResource("1_nck1r")]
+[node name="HandCrank" parent="RotationHelper" unique_id=922139481 instance=ExtResource("1_uect1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5802077, 0.49286887, 0.71778667)
 
-[node name="SubViewportContainer" parent="." unique_id=1275174229 instance=ExtResource("2_gbaq8")]
+[node name="SubViewportContainer" parent="." unique_id=1275174229 instance=ExtResource("2_buem2")]
 visible = false
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1054979006]
