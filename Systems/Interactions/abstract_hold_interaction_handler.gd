@@ -1,7 +1,6 @@
 @abstract class_name AbstractHoldInteractionHandler extends AbstractInteractionHandler
 
-const HOLD_THRESHOLD_MS : float = 1500
-
+var hold_threshold_ms : float = 1500
 var is_holding : bool = false
 var hold_start_timestamp : float = INF
 
@@ -20,7 +19,7 @@ func is_correct_input_given() -> bool:
 		return false
 	
 	if is_correct_input_held():
-		if Time.get_ticks_msec() - hold_start_timestamp > HOLD_THRESHOLD_MS:
+		if Time.get_ticks_msec() - hold_start_timestamp > hold_threshold_ms:
 			hold_start_timestamp = INF
 			return true
 	

@@ -13,7 +13,7 @@ config_version=5
 config/name="Underwater Jam"
 run/main_scene="uid://dy5url2aa2syh"
 config/features=PackedStringArray("4.7", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="res://Content/icon.svg"
 
 [audio]
 
