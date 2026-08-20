@@ -28,6 +28,7 @@ folder_colors={
 "res://Content/": "orange",
 "res://Content/Player/": "red",
 "res://Content/Player/Assets/": "purple",
+"res://Content/Porthole/": "purple",
 "res://Debug Character/": "gray",
 "res://Gym/": "green",
 "res://Gym/Assets/": "purple",

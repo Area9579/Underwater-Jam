@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cq5osxsjf602p"]
 
-[ext_resource type="Shader" uid="uid://engrn8eubxky" path="res://Gym/Parker/window_port.gdshader" id="1_rjhja"]
+[ext_resource type="Shader" uid="uid://engrn8eubxky" path="res://Content/Porthole/window_port.gdshader" id="1_rjhja"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_frjl4"]
 render_priority = 0

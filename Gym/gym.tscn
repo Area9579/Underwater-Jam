@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bkj28qpfl2n7k" path="res://Content/InteractableItems/DailyOrder/daily_order_sheet.tscn" id="6_1er27"]
 [ext_resource type="PackedScene" uid="uid://dsowx26n2s2kr" path="res://Gym/BlockOutModels/wall.tscn" id="7_7jjb4"]
 [ext_resource type="PackedScene" uid="uid://dgndvisekno7p" path="res://Gym/BlockOutModels/roof.tscn" id="8_eou5s"]
-[ext_resource type="PackedScene" uid="uid://cq5osxsjf602p" path="res://Gym/Parker/window_port.tscn" id="9_aa15y"]
+[ext_resource type="PackedScene" uid="uid://cq5osxsjf602p" path="res://Content/Porthole/window_port.tscn" id="9_aa15y"]
 [ext_resource type="PackedScene" uid="uid://bl3jromm4a7fk" path="res://Gym/BlockOutModels/pillar.tscn" id="9_frjl4"]
-[ext_resource type="Environment" uid="uid://dbmdvxf2yryev" path="res://Gym/Parker/volumetricFog.tres" id="10_eou5s"]
+[ext_resource type="Environment" uid="uid://6372adp05a4k" path="res://Content/Porthole/baseFog.tres" id="11_frjl4"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
 
@@ -23,18 +23,6 @@ albedo_texture = ExtResource("2_d8kd1")
 
 [node name="PlayerGym" type="Node3D" unique_id=1618404820]
 script = ExtResource("1_rh7av")
-
-[node name="Floor" type="StaticBody3D" parent="." unique_id=1489174417]
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=153202657]
-shape = SubResource("WorldBoundaryShape3D_g4v7s")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=826798761]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-mesh = SubResource("PlaneMesh_g4v7s")
-surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")
 
 [node name="Player" parent="." unique_id=1495724798 instance=ExtResource("3_1er27")]
 unique_name_in_owner = true
@@ -82,6 +70,59 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.945922, 0.67565703, -2.9100
 
 [node name="DailyOrderSheet" parent="." unique_id=1952071443 instance=ExtResource("6_1er27")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 5, 1.562298, 2)
+
+[node name="Floors" type="Node" parent="." unique_id=1281094641]
+
+[node name="Floor" type="StaticBody3D" parent="Floors" unique_id=1489174417]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Floor" unique_id=153202657]
+shape = SubResource("WorldBoundaryShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floors/Floor" unique_id=826798761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("PlaneMesh_g4v7s")
+surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")
+
+[node name="Floor2" type="StaticBody3D" parent="Floors" unique_id=1529848625]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 49.455185)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Floor2" unique_id=2073719438]
+shape = SubResource("WorldBoundaryShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floors/Floor2" unique_id=1496417884]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("PlaneMesh_g4v7s")
+surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")
+
+[node name="Floor3" type="StaticBody3D" parent="Floors" unique_id=1776358811]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 99.50838)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Floor3" unique_id=1078004623]
+shape = SubResource("WorldBoundaryShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floors/Floor3" unique_id=887525268]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("PlaneMesh_g4v7s")
+surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")
+
+[node name="Floor4" type="StaticBody3D" parent="Floors" unique_id=971751807]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 148.49648)
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floors/Floor4" unique_id=1739440656]
+shape = SubResource("WorldBoundaryShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floors/Floor4" unique_id=1603604577]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
+mesh = SubResource("PlaneMesh_g4v7s")
+surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")
 
 [node name="BlockOutModels" type="Node" parent="." unique_id=1339888686]
 
@@ -175,43 +216,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.405605, 1.9073486e-06, 49.
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.515987, 0, 167.12228)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=967025472]
-environment = ExtResource("10_eou5s")
-
-[node name="Floor2" type="StaticBody3D" parent="." unique_id=1529848625]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 49.455185)
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor2" unique_id=2073719438]
-shape = SubResource("WorldBoundaryShape3D_g4v7s")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor2" unique_id=1496417884]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-mesh = SubResource("PlaneMesh_g4v7s")
-surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")
-
-[node name="Floor3" type="StaticBody3D" parent="." unique_id=1776358811]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 99.50838)
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor3" unique_id=1078004623]
-shape = SubResource("WorldBoundaryShape3D_g4v7s")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor3" unique_id=887525268]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-mesh = SubResource("PlaneMesh_g4v7s")
-surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")
-
-[node name="Floor4" type="StaticBody3D" parent="." unique_id=971751807]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 148.49648)
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor4" unique_id=1739440656]
-shape = SubResource("WorldBoundaryShape3D_g4v7s")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor4" unique_id=1603604577]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
-mesh = SubResource("PlaneMesh_g4v7s")
-surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")
+environment = ExtResource("11_frjl4")
