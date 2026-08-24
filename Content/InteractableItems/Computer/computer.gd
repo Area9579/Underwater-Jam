@@ -5,18 +5,25 @@ class_name Computer extends Node3D
 @onready var computer_button: ComputerButton = $ComputerButton as ComputerButton
 @onready var computer_button_2: ComputerButton = $ComputerButton2 as ComputerButton
 @onready var computer_button_3: ComputerButton = $ComputerButton3 as ComputerButton
+@onready var computer_button_4: ComputerButton = $ComputerButton4 as ComputerButton
+@onready var computer_button_5: ComputerButton = $ComputerButton5 as ComputerButton
+@onready var computer_button_6: ComputerButton = $ComputerButton6 as ComputerButton
+
 @onready var label_3d: Label3D = $Label3D as Label3D
 
 var computer_button_arr : Array[ComputerButton]
 
-const max_inputs : int = 3
-var goal_input : String = 'ABC'
+const max_inputs : int = 6
+var goal_input : String = 'ROYGBP'
 
 func _ready() -> void:
 	computer_button_arr = [
 		computer_button,
 		computer_button_2,
 		computer_button_3,
+		computer_button_4,
+		computer_button_5,
+		computer_button_6,
 	]
 	
 	for button in computer_button_arr:
