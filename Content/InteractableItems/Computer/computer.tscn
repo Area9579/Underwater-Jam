@@ -431,8 +431,8 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6jvt"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_u5s0m")
-uv1_scale = Vector3(6.615, 6.615, 6.615)
-uv1_offset = Vector3(0.255, 0.09, 0)
+uv1_scale = Vector3(6.12, 6.12, 6.12)
+uv1_offset = Vector3(0.5, 0.205, 0)
 
 [node name="Computer" type="Node3D" unique_id=1318926826 node_paths=PackedStringArray("event")]
 script = ExtResource("1_nwl00")
