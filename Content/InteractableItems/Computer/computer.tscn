@@ -431,6 +431,8 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6jvt"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_u5s0m")
+uv1_scale = Vector3(5.9, 5.9, 5.9)
+uv1_offset = Vector3(0.605, 0.12, 0)
 
 [node name="Computer" type="Node3D" unique_id=1318926826 node_paths=PackedStringArray("event")]
 script = ExtResource("1_nwl00")
@@ -532,6 +534,7 @@ mesh = SubResource("ArrayMesh_1j3ok")
 surface_material_override/0 = SubResource("StandardMaterial3D_e6jvt")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=676221257]
+size = Vector2i(512, 544)
 
 [node name="ComputerScreen" parent="SubViewport" unique_id=563600665 instance=ExtResource("4_xmc6x")]
 

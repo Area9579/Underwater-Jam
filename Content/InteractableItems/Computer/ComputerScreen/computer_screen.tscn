@@ -42,7 +42,7 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Control" parent="HBoxContainer/ColorRect2/HBoxContainer/DNALeft" unique_id=55889794 instance=ExtResource("1_6anyq")]
+[node name="DNASegment" parent="HBoxContainer/ColorRect2/HBoxContainer/DNALeft" unique_id=55889794 instance=ExtResource("1_6anyq")]
 layout_mode = 2
 size_flags_horizontal = 4
 

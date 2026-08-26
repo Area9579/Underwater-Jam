@@ -1,16 +1,18 @@
 [gd_scene format=3 uid="uid://j1da4awngyhk"]
 
-[node name="Control" type="Control" unique_id=55889794]
+[node name="DNASegment" type="Control" unique_id=55889794]
 custom_minimum_size = Vector2(88, 88)
 layout_mode = 3
 anchors_preset = 0
 
 [node name="Label" type="Label" parent="." unique_id=2032590144]
+custom_minimum_size = Vector2(80, 80)
 layout_mode = 0
-offset_right = 88.0
-offset_bottom = 88.0
+offset_right = 80.0
+offset_bottom = 543.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 64
-text = "R"
+text = "ROYGBP"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 1
