@@ -1,9 +1,12 @@
 [gd_scene format=3 uid="uid://j1da4awngyhk"]
 
+[ext_resource type="Script" uid="uid://c8g6hh2levh38" path="res://Content/InteractableItems/Computer/ComputerScreen/DNASegment/dna_segment.gd" id="1_hljcq"]
+
 [node name="DNASegment" type="Control" unique_id=55889794]
 custom_minimum_size = Vector2(88, 88)
 layout_mode = 3
 anchors_preset = 0
+script = ExtResource("1_hljcq")
 
 [node name="Label" type="Label" parent="." unique_id=2032590144]
 custom_minimum_size = Vector2(80, 80)

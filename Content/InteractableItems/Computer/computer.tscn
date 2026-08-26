@@ -431,8 +431,8 @@ viewport_path = NodePath("SubViewport")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e6jvt"]
 resource_local_to_scene = true
 albedo_texture = SubResource("ViewportTexture_u5s0m")
-uv1_scale = Vector3(5.9, 5.9, 5.9)
-uv1_offset = Vector3(0.605, 0.12, 0)
+uv1_scale = Vector3(6.615, 6.615, 6.615)
+uv1_offset = Vector3(0.255, 0.09, 0)
 
 [node name="Computer" type="Node3D" unique_id=1318926826 node_paths=PackedStringArray("event")]
 script = ExtResource("1_nwl00")
@@ -480,6 +480,7 @@ script = ExtResource("3_47qs5")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
 [node name="VDUTerminal" type="Node3D" parent="." unique_id=1664232102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.87152255)
 
 [node name="VDUTerminal" type="MeshInstance3D" parent="VDUTerminal" unique_id=1018499832]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36494, 0.01604187)
@@ -534,7 +535,7 @@ mesh = SubResource("ArrayMesh_1j3ok")
 surface_material_override/0 = SubResource("StandardMaterial3D_e6jvt")
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=676221257]
-size = Vector2i(512, 544)
+size = Vector2i(600, 600)
 
 [node name="ComputerScreen" parent="SubViewport" unique_id=563600665 instance=ExtResource("4_xmc6x")]
 

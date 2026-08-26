@@ -10,6 +10,7 @@ class_name Computer extends Node3D
 @onready var computer_button_6: ComputerButton = $ComputerButton6 as ComputerButton
 
 @onready var label_3d: Label3D = $Label3D as Label3D
+@onready var computer_screen: ComputerScreen = $SubViewport/ComputerScreen as ComputerScreen
 
 var computer_button_arr : Array[ComputerButton]
 
@@ -31,15 +32,16 @@ func _ready() -> void:
 
 
 func add_value_to_string(new_input : String) -> void:
-	if label_3d.text.length() < max_inputs:
-		label_3d.text = label_3d.text + new_input
-	if label_3d.text == goal_input:
-		label_3d.text = 'COMPLETED'
+	if computer_screen.dna_segment.label.text.length() < max_inputs:
+		#label_3d.text = label_3d.text + new_input
+		computer_screen.dna_segment.update_dna_text(computer_screen.dna_segment.label.text + new_input)
+	if computer_screen.dna_segment.label.text == goal_input:
+		computer_screen.dna_segment.label.text = 'COMPLETED'
 		event.finish()
-	elif label_3d.text.length() == max_inputs:
-		label_3d.text = 'RESET'
+	elif computer_screen.dna_segment.label.text.length() == max_inputs:
+		computer_screen.dna_segment.label.text = 'RESET'
 		await get_tree().create_timer(0.5).timeout
-		label_3d.text = ''
+		computer_screen.dna_segment.label.text = ''
 
 
 func _on_event_event_disabled() -> void:
