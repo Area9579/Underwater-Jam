@@ -1,0 +1,62 @@
+[gd_scene format=3 uid="uid://dm2kk0ddb1ldv"]
+
+[ext_resource type="Script" uid="uid://b2vjerre3gouh" path="res://Content/InteractableItems/ValveControlPanel/Slider/panel_slider.gd" id="1_ibj2i"]
+
+[sub_resource type="Curve3D" id="Curve3D_ibj2i"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.06, 0, 0, 0, 0, 0, 0, 0, 0, 0.73, 0, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g4v7s"]
+top_radius = 0.041015625
+bottom_radius = 0.041015625
+height = 0.26416016
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_yf5fn"]
+top_radius = 0.052246094
+bottom_radius = 0.052246094
+height = 0.32714844
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+size = Vector3(0.086120605, 0.10241699, 0.33032227)
+
+[sub_resource type="BoxMesh" id="BoxMesh_yhjsi"]
+size = Vector3(1.1337585, 0.10241699, 0.11602783)
+
+[node name="Slider" type="Node3D" unique_id=10265840]
+script = ExtResource("1_ibj2i")
+
+[node name="Path3D" type="Path3D" parent="." unique_id=615197678]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5093759, 0, 0)
+curve = SubResource("Curve3D_ibj2i")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1587446659]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.06, 0, 0)
+
+[node name="HandleBase" type="MeshInstance3D" parent="Path3D/PathFollow3D" unique_id=1356688174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.262472e-09, 0.10522461, -0.18902332)
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="HandGrip" type="MeshInstance3D" parent="Path3D/PathFollow3D/HandleBase" unique_id=2055285983]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0.15884587, 0)
+mesh = SubResource("CylinderMesh_yf5fn")
+
+[node name="Borders" type="Node3D" parent="." unique_id=1559375616]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5093759, 0, 0)
+
+[node name="TopEdge" type="MeshInstance3D" parent="Borders" unique_id=1339482646]
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="BottomEdge" type="MeshInstance3D" parent="Borders" unique_id=976895829]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.047, 0, 0)
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="LeftEdge" type="MeshInstance3D" parent="Borders" unique_id=320562408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.524, 0, 0.12728657)
+mesh = SubResource("BoxMesh_yhjsi")
+
+[node name="RightEdge" type="MeshInstance3D" parent="Borders" unique_id=2051742688]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.524, 0, -0.13115901)
+mesh = SubResource("BoxMesh_yhjsi")

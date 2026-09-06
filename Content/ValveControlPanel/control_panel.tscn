@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqfkd6240ajbd" path="res://Content/ValveControlPanel/control_panel.gd" id="1_buem2"]
 [ext_resource type="PackedScene" uid="uid://ck6va6usf5n3w" path="res://Content/InteractableItems/ValveControlPanel/HandCrank/hand_crank.tscn" id="1_uect1"]
+[ext_resource type="PackedScene" uid="uid://dm2kk0ddb1ldv" path="res://Content/InteractableItems/ValveControlPanel/Slider/panel_slider.tscn" id="2_buem2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(1.67922, 1.3563232, 2.7410889)
@@ -47,6 +48,9 @@ border_color = Color(0, 0, 0, 1)
 [node name="ValveControlPanel" type="Node3D" unique_id=118694957]
 script = ExtResource("1_buem2")
 
+[node name="Slider" parent="." unique_id=10265840 instance=ExtResource("2_buem2")]
+transform = Transform3D(0.29632047, 0.95508873, 0, -0.95508873, 0.29632047, 0, 0, 0, 1, 0.19133049, 0.634982, -0.5690776)
+
 [node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=178835176]
 collision_layer = 4
 collision_mask = 0
@@ -61,14 +65,14 @@ mesh = SubResource("PrismMesh_g4v7s")
 surface_material_override/0 = SubResource("StandardMaterial3D_g4v7s")
 
 [node name="RotationHelper" type="Node3D" parent="." unique_id=1653929392]
-transform = Transform3D(0.32919097, 0.94426334, 0, -0.94426334, 0.32919097, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.32919097, 0.94426334, 0, -0.94426334, 0.32919097, 0, 0, 0, 1, 0, 0, 0.07434231)
 
 [node name="HandCrank" parent="RotationHelper" unique_id=922139481 instance=ExtResource("1_uect1")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5802077, 0.49286887, 0.71778667)
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1054979006]
-transform = Transform3D(0.9530649, -0.3024648, 0.013502284, 0.30249238, 0.95315176, 0, -0.012869726, 0.004084338, 0.99990886, 0.16005126, 0.6482248, -0.15769714)
+transform = Transform3D(0.9530649, -0.3024648, 0.013502284, 0.30249238, 0.95315176, 0, -0.012869726, 0.004084338, 0.99990886, 0.16005126, 0.6482248, 0.1767255)
 mesh = SubResource("BoxMesh_g4v7s")
 surface_material_override/0 = SubResource("StandardMaterial3D_57qmd")
 
