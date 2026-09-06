@@ -1,12 +1,13 @@
 class_name ComputerButton extends Area3D
 
-signal button_pressed(value : String)
+signal button_pressed(value : String, texture : CompressedTexture2D)
 
 @onready var node_3d_tween_sequencer: Node3DTweenSequencer = $Node3DTweenSequencer as Node3DTweenSequencer
 @onready var hover_text_label: Label3D = $HoverText as Label3D
 
 @export var hover_text : String
 @export var value : String
+@export var held_texture : CompressedTexture2D
 
 var interaction_handler : ComputerButtonInteractionHandler = ComputerButtonInteractionHandler.new(self)
 
@@ -21,4 +22,4 @@ func play_button_tween() -> void:
 
 
 func button_press() -> void:
-	button_pressed.emit(value)
+	button_pressed.emit(value, held_texture)

@@ -1,21 +1,32 @@
 [gd_scene format=3 uid="uid://j1da4awngyhk"]
 
 [ext_resource type="Script" uid="uid://c8g6hh2levh38" path="res://Content/InteractableItems/Computer/ComputerScreen/DNASegment/dna_segment.gd" id="1_hljcq"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Content/icon.svg" id="2_v14o7"]
 
 [node name="DNASegment" type="Control" unique_id=55889794]
 custom_minimum_size = Vector2(88, 88)
 layout_mode = 3
-anchors_preset = 0
+anchor_left = 0.462
+anchor_top = 0.432
+anchor_right = 0.53800005
+anchor_bottom = 0.568
+offset_left = -0.22399902
+offset_top = 0.06399536
+offset_right = 0.22393799
+offset_bottom = -0.06402588
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+offset_transform_enabled = true
 script = ExtResource("1_hljcq")
 
-[node name="Label" type="Label" parent="." unique_id=2032590144]
-custom_minimum_size = Vector2(80, 80)
-layout_mode = 0
-offset_right = 80.0
-offset_bottom = 543.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 64
-text = "ROYGBP"
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 1
+[node name="DNATexture" type="TextureRect" parent="." unique_id=449057930]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_v14o7")
+expand_mode = 3
+stretch_mode = 5

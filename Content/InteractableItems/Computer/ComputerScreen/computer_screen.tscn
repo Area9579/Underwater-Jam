@@ -3,6 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://j1da4awngyhk" path="res://Content/InteractableItems/Computer/ComputerScreen/DNASegment/DNASegment.tscn" id="1_6anyq"]
 [ext_resource type="Script" uid="uid://c2idenktgo7ka" path="res://Content/InteractableItems/Computer/ComputerScreen/computer_screen.gd" id="1_cgusi"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4v7s"]
+
 [node name="ComputerScreen" type="Control" unique_id=563600665]
 layout_mode = 3
 anchors_preset = 15
@@ -44,21 +46,23 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
+[node name="Panel" type="Panel" parent="HBoxContainer/ColorRect2/HBoxContainer/DNALeft" unique_id=573183658]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_g4v7s")
+
 [node name="DNASegment" parent="HBoxContainer/ColorRect2/HBoxContainer/DNALeft" unique_id=55889794 instance=ExtResource("1_6anyq")]
 layout_mode = 2
 size_flags_horizontal = 4
-offset_transform_enabled = true
-offset_transform_position_ratio = Vector2(0, 0.55)
 
 [node name="DNARight" type="VBoxContainer" parent="HBoxContainer/ColorRect2/HBoxContainer" unique_id=167987502]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="DNASegment" parent="HBoxContainer/ColorRect2/HBoxContainer/DNARight" unique_id=930817235 instance=ExtResource("1_6anyq")]
+[node name="Panel" type="Panel" parent="HBoxContainer/ColorRect2/HBoxContainer/DNARight" unique_id=1894356638]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
-size_flags_horizontal = 4
-offset_transform_enabled = true
-offset_transform_position_ratio = Vector2(0, 0.55)
+theme_override_styles/panel = SubResource("StyleBoxEmpty_g4v7s")
 
 [node name="ColorRect3" type="ColorRect" parent="HBoxContainer" unique_id=1319496145]
 layout_mode = 2

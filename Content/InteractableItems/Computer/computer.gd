@@ -15,7 +15,8 @@ class_name Computer extends Node3D
 var computer_button_arr : Array[ComputerButton]
 
 const max_inputs : int = 6
-var goal_input : String = 'ROYGBP'
+var goal_password : String = 'ROYGBP'
+var current_password : String = ''
 
 func _ready() -> void:
 	computer_button_arr = [
@@ -31,17 +32,17 @@ func _ready() -> void:
 		button.button_pressed.connect(add_value_to_string)
 
 
-func add_value_to_string(new_input : String) -> void:
-	if computer_screen.dna_segment.label.text.length() < max_inputs:
-		#label_3d.text = label_3d.text + new_input
-		computer_screen.dna_segment.update_dna_text(computer_screen.dna_segment.label.text + new_input)
-	if computer_screen.dna_segment.label.text == goal_input:
-		computer_screen.dna_segment.label.text = 'COMPLETED'
+
+
+func add_value_to_string(new_input : String, new_texture : CompressedTexture2D) -> void:
+	if current_password.length() < max_inputs:
+		current_password += new_input
+		print(current_password)
+		computer_screen.add_new_dna_segment(new_texture)
+	if current_password == goal_password:
 		event.finish()
-	elif computer_screen.dna_segment.label.text.length() == max_inputs:
-		computer_screen.dna_segment.label.text = 'RESET'
-		await get_tree().create_timer(0.5).timeout
-		computer_screen.dna_segment.label.text = ''
+	elif (current_password.length() == max_inputs) or (current_password[current_password.length() - 1] == goal_password[current_password.length() - 1]):
+		print('reset')
 
 
 func _on_event_event_disabled() -> void:

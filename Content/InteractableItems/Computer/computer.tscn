@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c4dmwq2wsa657" path="res://Content/InteractableItems/Computer/ComputerButton/computer_button.tscn" id="1_c4eha"]
 [ext_resource type="Script" uid="uid://dp6xydwjwsx0y" path="res://Content/InteractableItems/Computer/computer.gd" id="1_nwl00"]
 [ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="3_47qs5"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Content/icon.svg" id="3_oxpca"]
 [ext_resource type="PackedScene" uid="uid://cedmc3r84232b" path="res://Content/InteractableItems/Computer/ComputerScreen/computer_screen.tscn" id="4_xmc6x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1cwh6"]
@@ -442,30 +443,36 @@ event = NodePath("ComputerEvent")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
 hover_text = "R"
 value = "R"
+held_texture = ExtResource("3_oxpca")
 
 [node name="ComputerButton2" parent="." unique_id=819159958 instance=ExtResource("1_c4eha")]
 hover_text = "O"
 value = "O"
+held_texture = ExtResource("3_oxpca")
 
 [node name="ComputerButton3" parent="." unique_id=1787975395 instance=ExtResource("1_c4eha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 hover_text = "Y"
 value = "Y"
+held_texture = ExtResource("3_oxpca")
 
 [node name="ComputerButton4" parent="." unique_id=560940564 instance=ExtResource("1_c4eha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.1, 0.4)
 hover_text = "G"
 value = "G"
+held_texture = ExtResource("3_oxpca")
 
 [node name="ComputerButton5" parent="." unique_id=904534005 instance=ExtResource("1_c4eha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0.4)
 hover_text = "B"
 value = "B"
+held_texture = ExtResource("3_oxpca")
 
 [node name="ComputerButton6" parent="." unique_id=1718856459 instance=ExtResource("1_c4eha")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.1, 0.4)
 hover_text = "P"
 value = "P"
+held_texture = ExtResource("3_oxpca")
 
 [node name="Yappa" type="Label3D" parent="." unique_id=1283133865]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)

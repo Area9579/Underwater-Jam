@@ -1,6 +1,6 @@
 class_name DNASegment extends Control
-@onready var label: Label = $Label as Label
+@onready var dna_texture: TextureRect = $DNATexture as TextureRect
 
 
-func update_dna_text(new_text : String) -> void:
-	label.text = new_text
+func set_dna_texture(new_texture : CompressedTexture2D) -> void:
+	dna_texture.texture = new_texture
