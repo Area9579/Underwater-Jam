@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dm2kk0ddb1ldv"]
 
 [ext_resource type="Script" uid="uid://b2vjerre3gouh" path="res://Content/InteractableItems/ValveControlPanel/Slider/panel_slider.gd" id="1_ibj2i"]
+[ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="2_yhjsi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
 size = Vector3(1.1218262, 0.4515381, 0.38354492)
@@ -29,6 +30,8 @@ size = Vector3(0.086120605, 0.10241699, 0.33032227)
 size = Vector3(1.1337585, 0.10241699, 0.11602783)
 
 [node name="Slider" type="Area3D" unique_id=55996239]
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_ibj2i")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1538899244]
@@ -40,6 +43,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5093759, 0, 0)
 curve = SubResource("Curve3D_ibj2i")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D" unique_id=1587446659]
+unique_name_in_owner = true
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.06, 0, 0)
 
 [node name="HandleBase" type="MeshInstance3D" parent="Path3D/PathFollow3D" unique_id=1356688174]
@@ -67,3 +71,10 @@ mesh = SubResource("BoxMesh_yhjsi")
 [node name="RightEdge" type="MeshInstance3D" parent="Borders" unique_id=2051742688]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.524, 0, -0.13115901)
 mesh = SubResource("BoxMesh_yhjsi")
+
+[node name="SliderEvent" type="Node" parent="." unique_id=1821529362]
+script = ExtResource("2_yhjsi")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[connection signal="event_disabled" from="SliderEvent" to="." method="_on_slider_event_event_disabled"]
+[connection signal="event_enabled" from="SliderEvent" to="." method="_on_slider_event_event_enabled"]
