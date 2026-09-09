@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b2vjerre3gouh" path="res://Content/InteractableItems/ValveControlPanel/Slider/panel_slider.gd" id="1_ibj2i"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1.1218262, 0.4515381, 0.38354492)
+
 [sub_resource type="Curve3D" id="Curve3D_ibj2i"]
 _data = {
 "points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.06, 0, 0, 0, 0, 0, 0, 0, 0, 0.73, 0, 0),
@@ -25,8 +28,12 @@ size = Vector3(0.086120605, 0.10241699, 0.33032227)
 [sub_resource type="BoxMesh" id="BoxMesh_yhjsi"]
 size = Vector3(1.1337585, 0.10241699, 0.11602783)
 
-[node name="Slider" type="Node3D" unique_id=10265840]
+[node name="Slider" type="Area3D" unique_id=55996239]
 script = ExtResource("1_ibj2i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1538899244]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012573242, 0.18878174, -0.009887695)
+shape = SubResource("BoxShape3D_g4v7s")
 
 [node name="Path3D" type="Path3D" parent="." unique_id=615197678]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5093759, 0, 0)
