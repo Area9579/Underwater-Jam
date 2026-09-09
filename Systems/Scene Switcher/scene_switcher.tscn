@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://dhkfnd50dxgiv"]
+
+[ext_resource type="Script" uid="uid://cg7k02bkpn6fq" path="res://Systems/Scene Switcher/scene_switcher.gd" id="1_oyvwj"]
+[ext_resource type="Script" uid="uid://c0eq70gyg7rhf" path="res://Addons/Tween Components/Scripts/Components/control_tween.gd" id="2_my3d7"]
+[ext_resource type="Script" uid="uid://dby7depabb4fv" path="res://Addons/Tween Components/Scripts/TweenResources/canvas_item_tween.gd" id="4_3s4af"]
+
+[sub_resource type="Resource" id="Resource_3gngh"]
+script = ExtResource("4_3s4af")
+start_modulate = Color(1, 1, 1, 0)
+metadata/_custom_type_script = "uid://dby7depabb4fv"
+
+[sub_resource type="Resource" id="Resource_yf5fn"]
+script = ExtResource("4_3s4af")
+end_modulate = Color(1, 1, 1, 0)
+metadata/_custom_type_script = "uid://dby7depabb4fv"
+
+[node name="SceneSwitcher" type="Node" unique_id=1650507017]
+script = ExtResource("1_oyvwj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=70544486]
+layer = 2147483647
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1550543194]
+modulate = Color(1, 1, 1, 0)
+z_index = 4096
+z_as_relative = false
+anchors_preset = -1
+anchor_right = 1.0002778
+anchor_bottom = 1.0002717
+offset_right = -0.3199997
+offset_bottom = -0.1760025
+offset_transform_enabled = true
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="FadeToBlack" type="Node" parent="CanvasLayer/ColorRect" unique_id=1002379512 node_paths=PackedStringArray("affected_node")]
+unique_name_in_owner = true
+script = ExtResource("2_my3d7")
+affected_node = NodePath("..")
+canvas_item_tween = SubResource("Resource_3gngh")
+trans_type = 7
+ease_type = 2
+tween_duration = 0.5
+metadata/_custom_type_script = "uid://c0eq70gyg7rhf"
+
+[node name="FadeFromBlack" type="Node" parent="CanvasLayer/ColorRect" unique_id=1951060404 node_paths=PackedStringArray("affected_node")]
+unique_name_in_owner = true
+script = ExtResource("2_my3d7")
+affected_node = NodePath("..")
+canvas_item_tween = SubResource("Resource_yf5fn")
+trans_type = 7
+ease_type = 2
+tween_duration = 0.5
+metadata/_custom_type_script = "uid://c0eq70gyg7rhf"

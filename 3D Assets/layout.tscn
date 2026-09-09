@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://bbwbac51mfjg8"]
+
+[ext_resource type="Texture2D" uid="uid://cn4p5lf82faki" path="res://Gym/Assets/Horror_Floor_12-128x128.png" id="1_fgwyc"]
+[ext_resource type="PackedScene" uid="uid://0h3bkwj45wb6" path="res://3D Assets/LevelLayout.glb" id="2_1pk2y"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_e0gog"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_el6up"]
+size = Vector2(50, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4lg8p"]
+albedo_color = Color(0.67481464, 0.67481464, 0.6748146, 1)
+albedo_texture = ExtResource("1_fgwyc")
+
+[node name="Node3D" type="Node3D" unique_id=980558293]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=735543997]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=1031549660]
+shape = SubResource("WorldBoundaryShape3D_e0gog")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=928445596]
+transform = Transform3D(3.2265003, 0, 0, 0, 1, 0, 0, 0, 3.7408042, 0, -0.7475647, -29.388985)
+mesh = SubResource("PlaneMesh_el6up")
+surface_material_override/0 = SubResource("StandardMaterial3D_4lg8p")
+
+[node name="LevelLayout" parent="." unique_id=1219564872 instance=ExtResource("2_1pk2y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.540993, -0.87420654, 25.021458)
