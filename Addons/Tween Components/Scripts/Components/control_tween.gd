@@ -16,7 +16,7 @@ class_name ControlTween extends TweenComponent
 @export var transform_tween : TransformTween:
 	set(new_tween):
 		transform_tween = new_tween
-		if new_tween != null:
+		if new_tween != null and affected_node != null:
 			_set_reset_values()
 ## The canvas item tween resource
 @export var canvas_item_tween : CanvasItemTween:
@@ -43,8 +43,7 @@ func _ready() -> void:
 	
 	if autostart: do_tween()
 	
-	# Sets the pivot offset to be the center of the control node
-	affected_node.pivot_offset_ratio = Vector2(0.5, 0.5)
+	
 	# Sets the affected control node to be able to use offset transform
 	affected_node.offset_transform_enabled = true
 
@@ -62,14 +61,16 @@ func do_tween(forward : bool = true) -> void:
 	
 	# Tween that shit
 	_tween_values(forward)
+	_kill_empty_tween()
 	
 	# Set up chaining
 	if loop:
 		tween.chain()
 		_tween_values(forward)
 	
+	
 	# Await for tween to finish so that it can loop
-	await tween.finished
+	await tween_finished
 	return
 
 
