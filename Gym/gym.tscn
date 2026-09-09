@@ -13,13 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://blscnow6u561l" path="res://Content/ValveControlPanel/control_panel.tscn" id="12_aa15y"]
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="14_j07sc"]
 
-[sub_resource type="Environment" id="Environment_g4v7s"]
-glow_enabled = true
-glow_intensity = 0.68
-glow_bloom = 0.15
-volumetric_fog_enabled = true
-volumetric_fog_density = 0.0028
-
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_g4v7s"]
@@ -64,17 +57,14 @@ shader_parameter/color4 = Color(0.19955236, 0.4575218, 0.29545337, 1)
 [node name="PlayerGym" type="Node3D" unique_id=1618404820]
 script = ExtResource("1_rh7av")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=502045691]
-environment = SubResource("Environment_g4v7s")
-
-[node name="Floor" type="StaticBody3D" parent="." unique_id=1489174417]
+[node name="FloorBase" type="StaticBody3D" parent="." unique_id=1489174417]
 collision_layer = 4
 collision_mask = 0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=153202657]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="FloorBase" unique_id=153202657]
 shape = SubResource("WorldBoundaryShape3D_g4v7s")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=826798761]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="FloorBase" unique_id=826798761]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1, 0)
 mesh = SubResource("PlaneMesh_g4v7s")
 surface_material_override/0 = SubResource("StandardMaterial3D_qpgtp")
