@@ -61,6 +61,15 @@ shader_parameter/color2 = Color(0.53391707, 0.44811642, 0.7950995, 1)
 shader_parameter/color3 = Color(0.0046855886, 0.117006265, 0.30003342, 1)
 shader_parameter/color4 = Color(0.19955236, 0.4575218, 0.29545337, 1)
 
+[sub_resource type="ViewportTexture" id="ViewportTexture_aa15y"]
+viewport_path = NodePath("SubViewportContainer/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cwwjt"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_aa15y")
+uv1_offset = Vector3(0, 0.25, 0)
+stencil_outline_thickness = 0.131
+
 [node name="PlayerGym" type="Node3D" unique_id=1618404820]
 script = ExtResource("1_rh7av")
 
@@ -141,7 +150,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 1
 
 [node name="EventQueue" type="Node" parent="." unique_id=1180674234 node_paths=PackedStringArray("event_queue")]
 script = ExtResource("10_frjl4")
-event_queue = [NodePath("../TestClickInteractable/TestClickInteractableEvent"), NodePath("EventStage"), NodePath("../Computer/ComputerEvent")]
+event_queue = [NodePath("../ValveControlPanel/Slider/SliderEvent"), NodePath("../TestClickInteractable/TestClickInteractableEvent"), NodePath("EventStage"), NodePath("../Computer/ComputerEvent")]
 metadata/_custom_type_script = "uid://cua2uk64ok3vg"
 
 [node name="EventStage" type="Node" parent="EventQueue" unique_id=137883755 node_paths=PackedStringArray("events_in_stage")]
@@ -152,6 +161,11 @@ metadata/_custom_type_script = "uid://r70s6flykuow"
 [node name="ValveControlPanel" parent="." unique_id=118694957 instance=ExtResource("12_aa15y")]
 transform = Transform3D(-0.5285424, 0, 0.8489068, 0, 1, 0, -0.8489068, 0, -0.5285424, 3.6405199, 0.16771579, 5.5798755)
 
+[node name="MeshInstance3D2" parent="ValveControlPanel" index="4" unique_id=1054979006]
+surface_material_override/0 = SubResource("StandardMaterial3D_cwwjt")
+
 [editable path="TestHoldInteractable"]
 [editable path="TestClickInteractable"]
 [editable path="Computer"]
+[editable path="ValveControlPanel"]
+[editable path="ValveControlPanel/Slider"]
