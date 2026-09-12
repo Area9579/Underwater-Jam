@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://blscnow6u561l"]
+
+[ext_resource type="Script" uid="uid://cqfkd6240ajbd" path="res://Content/ValveControlPanel/control_panel.gd" id="1_buem2"]
+[ext_resource type="PackedScene" uid="uid://ck6va6usf5n3w" path="res://Content/InteractableItems/ValveControlPanel/HandCrank/hand_crank.tscn" id="1_uect1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+size = Vector3(1.67922, 1.3563232, 2.7410889)
+
+[sub_resource type="PrismMesh" id="PrismMesh_g4v7s"]
+size = Vector3(0.855, 1.365, 2.71)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4v7s"]
+albedo_color = Color(0.48178947, 0.48178947, 0.48178947, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+size = Vector3(0.14361572, 0.95458984, 0.14544678)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_3gngh"]
+viewport_path = NodePath("SubViewportContainer/SubViewport")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_57qmd"]
+resource_local_to_scene = true
+albedo_texture = SubResource("ViewportTexture_3gngh")
+uv1_offset = Vector3(0, 0.25, 0)
+stencil_outline_thickness = 0.131
+
+[sub_resource type="Gradient" id="Gradient_uect1"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.39574468, 0.48085105, 0.5489362, 0.6212766)
+colors = PackedColorArray(1, 0, 0, 1, 1, 0.8352941, 0, 1, 0, 1, 0.083333254, 1, 1, 0.8352941, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jnsgk"]
+gradient = SubResource("Gradient_uect1")
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+metadata/_snap_count = 2
+metadata/_snap_enabled = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o08x3"]
+texture = SubResource("GradientTexture2D_jnsgk")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7numd"]
+bg_color = Color(0.9019608, 0.35686275, 0.76862746, 0)
+border_width_top = 20
+border_color = Color(0, 0, 0, 1)
+
+[node name="ValveControlPanel" type="Node3D" unique_id=118694957]
+script = ExtResource("1_buem2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=178835176]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=935972632]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016917825, 0.65618896, 0.0018920898)
+shape = SubResource("BoxShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=521663012]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65537804, 0)
+mesh = SubResource("PrismMesh_g4v7s")
+surface_material_override/0 = SubResource("StandardMaterial3D_g4v7s")
+
+[node name="RotationHelper" type="Node3D" parent="." unique_id=1653929392]
+transform = Transform3D(0.32919097, 0.94426334, 0, -0.94426334, 0.32919097, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="HandCrank" parent="RotationHelper" unique_id=922139481 instance=ExtResource("1_uect1")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5802077, 0.49286887, 0.71778667)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1054979006]
+transform = Transform3D(0.9530649, -0.3024648, 0.013502284, 0.30249238, 0.95315176, 0, -0.012869726, 0.004084338, 0.99990886, 0.16005126, 0.6482248, -0.15769714)
+mesh = SubResource("BoxMesh_g4v7s")
+surface_material_override/0 = SubResource("StandardMaterial3D_57qmd")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=962784081]
+visibility_layer = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=478547955]
+own_world_3d = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="ProgressBar" type="ProgressBar" parent="SubViewportContainer/SubViewport" unique_id=1515563389]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/background = SubResource("StyleBoxTexture_o08x3")
+theme_override_styles/fill = SubResource("StyleBoxFlat_7numd")
+value = 50.0
+fill_mode = 3
+show_percentage = false

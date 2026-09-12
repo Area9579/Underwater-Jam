@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://cq5osxsjf602p"]
+
+[ext_resource type="Shader" uid="uid://engrn8eubxky" path="res://Content/Porthole/window_port.gdshader" id="1_rjhja"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_frjl4"]
+render_priority = 0
+shader = ExtResource("1_rjhja")
+shader_parameter/glass_alpha = 0.85
+shader_parameter/distortion_strength = 0.012
+shader_parameter/distortion_speed = 0.6
+shader_parameter/fog_color_near = Color(0.05, 0.25, 0.3, 1)
+shader_parameter/fog_color_far = Color(0, 0.04, 0.09, 1)
+shader_parameter/fog_distance = 15.0
+shader_parameter/vignette_strength = 0.85
+shader_parameter/vignette_radius = 0.35
+shader_parameter/vignette_softness = 0.35
+shader_parameter/caustic_color = Color(0.75, 0.95, 0.9, 1)
+shader_parameter/caustic_strength = 0.0850000040375
+shader_parameter/caustic_speed = 0.3
+shader_parameter/particle_density = 10.0
+shader_parameter/particle_speed = 0.06
+shader_parameter/particle_size = 0.07
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_12j5o"]
+
+[node name="WindowPort" type="MeshInstance3D" unique_id=426727361]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_frjl4")
+mesh = SubResource("PlaneMesh_12j5o")

@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c7fwgmmrjf53x" path="res://Content/Player/player.tscn" id="2_5e2fw"]
 [ext_resource type="Script" uid="uid://cua2uk64ok3vg" path="res://Systems/Event Queue/event_queue.gd" id="3_lul3p"]
 [ext_resource type="PackedScene" uid="uid://bkj28qpfl2n7k" path="res://Content/InteractableItems/DailyOrder/daily_order_sheet.tscn" id="5_y24es"]
+[ext_resource type="AudioStream" uid="uid://cd3dxombwav1r" path="res://AUDIO/SFX/FACILITY AMBIENCE/AMB_Air_drone_02.wav" id="6_12dd5"]
+[ext_resource type="AudioStream" uid="uid://c1xpadt2ly1ov" path="res://AUDIO/SFX/FACILITY AMBIENCE/AMB_ocean_drone_01.wav" id="7_77dgn"]
 
 [sub_resource type="Environment" id="Environment_o3k8e"]
 ambient_light_source = 3
@@ -57,3 +59,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.543605, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.575139, -3.375377)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1544371011]
+
+[node name="AmbientSounds" type="Node" parent="." unique_id=1547726949]
+
+[node name="AirDrone" type="AudioStreamPlayer" parent="AmbientSounds" unique_id=2091428852]
+stream = ExtResource("6_12dd5")
+autoplay = true
+
+[node name="OceanDrone" type="AudioStreamPlayer" parent="AmbientSounds" unique_id=448810120]
+stream = ExtResource("7_77dgn")
+autoplay = true
