@@ -14,7 +14,7 @@ func _ready() -> void:
 
 func start() -> void:
 	if event_queue.is_empty():
-		push_warning("%s: event_queue is empty and the queue didn't start, add events to make this system start!" % self)
+		push_warning("%s: event_queue is empty, add events to make this system start!" % self)
 		return
 	
 	# ensure all events are disabled as starting default

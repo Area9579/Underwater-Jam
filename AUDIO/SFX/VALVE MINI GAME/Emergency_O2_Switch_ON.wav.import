@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bm18y42imf30n"
+path="res://.godot/imported/Emergency_O2_Switch_ON.wav-66645b205f5f43363abc8fdcb0d3c0ce.sample"
+
+[deps]
+
+source_file="res://AUDIO/SFX/VALVE MINI GAME/Emergency_O2_Switch_ON.wav"
+dest_files=["res://.godot/imported/Emergency_O2_Switch_ON.wav-66645b205f5f43363abc8fdcb0d3c0ce.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

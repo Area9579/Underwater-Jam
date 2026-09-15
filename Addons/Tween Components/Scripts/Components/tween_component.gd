@@ -34,6 +34,9 @@ class_name TweenComponent extends Node
 @export var tween_duration : float = 1.0
 
 
+signal tween_finished
+
+
 ## The variable holding the tween.
 var tween : Tween
 
@@ -74,6 +77,7 @@ func _ready() -> void:
 	if use_custom_curve and curve_is_valid():
 		# Bake the curve once at the beginning so it's more performant when sampling
 		transition_curve.bake()
+		
 
 
 ## This function resets and creates a new tween with all given parameters:
@@ -90,12 +94,19 @@ func _reset_tween() -> void:
 ## allow for tweening to be done simultaneously.
 func _setup_tween() -> void:
 	tween = create_tween().set_ease(ease_type).set_trans(trans_type).set_parallel(true)
+	tween.finished.connect(tween_finished.emit)
 
 
 ## Kill the [member tween] if a [member tween] exists
 func _stop_tween() -> void:
 	if tween:
 		tween.kill()
+
+
+## Kill a tween if it is empty to prevent giving an error.
+func _kill_empty_tween() -> void:
+	if !tween.has_tweeners():
+		_stop_tween()
 
 
 ## Returns if a curve is valid. [br]
