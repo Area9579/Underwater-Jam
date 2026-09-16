@@ -2,8 +2,24 @@
 
 [ext_resource type="PackedScene" uid="uid://j1da4awngyhk" path="res://Content/InteractableItems/Computer/ComputerScreen/DNASegment/DNASegment.tscn" id="1_6anyq"]
 [ext_resource type="Script" uid="uid://c2idenktgo7ka" path="res://Content/InteractableItems/Computer/ComputerScreen/computer_screen.gd" id="1_cgusi"]
+[ext_resource type="Texture2D" uid="uid://ce252750qyntk" path="res://UI/ArrowLeft.png" id="3_grham"]
+[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Content/icon.svg" id="4_5gnbb"]
+[ext_resource type="Script" uid="uid://cbrntoax56ix8" path="res://Addons/Tween Components/Scripts/Effect Sequencers/control_tween_sequencer.gd" id="5_ls0to"]
+[ext_resource type="Script" uid="uid://c0eq70gyg7rhf" path="res://Addons/Tween Components/Scripts/Components/control_tween.gd" id="6_b5hre"]
+[ext_resource type="Script" uid="uid://cdere083tmmuo" path="res://Addons/Tween Components/Scripts/TweenResources/offset_transform_tween.gd" id="7_xvu28"]
+[ext_resource type="Texture2D" uid="uid://ch6nw7iy4owoh" path="res://UI/ArrowRight.png" id="8_h6toj"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4v7s"]
+
+[sub_resource type="Resource" id="Resource_g4v7s"]
+script = ExtResource("7_xvu28")
+end_offset_position = Vector2(-10, inf)
+metadata/_custom_type_script = "uid://cdere083tmmuo"
+
+[sub_resource type="Resource" id="Resource_yf5fn"]
+script = ExtResource("7_xvu28")
+end_offset_position = Vector2(0, inf)
+metadata/_custom_type_script = "uid://cdere083tmmuo"
 
 [node name="ComputerScreen" type="Control" unique_id=563600665]
 layout_mode = 3
@@ -33,6 +49,7 @@ color = Color(0, 0, 0, 1)
 [node name="ColorRect2" type="ColorRect" parent="HBoxContainer" unique_id=72398631]
 layout_mode = 2
 size_flags_horizontal = 3
+color = Color(0.8118375, 0.8118375, 0.8118375, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ColorRect2" unique_id=349757815]
 layout_mode = 1
@@ -68,3 +85,59 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_g4v7s")
 layout_mode = 2
 size_flags_horizontal = 3
 color = Color(0.44291076, 0.44291076, 0.44291073, 1)
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1754649756]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.76400006
+anchor_right = 1.0
+anchor_bottom = 0.92700005
+offset_top = -0.072052
+offset_bottom = 0.30395508
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 33
+alignment = 1
+
+[node name="LeftArrow" type="TextureRect" parent="HBoxContainer2" unique_id=1076741831]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("3_grham")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="SelectedDNAIcon" type="TextureRect" parent="HBoxContainer2" unique_id=928214464]
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("4_5gnbb")
+expand_mode = 3
+
+[node name="ControlTweenSequencer" type="Node" parent="HBoxContainer2/SelectedDNAIcon" unique_id=900268361 node_paths=PackedStringArray("affected_node", "tween_array")]
+script = ExtResource("5_ls0to")
+affected_node = NodePath("../../LeftArrow")
+tween_array = [NodePath("LeftMove"), NodePath("LeftBack")]
+metadata/_custom_type_script = "uid://cbrntoax56ix8"
+
+[node name="LeftMove" type="Node" parent="HBoxContainer2/SelectedDNAIcon/ControlTweenSequencer" unique_id=1978096608 node_paths=PackedStringArray("affected_node")]
+script = ExtResource("6_b5hre")
+affected_node = NodePath("../../../LeftArrow")
+offset_transform_tween = SubResource("Resource_g4v7s")
+trans_type = 8
+ease_type = 1
+tween_duration = 0.1
+metadata/_custom_type_script = "uid://c0eq70gyg7rhf"
+
+[node name="LeftBack" type="Node" parent="HBoxContainer2/SelectedDNAIcon/ControlTweenSequencer" unique_id=898525253 node_paths=PackedStringArray("affected_node")]
+script = ExtResource("6_b5hre")
+affected_node = NodePath("../../../LeftArrow")
+offset_transform_tween = SubResource("Resource_yf5fn")
+trans_type = 8
+ease_type = 1
+tween_duration = 0.1
+metadata/_custom_type_script = "uid://c0eq70gyg7rhf"
+
+[node name="RightArrow" type="TextureRect" parent="HBoxContainer2" unique_id=581585309]
+layout_mode = 2
+texture = ExtResource("8_h6toj")
+expand_mode = 3
+stretch_mode = 5
