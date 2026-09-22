@@ -69,3 +69,5 @@ autoplay = true
 [node name="OceanDrone" type="AudioStreamPlayer" parent="AmbientSounds" unique_id=448810120]
 stream = ExtResource("7_77dgn")
 autoplay = true
+
+[node name="SequentialDialogue" type="Node3D" parent="." unique_id=1378434186]

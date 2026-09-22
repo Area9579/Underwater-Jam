@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://kq6seoongy8u"]
+
+[ext_resource type="Script" uid="uid://braj1wqtyaoli" path="res://Content/AudioSystems/AudioEventSystem/audio_event_player.gd" id="1_m8ra2"]
+[ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="2_mkqs7"]
+
+[node name="AudioEventPlayer" type="Node3D" unique_id=447693708 node_paths=PackedStringArray("event")]
+script = ExtResource("1_m8ra2")
+event = NodePath("Event")
+
+[node name="Event" type="Node" parent="." unique_id=1825350162]
+script = ExtResource("2_mkqs7")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[connection signal="event_disabled" from="Event" to="." method="_on_event_disabled"]
+[connection signal="event_enabled" from="Event" to="." method="_on_event_enabled"]
+[connection signal="event_finished" from="Event" to="." method="_on_event_finished"]
