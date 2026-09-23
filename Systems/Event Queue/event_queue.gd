@@ -24,7 +24,7 @@ func start() -> void:
 			continue
 		
 		if !event.is_node_ready():
-			push_warning("%s: EventQueue has to wait for event: %s to be ready" % [self, event])
+			#push_warning("%s: EventQueue has to wait for event: %s to be ready" % [self, event])
 			await event.ready
 		
 		event.disable()

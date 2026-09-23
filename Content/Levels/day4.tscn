@@ -1,5 +1,14 @@
 [gd_scene format=3 uid="uid://dfudt776w6fum"]
 
 [ext_resource type="PackedScene" uid="uid://duqqc07ub3xhu" path="res://Content/Levels/Base Map/base_map.tscn" id="1_qo1rx"]
+[ext_resource type="PackedScene" uid="uid://kq6seoongy8u" path="res://Content/AudioSystems/AudioEventSystem/audio_event_player.tscn" id="2_4uu4a"]
 
 [node name="Day4" unique_id=1228570231 instance=ExtResource("1_qo1rx")]
+
+[node name="STUB_RadioTurningOn" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="0" unique_id=5817973]
+
+[node name="VanceWakingUpDay15" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="1" unique_id=447693708 instance=ExtResource("2_4uu4a")]
+
+[node name="RadioTurningOff" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="2" unique_id=180481954 instance=ExtResource("2_4uu4a")]
+
+[node name="VanceAmILosingMyMind" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="3" unique_id=1279943772 instance=ExtResource("2_4uu4a")]

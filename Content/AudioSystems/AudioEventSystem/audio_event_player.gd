@@ -1,7 +1,7 @@
 ## This class serves as 
 class_name AudioEventPlayer extends Node3D
 
-@export var audio_player : AudioStreamPlayer
+@export var audio_player : AudioStreamPlayer3D
 @export var event : Event
 
 signal audio_started_playing

@@ -1,5 +1,191 @@
 [gd_scene format=3 uid="uid://dv2vmmln3ln3y"]
 
 [ext_resource type="PackedScene" uid="uid://duqqc07ub3xhu" path="res://Content/Levels/Base Map/base_map.tscn" id="1_ax01y"]
+[ext_resource type="AudioStream" uid="uid://c0wwc4bldrq4y" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_01.wav" id="3_27u4b"]
+[ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="3_pf1uq"]
+[ext_resource type="AudioStream" uid="uid://p6sylje18bqs" path="res://AUDIO/SFX/Radio/Radio_On_Sfx.wav" id="4_8hs4d"]
+[ext_resource type="AudioStream" uid="uid://bj7xdlpkte0mp" path="res://AUDIO/DIALOGUE/HQ/HQ_Voiceline_02.wav" id="5_8hs4d"]
+[ext_resource type="AudioStream" uid="uid://dj5y22kalt12s" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_03.wav" id="6_5q2tb"]
+[ext_resource type="Script" uid="uid://braj1wqtyaoli" path="res://Content/AudioSystems/AudioEventSystem/audio_event_player.gd" id="6_8hs4d"]
+[ext_resource type="AudioStream" uid="uid://dsn4qsonbdk6k" path="res://AUDIO/DIALOGUE/HQ/HQ_Voiceline_04.wav" id="7_64ylx"]
+[ext_resource type="AudioStream" uid="uid://g0bqtl2f25hw" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_05.wav" id="8_ite6a"]
+[ext_resource type="AudioStream" uid="uid://yh24n7cfq8cs" path="res://AUDIO/DIALOGUE/HQ/HQ_Voiceline_06.wav" id="9_wt837"]
+[ext_resource type="AudioStream" uid="uid://xb0bg7jboegl" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_07.wav" id="10_tg5l2"]
+[ext_resource type="AudioStream" uid="uid://cl02ag5b1brqa" path="res://AUDIO/DIALOGUE/HQ/HQ_Voiceline_08.wav" id="11_jpvo4"]
+[ext_resource type="AudioStream" uid="uid://x4ukrd3dxwp2" path="res://AUDIO/SFX/Radio/Radio_Off_Sfx.wav" id="12_ka3wr"]
+[ext_resource type="AudioStream" uid="uid://jpxlldu4uunb" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_09.wav" id="13_j5c48"]
 
 [node name="Day1" unique_id=1228570231 instance=ExtResource("1_ax01y")]
+
+[node name="EventQueue" parent="." index="2" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
+event_queue = [NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceImAwake/VanceImAwake"), NodePath("../SequentialDialogue/HQWelcome/HQWelcome"), NodePath("../SequentialDialogue/VanceReady/VanceReady"), NodePath("../SequentialDialogue/HQOperationalDirective/HQOperationalDirective"), NodePath("../SequentialDialogue/VanceIncredible/VanceIncredible"), NodePath("../SequentialDialogue/HQSpecimenExplanation/HQSpecimenExplanation"), NodePath("../SequentialDialogue/VanceUnderstand30Days/VanceUnderstand30Days"), NodePath("../SequentialDialogue/HQExcellent/HQExcellent"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceItsOnly30Days/VanceItsOnly30Days")]
+
+[node name="STUB_MorningAlarmEvent" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="0" unique_id=126350490]
+
+[node name="RadioTurnsOn" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="1" unique_id=447693708 node_paths=PackedStringArray("audio_player", "event")]
+script = ExtResource("6_8hs4d")
+audio_player = NodePath("AudioStreamPlayer3D")
+event = NodePath("RadioTurnsOn")
+
+[node name="RadioTurnsOn" type="Node" parent="SequentialDialogue/RadioTurnsOn" index="0" unique_id=1825350162]
+script = ExtResource("3_pf1uq")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SequentialDialogue/RadioTurnsOn" index="1" unique_id=1162073888]
+stream = ExtResource("4_8hs4d")
+
+[node name="VanceImAwake" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="2" unique_id=2138084144 node_paths=PackedStringArray("audio_player", "event")]
+script = ExtResource("6_8hs4d")
+audio_player = NodePath("AudioStreamPlayer")
+event = NodePath("VanceImAwake")
+
+[node name="VanceImAwake" type="Node" parent="SequentialDialogue/VanceImAwake" index="0" unique_id=1104919345]
+script = ExtResource("3_pf1uq")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="SequentialDialogue/VanceImAwake" index="1" unique_id=1885120268]
+stream = ExtResource("3_27u4b")
+
+[node name="HQWelcome" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="3" unique_id=1787956900 node_paths=PackedStringArray("audio_player", "event")]
+script = ExtResource("6_8hs4d")
+audio_player = NodePath("AudioStreamPlayer3D")
+event = NodePath("HQWelcome")
+
+[node name="HQWelcome" type="Node" parent="SequentialDialogue/HQWelcome" index="0" unique_id=404597076]
+script = ExtResource("3_pf1uq")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SequentialDialogue/HQWelcome" index="1" unique_id=1020870366]
+stream = ExtResource("5_8hs4d")
+
+[node name="VanceReady" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="4" unique_id=335863928 node_paths=PackedStringArray("audio_player", "event")]
+script = ExtResource("6_8hs4d")
+audio_player = NodePath("AudioStreamPlayer")
+event = NodePath("VanceReady")
+
+[node name="VanceReady" type="Node" parent="SequentialDialogue/VanceReady" index="0" unique_id=1533919284]
+script = ExtResource("3_pf1uq")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="SequentialDialogue/VanceReady" index="1" unique_id=1073473154]
+stream = ExtResource("6_5q2tb")
+
+[node name="HQOperationalDirective" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="5" unique_id=1554572041 node_paths=PackedStringArray("audio_player", "event")]
+script = ExtResource("6_8hs4d")
+audio_player = NodePath("AudioStreamPlayer3D")
+event = NodePath("HQOperationalDirective")
+
+[node name="HQOperationalDirective" type="Node" parent="SequentialDialogue/HQOperationalDirective" index="0" unique_id=1889970872]
+script = ExtResource("3_pf1uq")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SequentialDialogue/HQOperationalDirective" index="1" unique_id=816859439]
+stream = ExtResource("7_64ylx")
+
+[node name="VanceIncredible" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="6" unique_id=694607214 node_paths=PackedStringArray("audio_player", "event")]
+script = ExtResource("6_8hs4d")
+audio_player = NodePath("AudioStreamPlayer")
+event = NodePath("VanceIncredible")
+
+[node name="VanceIncredible" type="Node" parent="SequentialDialogue/VanceIncredible" index="0" unique_id=1861444169]
+script = ExtResource("3_pf1uq")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="SequentialDialogue/VanceIncredible" index="1" unique_id=424994017]
+stream = ExtResource("8_ite6a")
+
+[node name="HQSpecimenExplanation" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="7" unique_id=1773141776 node_paths=PackedStringArray("audio_player", "event")]
+script = ExtResource("6_8hs4d")
+audio_player = NodePath("AudioStreamPlayer3D")
+event = NodePath("HQSpecimenExplanation")
+
+[node name="HQSpecimenExplanation" type="Node" parent="SequentialDialogue/HQSpecimenExplanation" index="0" unique_id=673795891]
+script = ExtResource("3_pf1uq")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SequentialDialogue/HQSpecimenExplanation" index="1" unique_id=1509632093]
+stream = ExtResource("9_wt837")
+
+[node name="VanceUnderstand30Days" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="8" unique_id=1298448028 node_paths=PackedStringArray("audio_player", "event")]
+script = ExtResource("6_8hs4d")
+audio_player = NodePath("AudioStreamPlayer")
+event = NodePath("VanceUnderstand30Days")
+
+[node name="VanceUnderstand30Days" type="Node" parent="SequentialDialogue/VanceUnderstand30Days" index="0" unique_id=1358133039]
+script = ExtResource("3_pf1uq")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="SequentialDialogue/VanceUnderstand30Days" index="1" unique_id=1826578749]
+stream = ExtResource("10_tg5l2")
+
+[node name="HQExcellent" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="9" unique_id=1615530749 node_paths=PackedStringArray("audio_player", "event")]
+script = ExtResource("6_8hs4d")
+audio_player = NodePath("AudioStreamPlayer3D")
+event = NodePath("HQExcellent")
+
+[node name="HQExcellent" type="Node" parent="SequentialDialogue/HQExcellent" index="0" unique_id=1639923669]
+script = ExtResource("3_pf1uq")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SequentialDialogue/HQExcellent" index="1" unique_id=24286466]
+stream = ExtResource("11_jpvo4")
+
+[node name="RadioShutsOff" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="10" unique_id=363783371 node_paths=PackedStringArray("audio_player", "event")]
+script = ExtResource("6_8hs4d")
+audio_player = NodePath("AudioStreamPlayer3D")
+event = NodePath("RadioShutsOff")
+
+[node name="RadioShutsOff" type="Node" parent="SequentialDialogue/RadioShutsOff" index="0" unique_id=867735512]
+script = ExtResource("3_pf1uq")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SequentialDialogue/RadioShutsOff" index="1" unique_id=1345015375]
+stream = ExtResource("12_ka3wr")
+
+[node name="VanceItsOnly30Days" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="11" unique_id=996508192 node_paths=PackedStringArray("audio_player", "event")]
+script = ExtResource("6_8hs4d")
+audio_player = NodePath("AudioStreamPlayer")
+event = NodePath("VanceItsOnly30Days")
+
+[node name="VanceItsOnly30Days" type="Node" parent="SequentialDialogue/VanceItsOnly30Days" index="0" unique_id=677262019]
+script = ExtResource("3_pf1uq")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer3D" parent="SequentialDialogue/VanceItsOnly30Days" index="1" unique_id=1340820165]
+stream = ExtResource("13_j5c48")
+
+[node name="STUB_DailyTaskStage" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="12" unique_id=398179995]
+
+[connection signal="event_disabled" from="SequentialDialogue/RadioTurnsOn/RadioTurnsOn" to="SequentialDialogue/RadioTurnsOn" method="_on_event_disabled"]
+[connection signal="event_enabled" from="SequentialDialogue/RadioTurnsOn/RadioTurnsOn" to="SequentialDialogue/RadioTurnsOn" method="_on_event_enabled"]
+[connection signal="event_finished" from="SequentialDialogue/RadioTurnsOn/RadioTurnsOn" to="SequentialDialogue/RadioTurnsOn" method="_on_event_finished"]
+[connection signal="event_disabled" from="SequentialDialogue/VanceImAwake/VanceImAwake" to="SequentialDialogue/VanceImAwake" method="_on_event_disabled"]
+[connection signal="event_enabled" from="SequentialDialogue/VanceImAwake/VanceImAwake" to="SequentialDialogue/VanceImAwake" method="_on_event_enabled"]
+[connection signal="event_finished" from="SequentialDialogue/VanceImAwake/VanceImAwake" to="SequentialDialogue/VanceImAwake" method="_on_event_finished"]
+[connection signal="event_disabled" from="SequentialDialogue/HQWelcome/HQWelcome" to="SequentialDialogue/HQWelcome" method="_on_event_disabled"]
+[connection signal="event_enabled" from="SequentialDialogue/HQWelcome/HQWelcome" to="SequentialDialogue/HQWelcome" method="_on_event_enabled"]
+[connection signal="event_finished" from="SequentialDialogue/HQWelcome/HQWelcome" to="SequentialDialogue/HQWelcome" method="_on_event_finished"]
+[connection signal="event_disabled" from="SequentialDialogue/VanceReady/VanceReady" to="SequentialDialogue/VanceReady" method="_on_event_disabled"]
+[connection signal="event_enabled" from="SequentialDialogue/VanceReady/VanceReady" to="SequentialDialogue/VanceReady" method="_on_event_enabled"]
+[connection signal="event_finished" from="SequentialDialogue/VanceReady/VanceReady" to="SequentialDialogue/VanceReady" method="_on_event_finished"]
+[connection signal="event_disabled" from="SequentialDialogue/HQOperationalDirective/HQOperationalDirective" to="SequentialDialogue/HQOperationalDirective" method="_on_event_disabled"]
+[connection signal="event_enabled" from="SequentialDialogue/HQOperationalDirective/HQOperationalDirective" to="SequentialDialogue/HQOperationalDirective" method="_on_event_enabled"]
+[connection signal="event_finished" from="SequentialDialogue/HQOperationalDirective/HQOperationalDirective" to="SequentialDialogue/HQOperationalDirective" method="_on_event_finished"]
+[connection signal="event_disabled" from="SequentialDialogue/VanceIncredible/VanceIncredible" to="SequentialDialogue/VanceIncredible" method="_on_event_disabled"]
+[connection signal="event_enabled" from="SequentialDialogue/VanceIncredible/VanceIncredible" to="SequentialDialogue/VanceIncredible" method="_on_event_enabled"]
+[connection signal="event_finished" from="SequentialDialogue/VanceIncredible/VanceIncredible" to="SequentialDialogue/VanceIncredible" method="_on_event_finished"]
+[connection signal="event_disabled" from="SequentialDialogue/HQSpecimenExplanation/HQSpecimenExplanation" to="SequentialDialogue/HQSpecimenExplanation" method="_on_event_disabled"]
+[connection signal="event_enabled" from="SequentialDialogue/HQSpecimenExplanation/HQSpecimenExplanation" to="SequentialDialogue/HQSpecimenExplanation" method="_on_event_enabled"]
+[connection signal="event_finished" from="SequentialDialogue/HQSpecimenExplanation/HQSpecimenExplanation" to="SequentialDialogue/HQSpecimenExplanation" method="_on_event_finished"]
+[connection signal="event_disabled" from="SequentialDialogue/VanceUnderstand30Days/VanceUnderstand30Days" to="SequentialDialogue/VanceUnderstand30Days" method="_on_event_disabled"]
+[connection signal="event_enabled" from="SequentialDialogue/VanceUnderstand30Days/VanceUnderstand30Days" to="SequentialDialogue/VanceUnderstand30Days" method="_on_event_enabled"]
+[connection signal="event_finished" from="SequentialDialogue/VanceUnderstand30Days/VanceUnderstand30Days" to="SequentialDialogue/VanceUnderstand30Days" method="_on_event_finished"]
+[connection signal="event_disabled" from="SequentialDialogue/HQExcellent/HQExcellent" to="SequentialDialogue/HQExcellent" method="_on_event_disabled"]
+[connection signal="event_enabled" from="SequentialDialogue/HQExcellent/HQExcellent" to="SequentialDialogue/HQExcellent" method="_on_event_enabled"]
+[connection signal="event_finished" from="SequentialDialogue/HQExcellent/HQExcellent" to="SequentialDialogue/HQExcellent" method="_on_event_finished"]
+[connection signal="event_disabled" from="SequentialDialogue/RadioShutsOff/RadioShutsOff" to="SequentialDialogue/RadioShutsOff" method="_on_event_disabled"]
+[connection signal="event_enabled" from="SequentialDialogue/RadioShutsOff/RadioShutsOff" to="SequentialDialogue/RadioShutsOff" method="_on_event_enabled"]
+[connection signal="event_finished" from="SequentialDialogue/RadioShutsOff/RadioShutsOff" to="SequentialDialogue/RadioShutsOff" method="_on_event_finished"]
+[connection signal="event_disabled" from="SequentialDialogue/VanceItsOnly30Days/VanceItsOnly30Days" to="SequentialDialogue/VanceItsOnly30Days" method="_on_event_disabled"]
+[connection signal="event_enabled" from="SequentialDialogue/VanceItsOnly30Days/VanceItsOnly30Days" to="SequentialDialogue/VanceItsOnly30Days" method="_on_event_enabled"]
+[connection signal="event_finished" from="SequentialDialogue/VanceItsOnly30Days/VanceItsOnly30Days" to="SequentialDialogue/VanceItsOnly30Days" method="_on_event_finished"]

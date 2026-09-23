@@ -1,5 +1,18 @@
 [gd_scene format=3 uid="uid://wd7ppiwtndyt"]
 
 [ext_resource type="PackedScene" uid="uid://duqqc07ub3xhu" path="res://Content/Levels/Base Map/base_map.tscn" id="1_diosg"]
+[ext_resource type="PackedScene" uid="uid://kq6seoongy8u" path="res://Content/AudioSystems/AudioEventSystem/audio_event_player.tscn" id="2_lwuct"]
 
 [node name="Day2" unique_id=1228570231 instance=ExtResource("1_diosg")]
+
+[node name="STUB_RadioTurningOn" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="0" unique_id=36183657]
+
+[node name="VanceExternalHullDiagnostic" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="1" unique_id=447693708 instance=ExtResource("2_lwuct")]
+
+[node name="HQExternalScansNormal" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="2" unique_id=1699446228 instance=ExtResource("2_lwuct")]
+
+[node name="STUB_RadioTurningOff" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="3" unique_id=1491408714]
+
+[node name="VanceSoundsLikePulse" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="4" unique_id=306234343 instance=ExtResource("2_lwuct")]
+
+[node name="STUB_TasksEnabling" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="5" unique_id=1967689732]
