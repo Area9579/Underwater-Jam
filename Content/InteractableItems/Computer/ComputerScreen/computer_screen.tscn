@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://j1da4awngyhk" path="res://Content/InteractableItems/Computer/ComputerScreen/DNASegment/DNASegment.tscn" id="1_6anyq"]
 [ext_resource type="Script" uid="uid://c2idenktgo7ka" path="res://Content/InteractableItems/Computer/ComputerScreen/computer_screen.gd" id="1_cgusi"]
 [ext_resource type="Texture2D" uid="uid://ce252750qyntk" path="res://UI/ArrowLeft.png" id="3_grham"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Content/icon.svg" id="4_5gnbb"]
 [ext_resource type="Script" uid="uid://cbrntoax56ix8" path="res://Addons/Tween Components/Scripts/Effect Sequencers/control_tween_sequencer.gd" id="5_ls0to"]
 [ext_resource type="Script" uid="uid://c0eq70gyg7rhf" path="res://Addons/Tween Components/Scripts/Components/control_tween.gd" id="6_b5hre"]
+[ext_resource type="Texture2D" uid="uid://dgfpofreertcu" path="res://Content/InteractableItems/Computer/ComputerScreen/DNASegment/Assets/dnaBar_orange.png" id="7_grham"]
 [ext_resource type="Script" uid="uid://cdere083tmmuo" path="res://Addons/Tween Components/Scripts/TweenResources/offset_transform_tween.gd" id="7_xvu28"]
 [ext_resource type="Texture2D" uid="uid://ch6nw7iy4owoh" path="res://UI/ArrowRight.png" id="8_h6toj"]
 
@@ -13,10 +13,28 @@
 
 [sub_resource type="Resource" id="Resource_g4v7s"]
 script = ExtResource("7_xvu28")
+start_offset_position = Vector2(0, 0)
 end_offset_position = Vector2(-10, inf)
 metadata/_custom_type_script = "uid://cdere083tmmuo"
 
 [sub_resource type="Resource" id="Resource_yf5fn"]
+script = ExtResource("7_xvu28")
+end_offset_position = Vector2(0, inf)
+metadata/_custom_type_script = "uid://cdere083tmmuo"
+
+[sub_resource type="Resource" id="Resource_57qmd"]
+script = ExtResource("7_xvu28")
+start_offset_scale = Vector2(0.8, 1.2)
+end_offset_scale = Vector2(1, 1)
+metadata/_custom_type_script = "uid://cdere083tmmuo"
+
+[sub_resource type="Resource" id="Resource_d0u6y"]
+script = ExtResource("7_xvu28")
+start_offset_position = Vector2(0, 0)
+end_offset_position = Vector2(10, inf)
+metadata/_custom_type_script = "uid://cdere083tmmuo"
+
+[sub_resource type="Resource" id="Resource_3gngh"]
 script = ExtResource("7_xvu28")
 end_offset_position = Vector2(0, inf)
 metadata/_custom_type_script = "uid://cdere083tmmuo"
@@ -106,38 +124,78 @@ texture = ExtResource("3_grham")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="SelectedDNAIcon" type="TextureRect" parent="HBoxContainer2" unique_id=928214464]
-layout_mode = 2
-offset_transform_enabled = true
-texture = ExtResource("4_5gnbb")
-expand_mode = 3
-
-[node name="ControlTweenSequencer" type="Node" parent="HBoxContainer2/SelectedDNAIcon" unique_id=900268361 node_paths=PackedStringArray("affected_node", "tween_array")]
+[node name="LeftArrowTween" type="Node" parent="HBoxContainer2/LeftArrow" unique_id=900268361 node_paths=PackedStringArray("affected_node", "tween_array")]
+unique_name_in_owner = true
 script = ExtResource("5_ls0to")
-affected_node = NodePath("../../LeftArrow")
+affected_node = NodePath("..")
 tween_array = [NodePath("LeftMove"), NodePath("LeftBack")]
 metadata/_custom_type_script = "uid://cbrntoax56ix8"
 
-[node name="LeftMove" type="Node" parent="HBoxContainer2/SelectedDNAIcon/ControlTweenSequencer" unique_id=1978096608 node_paths=PackedStringArray("affected_node")]
+[node name="LeftMove" type="Node" parent="HBoxContainer2/LeftArrow/LeftArrowTween" unique_id=1978096608 node_paths=PackedStringArray("affected_node")]
+unique_name_in_owner = true
 script = ExtResource("6_b5hre")
-affected_node = NodePath("../../../LeftArrow")
+affected_node = NodePath("../..")
 offset_transform_tween = SubResource("Resource_g4v7s")
 trans_type = 8
 ease_type = 1
 tween_duration = 0.1
 metadata/_custom_type_script = "uid://c0eq70gyg7rhf"
 
-[node name="LeftBack" type="Node" parent="HBoxContainer2/SelectedDNAIcon/ControlTweenSequencer" unique_id=898525253 node_paths=PackedStringArray("affected_node")]
+[node name="LeftBack" type="Node" parent="HBoxContainer2/LeftArrow/LeftArrowTween" unique_id=898525253 node_paths=PackedStringArray("affected_node")]
 script = ExtResource("6_b5hre")
-affected_node = NodePath("../../../LeftArrow")
+affected_node = NodePath("../..")
 offset_transform_tween = SubResource("Resource_yf5fn")
 trans_type = 8
 ease_type = 1
 tween_duration = 0.1
 metadata/_custom_type_script = "uid://c0eq70gyg7rhf"
 
+[node name="SelectedDNAIcon" type="TextureRect" parent="HBoxContainer2" unique_id=928214464]
+custom_maximum_size = Vector2(200, -1)
+layout_mode = 2
+offset_transform_enabled = true
+texture = ExtResource("7_grham")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Sqoosh" type="Node" parent="HBoxContainer2/SelectedDNAIcon" unique_id=1075120218 node_paths=PackedStringArray("affected_node")]
+script = ExtResource("6_b5hre")
+affected_node = NodePath("..")
+offset_transform_tween = SubResource("Resource_57qmd")
+trans_type = 9
+ease_type = 2
+tween_duration = 0.2
+metadata/_custom_type_script = "uid://c0eq70gyg7rhf"
+
 [node name="RightArrow" type="TextureRect" parent="HBoxContainer2" unique_id=581585309]
 layout_mode = 2
+offset_transform_enabled = true
 texture = ExtResource("8_h6toj")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="RightArrowTween" type="Node" parent="HBoxContainer2/RightArrow" unique_id=900784087 node_paths=PackedStringArray("affected_node", "tween_array")]
+unique_name_in_owner = true
+script = ExtResource("5_ls0to")
+affected_node = NodePath("..")
+tween_array = [NodePath("RightMove"), NodePath("RightBack")]
+metadata/_custom_type_script = "uid://cbrntoax56ix8"
+
+[node name="RightMove" type="Node" parent="HBoxContainer2/RightArrow/RightArrowTween" unique_id=947490182 node_paths=PackedStringArray("affected_node")]
+unique_name_in_owner = true
+script = ExtResource("6_b5hre")
+affected_node = NodePath("../..")
+offset_transform_tween = SubResource("Resource_d0u6y")
+trans_type = 8
+ease_type = 1
+tween_duration = 0.1
+metadata/_custom_type_script = "uid://c0eq70gyg7rhf"
+
+[node name="RightBack" type="Node" parent="HBoxContainer2/RightArrow/RightArrowTween" unique_id=702305353 node_paths=PackedStringArray("affected_node")]
+script = ExtResource("6_b5hre")
+affected_node = NodePath("../..")
+offset_transform_tween = SubResource("Resource_3gngh")
+trans_type = 8
+ease_type = 1
+tween_duration = 0.1
+metadata/_custom_type_script = "uid://c0eq70gyg7rhf"

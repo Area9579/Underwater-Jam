@@ -1,32 +1,53 @@
 [gd_scene format=3 uid="uid://j1da4awngyhk"]
 
 [ext_resource type="Script" uid="uid://c8g6hh2levh38" path="res://Content/InteractableItems/Computer/ComputerScreen/DNASegment/dna_segment.gd" id="1_hljcq"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Content/icon.svg" id="2_v14o7"]
+[ext_resource type="Texture2D" uid="uid://bbpwlymu0bhbn" path="res://Content/InteractableItems/Computer/ComputerScreen/DNASegment/Assets/halfHelix.png" id="2_svxqu"]
+[ext_resource type="Texture2D" uid="uid://dgfpofreertcu" path="res://Content/InteractableItems/Computer/ComputerScreen/DNASegment/Assets/dnaBar_orange.png" id="3_8lviy"]
 
 [node name="DNASegment" type="Control" unique_id=55889794]
-custom_minimum_size = Vector2(88, 88)
+custom_minimum_size = Vector2(88, 124.42418)
 layout_mode = 3
 anchor_left = 0.462
-anchor_top = 0.432
+anchor_top = 0.404
 anchor_right = 0.53800005
-anchor_bottom = 0.568
+anchor_bottom = 0.596
 offset_left = -0.22399902
-offset_top = 0.06399536
+offset_top = 18.207977
 offset_right = 0.22393799
-offset_bottom = -0.06402588
+offset_bottom = -18.208008
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 offset_transform_enabled = true
 script = ExtResource("1_hljcq")
 
-[node name="DNATexture" type="TextureRect" parent="." unique_id=449057930]
+[node name="TextureRect" type="TextureRect" parent="." unique_id=609600796]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_v14o7")
+texture = ExtResource("2_svxqu")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1669051562]
+layout_mode = 0
+offset_left = 8.000004
+offset_top = 9.212097
+offset_right = 44.47369
+offset_bottom = 19.212097
+texture = ExtResource("3_8lviy")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=54272443]
+layout_mode = 0
+offset_left = 44.0
+offset_top = 9.212097
+offset_right = 80.47369
+offset_bottom = 19.212097
+texture = ExtResource("3_8lviy")
 expand_mode = 3
 stretch_mode = 5

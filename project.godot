@@ -37,6 +37,7 @@ folder_colors={
 "res://Addons/AbstractStateMachine/": "gray",
 "res://Content/": "orange",
 "res://Content/AudioSystems/": "teal",
+"res://Content/InteractableItems/Computer/ComputerScreen/DNASegment/Assets/": "purple",
 "res://Content/Levels/": "green",
 "res://Content/Levels/Base Map/": "gray",
 "res://Content/MainMenu/": "yellow",

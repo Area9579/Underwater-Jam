@@ -51,5 +51,6 @@ func _on_event_event_disabled() -> void:
 
 
 func _on_event_event_enabled() -> void:
+	computer_screen.enabled = true
 	for button in computer_button_arr:
 		button.interaction_handler.enable()
