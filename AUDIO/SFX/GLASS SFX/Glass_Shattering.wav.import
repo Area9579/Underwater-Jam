@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b42v5kynma0bi"
+path="res://.godot/imported/Glass_Shattering.wav-939b3ae0ac42e9a9e14491458f82879e.sample"
+
+[deps]
+
+source_file="res://AUDIO/SFX/GLASS SFX/Glass_Shattering.wav"
+dest_files=["res://.godot/imported/Glass_Shattering.wav-939b3ae0ac42e9a9e14491458f82879e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
