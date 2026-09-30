@@ -1,5 +1,32 @@
 [gd_scene format=3 uid="uid://10moq2tersbe"]
 
 [ext_resource type="PackedScene" uid="uid://duqqc07ub3xhu" path="res://Content/Levels/Base Map/base_map.tscn" id="1_icxki"]
+[ext_resource type="PackedScene" uid="uid://kq6seoongy8u" path="res://Content/AudioSystems/AudioEventSystem/audio_event_player.tscn" id="2_wktrb"]
 
 [node name="Day5" unique_id=1228570231 instance=ExtResource("1_icxki")]
+
+[node name="STUB_EmergencyAlarm" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="0" unique_id=1264887628]
+
+[node name="STUB_SpecimentHeartbeat" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="1" unique_id=1856935743]
+
+[node name="TerminalAudioOxyPurge" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="2" unique_id=447693708 instance=ExtResource("2_wktrb")]
+
+[node name="VanceICantBreathe" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="3" unique_id=780597930 instance=ExtResource("2_wktrb")]
+
+[node name="VanceTurnOffPurge" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="4" unique_id=1566488299 instance=ExtResource("2_wktrb")]
+
+[node name="STUB_Pause" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="5" unique_id=573525930]
+
+[node name="BigMetallicSlam" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="6" unique_id=2064342938 instance=ExtResource("2_wktrb")]
+
+[node name="SFXWrenchHitOnPlexiglass" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="7" unique_id=2030350624 instance=ExtResource("2_wktrb")]
+
+[node name="SFXPlasticSnap" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="8" unique_id=1263319336 instance=ExtResource("2_wktrb")]
+
+[node name="STUB_AllAudioCutOut" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="9" unique_id=2059145503]
+
+[node name="STUB_Pause2" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="10" unique_id=1069087285]
+
+[node name="SFXIndustrialLightHum" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="11" unique_id=1066029379 instance=ExtResource("2_wktrb")]
+
+[node name="SFXGlassShartsTinkling" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="12" unique_id=10753948 instance=ExtResource("2_wktrb")]

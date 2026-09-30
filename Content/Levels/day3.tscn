@@ -1,5 +1,20 @@
 [gd_scene format=3 uid="uid://behilqytfb3fh"]
 
 [ext_resource type="PackedScene" uid="uid://duqqc07ub3xhu" path="res://Content/Levels/Base Map/base_map.tscn" id="1_op3j2"]
+[ext_resource type="PackedScene" uid="uid://kq6seoongy8u" path="res://Content/AudioSystems/AudioEventSystem/audio_event_player.tscn" id="2_gd7x3"]
 
 [node name="Day3" unique_id=1228570231 instance=ExtResource("1_op3j2")]
+
+[node name="STUB_OxygenVentedSound" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="0" unique_id=200408397]
+
+[node name="STUB_MetallicThud" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="1" unique_id=1813549738]
+
+[node name="STUB_RadioTurningOn" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="2" unique_id=342979877]
+
+[node name="VanceFlushedOxygen" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="3" unique_id=447693708 instance=ExtResource("2_gd7x3")]
+
+[node name="HQStayCalm" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="4" unique_id=250111104 instance=ExtResource("2_gd7x3")]
+
+[node name="STUB_RadioTurningOff" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="5" unique_id=1826133710]
+
+[node name="VanceAreTheyCrazy" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="6" unique_id=461650459 instance=ExtResource("2_gd7x3")]
