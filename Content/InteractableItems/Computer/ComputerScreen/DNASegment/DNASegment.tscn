@@ -32,22 +32,125 @@ texture = ExtResource("2_svxqu")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="TextureRect2" type="TextureRect" parent="." unique_id=1669051562]
-layout_mode = 0
-offset_left = 8.000004
-offset_top = 9.212097
-offset_right = 44.47369
-offset_bottom = 19.212097
+[node name="Row1Left" type="TextureRect" parent="." unique_id=1669051562]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.091000006
+anchor_top = 0.042000003
+anchor_right = 0.5
+anchor_bottom = 0.12200001
+offset_left = -0.007996559
+offset_top = -0.013718605
+offset_right = 0.47369003
+offset_bottom = 0.03234577
 texture = ExtResource("3_8lviy")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="TextureRect3" type="TextureRect" parent="." unique_id=54272443]
-layout_mode = 0
-offset_left = 44.0
-offset_top = 9.212097
-offset_right = 80.47369
-offset_bottom = 19.212097
+[node name="Row1Right" type="TextureRect" parent="." unique_id=54272443]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.505
+anchor_top = 0.042000003
+anchor_right = 0.91400003
+anchor_bottom = 0.12200001
+offset_left = -0.43999863
+offset_top = -0.013718605
+offset_right = 0.041732788
+offset_bottom = 0.032360077
 texture = ExtResource("3_8lviy")
 expand_mode = 3
 stretch_mode = 5
+
+[node name="Row2Left" type="TextureRect" parent="." unique_id=1328801217]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.091000006
+anchor_top = 0.24300002
+anchor_right = 0.505
+anchor_bottom = 0.323
+offset_left = -0.007996559
+offset_top = -0.022979736
+offset_right = 0.033691406
+offset_bottom = 0.023086548
+texture = ExtResource("3_8lviy")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Row2Right" type="TextureRect" parent="." unique_id=2075660355]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.505
+anchor_top = 0.24300002
+anchor_right = 0.91400003
+anchor_bottom = 0.323
+offset_left = -0.43999863
+offset_top = -0.022979736
+offset_right = 0.04168701
+offset_bottom = 0.023086548
+texture = ExtResource("3_8lviy")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Row3Left" type="TextureRect" parent="." unique_id=109612969]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.091000006
+anchor_top = 0.43600002
+anchor_right = 0.505
+anchor_bottom = 0.51600003
+offset_left = -0.007996559
+offset_top = -0.03684616
+offset_right = 0.033691406
+offset_bottom = 0.009216309
+texture = ExtResource("3_8lviy")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Row3Right" type="TextureRect" parent="." unique_id=1317490789]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.43600002
+anchor_right = 0.91400003
+anchor_bottom = 0.51600003
+offset_top = -0.03684616
+offset_right = 0.16795349
+offset_bottom = 0.00920105
+texture = ExtResource("3_8lviy")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Row4Left" type="TextureRect" parent="." unique_id=1054426331]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.091000006
+anchor_top = 0.629
+anchor_right = 0.505
+anchor_bottom = 0.70900005
+offset_left = -0.007996559
+offset_top = -0.050712585
+offset_right = 0.033691406
+offset_bottom = -0.0046539307
+texture = ExtResource("3_8lviy")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Row4Right" type="TextureRect" parent="." unique_id=1220369868]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.629
+anchor_right = 0.91400003
+anchor_bottom = 0.70900005
+offset_top = -0.050712585
+offset_right = 0.16796875
+offset_bottom = -0.0046691895
+texture = ExtResource("3_8lviy")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="LeftSide" type="Node" parent="." unique_id=705506050]
+
+[node name="RightSide" type="Control" parent="." unique_id=736140816]
+anchors_preset = 0
