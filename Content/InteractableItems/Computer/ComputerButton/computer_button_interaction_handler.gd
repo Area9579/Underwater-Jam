@@ -11,6 +11,7 @@ func do_interaction(_player : FirstPersonEntityController) -> void:
 	is_interacting = true
 	computer_button.play_button_tween()
 	computer_button.button_press()
+	computer_button.audio_stream_player_3d.play()
 	is_interacting = false
 
 

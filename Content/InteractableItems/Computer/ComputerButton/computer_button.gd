@@ -9,6 +9,7 @@ signal button_pressed(value : String)
 @export var value : String
 
 var interaction_handler : ComputerButtonInteractionHandler = ComputerButtonInteractionHandler.new(self)
+@onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 
 func _ready() -> void:

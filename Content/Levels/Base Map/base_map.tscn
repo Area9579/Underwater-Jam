@@ -73,22 +73,24 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.575139, -3.375377)
 
 [node name="AirDrone" type="AudioStreamPlayer" parent="AmbientSounds" unique_id=2091428852]
 stream = ExtResource("6_12dd5")
-volume_db = -5.031
+volume_db = 2.654
 pitch_scale = 0.8
 autoplay = true
+bus = &"Air"
 
 [node name="OceanDrone" type="AudioStreamPlayer" parent="AmbientSounds" unique_id=448810120]
 stream = ExtResource("7_77dgn")
-volume_db = 7.095
+volume_db = 11.194
 autoplay = true
+bus = &"Ocean Drone"
 
 [node name="Light Buzzing" type="AudioStreamPlayer3D" parent="AmbientSounds" unique_id=1661523111]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.322452, 3.2025971, -5.181854)
 stream = ExtResource("2_ou68s")
 attenuation_model = 3
-volume_db = -30.739
+volume_db = -25.222
 unit_size = 3.0
-pitch_scale = 0.78
+pitch_scale = 0.84
 autoplay = true
 max_distance = 10.0
 bus = &"Light Buzzing"
