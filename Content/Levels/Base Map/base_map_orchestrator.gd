@@ -11,10 +11,5 @@ func handle_player_menuing_inputs(event: InputEvent) -> void:
 		if Input.mouse_mode == Input.MOUSE_MODE_VISIBLE:
 			Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
-
-#func _unhandled_input(event: InputEvent) -> void:
-	
-
-
 func _input(event: InputEvent) -> void:
 	handle_player_menuing_inputs(event)
