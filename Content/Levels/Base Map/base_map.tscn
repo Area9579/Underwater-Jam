@@ -57,7 +57,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o3k8e")
 
 [node name="Player" parent="." unique_id=1495724798 instance=ExtResource("2_5e2fw")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8.543605, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9592443, 1.9033041, -5.0399218)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Player" unique_id=658117881]
 light_color = Color(0.9264652, 0.7131488, 0.54608184, 1)
