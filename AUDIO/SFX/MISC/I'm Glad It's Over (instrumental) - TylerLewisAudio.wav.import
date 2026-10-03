@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://d08hxl2g02v6a"
+path="res://.godot/imported/I'm Glad It's Over (instrumental) - TylerLewisAudio.wav-c97d136ceada5624dee8614bdbb9beab.sample"
+
+[deps]
+
+source_file="res://AUDIO/SFX/MISC/I'm Glad It's Over (instrumental) - TylerLewisAudio.wav"
+dest_files=["res://.godot/imported/I'm Glad It's Over (instrumental) - TylerLewisAudio.wav-c97d136ceada5624dee8614bdbb9beab.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
