@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dtg3g553eygk2"]
+
+[ext_resource type="Texture2D" uid="uid://bnfkfeoqlbkku" path="res://3D Assets/Door/Texture/Door_Color.png" id="1_vwo8p"]
+[ext_resource type="Texture2D" uid="uid://bphadeq5gkv68" path="res://3D Assets/Door/Texture/Door_AORoughMetal.png" id="2_8eao5"]
+
+[resource]
+albedo_texture = ExtResource("1_vwo8p")
+metallic = 1.0
+metallic_texture = ExtResource("2_8eao5")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_8eao5")
+roughness_texture_channel = 1
+ao_enabled = true
+ao_texture = ExtResource("2_8eao5")
