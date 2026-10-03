@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b5bgv4iytoqp3"]
+
+[ext_resource type="PackedScene" uid="uid://de2bdy4jgl5pp" path="res://3D Assets/Door/door(Export.glb" id="1_h1jdp"]
+[ext_resource type="Material" uid="uid://dtg3g553eygk2" path="res://3D Assets/Door/door.tres" id="2_12j1s"]
+
+[node name="door(Export" unique_id=1972249084 instance=ExtResource("1_h1jdp")]
+
+[node name="Door Frame" parent="." index="1" unique_id=1632707263]
+surface_material_override/0 = ExtResource("2_12j1s")
+
+[node name="Cylinder_005" parent="." index="2" unique_id=1346191949]
+material_override = ExtResource("2_12j1s")
+
+[node name="Cube_002" parent="." index="3" unique_id=274369860]
+transform = Transform3D(1.0000001, 0, 0, 0, 1, 0, 0, 0, 1.0000001, -0.9867937, 0.32823855, 0.013220749)
+material_override = ExtResource("2_12j1s")
+
+[node name="Cylinder" parent="Cube_002" index="0" unique_id=131161057]
+material_override = ExtResource("2_12j1s")
+
+[node name="Cylinder_001" parent="Cube_002" index="1" unique_id=1891592981]
+material_override = ExtResource("2_12j1s")
+
+[node name="Cylinder_002" parent="Cube_002" index="2" unique_id=850016739]
+material_override = ExtResource("2_12j1s")
+
+[node name="Cylinder_003" parent="Cube_002" index="3" unique_id=57144047]
+material_override = ExtResource("2_12j1s")
+
+[node name="Cylinder_004" parent="Cube_002" index="4" unique_id=1836794488]
+material_override = ExtResource("2_12j1s")
+
+[node name="Plane_001" parent="Cube_002" index="5" unique_id=990207137]
+material_override = ExtResource("2_12j1s")
