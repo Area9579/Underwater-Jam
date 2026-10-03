@@ -24,23 +24,21 @@ stream = ExtResource("3_ngw52")
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SequentialDialogue/VanceTurnOffPurge" index="1" unique_id=1069698647]
 stream = ExtResource("4_jhbkv")
 
-[node name="STUB_Pause" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="5" unique_id=573525930]
+[node name="BigMetallicSlam" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="5" unique_id=2064342938 instance=ExtResource("2_wktrb")]
 
-[node name="BigMetallicSlam" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="6" unique_id=2064342938 instance=ExtResource("2_wktrb")]
-
-[node name="VanceItsGonnaBreakTheGlass" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="7" unique_id=1728580346 instance=ExtResource("2_wktrb")]
+[node name="VanceItsGonnaBreakTheGlass" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="6" unique_id=1728580346 instance=ExtResource("2_wktrb")]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SequentialDialogue/VanceItsGonnaBreakTheGlass" index="1" unique_id=1005788304]
 stream = ExtResource("5_qxrku")
 
-[node name="SFXWrenchHitOnPlexiglass" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="8" unique_id=2030350624 instance=ExtResource("2_wktrb")]
+[node name="SFXWrenchHitOnPlexiglass" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="7" unique_id=2030350624 instance=ExtResource("2_wktrb")]
 
-[node name="SFXPlasticSnap" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="9" unique_id=1263319336 instance=ExtResource("2_wktrb")]
+[node name="SFXPlasticSnap" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="8" unique_id=1263319336 instance=ExtResource("2_wktrb")]
 
-[node name="STUB_AllAudioCutOut" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="10" unique_id=2059145503]
+[node name="STUB_AllAudioCutOut" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="9" unique_id=2059145503]
 
-[node name="STUB_Pause2" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="11" unique_id=1069087285]
+[node name="STUB_Pause2" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="10" unique_id=1069087285]
 
-[node name="SFXIndustrialLightHum" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="12" unique_id=1066029379 instance=ExtResource("2_wktrb")]
+[node name="SFXIndustrialLightHum" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="11" unique_id=1066029379 instance=ExtResource("2_wktrb")]
 
-[node name="SFXGlassShartsTinkling" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="13" unique_id=10753948 instance=ExtResource("2_wktrb")]
+[node name="SFXGlassShartsTinkling" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="12" unique_id=10753948 instance=ExtResource("2_wktrb")]

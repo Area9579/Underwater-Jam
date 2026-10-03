@@ -13,6 +13,9 @@
 [node name="SheetMarker" type="Marker3D" parent="Head/Camera3D" parent_id_path=PackedInt32Array(584939132) index="1" unique_id=1722558729]
 transform = Transform3D(0.8241262, 0, 0.56640625, 0, 1, 0, -0.56640625, 0, 0.8241262, -0.397, -0.11879733, -0.448)
 
+[node name="AudioListener3D" type="AudioListener3D" parent="Head/Camera3D" parent_id_path=PackedInt32Array(584939132) index="2" unique_id=1687763466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.50979733, 0)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="." index="3" unique_id=1705754704]
 
 [node name="CrosshairPanel" type="PanelContainer" parent="CanvasLayer" index="0" unique_id=703005182]
@@ -51,9 +54,7 @@ stretch_mode = 5
 
 [node name="Audio" type="Node" parent="." index="4" unique_id=47156124]
 
-[node name="AudioListener3D" type="AudioListener3D" parent="Audio" index="0" unique_id=1687763466]
-
-[node name="FootstepPlayer" type="AudioStreamPlayer" parent="Audio" index="1" unique_id=9134779 node_paths=PackedStringArray("state_machine")]
+[node name="FootstepPlayer" type="AudioStreamPlayer" parent="Audio" index="0" unique_id=9134779 node_paths=PackedStringArray("state_machine")]
 unique_name_in_owner = true
 stream = ExtResource("4_rn1qw")
 bus = &"FACILITY BUS"
