@@ -58,5 +58,6 @@ stretch_mode = 5
 unique_name_in_owner = true
 stream = ExtResource("4_rn1qw")
 volume_db = -4.611
+bus = &"Footsteps"
 script = ExtResource("4_7d8p2")
 state_machine = NodePath("../../EntityStateMachine")
