@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://csf3fsjqcfhnw"]
+
+[ext_resource type="PackedScene" uid="uid://c2mioot7etq1g" path="res://3D Assets/Creature/day1.glb" id="1_fltme"]
+[ext_resource type="Shader" uid="uid://cunvmsic2t2a6" path="res://3D Assets/Shaders/blob.gdshader" id="2_brpbv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7jjb4"]
+noise_type = 3
+frequency = 0.0014
+fractal_octaves = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n475g"]
+noise = SubResource("FastNoiseLite_7jjb4")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n475g"]
+render_priority = 0
+shader = ExtResource("2_brpbv")
+shader_parameter/time_speed = 0.05
+shader_parameter/surface_speed = 1.0
+shader_parameter/spin = 7.4
+shader_parameter/brightness = 0.6
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 2.0
+shader_parameter/size = 3.0
+shader_parameter/banding_bias = 0.56
+shader_parameter/wave_texture = SubResource("NoiseTexture2D_n475g")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_n475g")
+shader_parameter/wave_height = 0.055
+shader_parameter/texture_height = 0.23
+shader_parameter/color1 = Color(0.46012205, 0.9707323, 0.6626054, 1)
+shader_parameter/color2 = Color(0.53391707, 0.44811642, 0.7950995, 1)
+shader_parameter/color3 = Color(0.0046855886, 0.117006265, 0.30003342, 1)
+shader_parameter/color4 = Color(0.19955236, 0.4575218, 0.29545337, 1)
+
+[node name="Node3D" type="Node3D" unique_id=497407904]
+
+[node name="day1" parent="." unique_id=1688776708 instance=ExtResource("1_fltme")]
+
+[node name="Skeleton3D" parent="day1/DayOneCrewature" parent_id_path=PackedInt32Array(1688776708, 429961019) index="0" unique_id=1014947509]
+bones/1/position = Vector3(0.27660725, 0.93121105, -0.15966347)
+bones/2/position = Vector3(-0.56940293, 0.73427534, -0.032503635)
+bones/3/position = Vector3(-0.28085923, 0.8498892, -0.29019716)
+bones/4/position = Vector3(-0.0023653507, 1.4304386, 0.08625123)
+bones/5/position = Vector3(0.4689602, 1.6948467, -0.36992797)
+bones/6/position = Vector3(0.24404578, 2.1820984, 0.09787356)
+bones/7/position = Vector3(-0.26023898, 2.1510067, 0.41428685)
+bones/8/position = Vector3(-0.70333064, 1.9700763, -0.20323107)
+
+[node name="Sphere_001" parent="day1/DayOneCrewature/Skeleton3D" index="0" unique_id=1816213361]
+material_override = SubResource("ShaderMaterial_n475g")
+
+[node name="AnimationPlayer" parent="day1" index="1" unique_id=804525362]
+autoplay = &"ArmatureAction"
+
+[editable path="day1"]

@@ -20,6 +20,16 @@ func _ready() -> void:
 	setup_values()
 
 
+func _on_event_event_disabled() -> void:
+	nutrient_flow_crank.interaction_handler.disable()
+	target_display_mesh.hide()
+
+
+func _on_event_event_enabled() -> void:
+	nutrient_flow_crank.interaction_handler.enable()
+	target_display_mesh.show()
+
+
 func get_rot_from_value(value : float) -> float:
 	return deg_to_rad(Utils.remap_with_clamp(value, MIN, MAX, MIN_ROT + ROT_OFFSET, MAX_ROT+ ROT_OFFSET))
 

@@ -68,3 +68,8 @@ func fade_in_hover_effect() -> void:
 
 func fade_out_hover_effect() -> void:
 	pass
+
+
+func enable() -> void:
+	super()
+	
