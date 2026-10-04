@@ -1,3 +1,107 @@
 [gd_scene format=3 uid="uid://bxm55o2yfwjul"]
 
-[node name="Vat" type="Node2D" unique_id=1972743406]
+[ext_resource type="PackedScene" uid="uid://cosiem05xvpvw" path="res://3D Assets/VatAndControlPanel/vat5(export).obj" id="1_wpbea"]
+[ext_resource type="Material" uid="uid://d1uu1fe7gbeiv" path="res://3D Assets/VatAndControlPanel/Texture/console_side.tres" id="2_2xfam"]
+
+[node name="Vat" type="Node3D" unique_id=1977095011]
+
+[node name="vat5(export)" parent="." unique_id=458770921 instance=ExtResource("1_wpbea")]
+
+[node name="RotateCrank" parent="vat5(export)" index="70" unique_id=25559763]
+material_override = ExtResource("2_2xfam")
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="ValveConsole" parent="vat5(export)" index="71" unique_id=255287346]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cylinder_045" parent="vat5(export)" index="72" unique_id=1260776141]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cylinder_046" parent="vat5(export)" index="73" unique_id=507757079]
+material_override = ExtResource("2_2xfam")
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="NutrientFlow" parent="vat5(export)" index="74" unique_id=1472691794]
+material_override = ExtResource("2_2xfam")
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cylinder_048" parent="vat5(export)" index="75" unique_id=580091157]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cylinder_051" parent="vat5(export)" index="76" unique_id=910777792]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cylinder_052" parent="vat5(export)" index="77" unique_id=1327861764]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="RadialDial" parent="vat5(export)" index="78" unique_id=1387546744]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_016" parent="vat5(export)" index="79" unique_id=1349455564]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_015" parent="vat5(export)" index="80" unique_id=712719250]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="PhScale" parent="vat5(export)" index="81" unique_id=1226670250]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_012" parent="vat5(export)" index="82" unique_id=775759422]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_011" parent="vat5(export)" index="83" unique_id=2102630329]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_008" parent="vat5(export)" index="84" unique_id=12554719]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_007" parent="vat5(export)" index="85" unique_id=841148724]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_006" parent="vat5(export)" index="86" unique_id=797587061]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_005" parent="vat5(export)" index="87" unique_id=1491562868]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_018" parent="vat5(export)" index="88" unique_id=1088861281]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_020" parent="vat5(export)" index="89" unique_id=214365185]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_022" parent="vat5(export)" index="90" unique_id=1217555879]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_062" parent="vat5(export)" index="93" unique_id=1916429624]
+material_override = ExtResource("2_2xfam")
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="phDial" parent="vat5(export)" index="94" unique_id=2105519136]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_065" parent="vat5(export)" index="95" unique_id=744177325]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_066" parent="vat5(export)" index="96" unique_id=842601248]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_014" parent="vat5(export)" index="97" unique_id=611073064]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="TempButtonRight" parent="vat5(export)" index="98" unique_id=1566708400]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="TempButtonLeft" parent="vat5(export)" index="99" unique_id=1694647332]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="NurbsPath_008" parent="vat5(export)" index="102" unique_id=1034537230]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="NurbsPath_009" parent="vat5(export)" index="103" unique_id=1552961890]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[node name="Cube_067" parent="vat5(export)" index="104" unique_id=1950944153]
+surface_material_override/0 = ExtResource("2_2xfam")
+
+[editable path="vat5(export)"]
