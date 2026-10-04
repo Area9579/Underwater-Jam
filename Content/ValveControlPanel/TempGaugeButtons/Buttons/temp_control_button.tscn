@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://cqfiqxxv5oyea"]
+
+[ext_resource type="Script" uid="uid://dtwnc5o5o74ws" path="res://Content/ValveControlPanel/TempGaugeButtons/Buttons/temp_control_button.gd" id="1_k61q0"]
+[ext_resource type="Script" uid="uid://dk6ci6cn8li37" path="res://Addons/Tween Components/Scripts/Components/node3D_tween.gd" id="2_a0uif"]
+[ext_resource type="Script" uid="uid://teubb6vs0mf1" path="res://Addons/Tween Components/Scripts/Effect Sequencers/node_3D_tween_sequencer.gd" id="2_s3msb"]
+[ext_resource type="Script" uid="uid://bvekgf6tgcfay" path="res://Addons/Tween Components/Scripts/TweenResources/transform3d_tween.gd" id="4_p1wsg"]
+[ext_resource type="AudioStream" uid="uid://cv21mg8ihvq2e" path="res://AUDIO/SFX/VALVE MINI GAME/Emergency_O2_Switch_OFF.wav" id="5_umvbb"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_g4v7s"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a0uif"]
+data = PackedVector3Array(0, 0.099999994, 0.099999994, 0.099999994, -0.099999994, 0.099999994, -0.099999994, -0.099999994, 0.099999994, 0, 0.099999994, -0.099999994, -0.099999994, -0.099999994, -0.099999994, 0.099999994, -0.099999994, -0.099999994, 0, 0.099999994, 0.099999994, 0, 0.099999994, -0.099999994, 0.099999994, -0.099999994, 0.099999994, 0, 0.099999994, -0.099999994, 0.099999994, -0.099999994, -0.099999994, 0.099999994, -0.099999994, 0.099999994, 0, 0.099999994, -0.099999994, 0, 0.099999994, 0.099999994, -0.099999994, -0.099999994, -0.099999994, 0, 0.099999994, 0.099999994, -0.099999994, -0.099999994, 0.099999994, -0.099999994, -0.099999994, -0.099999994, -0.099999994, -0.099999994, 0.099999994, 0.099999994, -0.099999994, 0.099999994, -0.099999994, -0.099999994, -0.099999994, 0.099999994, -0.099999994, 0.099999994, 0.099999994, -0.099999994, -0.099999994, -0.099999994, -0.099999994, -0.099999994)
+
+[sub_resource type="Resource" id="Resource_s3msb"]
+script = ExtResource("4_p1wsg")
+end_position = Vector3(inf, inf, -0.1)
+metadata/_custom_type_script = "uid://bvekgf6tgcfay"
+
+[sub_resource type="Resource" id="Resource_umvbb"]
+script = ExtResource("4_p1wsg")
+end_position = Vector3(inf, inf, 0)
+metadata/_custom_type_script = "uid://bvekgf6tgcfay"
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g4v7s"]
+random_pitch = 1.0905077
+streams_count = 1
+stream_0/stream = ExtResource("5_umvbb")
+
+[node name="TempControlButton" type="Area3D" unique_id=904356665]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_k61q0")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=612772159]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("PrismMesh_g4v7s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=1493786106]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_a0uif")
+
+[node name="ButtonPressSequencer" type="Node" parent="." unique_id=2025370178 node_paths=PackedStringArray("affected_node", "tween_array")]
+unique_name_in_owner = true
+script = ExtResource("2_s3msb")
+affected_node = NodePath("..")
+tween_array = [NodePath("Press"), NodePath("Release")]
+metadata/_custom_type_script = "uid://teubb6vs0mf1"
+
+[node name="Press" type="Node" parent="ButtonPressSequencer" unique_id=2024310248 node_paths=PackedStringArray("affected_node")]
+unique_name_in_owner = true
+script = ExtResource("2_a0uif")
+affected_node = NodePath("../..")
+transform3D_tween = SubResource("Resource_s3msb")
+trans_type = 10
+ease_type = 2
+tween_duration = 0.2
+metadata/_custom_type_script = "uid://dk6ci6cn8li37"
+
+[node name="Release" type="Node" parent="ButtonPressSequencer" unique_id=1474288319 node_paths=PackedStringArray("affected_node")]
+unique_name_in_owner = true
+script = ExtResource("2_a0uif")
+affected_node = NodePath("../..")
+transform3D_tween = SubResource("Resource_umvbb")
+trans_type = 4
+ease_type = 2
+tween_duration = 0.2
+metadata/_custom_type_script = "uid://dk6ci6cn8li37"
+
+[node name="PressedAudioStreamPlayer" type="AudioStreamPlayer3D" parent="." unique_id=368230597]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_g4v7s")
