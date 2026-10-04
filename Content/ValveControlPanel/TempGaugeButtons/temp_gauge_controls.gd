@@ -40,7 +40,6 @@ func setup_values() -> void:
 
 
 func _on_increment_pressed() -> void:
-	print(increment)
 	if player_won:
 		return
 	curr_value = clampf(curr_value + VALUE_CHANGE_AMOUNT, MIN, MAX)
@@ -49,7 +48,6 @@ func _on_increment_pressed() -> void:
 
 
 func _on_decrement_pressed() -> void:
-	print(decrement)
 	if player_won:
 		return
 	curr_value = clampf(curr_value - VALUE_CHANGE_AMOUNT, MIN, MAX)

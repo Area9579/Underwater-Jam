@@ -22,7 +22,7 @@
 [node name="Computer" parent="LevelLayout" parent_id_path=PackedInt32Array(1577965459) index="97" unique_id=1318926826 instance=ExtResource("2_wt837")]
 transform = Transform3D(-1.2710856, 0, -6.778415, 0, 6.8965664, 0, 6.778415, 0, -1.2710856, 102.397835, 9.028236, -14.372993)
 
-[node name="EventQueue" parent="." index="2" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
+[node name="EventQueue" parent="." index="3" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceImAwake/VanceImAwake"), NodePath("../SequentialDialogue/HQWelcome/HQWelcome"), NodePath("../SequentialDialogue/VanceReady/VanceReady"), NodePath("../SequentialDialogue/HQOperationalDirective/HQOperationalDirective"), NodePath("../SequentialDialogue/VanceIncredible/VanceIncredible"), NodePath("../SequentialDialogue/HQSpecimenExplanation/HQSpecimenExplanation"), NodePath("../SequentialDialogue/VanceUnderstand30Days/VanceUnderstand30Days"), NodePath("../SequentialDialogue/HQExcellent/HQExcellent"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceItsOnly30Days/VanceItsOnly30Days")]
 
 [node name="VanceImAwake2" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="0" unique_id=1885120268]
