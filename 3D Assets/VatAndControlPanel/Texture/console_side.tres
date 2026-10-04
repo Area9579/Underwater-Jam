@@ -1,0 +1,14 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d1uu1fe7gbeiv"]
+
+[ext_resource type="Texture2D" uid="uid://d3l3ik675chhh" path="res://3D Assets/VatAndControlPanel/Texture/ConsoleSide_Color.png" id="1_7alr0"]
+[ext_resource type="Texture2D" uid="uid://cslrmu2rc27y7" path="res://3D Assets/VatAndControlPanel/Texture/ConsoleSide_AORoughMetal.png" id="2_dv08e"]
+
+[resource]
+albedo_texture = ExtResource("1_7alr0")
+metallic = 1.0
+metallic_texture = ExtResource("2_dv08e")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_dv08e")
+roughness_texture_channel = 1
+ao_enabled = true
+ao_texture = ExtResource("2_dv08e")

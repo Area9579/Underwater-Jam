@@ -2,9 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cqfkd6240ajbd" path="res://Content/ValveControlPanel/control_panel.gd" id="1_buem2"]
 [ext_resource type="PackedScene" uid="uid://ck6va6usf5n3w" path="res://Content/InteractableItems/ValveControlPanel/HandCrank/hand_crank.tscn" id="1_uect1"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
-size = Vector3(1.67922, 1.3563232, 2.7410889)
+[ext_resource type="PackedScene" uid="uid://6ta6mx1n4c38" path="res://Content/ValveControlPanel/Assets/vat_mesh.tscn" id="2_buem2"]
 
 [sub_resource type="PrismMesh" id="PrismMesh_g4v7s"]
 size = Vector3(0.855, 1.365, 2.71)
@@ -47,16 +45,11 @@ border_color = Color(0, 0, 0, 1)
 [node name="ValveControlPanel" type="Node3D" unique_id=118694957]
 script = ExtResource("1_buem2")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=178835176]
-collision_layer = 4
-collision_mask = 0
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=935972632]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.016917825, 0.65618896, 0.0018920898)
-shape = SubResource("BoxShape3D_g4v7s")
+[node name="VatMesh" parent="." unique_id=188913953 instance=ExtResource("2_buem2")]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=521663012]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65537804, 0)
+visible = false
 mesh = SubResource("PrismMesh_g4v7s")
 surface_material_override/0 = SubResource("StandardMaterial3D_g4v7s")
 
