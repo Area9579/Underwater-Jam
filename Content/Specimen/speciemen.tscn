@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://bvm5ljkf31yqn"]
+
+[ext_resource type="Script" uid="uid://d1i1org4ftgce" path="res://Content/Specimen/specimen_controller.gd" id="1_w7es8"]
+[ext_resource type="ArrayMesh" uid="uid://cvwcipxyyfx16" path="res://3D Assets/BLOB.obj" id="2_py7l8"]
+[ext_resource type="Shader" uid="uid://cunvmsic2t2a6" path="res://3D Assets/Shaders/blob.gdshader" id="3_4mjr2"]
+[ext_resource type="Script" uid="uid://de0rtrqtincso" path="res://Content/InteractableItems/Speciemen/Door/door.gd" id="4_tojbm"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7jjb4"]
+noise_type = 3
+frequency = 0.0014
+fractal_octaves = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n475g"]
+noise = SubResource("FastNoiseLite_7jjb4")
+seamless = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n475g"]
+render_priority = 0
+shader = ExtResource("3_4mjr2")
+shader_parameter/time_speed = 0.05
+shader_parameter/surface_speed = 1.0
+shader_parameter/spin = 7.4
+shader_parameter/brightness = 0.6
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 2.0
+shader_parameter/size = 3.0
+shader_parameter/banding_bias = 0.56
+shader_parameter/wave_texture = SubResource("NoiseTexture2D_n475g")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_n475g")
+shader_parameter/wave_height = 0.055
+shader_parameter/texture_height = 0.23
+shader_parameter/color1 = Color(0.972549, 0.45882353, 0.45882353, 1)
+shader_parameter/color2 = Color(0.53391707, 0.44811642, 0.7950995, 1)
+shader_parameter/color3 = Color(0.0046855886, 0.117006265, 0.30003342, 1)
+shader_parameter/color4 = Color(0.45882353, 0.2, 0.20784314, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mcxa5"]
+size = Vector3(0.3, 0.3, 0.3)
+
+[node name="SpecimenController" type="Node3D" unique_id=174937618]
+transform = Transform3D(0.2561991, 0, -0.966624, 0, 1, 0, 0.966624, 0, 0.2561991, 0, 0, 0)
+script = ExtResource("1_w7es8")
+
+[node name="Specimen" type="MeshInstance3D" parent="." unique_id=1234053442]
+mesh = ExtResource("2_py7l8")
+surface_material_override/0 = SubResource("ShaderMaterial_n475g")
+
+[node name="DoorButton" type="Area3D" parent="." unique_id=719386855]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.8074841, -0.7356379, -1.2061546)
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("4_tojbm")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="DoorButton" unique_id=275907630]
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DoorButton" unique_id=1923532394]
+shape = SubResource("BoxShape3D_mcxa5")
+
+[node name="HoverText" type="Label3D" parent="DoorButton" unique_id=304380719]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+text = "false"
+
+[node name="UVLight" type="SpotLight3D" parent="." unique_id=1420702930]
+transform = Transform3D(1, 0, 0, 0, -0.03073603, 0.99952763, 0, -0.99952763, -0.03073603, -0.22869778, 1.6205027, -0.20470554)
+light_color = Color(0.5019608, 0, 0.5019608, 1)
+light_energy = 0.0
+spot_range = 7.254037
+spot_angle = 30.401146
+
+[node name="Timer" type="Timer" parent="." unique_id=1258383490]
+one_shot = true
