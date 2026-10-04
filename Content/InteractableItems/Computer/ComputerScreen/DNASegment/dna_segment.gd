@@ -17,13 +17,14 @@ const DNA_BAR_YELLOW = preload("uid://ckgeog8y5n6ak")
 @onready var row_4_right: TextureRect = $Row4Right
 
 @onready var left_array : Array[TextureRect] = [row_1_left, row_2_left, row_3_left, row_4_left]
+@onready var right_array : Array[TextureRect] = [row_1_right, row_2_right, row_3_right, row_4_right]
 
-
+var dna_index : int = 0
 
 
 func _ready() -> void:
-	print(left_array)
 	set_dna_password("OYGB")
+	reset_right_segments()
 
 
 func set_dna_password(dna_string : String) -> void:
@@ -31,6 +32,17 @@ func set_dna_password(dna_string : String) -> void:
 	
 	for i in range(dna_string.length()) :
 		match_char_to_dna(dna_string[i], left_array[i])
+
+
+func set_next_segment(next_texture : Texture2D) -> void:
+	right_array[dna_index].texture = next_texture
+	dna_index += 1
+
+
+func reset_right_segments() -> void:
+	dna_index = 0
+	for element : TextureRect in right_array:
+		element.texture = null
 
 
 func match_char_to_dna(character : String, texture : TextureRect) -> void:

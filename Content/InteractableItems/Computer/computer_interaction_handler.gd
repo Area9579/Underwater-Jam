@@ -2,12 +2,15 @@ class_name ComputerInteractionHandler extends AbstractInteractionHandler
 
 signal send_player_camera(camera : Camera3D)
 
+var puter_is_active : bool = false
+
 
 func _init(interactable_node : ComputerInteractable) -> void:
 	super(interactable_node)
 
 
 func do_interaction(player : FirstPersonEntityController) -> void:
+	if puter_is_active == false: return
 	is_interacting = true
 	player.interaction_enabled = false
 	player.look_enabled = false
