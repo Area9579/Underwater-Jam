@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://blscnow6u561l"]
 
-[ext_resource type="Script" uid="uid://cqfkd6240ajbd" path="res://Content/ValveControlPanel/HandCrank/hand_crank_controls.gd" id="1_hxan2"]
-[ext_resource type="PackedScene" uid="uid://ck6va6usf5n3w" path="res://Content/InteractableItems/ValveControlPanel/HandCrank/hand_crank.tscn" id="2_h8l6y"]
+[ext_resource type="Script" uid="uid://cqfkd6240ajbd" path="res://Content/ValveControlPanel/NutrientFlowHandCrank/hand_crank_controls.gd" id="1_hxan2"]
+[ext_resource type="PackedScene" uid="uid://ck6va6usf5n3w" path="res://Content/ValveControlPanel/NutrientFlowHandCrank/HandCrank/hand_crank.tscn" id="2_h8l6y"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
 size = Vector3(0.14361572, 0.95458984, 0.14544678)

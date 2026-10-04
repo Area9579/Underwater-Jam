@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d0xlu1eut8528"]
 
-[ext_resource type="Script" uid="uid://pgoo4mjk0so0" path="res://Content/ValveControlPanel/TempGauge/temp_gauge_controls.gd" id="1_g73ux"]
-[ext_resource type="PackedScene" uid="uid://cqfiqxxv5oyea" path="res://Content/ValveControlPanel/TempGauge/Buttons/temp_control_button.tscn" id="2_tg5dm"]
+[ext_resource type="Script" uid="uid://pgoo4mjk0so0" path="res://Content/ValveControlPanel/TempGaugeButtons/temp_gauge_controls.gd" id="1_g73ux"]
+[ext_resource type="PackedScene" uid="uid://cqfiqxxv5oyea" path="res://Content/ValveControlPanel/TempGaugeButtons/Buttons/temp_control_button.tscn" id="2_tg5dm"]
 
 [node name="TempGaugeControls" type="Node3D" unique_id=167998769]
 script = ExtResource("1_g73ux")

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cqfiqxxv5oyea"]
 
-[ext_resource type="Script" uid="uid://dtwnc5o5o74ws" path="res://Content/ValveControlPanel/TempGauge/Buttons/temp_control_button.gd" id="1_k61q0"]
+[ext_resource type="Script" uid="uid://dtwnc5o5o74ws" path="res://Content/ValveControlPanel/TempGaugeButtons/Buttons/temp_control_button.gd" id="1_k61q0"]
 [ext_resource type="Script" uid="uid://dk6ci6cn8li37" path="res://Addons/Tween Components/Scripts/Components/node3D_tween.gd" id="2_a0uif"]
 [ext_resource type="Script" uid="uid://teubb6vs0mf1" path="res://Addons/Tween Components/Scripts/Effect Sequencers/node_3D_tween_sequencer.gd" id="2_s3msb"]
 [ext_resource type="Script" uid="uid://bvekgf6tgcfay" path="res://Addons/Tween Components/Scripts/TweenResources/transform3d_tween.gd" id="4_p1wsg"]

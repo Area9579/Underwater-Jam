@@ -15,8 +15,8 @@
 [ext_resource type="PackedScene" uid="uid://bl3jromm4a7fk" path="res://Gym/BlockOutModels/pillar.tscn" id="9_frjl4"]
 [ext_resource type="Script" uid="uid://cua2uk64ok3vg" path="res://Systems/Event Queue/event_queue.gd" id="10_frjl4"]
 [ext_resource type="Environment" uid="uid://6372adp05a4k" path="res://Content/Porthole/baseFog.tres" id="11_frjl4"]
-[ext_resource type="PackedScene" uid="uid://blscnow6u561l" path="res://Content/ValveControlPanel/HandCrank/hand_crank_controls.tscn" id="12_aa15y"]
-[ext_resource type="PackedScene" uid="uid://d0xlu1eut8528" path="res://Content/ValveControlPanel/TempGauge/temp_gauge_controls.tscn" id="13_cos24"]
+[ext_resource type="PackedScene" uid="uid://blscnow6u561l" path="res://Content/ValveControlPanel/NutrientFlowHandCrank/hand_crank_controls.tscn" id="12_aa15y"]
+[ext_resource type="PackedScene" uid="uid://d0xlu1eut8528" path="res://Content/ValveControlPanel/TempGaugeButtons/temp_gauge_controls.tscn" id="13_cos24"]
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="14_j07sc"]
 [ext_resource type="PackedScene" uid="uid://bbjy0l63rcy3q" path="res://3D Assets/VDUTerminal.fbx" id="18_7nik5"]
 

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ck6va6usf5n3w"]
 
-[ext_resource type="Script" uid="uid://b2eswotaatkf" path="res://Content/InteractableItems/ValveControlPanel/HandCrank/hand_crank.gd" id="1_40k5c"]
+[ext_resource type="Script" uid="uid://b2eswotaatkf" path="res://Content/ValveControlPanel/NutrientFlowHandCrank/HandCrank/hand_crank.gd" id="1_40k5c"]
 [ext_resource type="AudioStream" uid="uid://c1s878j68xjyr" path="res://AUDIO/SFX/VALVE MINI GAME/Wheel_Crank_02_Sfx.wav" id="2_w37mq"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4i3x5"]
