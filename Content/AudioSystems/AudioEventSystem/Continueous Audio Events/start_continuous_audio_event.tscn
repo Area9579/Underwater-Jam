@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://r5cf7eysjhs"]
+
+[ext_resource type="Script" uid="uid://yivgoqoh0s4g" path="res://Content/AudioSystems/AudioEventSystem/Continueous Audio Events/start_continuous_audio_event.gd" id="1_o1t5e"]
+[ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="2_4bexi"]
+
+[node name="StartContinuousAudioEventPlayer" type="Node3D" unique_id=943645032 node_paths=PackedStringArray("event")]
+script = ExtResource("1_o1t5e")
+event = NodePath("Event")
+
+[node name="Event" type="Node" parent="." unique_id=1424440509]
+script = ExtResource("2_4bexi")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[connection signal="event_disabled" from="Event" to="." method="_on_event_disabled"]
+[connection signal="event_enabled" from="Event" to="." method="_on_event_enabled"]

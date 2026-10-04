@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://blscnow6u561l"]
+
+[ext_resource type="Script" uid="uid://cqfkd6240ajbd" path="res://Content/ValveControlPanel/NutrientFlowHandCrank/nutrient_flow_crank_panel.gd" id="1_h2u0f"]
+[ext_resource type="PackedScene" uid="uid://ck6va6usf5n3w" path="res://Content/ValveControlPanel/NutrientFlowHandCrank/HandCrank/nutrient_flow_crank.tscn" id="2_8750c"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
+size = Vector3(0.14361572, 0.95458984, 0.14544678)
+
+[sub_resource type="Curve3D" id="Curve3D_uect1"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, -0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0.475, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_yf5fn"]
+size = Vector3(0.059352875, 0.07138354, 0.16467285)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d0u6y"]
+albedo_color = Color(0.21230483, 0.21230483, 0.21230483, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5rkhk"]
+transparency = 1
+albedo_color = Color(0.92156863, 0.49411765, 0.25882354, 0.6392157)
+emission = Color(0.74408454, 0.4010128, 0.18396342, 1)
+emission_energy_multiplier = 0.2
+
+[node name="NutrientFlowCrankPanel" type="Node3D" unique_id=118694957]
+script = ExtResource("1_h2u0f")
+
+[node name="RotationHelper" type="Node3D" parent="." unique_id=1653929392]
+transform = Transform3D(0.32919097, 0.94426334, 0, -0.94426334, 0.32919097, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="NutrientFlowCrank" parent="RotationHelper" unique_id=922139481 instance=ExtResource("2_8750c")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5802077, 0.49286887, 0.71778667)
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1054979006]
+transform = Transform3D(0.9530649, -0.3024648, 0.013502284, 0.30249238, 0.95315176, 0, -0.012869726, 0.004084338, 0.99990886, 0.16005126, 0.6482248, -0.15769714)
+mesh = SubResource("BoxMesh_g4v7s")
+
+[node name="Path3D" type="Path3D" parent="MeshInstance3D2" unique_id=1935929983]
+transform = Transform3D(1, -2.2817403e-08, 0, 6.9849193e-09, 1, 0, 0, 0, 1, 0.045, 0, 0)
+curve = SubResource("Curve3D_uect1")
+
+[node name="CurrLocationPathFollow" type="PathFollow3D" parent="MeshInstance3D2/Path3D" unique_id=509638979]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.5, 0)
+
+[node name="CurrLocationMesh" type="MeshInstance3D" parent="MeshInstance3D2/Path3D/CurrLocationPathFollow" unique_id=2136205174]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, 0.99999994, 0, 1.0000005, 0, -1, 0, -4.3711385e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_yf5fn")
+surface_material_override/0 = SubResource("StandardMaterial3D_d0u6y")
+
+[node name="TargetLocationPathFollow" type="PathFollow3D" parent="MeshInstance3D2/Path3D" unique_id=1436369729]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0.14461522, 0)
+progress = 0.64350003
+
+[node name="TargetLocationMesh" type="MeshInstance3D" parent="MeshInstance3D2/Path3D/TargetLocationPathFollow" unique_id=2107848222]
+unique_name_in_owner = true
+transform = Transform3D(-4.371139e-08, 0, 0.99999994, 0, 1.0000005, 0, -1, 0, -4.3711385e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_yf5fn")
+surface_material_override/0 = SubResource("StandardMaterial3D_5rkhk")

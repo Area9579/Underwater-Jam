@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://x0gsjfyneums"]
+
+[ext_resource type="Shader" uid="uid://cugqw5fdttvyn" path="res://3D Assets/Shaders/outline_shader.gdshader" id="1_f833r"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_f833r")
+shader_parameter/outline_color = Color(0.93277454, 0.4713444, 0.14720419, 1)
+shader_parameter/thickness = 0.0050000002375
+shader_parameter/outline_energy = 1.0
+shader_parameter/outline_transparency = 0.4370000207575
+shader_parameter/merge_group = false
+shader_parameter/merge_depth_range = 10.0

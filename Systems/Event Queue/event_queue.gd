@@ -20,7 +20,7 @@ func start() -> void:
 	# ensure all events are disabled as starting default
 	for event in event_queue:
 		if event == null:
-			printerr("%s: Null event!" % self)
+			printerr("%s: Null event! \nEvent queue: %s" % [self, event_queue])
 			continue
 		
 		if !event.is_node_ready():
