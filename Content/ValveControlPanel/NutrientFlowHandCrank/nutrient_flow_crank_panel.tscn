@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://blscnow6u561l"]
 
-[ext_resource type="Script" uid="uid://cqfkd6240ajbd" path="res://Content/ValveControlPanel/NutrientFlowHandCrank/hand_crank_controls.gd" id="1_hxan2"]
-[ext_resource type="PackedScene" uid="uid://ck6va6usf5n3w" path="res://Content/ValveControlPanel/NutrientFlowHandCrank/HandCrank/hand_crank.tscn" id="2_h8l6y"]
+[ext_resource type="Script" uid="uid://cqfkd6240ajbd" path="res://Content/ValveControlPanel/NutrientFlowHandCrank/nutrient_flow_crank_panel.gd" id="1_h2u0f"]
+[ext_resource type="PackedScene" uid="uid://ck6va6usf5n3w" path="res://Content/ValveControlPanel/NutrientFlowHandCrank/HandCrank/nutrient_flow_crank.tscn" id="2_8750c"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
 size = Vector3(0.14361572, 0.95458984, 0.14544678)
@@ -25,13 +25,13 @@ albedo_color = Color(0.92156863, 0.49411765, 0.25882354, 0.6392157)
 emission = Color(0.74408454, 0.4010128, 0.18396342, 1)
 emission_energy_multiplier = 0.2
 
-[node name="HandCrankPanel" type="Node3D" unique_id=118694957]
-script = ExtResource("1_hxan2")
+[node name="NutrientFlowCrankPanel" type="Node3D" unique_id=118694957]
+script = ExtResource("1_h2u0f")
 
 [node name="RotationHelper" type="Node3D" parent="." unique_id=1653929392]
 transform = Transform3D(0.32919097, 0.94426334, 0, -0.94426334, 0.32919097, 0, 0, 0, 1, 0, 0, 0)
 
-[node name="HandCrank" parent="RotationHelper" unique_id=922139481 instance=ExtResource("2_h8l6y")]
+[node name="NutrientFlowCrank" parent="RotationHelper" unique_id=922139481 instance=ExtResource("2_8750c")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5802077, 0.49286887, 0.71778667)
 

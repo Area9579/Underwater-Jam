@@ -1,6 +1,6 @@
-class_name HandCrank extends Area3D
+class_name NutrientFlowCrank extends Area3D
 
-var interaction_handler : HandCrankInteractionHandler = HandCrankInteractionHandler.new(self)
+var interaction_handler : NutrientFlowCrankInteractionHandler = NutrientFlowCrankInteractionHandler.new(self)
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = %AudioStreamPlayer3D
 
 @warning_ignore("unused_signal")

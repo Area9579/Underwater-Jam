@@ -1,16 +1,16 @@
-class_name HandCrankInteractionHandler extends AbstractInteractionHandler
+class_name NutrientFlowCrankInteractionHandler extends AbstractInteractionHandler
 
-var hand_crank : HandCrank
+var nutrient_flow_crank : NutrientFlowCrank
 var audio_stream_pos : float = 0.0
 
-func _init(interactable_node : HandCrank) -> void:
+func _init(interactable_node : NutrientFlowCrank) -> void:
 	super(interactable_node)
 	
-	if interactable_node is not HandCrank:
-		printerr("%s: Interactable node: %s is not a HandCrank" % [self, interactable_node])
+	if interactable_node is not NutrientFlowCrank:
+		printerr("%s: Interactable node: %s is not a NutrientFlowCrank" % [self, interactable_node])
 		return
 	
-	hand_crank = interactable_node
+	nutrient_flow_crank = interactable_node
 
 
 func is_correct_input_given() -> bool:
@@ -34,23 +34,23 @@ func do_interaction(_entity : FirstPersonEntityController) -> void:
 	is_interacting = false
 
 func play_squeak() -> void:
-	if hand_crank.audio_stream_player_3d.playing:
+	if nutrient_flow_crank.audio_stream_player_3d.playing:
 		return
 	
-	hand_crank.audio_stream_player_3d.play(audio_stream_pos)
+	nutrient_flow_crank.audio_stream_player_3d.play(audio_stream_pos)
 	await get_tree().create_timer(0.1).timeout
-	audio_stream_pos = hand_crank.audio_stream_player_3d.get_playback_position()
-	hand_crank.audio_stream_player_3d.stop()
+	audio_stream_pos = nutrient_flow_crank.audio_stream_player_3d.get_playback_position()
+	nutrient_flow_crank.audio_stream_player_3d.stop()
 	
 
 func add_to_rotation(value : float) -> void:
-	hand_crank.rotation.y += deg_to_rad(value)
-	hand_crank.increment_value.emit()
+	nutrient_flow_crank.rotation.y += deg_to_rad(value)
+	nutrient_flow_crank.increment_value.emit()
 
 
 func subtract_from_rotation(value : float) -> void:
-	hand_crank.rotation.y -= deg_to_rad(value)
-	hand_crank.decrement_value.emit()
+	nutrient_flow_crank.rotation.y -= deg_to_rad(value)
+	nutrient_flow_crank.decrement_value.emit()
 
 
 func fade_in_hover_effect() -> void:
