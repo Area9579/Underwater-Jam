@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d1ikld10ccwf8"]
+
+[ext_resource type="Script" uid="uid://b1iqmqiopl6dr" path="res://Content/ValveControlPanel/PhScaleLever/Lever/ph_scale_lever.gd" id="1_5gat1"]
+
+[node name="PhScaleLever" type="Node3D" unique_id=1265122815]
+script = ExtResource("1_5gat1")
