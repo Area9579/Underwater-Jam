@@ -31,6 +31,7 @@ window/stretch/aspect="expand"
 [file_customization]
 
 folder_colors={
+"res://2DAssets/": "purple",
 "res://3D Assets/": "purple",
 "res://AUDIO/": "purple",
 "res://Addons/": "gray",
