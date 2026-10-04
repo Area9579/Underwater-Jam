@@ -33,7 +33,6 @@ func setup_values() -> void:
 	
 	# haha fuck you edge case!
 	if Utils.nearly_equal(curr_value, target_value, VALUE_CHANGE_AMOUNT * 2.0):
-		push_warning(self, ": HOLY SHIT YOU HIT THE CRAZY EDGE CASE AND HAD TO REGEN THE TEMP VALUES (this isn't that crazy of an edge case dw about it smile)")
 		setup_values()
 		return
 	

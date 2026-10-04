@@ -39,4 +39,5 @@ func check_for_success() -> void:
 
 func finish() -> void:
 	target_location_mesh.hide()
+	hand_crank.interaction_handler.is_enabled = false
 	super()
