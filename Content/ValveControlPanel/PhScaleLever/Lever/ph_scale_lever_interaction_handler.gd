@@ -20,7 +20,7 @@ func fade_out_hover_effect() -> void:
 	pass
 
 
-func do_interaction(entity : FirstPersonEntityController) -> void:
+func do_interaction(_entity : FirstPersonEntityController) -> void:
 	is_interacting = true
 	
 	
