@@ -27,6 +27,18 @@ func _ready() -> void:
 	connect_signals()
 
 
+func _on_event_event_disabled() -> void:
+	ph_scale_lever.interaction_handler.disable()
+	target_location_mesh.hide()
+
+
+
+func _on_event_event_enabled() -> void:
+	ph_scale_lever.interaction_handler.enable()
+	target_location_mesh.show()
+
+
+
 func connect_signals() -> void:
 	ph_scale_lever.value_changed.connect(_on_lever_dragged)
 

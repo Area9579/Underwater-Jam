@@ -1,8 +1,9 @@
-[gd_scene format=4 uid="uid://c75ceqrjafian"]
+[gd_scene format=4 uid="uid://cunnbqjgjkbqn"]
 
 [ext_resource type="Material" uid="uid://dct8llpfe8mss" path="res://3D Assets/Pipe Vat and Valve/Valve.tres" id="1_whxrb"]
 [ext_resource type="Script" uid="uid://3iewgnlm4pbc" path="res://Content/ValveControlPanel/PhScaleLever/ph_scale_lever_panel.gd" id="2_34rbp"]
 [ext_resource type="Script" uid="uid://dtwnc5o5o74ws" path="res://Content/ValveControlPanel/TempGaugeButtons/Buttons/temp_control_button.gd" id="2_iqog7"]
+[ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="2_mji5f"]
 [ext_resource type="Script" uid="uid://cqfkd6240ajbd" path="res://Content/ValveControlPanel/NutrientFlowHandCrank/nutrient_flow_crank_panel.gd" id="3_3ri5n"]
 [ext_resource type="Script" uid="uid://teubb6vs0mf1" path="res://Addons/Tween Components/Scripts/Effect Sequencers/node_3D_tween_sequencer.gd" id="3_48aeq"]
 [ext_resource type="Script" uid="uid://dk6ci6cn8li37" path="res://Addons/Tween Components/Scripts/Components/node3D_tween.gd" id="4_34rbp"]
@@ -358,6 +359,10 @@ decrement = NodePath("../PipeVatValves/controls/TempButtonLeftP/TempButtonLeft/D
 target_label = NodePath("../PipeVatValves/ValveConsole2/ValveConsole/TargetLabel")
 current_label = NodePath("../PipeVatValves/ValveConsole2/ValveConsole/CurrentLabel")
 
+[node name="TempGaugeControlsEvent" type="Node" parent="TempGaugeControls" unique_id=869296425]
+script = ExtResource("2_mji5f")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
 [node name="PhScaleLeverPanel" type="Node3D" parent="." unique_id=1948631008 node_paths=PackedStringArray("ph_scale_lever", "curr_location_path_follow", "target_location_path_follow", "curr_location_mesh", "target_location_mesh")]
 script = ExtResource("2_34rbp")
 ph_scale_lever = NodePath("../PipeVatValves/controls/PhScaleLever/PhScaleLever")
@@ -366,11 +371,19 @@ target_location_path_follow = NodePath("../PipeVatValves/controls/phDialP/Path3D
 curr_location_mesh = NodePath("../PipeVatValves/controls/phDialP/Path3D/CurrLocationPathFollow/phDial")
 target_location_mesh = NodePath("../PipeVatValves/controls/phDialP/Path3D/TargetLocationPathFollow/phDial")
 
+[node name="PhScaleLeverPanelEvent" type="Node" parent="PhScaleLeverPanel" unique_id=1166769899]
+script = ExtResource("2_mji5f")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
 [node name="NutrientFlowCrankPanel" type="Node3D" parent="." unique_id=118694957 node_paths=PackedStringArray("nutrient_flow_crank", "curr_display_mesh", "target_display_mesh")]
 script = ExtResource("3_3ri5n")
 nutrient_flow_crank = NodePath("../PipeVatValves/controls/RotateCrankP/RotateCrank/NutrientFlowCrank")
 curr_display_mesh = NodePath("../PipeVatValves/controls/RadialDialP/CurrentRadialDial")
 target_display_mesh = NodePath("../PipeVatValves/controls/RadialDialP/TargetRadialDial")
+
+[node name="NutrientFlowCrankPanelEvent" type="Node" parent="NutrientFlowCrankPanel" unique_id=717334883]
+script = ExtResource("2_mji5f")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
 [node name="PipeVatValves" type="Node3D" parent="." unique_id=309984907]
 
@@ -796,6 +809,12 @@ material_override = SubResource("StandardMaterial3D_46c3x")
 [node name="NutrientFlow_001" parent="PipeVatValves/ValveConsole2" index="3" unique_id=992958604]
 material_override = SubResource("StandardMaterial3D_fqwas")
 
+[connection signal="event_disabled" from="TempGaugeControls/TempGaugeControlsEvent" to="TempGaugeControls" method="_on_event_event_disabled"]
+[connection signal="event_enabled" from="TempGaugeControls/TempGaugeControlsEvent" to="TempGaugeControls" method="_on_event_event_enabled"]
+[connection signal="event_disabled" from="PhScaleLeverPanel/PhScaleLeverPanelEvent" to="PhScaleLeverPanel" method="_on_event_event_disabled"]
+[connection signal="event_enabled" from="PhScaleLeverPanel/PhScaleLeverPanelEvent" to="PhScaleLeverPanel" method="_on_event_event_enabled"]
+[connection signal="event_disabled" from="NutrientFlowCrankPanel/NutrientFlowCrankPanelEvent" to="NutrientFlowCrankPanel" method="_on_event_event_disabled"]
+[connection signal="event_enabled" from="NutrientFlowCrankPanel/NutrientFlowCrankPanelEvent" to="NutrientFlowCrankPanel" method="_on_event_event_enabled"]
 [connection signal="pressed" from="PipeVatValves/controls/TempButtonRightP/TempButtonRight/Increment" to="TempGaugeControls" method="_on_increment_pressed"]
 [connection signal="pressed" from="PipeVatValves/controls/TempButtonLeftP/TempButtonLeft/Decrement" to="TempGaugeControls" method="_on_decrement_pressed"]
 
