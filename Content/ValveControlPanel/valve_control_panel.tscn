@@ -3,10 +3,13 @@
 [ext_resource type="Material" uid="uid://dct8llpfe8mss" path="res://3D Assets/Pipe Vat and Valve/Valve.tres" id="1_whxrb"]
 [ext_resource type="Script" uid="uid://3iewgnlm4pbc" path="res://Content/ValveControlPanel/PhScaleLever/ph_scale_lever_panel.gd" id="2_34rbp"]
 [ext_resource type="Script" uid="uid://dtwnc5o5o74ws" path="res://Content/ValveControlPanel/TempGaugeButtons/Buttons/temp_control_button.gd" id="2_iqog7"]
+[ext_resource type="Script" uid="uid://cqfkd6240ajbd" path="res://Content/ValveControlPanel/NutrientFlowHandCrank/nutrient_flow_crank_panel.gd" id="3_3ri5n"]
 [ext_resource type="Script" uid="uid://teubb6vs0mf1" path="res://Addons/Tween Components/Scripts/Effect Sequencers/node_3D_tween_sequencer.gd" id="3_48aeq"]
 [ext_resource type="Script" uid="uid://dk6ci6cn8li37" path="res://Addons/Tween Components/Scripts/Components/node3D_tween.gd" id="4_34rbp"]
 [ext_resource type="Script" uid="uid://b1iqmqiopl6dr" path="res://Content/ValveControlPanel/PhScaleLever/Lever/ph_scale_lever.gd" id="4_f8dfx"]
+[ext_resource type="Script" uid="uid://b2eswotaatkf" path="res://Content/ValveControlPanel/NutrientFlowHandCrank/HandCrank/nutrient_flow_crank.gd" id="4_mji5f"]
 [ext_resource type="Script" uid="uid://bvekgf6tgcfay" path="res://Addons/Tween Components/Scripts/TweenResources/transform3d_tween.gd" id="5_f8dfx"]
+[ext_resource type="AudioStream" uid="uid://c1s878j68xjyr" path="res://AUDIO/SFX/VALVE MINI GAME/Wheel_Crank_02_Sfx.wav" id="5_kod7w"]
 [ext_resource type="AudioStream" uid="uid://bajdhfxd04d0d" path="res://AUDIO/SFX/VALVE MINI GAME/Wheel_Crank_Sfx.wav" id="5_wf8ru"]
 [ext_resource type="AudioStream" uid="uid://cv21mg8ihvq2e" path="res://AUDIO/SFX/VALVE MINI GAME/Emergency_O2_Switch_OFF.wav" id="6_wf8ru"]
 [ext_resource type="Material" uid="uid://dtqalfquc8ltj" path="res://3D Assets/Pipe Vat and Valve/Vat.tres" id="7_3ri5n"]
@@ -61,6 +64,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vmi7p")
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_4i3x5"]
+height = 0.20038414
+radius = 0.10595703
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_8g8q3"]
 _surfaces = [{
 "aabb": AABB(-0.026207212, 0.14042465, -0.026207112, 0.052414287, 0.21685012, 0.052414328),
@@ -99,7 +106,7 @@ shadow_mesh = SubResource("ArrayMesh_8g8q3")
 radius = 0.04345703
 height = 0.34742737
 
-[sub_resource type="CylinderMesh" id="CylinderMesh_g4v7s"]
+[sub_resource type="CylinderMesh" id="CylinderMesh_uan8n"]
 top_radius = 0.045898438
 bottom_radius = 0.045898438
 height = 0.37890625
@@ -358,6 +365,12 @@ target_location_path_follow = NodePath("../PipeVatValves/controls/phDialP/Path3D
 curr_location_mesh = NodePath("../PipeVatValves/controls/phDialP/Path3D/CurrLocationPathFollow/phDial")
 target_location_mesh = NodePath("../PipeVatValves/controls/phDialP/Path3D/TargetLocationPathFollow/phDial")
 
+[node name="NutrientFlowCrankPanel" type="Node3D" parent="." unique_id=118694957 node_paths=PackedStringArray("nutrient_flow_crank", "curr_display_mesh", "target_display_mesh")]
+script = ExtResource("3_3ri5n")
+nutrient_flow_crank = NodePath("../PipeVatValves/controls/RotateCrankP/RotateCrank/NutrientFlowCrank")
+curr_display_mesh = NodePath("../PipeVatValves/controls/RadialDialP/CurrentRadialDial")
+target_display_mesh = NodePath("../PipeVatValves/controls/RadialDialP/TargetRadialDial")
+
 [node name="PipeVatValves" type="Node3D" parent="." unique_id=309984907]
 
 [node name="controls" type="Node3D" parent="PipeVatValves" unique_id=1800504193]
@@ -369,6 +382,21 @@ transform = Transform3D(0.36599782, 0.9306157, 0, -0.9306157, 0.36599782, 0, 0, 
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("1_whxrb")
 mesh = SubResource("ArrayMesh_dhlpj")
+
+[node name="NutrientFlowCrank" type="Area3D" parent="PipeVatValves/controls/RotateCrankP/RotateCrank" unique_id=922139481 node_paths=PackedStringArray("audio_stream_player_3d", "parent_mesh")]
+unique_name_in_owner = true
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("4_mji5f")
+audio_stream_player_3d = NodePath("AudioStreamPlayer3D")
+parent_mesh = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PipeVatValves/controls/RotateCrankP/RotateCrank/NutrientFlowCrank" unique_id=93735581]
+transform = Transform3D(1.0000001, -1.7881393e-07, 0, 1.7881393e-07, 1.0000001, 0, 0, 0, 1, -4.7683716e-07, 0.026870728, 0)
+shape = SubResource("CylinderShape3D_4i3x5")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="PipeVatValves/controls/RotateCrankP/RotateCrank/NutrientFlowCrank" unique_id=873823630]
+stream = ExtResource("5_kod7w")
 
 [node name="PhScaleLever" type="MeshInstance3D" parent="PipeVatValves/controls" unique_id=1282760291]
 transform = Transform3D(0.8103997, 0.5858774, 0, -0.5858774, 0.8103997, 0, 0, 0, 1, 14.198, 5.419997, -10.904201)
@@ -391,7 +419,7 @@ shape = SubResource("CapsuleShape3D_3ri5n")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="PipeVatValves/controls/PhScaleLever/PhScaleLever" unique_id=1330540120]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17871094, 0)
 visible = false
-mesh = SubResource("CylinderMesh_g4v7s")
+mesh = SubResource("CylinderMesh_uan8n")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="PipeVatValves/controls/PhScaleLever/PhScaleLever" unique_id=1358061381]
 unique_name_in_owner = true
@@ -401,8 +429,12 @@ pitch_scale = 1.22
 [node name="RadialDialP" type="Node3D" parent="PipeVatValves/controls" unique_id=1134580654]
 transform = Transform3D(0.41786703, 0.9085082, 0, -0.9085082, 0.41786703, 0, 0, 0, 1, 14.281302, 5.7580633, -10.23045)
 
-[node name="RadialDial" type="MeshInstance3D" parent="PipeVatValves/controls/RadialDialP" unique_id=1474824188]
-transform = Transform3D(0.71325046, 0, 0.70090926, 0, 1, 0, -0.70090926, 0, 0.71325046, 0, 0, 0)
+[node name="CurrentRadialDial" type="MeshInstance3D" parent="PipeVatValves/controls/RadialDialP" unique_id=1474824188]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, 0, 0, 0)
+mesh = SubResource("ArrayMesh_t7trg")
+
+[node name="TargetRadialDial" type="MeshInstance3D" parent="PipeVatValves/controls/RadialDialP" unique_id=1358226458]
+transform = Transform3D(-0.80901694, 0, 0.58778536, 0, 1, 0, -0.58778536, 0, -0.80901694, 0, 0, 0)
 mesh = SubResource("ArrayMesh_t7trg")
 
 [node name="phDialP" type="Node3D" parent="PipeVatValves/controls" unique_id=252873794]

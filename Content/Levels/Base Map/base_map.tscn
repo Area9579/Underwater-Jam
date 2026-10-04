@@ -34,7 +34,7 @@ albedo_texture = ExtResource("1_pwexk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.811306, -4.372, 12.717174)
 
 [node name="LevelLayout" parent="." unique_id=1577965459 instance=ExtResource("1_2vlr6")]
-transform = Transform3D(0.185, 0, 0, 0, 0.185, 0, 0, 0, 0.185, -6.994794, -0.083275795, 6.666717)
+transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -6.994794, -0.083275795, 6.666717)
 
 [node name="BaseMapOrchestrator" type="Node3D" parent="." unique_id=43420996]
 script = ExtResource("1_y24es")
