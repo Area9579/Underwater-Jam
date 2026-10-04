@@ -285,7 +285,7 @@ albedo_texture = ExtResource("10_2lef6")
 transform = Transform3D(0.36599782, 0.9306157, 0, -0.9306157, 0.36599782, 0, 0, 0, 1, 14.377343, 5.4494295, -10.23576)
 
 [node name="RotateCrank" type="MeshInstance3D" parent="controls/RotateCrankP" unique_id=1955130838]
-transform = Transform3D(0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("1_gyfit")
 mesh = SubResource("ArrayMesh_dhlpj")
 
@@ -325,7 +325,7 @@ material_override = ExtResource("1_gyfit")
 mesh = SubResource("ArrayMesh_f8yuj")
 
 [node name="Cylinder_021" type="MeshInstance3D" parent="controls" unique_id=352750081]
-transform = Transform3D(0.01831375, 0, 0, 0, 0.16758732, 0, 0, 0, 0.018313747, 26.168528, 5.5483475, -3.1184568)
+transform = Transform3D(-5.198958e-10, -5.5703344e-09, 0.018313749, -0.011200367, 0.1325919, 1.6364833e-10, -0.014489489, -0.102493435, -7.836137e-10, 26.168528, 5.5483475, -3.1184568)
 material_override = ExtResource("2_8d435")
 mesh = SubResource("ArrayMesh_qurt3")
 
