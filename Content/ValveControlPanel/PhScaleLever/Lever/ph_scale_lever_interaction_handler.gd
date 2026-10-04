@@ -29,7 +29,14 @@ func _input(event: InputEvent) -> void:
 	if !is_enabled:
 		return
 	
-	lever.follow_mouse_relative_motion(event as InputEventMouseMotion)
+	follow_mouse_relative_motion(event as InputEventMouseMotion)
+
+
+
+func follow_mouse_relative_motion(event : InputEventMouseMotion) -> void:
+	var height : float = abs(get_viewport().get_visible_rect().end.y - get_viewport().get_visible_rect().position.y)
+	lever.value_changed.emit(Utils.remap_with_clamp(event.screen_relative.y, -height/2, height/2, -1.0, 1.0))
+
 
 
 func is_correct_input_given() -> bool:
