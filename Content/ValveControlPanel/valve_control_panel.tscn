@@ -1,15 +1,21 @@
-[gd_scene format=4 uid="uid://br00futco8no"]
+[gd_scene format=4 uid="uid://c75ceqrjafian"]
 
-[ext_resource type="Material" uid="uid://dct8llpfe8mss" path="res://3D Assets/Pipe Vat and Valve/Valve.tres" id="1_gyfit"]
-[ext_resource type="Material" uid="uid://dtqalfquc8ltj" path="res://3D Assets/Pipe Vat and Valve/Vat.tres" id="2_8d435"]
-[ext_resource type="PackedScene" uid="uid://bitvmasqrv26k" path="res://3D Assets/Pipe Vat and Valve/Pipe And Vat.glb" id="3_goj1n"]
-[ext_resource type="Texture2D" uid="uid://c814xp7f3v7r6" path="res://3D Assets/Pipe Vat and Valve/Texture/Main_Color.png" id="4_8hq0b"]
-[ext_resource type="Texture2D" uid="uid://dhvvh2sgmtyad" path="res://3D Assets/Pipe Vat and Valve/Texture/Main_AORoughMetal.png" id="5_4exij"]
-[ext_resource type="Texture2D" uid="uid://bqm67u3stpmtr" path="res://3D Assets/Pipe Vat and Valve/Texture/Main_Normal.png" id="6_377sg"]
-[ext_resource type="Material" uid="uid://bnbm8fny4kmfv" path="res://3D Assets/Pipe Vat and Valve/Pipes.tres" id="7_12u62"]
-[ext_resource type="PackedScene" uid="uid://vt5gyjpwgucf" path="res://3D Assets/Pipe Vat and Valve/ValveConsole.glb" id="8_617sb"]
-[ext_resource type="Texture2D" uid="uid://dxs3458od7mpo" path="res://3D Assets/Pipe Vat and Valve/Texture/PH SCALE.png" id="9_r5kw6"]
-[ext_resource type="Texture2D" uid="uid://7wn4wigi3oen" path="res://3D Assets/Pipe Vat and Valve/Texture/Presuure Guage (2).png" id="10_2lef6"]
+[ext_resource type="Material" uid="uid://dct8llpfe8mss" path="res://3D Assets/Pipe Vat and Valve/Valve.tres" id="1_whxrb"]
+[ext_resource type="Script" uid="uid://dtwnc5o5o74ws" path="res://Content/ValveControlPanel/TempGaugeButtons/Buttons/temp_control_button.gd" id="2_iqog7"]
+[ext_resource type="Script" uid="uid://teubb6vs0mf1" path="res://Addons/Tween Components/Scripts/Effect Sequencers/node_3D_tween_sequencer.gd" id="3_48aeq"]
+[ext_resource type="Script" uid="uid://dk6ci6cn8li37" path="res://Addons/Tween Components/Scripts/Components/node3D_tween.gd" id="4_34rbp"]
+[ext_resource type="Script" uid="uid://bvekgf6tgcfay" path="res://Addons/Tween Components/Scripts/TweenResources/transform3d_tween.gd" id="5_f8dfx"]
+[ext_resource type="AudioStream" uid="uid://cv21mg8ihvq2e" path="res://AUDIO/SFX/VALVE MINI GAME/Emergency_O2_Switch_OFF.wav" id="6_wf8ru"]
+[ext_resource type="Material" uid="uid://dtqalfquc8ltj" path="res://3D Assets/Pipe Vat and Valve/Vat.tres" id="7_3ri5n"]
+[ext_resource type="PackedScene" uid="uid://bitvmasqrv26k" path="res://3D Assets/Pipe Vat and Valve/Pipe And Vat.glb" id="8_mji5f"]
+[ext_resource type="Texture2D" uid="uid://c814xp7f3v7r6" path="res://3D Assets/Pipe Vat and Valve/Texture/Main_Color.png" id="9_kod7w"]
+[ext_resource type="Texture2D" uid="uid://dhvvh2sgmtyad" path="res://3D Assets/Pipe Vat and Valve/Texture/Main_AORoughMetal.png" id="10_6n8qi"]
+[ext_resource type="Texture2D" uid="uid://bqm67u3stpmtr" path="res://3D Assets/Pipe Vat and Valve/Texture/Main_Normal.png" id="11_uan8n"]
+[ext_resource type="Material" uid="uid://bnbm8fny4kmfv" path="res://3D Assets/Pipe Vat and Valve/Pipes.tres" id="12_81jtx"]
+[ext_resource type="PackedScene" uid="uid://vt5gyjpwgucf" path="res://3D Assets/Pipe Vat and Valve/ValveConsole.glb" id="13_qe0lb"]
+[ext_resource type="Texture2D" uid="uid://dxs3458od7mpo" path="res://3D Assets/Pipe Vat and Valve/Texture/PH SCALE.png" id="14_djvyw"]
+[ext_resource type="Texture2D" uid="uid://7wn4wigi3oen" path="res://3D Assets/Pipe Vat and Valve/Texture/Presuure Guage (2).png" id="15_paj08"]
+[ext_resource type="Script" uid="uid://pgoo4mjk0so0" path="res://Content/ValveControlPanel/TempGaugeButtons/temp_gauge_controls.gd" id="16_7jfgw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxfqv"]
 resource_name = "ConsoleSide"
@@ -187,6 +193,27 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_xqqsx")
 
+[sub_resource type="PrismMesh" id="PrismMesh_g4v7s"]
+size = Vector3(0.2, 0.2, 0.2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_a0uif"]
+data = PackedVector3Array(0, 0.099999994, 0.099999994, 0.099999994, -0.099999994, 0.099999994, -0.099999994, -0.099999994, 0.099999994, 0, 0.099999994, -0.099999994, -0.099999994, -0.099999994, -0.099999994, 0.099999994, -0.099999994, -0.099999994, 0, 0.099999994, 0.099999994, 0, 0.099999994, -0.099999994, 0.099999994, -0.099999994, 0.099999994, 0, 0.099999994, -0.099999994, 0.099999994, -0.099999994, -0.099999994, 0.099999994, -0.099999994, 0.099999994, 0, 0.099999994, -0.099999994, 0, 0.099999994, 0.099999994, -0.099999994, -0.099999994, -0.099999994, 0, 0.099999994, 0.099999994, -0.099999994, -0.099999994, 0.099999994, -0.099999994, -0.099999994, -0.099999994, -0.099999994, -0.099999994, 0.099999994, 0.099999994, -0.099999994, 0.099999994, -0.099999994, -0.099999994, -0.099999994, 0.099999994, -0.099999994, 0.099999994, 0.099999994, -0.099999994, -0.099999994, -0.099999994, -0.099999994, -0.099999994)
+
+[sub_resource type="Resource" id="Resource_s3msb"]
+script = ExtResource("5_f8dfx")
+end_position = Vector3(-0.012, inf, inf)
+metadata/_custom_type_script = "uid://bvekgf6tgcfay"
+
+[sub_resource type="Resource" id="Resource_umvbb"]
+script = ExtResource("5_f8dfx")
+end_position = Vector3(0, inf, inf)
+metadata/_custom_type_script = "uid://bvekgf6tgcfay"
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_g4v7s"]
+random_pitch = 1.0905077
+streams_count = 1
+stream_0/stream = ExtResource("6_wf8ru")
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_do8iw"]
 _surfaces = [{
 "aabb": AABB(-0.04789077, -0.016959568, -0.055743095, 0.09578154, 0.033919137, 0.11148619),
@@ -218,6 +245,16 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_do8iw")
+
+[sub_resource type="Resource" id="Resource_60i7v"]
+script = ExtResource("5_f8dfx")
+end_position = Vector3(-14.3, inf, inf)
+metadata/_custom_type_script = "uid://bvekgf6tgcfay"
+
+[sub_resource type="Resource" id="Resource_whxrb"]
+script = ExtResource("5_f8dfx")
+end_position = Vector3(-14.29, inf, inf)
+metadata/_custom_type_script = "uid://bvekgf6tgcfay"
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3wj17"]
 resource_name = "Main"
@@ -260,279 +297,397 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_msmvf")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3dxv"]
-albedo_texture = ExtResource("4_8hq0b")
+albedo_texture = ExtResource("9_kod7w")
 metallic = 1.0
-metallic_texture = ExtResource("5_4exij")
+metallic_texture = ExtResource("10_6n8qi")
 metallic_texture_channel = 2
-roughness_texture = ExtResource("5_4exij")
+roughness_texture = ExtResource("10_6n8qi")
 roughness_texture_channel = 1
 normal_enabled = true
-normal_texture = ExtResource("6_377sg")
+normal_texture = ExtResource("11_uan8n")
 ao_enabled = true
-ao_texture = ExtResource("5_4exij")
+ao_texture = ExtResource("10_6n8qi")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46c3x"]
-albedo_texture = ExtResource("9_r5kw6")
+albedo_texture = ExtResource("14_djvyw")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fqwas"]
-albedo_texture = ExtResource("10_2lef6")
+albedo_texture = ExtResource("15_paj08")
 
-[node name="PipeVatValves" type="Node3D" unique_id=309984907]
+[node name="ValveControlPanel" type="Node3D" unique_id=616365444]
 
-[node name="controls" type="Node3D" parent="." unique_id=1800504193]
+[node name="PipeVatValves" type="Node3D" parent="." unique_id=309984907]
 
-[node name="RotateCrankP" type="Node3D" parent="controls" unique_id=1039664958]
+[node name="controls" type="Node3D" parent="PipeVatValves" unique_id=1800504193]
+
+[node name="RotateCrankP" type="Node3D" parent="PipeVatValves/controls" unique_id=1039664958]
 transform = Transform3D(0.36599782, 0.9306157, 0, -0.9306157, 0.36599782, 0, 0, 0, 1, 14.377343, 5.4494295, -10.23576)
 
-[node name="RotateCrank" type="MeshInstance3D" parent="controls/RotateCrankP" unique_id=1955130838]
+[node name="RotateCrank" type="MeshInstance3D" parent="PipeVatValves/controls/RotateCrankP" unique_id=1955130838]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
-material_override = ExtResource("1_gyfit")
+material_override = ExtResource("1_whxrb")
 mesh = SubResource("ArrayMesh_dhlpj")
 
-[node name="Cylinder_045" type="MeshInstance3D" parent="controls" unique_id=1282760291]
+[node name="Cylinder_045" type="MeshInstance3D" parent="PipeVatValves/controls" unique_id=1282760291]
 transform = Transform3D(0.8103997, 0.5858774, 0, -0.5858774, 0.8103997, 0, 0, 0, 1, 14.198, 5.419997, -10.904201)
-material_override = ExtResource("1_gyfit")
+material_override = ExtResource("1_whxrb")
 mesh = SubResource("ArrayMesh_xkawl")
 
-[node name="RadialDialP" type="Node3D" parent="controls" unique_id=1134580654]
+[node name="RadialDialP" type="Node3D" parent="PipeVatValves/controls" unique_id=1134580654]
 transform = Transform3D(0.41786703, 0.9085082, 0, -0.9085082, 0.41786703, 0, 0, 0, 1, 14.281302, 5.7580633, -10.23045)
 
-[node name="RadialDial" type="MeshInstance3D" parent="controls/RadialDialP" unique_id=1474824188]
+[node name="RadialDial" type="MeshInstance3D" parent="PipeVatValves/controls/RadialDialP" unique_id=1474824188]
 transform = Transform3D(0.71325046, 0, 0.70090926, 0, 1, 0, -0.70090926, 0, 0.71325046, 0, 0, 0)
 mesh = SubResource("ArrayMesh_t7trg")
 
-[node name="phDialP" type="Node3D" parent="controls" unique_id=252873794]
+[node name="phDialP" type="Node3D" parent="PipeVatValves/controls" unique_id=252873794]
 transform = Transform3D(0.42893517, 0.9033353, 0, -0.9033353, 0.42893517, 0, 0, 0, 2.3641207, 14.213253, 5.6815634, -10.8613615)
 
-[node name="phDial" type="MeshInstance3D" parent="controls/phDialP" unique_id=1052099167]
+[node name="phDial" type="MeshInstance3D" parent="PipeVatValves/controls/phDialP" unique_id=1052099167]
 transform = Transform3D(-2.0544352e-08, 0, 1.909, 0, 1, 0, -0.47, 0, -8.3445045e-08, -0.193, 0, 0)
 mesh = SubResource("ArrayMesh_yhxo1")
 
-[node name="TempButtonRightP" type="Node3D" parent="controls" unique_id=1478621328]
+[node name="TempButtonRightP" type="Node3D" parent="PipeVatValves/controls" unique_id=1478621328]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.290357, 5.476774, -10.663881)
 
-[node name="TempButtonRight" type="MeshInstance3D" parent="controls/TempButtonRightP" unique_id=919307088]
+[node name="TempButtonRight" type="MeshInstance3D" parent="PipeVatValves/controls/TempButtonRightP" unique_id=919307088]
 transform = Transform3D(-4.371139e-08, 0.9304176, 0.3665012, 0, 0.3665012, -0.9304176, -1, -4.0669846e-08, -1.6020277e-08, 0, 0, 0)
-material_override = ExtResource("1_gyfit")
+material_override = ExtResource("1_whxrb")
 mesh = SubResource("ArrayMesh_j5tj0")
 
-[node name="TempButtonLeftP" type="Node3D" parent="controls" unique_id=820841158]
+[node name="Increment" type="Area3D" parent="PipeVatValves/controls/TempButtonRightP/TempButtonRight" unique_id=904356665 node_paths=PackedStringArray("button_press_sequencer", "pressed_audio_stream_player")]
+unique_name_in_owner = true
+transform = Transform3D(0.55, 3.5527137e-15, 0, 3.5527137e-15, -5.9604645e-08, -0.55, 8.881784e-16, 0.55, -5.9604645e-08, 0, -0.03153038, -0.0027270317)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("2_iqog7")
+button_press_sequencer = NodePath("ButtonPressSequencer")
+pressed_audio_stream_player = NodePath("PressedAudioStreamPlayer")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PipeVatValves/controls/TempButtonRightP/TempButtonRight/Increment" unique_id=612772159]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+mesh = SubResource("PrismMesh_g4v7s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PipeVatValves/controls/TempButtonRightP/TempButtonRight/Increment" unique_id=1493786106]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_a0uif")
+
+[node name="ButtonPressSequencer" type="Node" parent="PipeVatValves/controls/TempButtonRightP/TempButtonRight/Increment" unique_id=2025370178 node_paths=PackedStringArray("affected_node", "tween_array")]
+unique_name_in_owner = true
+script = ExtResource("3_48aeq")
+affected_node = NodePath("../..")
+tween_array = [NodePath("Press"), NodePath("Release")]
+metadata/_custom_type_script = "uid://teubb6vs0mf1"
+
+[node name="Press" type="Node" parent="PipeVatValves/controls/TempButtonRightP/TempButtonRight/Increment/ButtonPressSequencer" unique_id=2024310248 node_paths=PackedStringArray("affected_node")]
+unique_name_in_owner = true
+script = ExtResource("4_34rbp")
+affected_node = NodePath("../../..")
+transform3D_tween = SubResource("Resource_s3msb")
+trans_type = 10
+ease_type = 2
+tween_duration = 0.2
+metadata/_custom_type_script = "uid://dk6ci6cn8li37"
+
+[node name="Release" type="Node" parent="PipeVatValves/controls/TempButtonRightP/TempButtonRight/Increment/ButtonPressSequencer" unique_id=1474288319 node_paths=PackedStringArray("affected_node")]
+unique_name_in_owner = true
+script = ExtResource("4_34rbp")
+affected_node = NodePath("../../..")
+transform3D_tween = SubResource("Resource_umvbb")
+trans_type = 4
+ease_type = 2
+tween_duration = 0.2
+metadata/_custom_type_script = "uid://dk6ci6cn8li37"
+
+[node name="PressedAudioStreamPlayer" type="AudioStreamPlayer3D" parent="PipeVatValves/controls/TempButtonRightP/TempButtonRight/Increment" unique_id=368230597]
+unique_name_in_owner = true
+stream = SubResource("AudioStreamRandomizer_g4v7s")
+
+[node name="TempButtonLeftP" type="Node3D" parent="PipeVatValves/controls" unique_id=820841158]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.580713, 10.953548, -21.161129)
 
-[node name="TempButtonLeft" type="MeshInstance3D" parent="controls/TempButtonLeftP" unique_id=1622443584]
-transform = Transform3D(-4.371139e-08, 0.9304176, -0.3665012, 0, 0.3665012, 0.9304176, 1, 4.0669846e-08, -1.6020277e-08, -14.290357, -5.476774, 10.663882)
-material_override = ExtResource("1_gyfit")
+[node name="TempButtonLeft" type="MeshInstance3D" parent="PipeVatValves/controls/TempButtonLeftP" unique_id=1622443584]
+transform = Transform3D(-4.371139e-08, 0.9304176, -0.3665012, 0, 0.3665012, 0.9304176, 1, 4.0669846e-08, -1.6020277e-08, -14.29, -5.476774, 10.663882)
+material_override = ExtResource("1_whxrb")
 mesh = SubResource("ArrayMesh_f8yuj")
 
-[node name="Cylinder_021" type="MeshInstance3D" parent="controls" unique_id=352750081]
+[node name="Decrement" type="Area3D" parent="PipeVatValves/controls/TempButtonLeftP/TempButtonLeft" unique_id=1956158560 node_paths=PackedStringArray("button_press_sequencer", "pressed_audio_stream_player")]
+unique_name_in_owner = true
+transform = Transform3D(-0.55, 4.8082526e-08, 0, 2.101754e-15, 2.4041263e-08, -0.55, -4.8082526e-08, -0.55, -2.4041263e-08, 0, -0.03153038, -0.0027270317)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("2_iqog7")
+button_press_sequencer = NodePath("ButtonPressSequencer")
+pressed_audio_stream_player = NodePath("PressedAudioStreamPlayer")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PipeVatValves/controls/TempButtonLeftP/TempButtonLeft/Decrement" unique_id=2112891855]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+mesh = SubResource("PrismMesh_g4v7s")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="PipeVatValves/controls/TempButtonLeftP/TempButtonLeft/Decrement" unique_id=2137774685]
+transform = Transform3D(-4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConcavePolygonShape3D_a0uif")
+
+[node name="ButtonPressSequencer" type="Node" parent="PipeVatValves/controls/TempButtonLeftP/TempButtonLeft/Decrement" unique_id=538144549 node_paths=PackedStringArray("affected_node", "tween_array")]
+script = ExtResource("3_48aeq")
+affected_node = NodePath("../..")
+tween_array = [NodePath("Press"), NodePath("Release")]
+metadata/_custom_type_script = "uid://teubb6vs0mf1"
+
+[node name="Press" type="Node" parent="PipeVatValves/controls/TempButtonLeftP/TempButtonLeft/Decrement/ButtonPressSequencer" unique_id=1251748402 node_paths=PackedStringArray("affected_node")]
+script = ExtResource("4_34rbp")
+affected_node = NodePath("../../..")
+transform3D_tween = SubResource("Resource_60i7v")
+trans_type = 10
+ease_type = 2
+tween_duration = 0.2
+metadata/_custom_type_script = "uid://dk6ci6cn8li37"
+
+[node name="Release" type="Node" parent="PipeVatValves/controls/TempButtonLeftP/TempButtonLeft/Decrement/ButtonPressSequencer" unique_id=1341512293 node_paths=PackedStringArray("affected_node")]
+script = ExtResource("4_34rbp")
+affected_node = NodePath("../../..")
+transform3D_tween = SubResource("Resource_whxrb")
+trans_type = 4
+ease_type = 2
+tween_duration = 0.2
+metadata/_custom_type_script = "uid://dk6ci6cn8li37"
+
+[node name="PressedAudioStreamPlayer" type="AudioStreamPlayer3D" parent="PipeVatValves/controls/TempButtonLeftP/TempButtonLeft/Decrement" unique_id=1633036020]
+stream = SubResource("AudioStreamRandomizer_g4v7s")
+
+[node name="Cylinder_021" type="MeshInstance3D" parent="PipeVatValves/controls" unique_id=352750081]
 transform = Transform3D(-5.198958e-10, -5.5703344e-09, 0.018313749, -0.011200367, 0.1325919, 1.6364833e-10, -0.014489489, -0.102493435, -7.836137e-10, 26.168528, 5.5483475, -3.1184568)
-material_override = ExtResource("2_8d435")
+material_override = ExtResource("7_3ri5n")
 mesh = SubResource("ArrayMesh_qurt3")
 
-[node name="Pipe And Vat" parent="." unique_id=1669105872 instance=ExtResource("3_goj1n")]
+[node name="Pipe And Vat" parent="PipeVatValves" unique_id=1669105872 instance=ExtResource("8_mji5f")]
 
-[node name=" " parent="Pipe And Vat" index="0" unique_id=976270614]
+[node name=" " parent="PipeVatValves/Pipe And Vat" index="0" unique_id=976270614]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="VatDoorPlate" parent="Pipe And Vat/ " index="0" unique_id=566515589]
+[node name="VatDoorPlate" parent="PipeVatValves/Pipe And Vat/ " index="0" unique_id=566515589]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_001" parent="Pipe And Vat/ /VatDoorPlate" index="0" unique_id=465624295]
+[node name="Plane_001" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate" index="0" unique_id=465624295]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_002" parent="Pipe And Vat/ /VatDoorPlate/Plane_001" index="0" unique_id=1627574667]
+[node name="Plane_002" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001" index="0" unique_id=1627574667]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_003" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002" index="0" unique_id=1806095816]
+[node name="Plane_003" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002" index="0" unique_id=1806095816]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_004" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003" index="0" unique_id=162152353]
+[node name="Plane_004" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003" index="0" unique_id=162152353]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_005" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004" index="0" unique_id=140076049]
+[node name="Plane_005" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004" index="0" unique_id=140076049]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_006" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005" index="0" unique_id=2123434179]
+[node name="Plane_006" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005" index="0" unique_id=2123434179]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_007" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006" index="0" unique_id=1083682277]
+[node name="Plane_007" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006" index="0" unique_id=1083682277]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_008" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007" index="0" unique_id=1919035799]
+[node name="Plane_008" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007" index="0" unique_id=1919035799]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_009" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008" index="0" unique_id=182887117]
+[node name="Plane_009" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008" index="0" unique_id=182887117]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_010" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009" index="0" unique_id=116678632]
+[node name="Plane_010" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009" index="0" unique_id=116678632]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_011" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010" index="0" unique_id=1426421075]
+[node name="Plane_011" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010" index="0" unique_id=1426421075]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_012" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011" index="0" unique_id=2116115358]
+[node name="Plane_012" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011" index="0" unique_id=2116115358]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_013" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012" index="0" unique_id=197898458]
+[node name="Plane_013" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012" index="0" unique_id=197898458]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_014" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013" index="0" unique_id=1417648875]
+[node name="Plane_014" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013" index="0" unique_id=1417648875]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_015" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014" index="0" unique_id=521883470]
+[node name="Plane_015" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014" index="0" unique_id=521883470]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_016" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015" index="0" unique_id=501088912]
+[node name="Plane_016" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015" index="0" unique_id=501088912]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_017" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016" index="0" unique_id=285795757]
+[node name="Plane_017" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016" index="0" unique_id=285795757]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_018" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017" index="0" unique_id=1425125219]
+[node name="Plane_018" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017" index="0" unique_id=1425125219]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_019" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018" index="0" unique_id=1917742665]
+[node name="Plane_019" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018" index="0" unique_id=1917742665]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_020" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019" index="0" unique_id=1403835403]
+[node name="Plane_020" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019" index="0" unique_id=1403835403]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_021" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020" index="0" unique_id=67070851]
+[node name="Plane_021" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020" index="0" unique_id=67070851]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_022" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021" index="0" unique_id=849186609]
+[node name="Plane_022" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021" index="0" unique_id=849186609]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_023" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022" index="0" unique_id=842582214]
+[node name="Plane_023" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022" index="0" unique_id=842582214]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_024" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022/Plane_023" index="0" unique_id=78724770]
+[node name="Plane_024" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022/Plane_023" index="0" unique_id=78724770]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_025" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022/Plane_023/Plane_024" index="0" unique_id=1068849400]
+[node name="Plane_025" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022/Plane_023/Plane_024" index="0" unique_id=1068849400]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_026" parent="Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022/Plane_023/Plane_024/Plane_025" index="0" unique_id=2094155326]
+[node name="Plane_026" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022/Plane_023/Plane_024/Plane_025" index="0" unique_id=2094155326]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Cylinder" parent="Pipe And Vat" index="1" unique_id=1542653781]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder" parent="PipeVatValves/Pipe And Vat" index="1" unique_id=1542653781]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_002" parent="Pipe And Vat" index="2" unique_id=828160572]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_002" parent="PipeVatValves/Pipe And Vat" index="2" unique_id=828160572]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_003" parent="Pipe And Vat" index="3" unique_id=986797847]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_003" parent="PipeVatValves/Pipe And Vat" index="3" unique_id=986797847]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_004" parent="Pipe And Vat" index="4" unique_id=344055948]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_004" parent="PipeVatValves/Pipe And Vat" index="4" unique_id=344055948]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_005" parent="Pipe And Vat" index="5" unique_id=1126921340]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_005" parent="PipeVatValves/Pipe And Vat" index="5" unique_id=1126921340]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_006" parent="Pipe And Vat" index="6" unique_id=326042512]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_006" parent="PipeVatValves/Pipe And Vat" index="6" unique_id=326042512]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_007" parent="Pipe And Vat" index="7" unique_id=643064047]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_007" parent="PipeVatValves/Pipe And Vat" index="7" unique_id=643064047]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_008" parent="Pipe And Vat" index="8" unique_id=1776519127]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_008" parent="PipeVatValves/Pipe And Vat" index="8" unique_id=1776519127]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_009" parent="Pipe And Vat" index="9" unique_id=360518672]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_009" parent="PipeVatValves/Pipe And Vat" index="9" unique_id=360518672]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_010" parent="Pipe And Vat" index="10" unique_id=2038155405]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_010" parent="PipeVatValves/Pipe And Vat" index="10" unique_id=2038155405]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_011" parent="Pipe And Vat" index="11" unique_id=2102528020]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_011" parent="PipeVatValves/Pipe And Vat" index="11" unique_id=2102528020]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_012" parent="Pipe And Vat" index="12" unique_id=59745261]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_012" parent="PipeVatValves/Pipe And Vat" index="12" unique_id=59745261]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_013" parent="Pipe And Vat" index="13" unique_id=1194753038]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_013" parent="PipeVatValves/Pipe And Vat" index="13" unique_id=1194753038]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_014" parent="Pipe And Vat" index="14" unique_id=605555398]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_014" parent="PipeVatValves/Pipe And Vat" index="14" unique_id=605555398]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_015" parent="Pipe And Vat" index="15" unique_id=1005773900]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_015" parent="PipeVatValves/Pipe And Vat" index="15" unique_id=1005773900]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_016" parent="Pipe And Vat" index="16" unique_id=347220002]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_016" parent="PipeVatValves/Pipe And Vat" index="16" unique_id=347220002]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_017" parent="Pipe And Vat" index="17" unique_id=1765017803]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_017" parent="PipeVatValves/Pipe And Vat" index="17" unique_id=1765017803]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_018" parent="Pipe And Vat" index="18" unique_id=1383663887]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_018" parent="PipeVatValves/Pipe And Vat" index="18" unique_id=1383663887]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_019" parent="Pipe And Vat" index="19" unique_id=230549878]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_019" parent="PipeVatValves/Pipe And Vat" index="19" unique_id=230549878]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cube_002" parent="Pipe And Vat" index="20" unique_id=2053594866]
-material_override = ExtResource("2_8d435")
+[node name="Cube_002" parent="PipeVatValves/Pipe And Vat" index="20" unique_id=2053594866]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_024" parent="Pipe And Vat" index="21" unique_id=1424942529]
-material_override = ExtResource("7_12u62")
+[node name="Cylinder_024" parent="PipeVatValves/Pipe And Vat" index="21" unique_id=1424942529]
+material_override = ExtResource("12_81jtx")
 
-[node name="Cylinder_028" parent="Pipe And Vat" index="22" unique_id=1284012108]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_028" parent="PipeVatValves/Pipe And Vat" index="22" unique_id=1284012108]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_029" parent="Pipe And Vat" index="23" unique_id=2093766647]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_029" parent="PipeVatValves/Pipe And Vat" index="23" unique_id=2093766647]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_030" parent="Pipe And Vat" index="24" unique_id=1788442840]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_030" parent="PipeVatValves/Pipe And Vat" index="24" unique_id=1788442840]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_031" parent="Pipe And Vat" index="25" unique_id=1693433532]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_031" parent="PipeVatValves/Pipe And Vat" index="25" unique_id=1693433532]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_032" parent="Pipe And Vat" index="26" unique_id=991904019]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_032" parent="PipeVatValves/Pipe And Vat" index="26" unique_id=991904019]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_033" parent="Pipe And Vat" index="27" unique_id=814104742]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_033" parent="PipeVatValves/Pipe And Vat" index="27" unique_id=814104742]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_034" parent="Pipe And Vat" index="28" unique_id=1639078044]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_034" parent="PipeVatValves/Pipe And Vat" index="28" unique_id=1639078044]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_035" parent="Pipe And Vat" index="29" unique_id=677099944]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_035" parent="PipeVatValves/Pipe And Vat" index="29" unique_id=677099944]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_036" parent="Pipe And Vat" index="30" unique_id=1943756389]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_036" parent="PipeVatValves/Pipe And Vat" index="30" unique_id=1943756389]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_025" parent="Pipe And Vat" index="31" unique_id=1726909569]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_025" parent="PipeVatValves/Pipe And Vat" index="31" unique_id=1726909569]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_037" parent="Pipe And Vat" index="32" unique_id=1577613712]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_037" parent="PipeVatValves/Pipe And Vat" index="32" unique_id=1577613712]
+material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_039" parent="Pipe And Vat" index="33" unique_id=828159724]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_039" parent="PipeVatValves/Pipe And Vat" index="33" unique_id=828159724]
+material_override = ExtResource("7_3ri5n")
 
-[node name="NurbsPath_006" parent="Pipe And Vat" index="34" unique_id=1831212735]
-material_override = ExtResource("7_12u62")
+[node name="NurbsPath_006" parent="PipeVatValves/Pipe And Vat" index="34" unique_id=1831212735]
+material_override = ExtResource("12_81jtx")
 
-[node name="Cylinder_026" parent="Pipe And Vat" index="35" unique_id=1960420025]
-material_override = ExtResource("2_8d435")
+[node name="Cylinder_026" parent="PipeVatValves/Pipe And Vat" index="35" unique_id=1960420025]
+material_override = ExtResource("7_3ri5n")
 
-[node name="ValveConsole2" parent="." unique_id=217254844 instance=ExtResource("8_617sb")]
+[node name="ValveConsole2" parent="PipeVatValves" unique_id=217254844 instance=ExtResource("13_qe0lb")]
 
-[node name="Cylinder_052" parent="ValveConsole2" index="0" unique_id=1694129008]
-material_override = ExtResource("1_gyfit")
+[node name="Cylinder_052" parent="PipeVatValves/ValveConsole2" index="0" unique_id=1694129008]
+material_override = ExtResource("1_whxrb")
 
-[node name="ValveConsole" parent="ValveConsole2" index="1" unique_id=1150806025]
-material_override = ExtResource("1_gyfit")
+[node name="ValveConsole" parent="PipeVatValves/ValveConsole2" index="1" unique_id=1150806025]
+material_override = ExtResource("1_whxrb")
 
-[node name="PhScale_001" parent="ValveConsole2" index="2" unique_id=43483276]
+[node name="TargetLabel" type="Label3D" parent="PipeVatValves/ValveConsole2/ValveConsole" index="0" unique_id=955796310]
+unique_name_in_owner = true
+transform = Transform3D(-8.239228e-09, -0.0995055, 0.2128935, -4.3495243e-09, 0.2128935, 0.0995055, -0.235, -4.5164622e-10, -9.305871e-09, 0.1451683, 0.42400074, -0.016892433)
+text = "WARNING: SPECIMEN TEMP
+EXCEEDS TARGET RANGE"
+font_size = 13
+
+[node name="CurrentLabel" type="Label3D" parent="PipeVatValves/ValveConsole2/ValveConsole" index="1" unique_id=981493387]
+unique_name_in_owner = true
+transform = Transform3D(-9.3058725e-09, -0.0995055, 0.2128935, -4.3495243e-09, 0.2128935, 0.0995055, -0.235, -4.3899897e-16, -1.0272178e-08, 0.16814232, 0.3743577, -0.01240921)
+text = "Temp: "
+
+[node name="PhScale_001" parent="PipeVatValves/ValveConsole2" index="2" unique_id=43483276]
 material_override = SubResource("StandardMaterial3D_46c3x")
 
-[node name="NutrientFlow_001" parent="ValveConsole2" index="3" unique_id=992958604]
+[node name="NutrientFlow_001" parent="PipeVatValves/ValveConsole2" index="3" unique_id=992958604]
 material_override = SubResource("StandardMaterial3D_fqwas")
 
-[editable path="Pipe And Vat"]
-[editable path="ValveConsole2"]
+[node name="TempGaugeControls" type="Node3D" parent="." unique_id=167998769 node_paths=PackedStringArray("increment", "decrement", "target_label", "current_label")]
+script = ExtResource("16_7jfgw")
+increment = NodePath("../PipeVatValves/controls/TempButtonRightP/TempButtonRight/Increment")
+decrement = NodePath("../PipeVatValves/controls/TempButtonLeftP/TempButtonLeft/Decrement")
+target_label = NodePath("../PipeVatValves/ValveConsole2/ValveConsole/TargetLabel")
+current_label = NodePath("../PipeVatValves/ValveConsole2/ValveConsole/CurrentLabel")
+
+[connection signal="pressed" from="PipeVatValves/controls/TempButtonRightP/TempButtonRight/Increment" to="TempGaugeControls" method="_on_increment_pressed"]
+[connection signal="pressed" from="PipeVatValves/controls/TempButtonLeftP/TempButtonLeft/Decrement" to="TempGaugeControls" method="_on_decrement_pressed"]
+
+[editable path="PipeVatValves/Pipe And Vat"]
+[editable path="PipeVatValves/ValveConsole2"]

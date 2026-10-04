@@ -3,8 +3,12 @@
 [ext_resource type="Script" uid="uid://pgoo4mjk0so0" path="res://Content/ValveControlPanel/TempGaugeButtons/temp_gauge_controls.gd" id="1_g73ux"]
 [ext_resource type="PackedScene" uid="uid://cqfiqxxv5oyea" path="res://Content/ValveControlPanel/TempGaugeButtons/Buttons/temp_control_button.tscn" id="2_tg5dm"]
 
-[node name="TempGaugeControls" type="Node3D" unique_id=167998769]
+[node name="TempGaugeControls" type="Node3D" unique_id=167998769 node_paths=PackedStringArray("increment", "decrement", "target_label", "current_label")]
 script = ExtResource("1_g73ux")
+increment = NodePath("Increment")
+decrement = NodePath("Decrement")
+target_label = NodePath("TargetLabel")
+current_label = NodePath("CurrentLabel")
 
 [node name="Increment" parent="." unique_id=904356665 instance=ExtResource("2_tg5dm")]
 unique_name_in_owner = true

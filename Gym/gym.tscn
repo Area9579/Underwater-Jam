@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://5gjy7txskuyd" path="res://Content/ValveControlPanel/PhScaleLever/ph_scale_lever_panel.tscn" id="14_170bl"]
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="14_j07sc"]
 [ext_resource type="PackedScene" uid="uid://bbjy0l63rcy3q" path="res://3D Assets/VDUTerminal.fbx" id="18_7nik5"]
+[ext_resource type="PackedScene" uid="uid://c75ceqrjafian" path="res://Content/ValveControlPanel/valve_control_panel.tscn" id="21_pnf3o"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
 
@@ -305,6 +306,9 @@ environment = ExtResource("11_frjl4")
 
 [node name="VDUTerminal" parent="." unique_id=1752543283 instance=ExtResource("18_7nik5")]
 transform = Transform3D(0.008660284, 0, -0.9999625, 0, 1, 0, 0.9999625, 0, 0.008660284, 4.9084196, 0.7712803, 0.9103308)
+
+[node name="ValveControlPanel" parent="." unique_id=616365444 instance=ExtResource("21_pnf3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.783218, -4.076112, 10.648075)
 
 [editable path="TestHoldInteractable"]
 [editable path="TestClickInteractable"]
