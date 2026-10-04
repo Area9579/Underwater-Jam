@@ -3,8 +3,11 @@
 [ext_resource type="Script" uid="uid://3iewgnlm4pbc" path="res://Content/ValveControlPanel/PhScaleLever/ph_scale_lever_panel.gd" id="1_0l2o5"]
 [ext_resource type="PackedScene" uid="uid://d1ikld10ccwf8" path="res://Content/ValveControlPanel/PhScaleLever/Lever/ph_scale_lever.tscn" id="2_d272e"]
 
-[node name="PhScaleLeverPanel" type="Node3D" unique_id=1948631008]
+[node name="PhScaleLeverPanel" type="Node3D" unique_id=1948631008 node_paths=PackedStringArray("ph_scale_lever", "target_label", "current_label")]
 script = ExtResource("1_0l2o5")
+ph_scale_lever = NodePath("PhScaleLever")
+target_label = NodePath("TargetLabel")
+current_label = NodePath("CurrentLabel")
 
 [node name="PhScaleLever" parent="." unique_id=1265122815 instance=ExtResource("2_d272e")]
 unique_name_in_owner = true

@@ -9,9 +9,9 @@ const MIN : float = 0.0
 const MAX : float = 14.0
 const VALUE_CHANGE_AMOUNT : float = 1.0
 
-@onready var ph_scale_lever: PhScaleLever = %PhScaleLever
-@onready var target_label: Label3D = %TargetLabel
-@onready var current_label: Label3D = %CurrentLabel
+@export var ph_scale_lever: PhScaleLever
+@export var target_label: Label3D
+@export var current_label: Label3D
 
 var curr_value : float = 0.0
 var target_value : float = 0.0

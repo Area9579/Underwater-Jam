@@ -1,10 +1,10 @@
 class_name NutrientFlowCrankPanel extends ValveControl
 
-@onready var nutrient_flow_crank: NutrientFlowCrank = %NutrientFlowCrank
-@onready var curr_location_path_follow: PathFollow3D = %CurrLocationPathFollow
-@onready var target_location_path_follow: PathFollow3D = %TargetLocationPathFollow
-@onready var curr_location_mesh: MeshInstance3D = %CurrLocationMesh
-@onready var target_location_mesh: MeshInstance3D = %TargetLocationMesh
+@export var nutrient_flow_crank: NutrientFlowCrank
+@export var curr_location_path_follow: PathFollow3D
+@export var target_location_path_follow: PathFollow3D
+@export var curr_location_mesh: MeshInstance3D
+@export var target_location_mesh: MeshInstance3D
 
 const MIN : float = 0.0
 const MAX : float = 1.0

@@ -12,10 +12,11 @@ top_radius = 0.045898438
 bottom_radius = 0.045898438
 height = 0.37890625
 
-[node name="PhScaleLever" type="Area3D" unique_id=1993526663]
+[node name="PhScaleLever" type="Area3D" unique_id=1993526663 node_paths=PackedStringArray("audio_stream_player_3d")]
 collision_layer = 8
 collision_mask = 8
 script = ExtResource("1_5gat1")
+audio_stream_player_3d = NodePath("AudioStreamPlayer3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=98050261]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1921997, 0)
