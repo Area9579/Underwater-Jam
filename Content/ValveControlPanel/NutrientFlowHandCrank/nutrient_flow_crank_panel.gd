@@ -8,25 +8,21 @@ class_name NutrientFlowCrankPanel extends ValveControl
 
 const MIN : float = 0.0
 const MAX : float = 1.0
-const VALUE_CHANGE_AMOUNT : float = 0.01
-
+const VALUE_CHANGE_AMOUNT : float = 0.1
 
 func _ready() -> void:
-	nutrient_flow_crank.increment_value.connect(_on_nutrient_flow_crank_clockwise)
-	nutrient_flow_crank.decrement_value.connect(_on_nutrient_flow_crank_counter_clockwise)
+	nutrient_flow_crank.value_changed.connect(_on_value_changed)
 
 
-func _on_nutrient_flow_crank_clockwise() -> void:
+func get_rotation_from_curr_value() -> float:
+	return Utils.remap_with_clamp(curr_location_path_follow.progress_ratio, MIN, MAX, 0, 360)
+
+
+func _on_value_changed(value : float) -> void:
 	if player_won:
 		return
-	curr_location_path_follow.progress_ratio = clampf(curr_location_path_follow.progress_ratio + VALUE_CHANGE_AMOUNT, MIN, MAX)
-	check_for_success()
-
-
-func _on_nutrient_flow_crank_counter_clockwise() -> void:
-	if player_won:
-		return
-	curr_location_path_follow.progress_ratio = clampf(curr_location_path_follow.progress_ratio - VALUE_CHANGE_AMOUNT, MIN, MAX)
+	curr_location_path_follow.progress_ratio = clampf(curr_location_path_follow.progress_ratio + (value * VALUE_CHANGE_AMOUNT), MIN, MAX)
+	nutrient_flow_crank.rotation.y = deg_to_rad(get_rotation_from_curr_value())
 	check_for_success()
 
 

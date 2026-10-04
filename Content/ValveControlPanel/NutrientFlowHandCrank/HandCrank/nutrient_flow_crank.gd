@@ -1,9 +1,8 @@
 class_name NutrientFlowCrank extends Area3D
 
-var interaction_handler : NutrientFlowCrankInteractionHandler = NutrientFlowCrankInteractionHandler.new(self)
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = %AudioStreamPlayer3D
 
+var interaction_handler : NutrientFlowCrankInteractionHandler = NutrientFlowCrankInteractionHandler.new(self)
+
 @warning_ignore("unused_signal")
-signal increment_value
-@warning_ignore("unused_signal")
-signal decrement_value
+signal value_changed(value : float)

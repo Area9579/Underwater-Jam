@@ -4,6 +4,8 @@ var lever : PhScaleLever
 
 var interacting_entity : FirstPersonEntityController
 
+var audio_stream_pos : float = 0.0
+
 func _init(interactable_node : PhScaleLever) -> void:
 	super(interactable_node)
 	
@@ -36,6 +38,16 @@ func _input(event: InputEvent) -> void:
 func follow_mouse_relative_motion(event : InputEventMouseMotion) -> void:
 	var height : float = abs(get_viewport().get_visible_rect().end.y - get_viewport().get_visible_rect().position.y)
 	lever.value_changed.emit(Utils.remap_with_clamp(event.screen_relative.y, -height/2, height/2, -1.0, 1.0))
+	play_squeak()
+
+func play_squeak() -> void:
+	if lever.audio_stream_player_3d.playing:
+		return
+	
+	lever.audio_stream_player_3d.play(audio_stream_pos)
+	await get_tree().create_timer(0.1).timeout
+	audio_stream_pos = lever.audio_stream_player_3d.get_playback_position()
+	lever.audio_stream_player_3d.stop()
 
 
 
