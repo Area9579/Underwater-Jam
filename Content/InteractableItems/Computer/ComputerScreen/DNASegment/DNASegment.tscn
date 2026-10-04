@@ -4,17 +4,13 @@
 [ext_resource type="Texture2D" uid="uid://bbpwlymu0bhbn" path="res://Content/InteractableItems/Computer/ComputerScreen/DNASegment/Assets/halfHelix.png" id="2_svxqu"]
 [ext_resource type="Texture2D" uid="uid://dgfpofreertcu" path="res://Content/InteractableItems/Computer/ComputerScreen/DNASegment/Assets/dnaBar_orange.png" id="3_8lviy"]
 
-[node name="DNASegment" type="Control" unique_id=55889794]
+[node name="DNASegment" type="Control" unique_id=827466855]
 custom_minimum_size = Vector2(88, 124.42418)
 layout_mode = 3
-anchor_left = 0.462
-anchor_top = 0.404
-anchor_right = 0.53800005
-anchor_bottom = 0.596
-offset_left = -0.22399902
-offset_top = 18.207977
-offset_right = 0.22393799
-offset_bottom = -18.208008
+anchor_right = 0.076000005
+anchor_bottom = 0.192
+offset_right = 0.44799805
+offset_bottom = 0.00819397
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
@@ -23,11 +19,9 @@ script = ExtResource("1_hljcq")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=609600796]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
 texture = ExtResource("2_svxqu")
 expand_mode = 5
 stretch_mode = 5
@@ -43,6 +37,8 @@ offset_left = -0.007996559
 offset_top = -0.013718605
 offset_right = 0.47369003
 offset_bottom = 0.03234577
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("3_8lviy")
 expand_mode = 3
 stretch_mode = 5
@@ -115,8 +111,8 @@ anchor_top = 0.43600002
 anchor_right = 0.91400003
 anchor_bottom = 0.51600003
 offset_top = -0.03684616
-offset_right = 0.16795349
-offset_bottom = 0.00920105
+offset_right = 0.04168701
+offset_bottom = 0.009223938
 texture = ExtResource("3_8lviy")
 expand_mode = 3
 stretch_mode = 5
@@ -144,13 +140,10 @@ anchor_top = 0.629
 anchor_right = 0.91400003
 anchor_bottom = 0.70900005
 offset_top = -0.050712585
-offset_right = 0.16796875
-offset_bottom = -0.0046691895
+offset_right = 0.04168701
+offset_bottom = -0.0046463013
 texture = ExtResource("3_8lviy")
 expand_mode = 3
 stretch_mode = 5
 
 [node name="LeftSide" type="Node" parent="." unique_id=705506050]
-
-[node name="RightSide" type="Control" parent="." unique_id=736140816]
-anchors_preset = 0

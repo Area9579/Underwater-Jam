@@ -1,9 +1,8 @@
 [gd_scene format=4 uid="uid://cmuk8q4nj8nd"]
 
-[ext_resource type="PackedScene" uid="uid://c4dmwq2wsa657" path="res://Content/InteractableItems/Computer/ComputerButton/computer_button.tscn" id="1_c4eha"]
 [ext_resource type="Script" uid="uid://dp6xydwjwsx0y" path="res://Content/InteractableItems/Computer/computer.gd" id="1_nwl00"]
 [ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="3_47qs5"]
-[ext_resource type="Texture2D" uid="uid://4q335xxs2p" path="res://Content/icon.svg" id="3_oxpca"]
+[ext_resource type="Script" uid="uid://dw3rgqw7ff4qf" path="res://Content/InteractableItems/Computer/computer_interactable.gd" id="4_oxpca"]
 [ext_resource type="PackedScene" uid="uid://cedmc3r84232b" path="res://Content/InteractableItems/Computer/ComputerScreen/computer_screen.tscn" id="4_xmc6x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1cwh6"]
@@ -435,52 +434,11 @@ albedo_texture = SubResource("ViewportTexture_u5s0m")
 uv1_scale = Vector3(6.12, 6.12, 6.12)
 uv1_offset = Vector3(0.5, 0.205, 0)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_g4v7s"]
+
 [node name="Computer" type="Node3D" unique_id=1318926826 node_paths=PackedStringArray("event")]
 script = ExtResource("1_nwl00")
 event = NodePath("ComputerEvent")
-
-[node name="ComputerButton" parent="." unique_id=1562565514 instance=ExtResource("1_c4eha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0)
-hover_text = "R"
-value = "R"
-held_texture = ExtResource("3_oxpca")
-
-[node name="ComputerButton2" parent="." unique_id=819159958 instance=ExtResource("1_c4eha")]
-hover_text = "O"
-value = "O"
-held_texture = ExtResource("3_oxpca")
-
-[node name="ComputerButton3" parent="." unique_id=1787975395 instance=ExtResource("1_c4eha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
-hover_text = "Y"
-value = "Y"
-held_texture = ExtResource("3_oxpca")
-
-[node name="ComputerButton4" parent="." unique_id=560940564 instance=ExtResource("1_c4eha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -0.1, 0.4)
-hover_text = "G"
-value = "G"
-held_texture = ExtResource("3_oxpca")
-
-[node name="ComputerButton5" parent="." unique_id=904534005 instance=ExtResource("1_c4eha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0.4)
-hover_text = "B"
-value = "B"
-held_texture = ExtResource("3_oxpca")
-
-[node name="ComputerButton6" parent="." unique_id=1718856459 instance=ExtResource("1_c4eha")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, -0.1, 0.4)
-hover_text = "P"
-value = "P"
-held_texture = ExtResource("3_oxpca")
-
-[node name="Yappa" type="Label3D" parent="." unique_id=1283133865]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
-text = "Enter Code : ROYGBP"
-
-[node name="Label3D" type="Label3D" parent="." unique_id=208973703]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.4, 0)
-visible = false
 
 [node name="ComputerEvent" type="Node" parent="." unique_id=1559844608]
 script = ExtResource("3_47qs5")
@@ -525,7 +483,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9351155, 0.35434294, 0, -0.35434294, 0.935
 mesh = SubResource("ArrayMesh_qpkc8")
 
 [node name="Switch2" type="MeshInstance3D" parent="VDUTerminal/VDUTerminal/Inputs" unique_id=2086330754]
-transform = Transform3D(1, 0, 0, 0, 0.9351155, 0.35434294, 0, -0.35434294, 0.9351155, -0.27492735, 0.32817224, 0.3113665)
+transform = Transform3D(1, 0, 0, 0, 0.9348256, 0.35510695, 0, -0.35510695, 0.9348256, -0.27492735, 0.32817224, 0.3113665)
 mesh = SubResource("ArrayMesh_jocgi")
 
 [node name="LightKeys" type="MeshInstance3D" parent="VDUTerminal/VDUTerminal/Inputs" unique_id=1470833322]
@@ -545,6 +503,18 @@ surface_material_override/0 = SubResource("StandardMaterial3D_e6jvt")
 size = Vector2i(600, 600)
 
 [node name="ComputerScreen" parent="SubViewport" unique_id=563600665 instance=ExtResource("4_xmc6x")]
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=784599618]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05880048, 0.41077206, -0.17109387)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=299481471]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("4_oxpca")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=2005709568]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.41584212, -0.55560654)
+shape = SubResource("BoxShape3D_g4v7s")
 
 [connection signal="event_disabled" from="ComputerEvent" to="." method="_on_event_event_disabled"]
 [connection signal="event_enabled" from="ComputerEvent" to="." method="_on_event_event_enabled"]

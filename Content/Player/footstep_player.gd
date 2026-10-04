@@ -1,7 +1,8 @@
 extends AudioStreamPlayer
 
 
-@export var state_machine : EntityStateMachine
+@export var player : Player
+
 
 var player_is_walking : bool = false
 
@@ -13,20 +14,15 @@ func _ready() -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	if state_machine.curr_state is WalkingEntityState:
-		player_is_walking = true
-	else:
-		player_is_walking = false
+	if player.velocity.round() == Vector3.ZERO or !player.is_on_floor() : return
 
-	if !player_is_walking:
-		return
 	
 	if !self.playing:
 		self.play()
 
 
 func _on_footstep_player_finished() -> void:
-	if !player_is_walking:
+	if player.velocity.round() == Vector3.ZERO or !player.is_on_floor():
 		self.stop()
 		return
 	

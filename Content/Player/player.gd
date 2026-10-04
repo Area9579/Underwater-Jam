@@ -4,6 +4,7 @@ class_name Player extends FirstPersonEntityController
 @onready var footstep_player: AudioStreamPlayer = %FootstepPlayer
 @onready var interaction_raycast: InteractionRaycast = %InteractionRaycast
 @onready var hand_icon: TextureRect = %HandIcon
+@onready var camera_3d: Camera3D = %Camera3D
 
 const HAND_OPEN = preload("uid://d1bht2p36xbyw")
 const HAND_CLOSED = preload("uid://disykxjnkewfx")

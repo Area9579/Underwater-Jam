@@ -9,8 +9,6 @@
 [ext_resource type="Script" uid="uid://cdere083tmmuo" path="res://Addons/Tween Components/Scripts/TweenResources/offset_transform_tween.gd" id="7_xvu28"]
 [ext_resource type="Texture2D" uid="uid://ch6nw7iy4owoh" path="res://UI/ArrowRight.png" id="8_h6toj"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4v7s"]
-
 [sub_resource type="Resource" id="Resource_g4v7s"]
 script = ExtResource("7_xvu28")
 start_offset_position = Vector2(0, 0)
@@ -76,28 +74,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+alignment = 1
 
-[node name="DNALeft" type="VBoxContainer" parent="HBoxContainer/ColorRect2/HBoxContainer" unique_id=2033849483]
+[node name="DNASegment" parent="HBoxContainer/ColorRect2/HBoxContainer" unique_id=55889794 instance=ExtResource("1_6anyq")]
+z_index = 1
 layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Panel" type="Panel" parent="HBoxContainer/ColorRect2/HBoxContainer/DNALeft" unique_id=573183658]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_g4v7s")
-
-[node name="DNASegment" parent="HBoxContainer/ColorRect2/HBoxContainer/DNALeft" unique_id=55889794 instance=ExtResource("1_6anyq")]
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="DNARight" type="VBoxContainer" parent="HBoxContainer/ColorRect2/HBoxContainer" unique_id=167987502]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="Panel" type="Panel" parent="HBoxContainer/ColorRect2/HBoxContainer/DNARight" unique_id=1894356638]
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 2
-theme_override_styles/panel = SubResource("StyleBoxEmpty_g4v7s")
+size_flags_vertical = 4
+offset_transform_position_ratio = Vector2(0, -0.23)
+offset_transform_scale = Vector2(2.4, 2.4)
 
 [node name="ColorRect3" type="ColorRect" parent="HBoxContainer" unique_id=1319496145]
 layout_mode = 2
