@@ -3,8 +3,13 @@
 [ext_resource type="Script" uid="uid://b1iqmqiopl6dr" path="res://Content/ValveControlPanel/PhScaleLever/Lever/ph_scale_lever.gd" id="1_5gat1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
-radius = 0.21972656
-height = 0.71972656
+radius = 0.13183594
+height = 0.48547363
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g4v7s"]
+top_radius = 0.045898438
+bottom_radius = 0.045898438
+height = 0.37890625
 
 [node name="PhScaleLever" type="Area3D" unique_id=1993526663]
 collision_layer = 8
@@ -12,5 +17,9 @@ collision_mask = 8
 script = ExtResource("1_5gat1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=98050261]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05908203, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1921997, 0)
 shape = SubResource("CapsuleShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1330540120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17871094, 0)
+mesh = SubResource("CylinderMesh_g4v7s")

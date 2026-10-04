@@ -2,8 +2,8 @@ class_name PhScaleLeverPanel extends ValveControl
 
 # for translating to rotational values
 const MIN_ROTATION : float = 0.0
-const MAX_ROTATION : float = 45.0
-const ROT_OFFSET : float = 0.0
+const MAX_ROTATION : float = 90.0
+const ROT_OFFSET : float = 45
 
 const MIN : float = 0.0
 const MAX : float = 14.0
@@ -16,10 +16,12 @@ const VALUE_CHANGE_AMOUNT : float = 1.0
 var curr_value : float = 0.0
 var target_value : float = 0.0
 
+
 func get_rotation_from_curr_value() -> float:
-	return Utils.remap_with_clamp(curr_value, 0.0, 1.0, MIN_ROTATION + ROT_OFFSET, MAX_ROTATION + ROT_OFFSET)
-
-
+	# remap PH scale to rotation range defined by const values
+	var inbetween : float = Utils.remap_with_clamp(curr_value, MIN, MAX, MIN_ROTATION + ROT_OFFSET, MAX_ROTATION + ROT_OFFSET)
+	# flip scale to get roatation running in correct direction bc idek whats going on
+	return remap(inbetween, MIN_ROTATION + ROT_OFFSET, MAX_ROTATION + ROT_OFFSET, MAX_ROTATION + ROT_OFFSET, MIN_ROTATION + ROT_OFFSET)
 
 func _ready() -> void:
 	setup_values()
@@ -55,6 +57,7 @@ func _on_lever_dragged(value : float) -> void:
 func update_text() -> void:
 	target_label.text = "Target: " + "%.1f" % target_value
 	current_label.text = "Current: " + "%.1f" % curr_value
+	ph_scale_lever.rotation.x = deg_to_rad(get_rotation_from_curr_value())
 
 
 func check_for_success() -> void:
