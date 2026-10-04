@@ -7,18 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://hr32o2ebjj8a" path="res://Gym/Interactables/Hold/test_hold_interactable.tscn" id="5_d8kd1"]
 [ext_resource type="PackedScene" uid="uid://bkj28qpfl2n7k" path="res://Content/InteractableItems/DailyOrder/daily_order_sheet.tscn" id="6_1er27"]
 [ext_resource type="PackedScene" uid="uid://dsowx26n2s2kr" path="res://Gym/BlockOutModels/wall.tscn" id="7_7jjb4"]
-[ext_resource type="Shader" uid="uid://cunvmsic2t2a6" path="res://3D Assets/Shaders/blob.gdshader" id="7_n475g"]
 [ext_resource type="PackedScene" uid="uid://dgndvisekno7p" path="res://Gym/BlockOutModels/roof.tscn" id="8_eou5s"]
-[ext_resource type="ArrayMesh" uid="uid://cvwcipxyyfx16" path="res://3D Assets/BLOB.obj" id="8_ndoub"]
 [ext_resource type="PackedScene" uid="uid://cmuk8q4nj8nd" path="res://Content/InteractableItems/Computer/computer.tscn" id="9_7jjb4"]
 [ext_resource type="PackedScene" uid="uid://cq5osxsjf602p" path="res://Content/Porthole/window_port.tscn" id="9_aa15y"]
 [ext_resource type="PackedScene" uid="uid://bl3jromm4a7fk" path="res://Gym/BlockOutModels/pillar.tscn" id="9_frjl4"]
 [ext_resource type="Script" uid="uid://cua2uk64ok3vg" path="res://Systems/Event Queue/event_queue.gd" id="10_frjl4"]
 [ext_resource type="Environment" uid="uid://6372adp05a4k" path="res://Content/Porthole/baseFog.tres" id="11_frjl4"]
-[ext_resource type="PackedScene" uid="uid://blscnow6u561l" path="res://Content/ValveControlPanel/NutrientFlowHandCrank/nutrient_flow_crank_panel.tscn" id="12_aa15y"]
-[ext_resource type="PackedScene" uid="uid://d0xlu1eut8528" path="res://Content/ValveControlPanel/TempGaugeButtons/temp_gauge_controls.tscn" id="13_cos24"]
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="14_j07sc"]
+[ext_resource type="PackedScene" uid="uid://bvm5ljkf31yqn" path="res://Content/Specimen/speciemen.tscn" id="17_0i5pg"]
 [ext_resource type="PackedScene" uid="uid://bbjy0l63rcy3q" path="res://3D Assets/VDUTerminal.fbx" id="18_7nik5"]
+[ext_resource type="PackedScene" uid="uid://c75ceqrjafian" path="res://Content/ValveControlPanel/valve_control_panel.tscn" id="21_pnf3o"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
 
@@ -28,38 +26,6 @@ size = Vector2(50, 50)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qpgtp"]
 albedo_color = Color(0.67481464, 0.67481464, 0.6748146, 1)
 albedo_texture = ExtResource("2_d8kd1")
-
-[sub_resource type="TorusMesh" id="TorusMesh_aa15y"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_7jjb4"]
-noise_type = 3
-frequency = 0.0014
-fractal_octaves = 3
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n475g"]
-noise = SubResource("FastNoiseLite_7jjb4")
-seamless = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n475g"]
-render_priority = 0
-shader = ExtResource("7_n475g")
-shader_parameter/time_speed = 0.05
-shader_parameter/surface_speed = 1.0
-shader_parameter/spin = 7.4
-shader_parameter/brightness = 0.6
-shader_parameter/color_intensity = 0.0
-shader_parameter/horizontal_frequency = 2.0
-shader_parameter/vertical_frequency = 2.0
-shader_parameter/size = 3.0
-shader_parameter/banding_bias = 0.56
-shader_parameter/wave_texture = SubResource("NoiseTexture2D_n475g")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_n475g")
-shader_parameter/wave_height = 0.055
-shader_parameter/texture_height = 0.23
-shader_parameter/color1 = Color(0.46012205, 0.9707323, 0.6626054, 1)
-shader_parameter/color2 = Color(0.53391707, 0.44811642, 0.7950995, 1)
-shader_parameter/color3 = Color(0.0046855886, 0.117006265, 0.30003342, 1)
-shader_parameter/color4 = Color(0.19955236, 0.4575218, 0.29545337, 1)
 
 [node name="PlayerGym" type="Node3D" unique_id=1618404820]
 script = ExtResource("1_rh7av")
@@ -123,16 +89,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8273606, 0.8331819, -0.9888
 [node name="DailyOrderSheet" parent="." unique_id=1952071443 instance=ExtResource("6_1er27")]
 transform = Transform3D(1.1924881e-08, 0, -1, 0, 1, 0, 1, 0, 1.1924881e-08, 5, 1.562298, 2)
 
-[node name="Donut" type="MeshInstance3D" parent="." unique_id=1443713786]
-transform = Transform3D(0.49041525, 0.87148887, 0, -0.87148887, 0.49041525, 0, 0, 0, 1, -4.1784525, 2.6438553, -0.022537988)
-mesh = SubResource("TorusMesh_aa15y")
-surface_material_override/0 = SubResource("ShaderMaterial_n475g")
-
-[node name="Blob <3" type="MeshInstance3D" parent="." unique_id=198549879]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07599783, 3.1635613, 1.5170021)
-mesh = ExtResource("8_ndoub")
-surface_material_override/0 = SubResource("ShaderMaterial_n475g")
-
 [node name="Computer" parent="." unique_id=1318926826 instance=ExtResource("9_7jjb4")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 1, 3)
 
@@ -145,12 +101,6 @@ metadata/_custom_type_script = "uid://cua2uk64ok3vg"
 script = ExtResource("14_j07sc")
 events_in_stage = [NodePath("../../TestClickInteractable/TestClickInteractableEvent"), NodePath("../../TestHoldInteractable/TestHoldInteractableEvent")]
 metadata/_custom_type_script = "uid://r70s6flykuow"
-
-[node name="NutrientFlowCrankPanel" parent="." unique_id=118694957 instance=ExtResource("12_aa15y")]
-transform = Transform3D(-0.5285424, 0, 0.8489068, 0, 1, 0, -0.8489068, 0, -0.5285424, 3.6405199, 0.16771579, 5.5798755)
-
-[node name="TempGaugeControls" parent="." unique_id=167998769 instance=ExtResource("13_cos24")]
-transform = Transform3D(-0.9287425, 0, -0.37072542, 0, 1, 0, 0.37072542, 0, -0.9287425, 1.9635257, 0.7832272, 6.1815367)
 
 [node name="Floors" type="Node" parent="." unique_id=1281094641]
 
@@ -301,6 +251,12 @@ environment = ExtResource("11_frjl4")
 
 [node name="VDUTerminal" parent="." unique_id=1752543283 instance=ExtResource("18_7nik5")]
 transform = Transform3D(0.008660284, 0, -0.9999625, 0, 1, 0, 0.9999625, 0, 0.008660284, 4.9084196, 0.7712803, 0.9103308)
+
+[node name="ValveControlPanel" parent="." unique_id=616365444 instance=ExtResource("21_pnf3o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.783218, -4.076112, 10.648075)
+
+[node name="Speciemen" parent="." unique_id=174937618 instance=ExtResource("17_0i5pg")]
+transform = Transform3D(0.2561991, 0, -0.966624, 0, 1, 0, 0.966624, 0, 0.2561991, -12.637952, 2.9638014, 2.483758)
 
 [editable path="TestHoldInteractable"]
 [editable path="TestClickInteractable"]

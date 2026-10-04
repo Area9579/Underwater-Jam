@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://5gjy7txskuyd"]
+
+[ext_resource type="Script" uid="uid://3iewgnlm4pbc" path="res://Content/ValveControlPanel/PhScaleLever/ph_scale_lever_panel.gd" id="1_0l2o5"]
+[ext_resource type="PackedScene" uid="uid://d1ikld10ccwf8" path="res://Content/ValveControlPanel/PhScaleLever/Lever/ph_scale_lever.tscn" id="2_d272e"]
+
+[sub_resource type="Curve3D" id="Curve3D_d272e"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, -0.5, 0, 0, 0, 0, 0, 0, 0, 0, 0.475, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_er57q"]
+size = Vector3(0.059352875, 0.07138354, 0.16467285)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dyicy"]
+albedo_color = Color(0.21230483, 0.21230483, 0.21230483, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sh40n"]
+transparency = 1
+albedo_color = Color(0.92156863, 0.49411765, 0.25882354, 0.6392157)
+emission = Color(0.74408454, 0.4010128, 0.18396342, 1)
+emission_energy_multiplier = 0.2
+
+[node name="PhScaleLeverPanel" type="Node3D" unique_id=1948631008 node_paths=PackedStringArray("ph_scale_lever")]
+script = ExtResource("1_0l2o5")
+ph_scale_lever = NodePath("PhScaleLever")
+
+[node name="PhScaleLever" parent="." unique_id=1265122815 instance=ExtResource("2_d272e")]
+unique_name_in_owner = true
+
+[node name="TargetLabel" type="Label3D" parent="." unique_id=743721000]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40978438, 0)
+visible = false
+text = "Target: "
+
+[node name="CurrentLabel" type="Label3D" parent="." unique_id=1627991268]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35848987, 0)
+visible = false
+text = "Current: "
+
+[node name="Path3D" type="Path3D" parent="." unique_id=1975742248]
+transform = Transform3D(0.9530649, -0.30246484, 0.013502284, 0.30249238, 0.95315176, 0, -0.012869726, 0.0040843384, 0.99990886, 0.20293918, 0.6618369, -0.15827627)
+curve = SubResource("Curve3D_d272e")
+
+[node name="CurrLocationPathFollow" type="PathFollow3D" parent="Path3D" unique_id=306154620]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, -0.5, 0)
+
+[node name="CurrLocationMesh" type="MeshInstance3D" parent="Path3D/CurrLocationPathFollow" unique_id=1198858552]
+transform = Transform3D(-4.371139e-08, 0, 0.99999994, 0, 1.0000005, 0, -1, 0, -4.3711385e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_er57q")
+surface_material_override/0 = SubResource("StandardMaterial3D_dyicy")
+
+[node name="TargetLocationPathFollow" type="PathFollow3D" parent="Path3D" unique_id=579685068]
+transform = Transform3D(-4.371139e-08, 1, -4.371139e-08, 0, -4.371139e-08, -1, -1, -4.371139e-08, 1.9106855e-15, 0, 0.14461522, 0)
+progress = 0.64350003
+
+[node name="TargetLocationMesh" type="MeshInstance3D" parent="Path3D/TargetLocationPathFollow" unique_id=94342938]
+transform = Transform3D(-4.371139e-08, 0, 0.99999994, 0, 1.0000005, 0, -1, 0, -4.3711385e-08, 0, 0, 0)
+mesh = SubResource("BoxMesh_er57q")
+surface_material_override/0 = SubResource("StandardMaterial3D_sh40n")

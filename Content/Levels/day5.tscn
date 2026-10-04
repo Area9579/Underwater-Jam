@@ -18,7 +18,7 @@
 
 [node name="Day5" unique_id=1228570231 instance=ExtResource("1_icxki")]
 
-[node name="EventQueue" parent="." index="2" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
+[node name="EventQueue" parent="." index="3" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/StartContinuousAudioEventPlayer/StartContinuousAudioEventPlayer"), NodePath("../SequentialDialogue/VanceICantBreathe/VanceICantBreatheEvent"), NodePath("../SequentialDialogue/VanceTurnOffPurge/VanceTurnOffPurgeEvent"), NodePath("../SequentialDialogue/BigMetallicSlam/BigMetallicSlamEvent"), NodePath("../SequentialDialogue/VanceItsGonnaBreakTheGlass/VanceItsGonnaBreakTheGlassEvent"), NodePath("../SequentialDialogue/SFXWrenchHitOnGlass/SFXWrenchHitOnGlassEvent"), NodePath("../SequentialDialogue/EndContinueousAudioEvent/EndContinueousAudioEvent"), NodePath("../SequentialDialogue/SFXIndustrialLightHum2/SFXIndustrialLightHum2"), NodePath("../SequentialDialogue/SFXGlassShatter/SFXGlassShatterEvent")]
 
 [node name="VanceICantBreathe" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="6" unique_id=796755007]

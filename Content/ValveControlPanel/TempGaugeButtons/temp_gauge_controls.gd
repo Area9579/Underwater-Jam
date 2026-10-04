@@ -1,9 +1,9 @@
 class_name TempGaugeControls extends ValveControl
 
-@onready var increment: TempControlButton = %Increment as TempControlButton
-@onready var decrement: TempControlButton = %Decrement as TempControlButton
-@onready var target_label: Label3D = %TargetLabel
-@onready var current_label: Label3D = %CurrentLabel
+@export var increment: TempControlButton
+@export var decrement: TempControlButton
+@export var target_label: Label3D
+@export var current_label: Label3D
 
 # these are min/max values based on celcius temps, 22.0*C is abt room temp
 const MIN : float = 0.0
@@ -15,7 +15,16 @@ var target_value : float = 0.0
 
 func _ready() -> void:
 	setup_values()
-	connect_signals()
+	#connect_signals()
+
+func _on_event_event_disabled() -> void:
+	increment.interaction_handler.disable()
+	decrement.interaction_handler.disable()
+
+
+func _on_event_event_enabled() -> void:
+	increment.interaction_handler.enable()
+	decrement.interaction_handler.enable()
 
 
 func connect_signals() -> void:
@@ -56,8 +65,20 @@ func _on_decrement_pressed() -> void:
 
 
 func update_text() -> void:
-	target_label.text = "Target: " + "%.1f" % target_value
-	current_label.text = "Current: " + "%.1f" % curr_value
+	current_label.text = "Temp: " + "%.1f" % curr_value
+	
+	if Utils.nearly_equal(curr_value, target_value, VALUE_CHANGE_AMOUNT):
+		finish()
+		return
+	
+	if curr_value > target_value:
+		target_label.text = "WARNING: SPECIMEN TEMP\nEXCEEDS TARGET RANGE"
+		target_label.modulate = Color.CRIMSON
+		current_label.modulate = Color.CRIMSON
+	else:
+		target_label.text = "WARNING: SPECIMEN TEMP\nUNDER TARGET RANGE"
+		target_label.modulate = Color.BLUE_VIOLET
+		current_label.modulate = Color.BLUE_VIOLET
 
 
 func check_for_success() -> void:
@@ -71,6 +92,7 @@ func finish() -> void:
 	super()
 	increment.interaction_handler.is_enabled = false
 	decrement.interaction_handler.is_enabled = false
-	target_label.modulate = Color.GREEN
-	current_label.modulate = Color.GREEN
+	target_label.text = "SPECIMEN TEMP\nMEETS TARGET RANGE"
+	target_label.modulate = Color.LIGHT_GREEN
+	current_label.modulate = Color.LIGHT_GREEN
 	

@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://d1ikld10ccwf8"]
+
+[ext_resource type="Script" uid="uid://b1iqmqiopl6dr" path="res://Content/ValveControlPanel/PhScaleLever/Lever/ph_scale_lever.gd" id="1_5gat1"]
+[ext_resource type="AudioStream" uid="uid://bajdhfxd04d0d" path="res://AUDIO/SFX/VALVE MINI GAME/Wheel_Crank_Sfx.wav" id="2_6bu2a"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g4v7s"]
+radius = 0.13183594
+height = 0.48547363
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g4v7s"]
+top_radius = 0.045898438
+bottom_radius = 0.045898438
+height = 0.37890625
+
+[node name="PhScaleLever" type="Area3D" unique_id=1993526663 node_paths=PackedStringArray("audio_stream_player_3d")]
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("1_5gat1")
+audio_stream_player_3d = NodePath("AudioStreamPlayer3D")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=98050261]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1921997, 0)
+shape = SubResource("CapsuleShape3D_g4v7s")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1330540120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17871094, 0)
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." unique_id=1358061381]
+unique_name_in_owner = true
+stream = ExtResource("2_6bu2a")
+pitch_scale = 1.22
