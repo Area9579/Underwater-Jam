@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://d0xlu1eut8528"]
+
+[ext_resource type="Script" uid="uid://pgoo4mjk0so0" path="res://Content/ValveControlPanel/TempGauge/temp_gauge_controls.gd" id="1_g73ux"]
+[ext_resource type="PackedScene" uid="uid://cqfiqxxv5oyea" path="res://Content/ValveControlPanel/TempGauge/Buttons/temp_control_button.tscn" id="2_tg5dm"]
+
+[node name="TempGaugeControls" type="Node3D" unique_id=167998769]
+script = ExtResource("1_g73ux")
+
+[node name="Increment" parent="." unique_id=904356665 instance=ExtResource("2_tg5dm")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16782355, 0, 0)
+
+[node name="MeshInstance3D" parent="Increment" index="0" unique_id=612772159]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D2" parent="Increment" index="1" unique_id=1493786106]
+transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="Decrement" parent="." unique_id=1956158560 instance=ExtResource("2_tg5dm")]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17540202, 0, 0)
+
+[node name="TargetLabel" type="Label3D" parent="." unique_id=955796310]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.40978438, 0)
+text = "Target: "
+
+[node name="CurrentLabel" type="Label3D" parent="." unique_id=981493387]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.35848987, 0)
+text = "Current: "
+
+[editable path="Increment"]
+[editable path="Decrement"]

@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://cua2uk64ok3vg" path="res://Systems/Event Queue/event_queue.gd" id="10_frjl4"]
 [ext_resource type="Environment" uid="uid://6372adp05a4k" path="res://Content/Porthole/baseFog.tres" id="11_frjl4"]
 [ext_resource type="PackedScene" uid="uid://blscnow6u561l" path="res://Content/ValveControlPanel/HandCrank/hand_crank_controls.tscn" id="12_aa15y"]
+[ext_resource type="PackedScene" uid="uid://d0xlu1eut8528" path="res://Content/ValveControlPanel/TempGauge/temp_gauge_controls.tscn" id="13_cos24"]
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="14_j07sc"]
 [ext_resource type="PackedScene" uid="uid://bbjy0l63rcy3q" path="res://3D Assets/VDUTerminal.fbx" id="18_7nik5"]
 
@@ -147,6 +148,9 @@ metadata/_custom_type_script = "uid://r70s6flykuow"
 
 [node name="ValveControlPanel" parent="." unique_id=118694957 instance=ExtResource("12_aa15y")]
 transform = Transform3D(-0.5285424, 0, 0.8489068, 0, 1, 0, -0.8489068, 0, -0.5285424, 3.6405199, 0.16771579, 5.5798755)
+
+[node name="TempGaugeControls" parent="." unique_id=167998769 instance=ExtResource("13_cos24")]
+transform = Transform3D(-0.9287425, 0, -0.37072542, 0, 1, 0, 0.37072542, 0, -0.9287425, 1.9635257, 0.7832272, 6.1815367)
 
 [node name="Floors" type="Node" parent="." unique_id=1281094641]
 

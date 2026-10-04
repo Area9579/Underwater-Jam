@@ -1,7 +1,7 @@
 class_name HandCrankInteractionHandler extends AbstractInteractionHandler
 
 var hand_crank : HandCrank
-
+var audio_stream_pos : float = 0.0
 
 func _init(interactable_node : HandCrank) -> void:
 	super(interactable_node)
@@ -28,9 +28,20 @@ func do_interaction(_entity : FirstPersonEntityController) -> void:
 	elif Input.is_action_pressed("alt_interact"):
 		tween.tween_method(subtract_from_rotation, 0, 1, 0.01)
 	
+	play_squeak()
 	await tween.finished
+	
 	is_interacting = false
 
+func play_squeak() -> void:
+	if hand_crank.audio_stream_player_3d.playing:
+		return
+	
+	hand_crank.audio_stream_player_3d.play(audio_stream_pos)
+	await get_tree().create_timer(0.1).timeout
+	audio_stream_pos = hand_crank.audio_stream_player_3d.get_playback_position()
+	hand_crank.audio_stream_player_3d.stop()
+	
 
 func add_to_rotation(value : float) -> void:
 	hand_crank.rotation.y += deg_to_rad(value)
