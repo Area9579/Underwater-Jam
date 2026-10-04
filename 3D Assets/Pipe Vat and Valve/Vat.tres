@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dtqalfquc8ltj"]
+
+[ext_resource type="Texture2D" uid="uid://c814xp7f3v7r6" path="res://3D Assets/Pipe Vat and Valve/Texture/Main_Color.png" id="1_4gs7y"]
+[ext_resource type="Texture2D" uid="uid://dhvvh2sgmtyad" path="res://3D Assets/Pipe Vat and Valve/Texture/Main_AORoughMetal.png" id="2_ypvjr"]
+[ext_resource type="Texture2D" uid="uid://bqm67u3stpmtr" path="res://3D Assets/Pipe Vat and Valve/Texture/Main_Normal.png" id="3_n784b"]
+
+[resource]
+albedo_texture = ExtResource("1_4gs7y")
+metallic = 1.0
+metallic_texture = ExtResource("2_ypvjr")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("2_ypvjr")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("3_n784b")
+ao_enabled = true
+ao_texture = ExtResource("2_ypvjr")
