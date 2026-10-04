@@ -60,12 +60,31 @@ metadata/_edit_use_anchors_ = true
 [node name="ColorRect" type="ColorRect" parent="HBoxContainer" unique_id=959906661]
 layout_mode = 2
 size_flags_horizontal = 3
-color = Color(0, 0, 0, 1)
+color = Color(0.30588236, 0.30588236, 0.30588236, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="HBoxContainer/ColorRect" unique_id=862223750]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.042000003
+anchor_top = 0.273
+anchor_right = 0.95800006
+anchor_bottom = 0.84000003
+offset_left = -0.12800217
+offset_top = 0.09599304
+offset_right = 0.12799072
+offset_bottom = -0.32000732
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "A & D to switch
+Space to select"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ColorRect2" type="ColorRect" parent="HBoxContainer" unique_id=72398631]
 layout_mode = 2
 size_flags_horizontal = 3
-color = Color(0.8118375, 0.8118375, 0.8118375, 1)
+color = Color(0.30588236, 0.30588236, 0.30588236, 1)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/ColorRect2" unique_id=349757815]
 layout_mode = 1
@@ -86,7 +105,7 @@ offset_transform_scale = Vector2(2.4, 2.4)
 [node name="ColorRect3" type="ColorRect" parent="HBoxContainer" unique_id=1319496145]
 layout_mode = 2
 size_flags_horizontal = 3
-color = Color(0.44291076, 0.44291076, 0.44291073, 1)
+color = Color(0.30588236, 0.30588236, 0.30588236, 1)
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=1754649756]
 layout_mode = 1

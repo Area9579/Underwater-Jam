@@ -22,6 +22,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 texture = ExtResource("2_svxqu")
 expand_mode = 5
 stretch_mode = 5
@@ -145,5 +147,3 @@ offset_bottom = -0.0046463013
 texture = ExtResource("3_8lviy")
 expand_mode = 3
 stretch_mode = 5
-
-[node name="LeftSide" type="Node" parent="." unique_id=705506050]
