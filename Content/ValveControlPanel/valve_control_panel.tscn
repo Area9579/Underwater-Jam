@@ -1,10 +1,13 @@
 [gd_scene format=4 uid="uid://c75ceqrjafian"]
 
 [ext_resource type="Material" uid="uid://dct8llpfe8mss" path="res://3D Assets/Pipe Vat and Valve/Valve.tres" id="1_whxrb"]
+[ext_resource type="Script" uid="uid://3iewgnlm4pbc" path="res://Content/ValveControlPanel/PhScaleLever/ph_scale_lever_panel.gd" id="2_34rbp"]
 [ext_resource type="Script" uid="uid://dtwnc5o5o74ws" path="res://Content/ValveControlPanel/TempGaugeButtons/Buttons/temp_control_button.gd" id="2_iqog7"]
 [ext_resource type="Script" uid="uid://teubb6vs0mf1" path="res://Addons/Tween Components/Scripts/Effect Sequencers/node_3D_tween_sequencer.gd" id="3_48aeq"]
 [ext_resource type="Script" uid="uid://dk6ci6cn8li37" path="res://Addons/Tween Components/Scripts/Components/node3D_tween.gd" id="4_34rbp"]
+[ext_resource type="Script" uid="uid://b1iqmqiopl6dr" path="res://Content/ValveControlPanel/PhScaleLever/Lever/ph_scale_lever.gd" id="4_f8dfx"]
 [ext_resource type="Script" uid="uid://bvekgf6tgcfay" path="res://Addons/Tween Components/Scripts/TweenResources/transform3d_tween.gd" id="5_f8dfx"]
+[ext_resource type="AudioStream" uid="uid://bajdhfxd04d0d" path="res://AUDIO/SFX/VALVE MINI GAME/Wheel_Crank_Sfx.wav" id="5_wf8ru"]
 [ext_resource type="AudioStream" uid="uid://cv21mg8ihvq2e" path="res://AUDIO/SFX/VALVE MINI GAME/Emergency_O2_Switch_OFF.wav" id="6_wf8ru"]
 [ext_resource type="Material" uid="uid://dtqalfquc8ltj" path="res://3D Assets/Pipe Vat and Valve/Vat.tres" id="7_3ri5n"]
 [ext_resource type="PackedScene" uid="uid://bitvmasqrv26k" path="res://3D Assets/Pipe Vat and Valve/Pipe And Vat.glb" id="8_mji5f"]
@@ -92,6 +95,15 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8g8q3")
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3ri5n"]
+radius = 0.04345703
+height = 0.34742737
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_g4v7s"]
+top_radius = 0.045898438
+bottom_radius = 0.045898438
+height = 0.37890625
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_al628"]
 resource_name = "Red"
 cull_mode = 2
@@ -130,6 +142,13 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_ee7ys")
 
+[sub_resource type="Curve3D" id="Curve3D_34rbp"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.006052017, -0.0006093979, -0.0013332367, 0, 0, 0, 0, 0, 0, -0.001162529, 0.19250745, 6.0081482e-05),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
 [sub_resource type="ArrayMesh" id="ArrayMesh_bqo1w"]
 _surfaces = [{
 "aabb": AABB(-0.056855228, 0.0016068915, -0.0013308463, 0.113710456, 1e-05, 0.0026616927),
@@ -161,6 +180,13 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bqo1w")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_d272e"]
+transparency = 1
+albedo_color = Color(0.83137256, 0.31764707, 0, 0.5137255)
+emission_enabled = true
+emission = Color(0.17641911, 0.17641908, 0.17641908, 1)
+emission_operator = 1
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_xqqsx"]
 _surfaces = [{
@@ -317,6 +343,21 @@ albedo_texture = ExtResource("15_paj08")
 
 [node name="ValveControlPanel" type="Node3D" unique_id=616365444]
 
+[node name="TempGaugeControls" type="Node3D" parent="." unique_id=167998769 node_paths=PackedStringArray("increment", "decrement", "target_label", "current_label")]
+script = ExtResource("16_7jfgw")
+increment = NodePath("../PipeVatValves/controls/TempButtonRightP/TempButtonRight/Increment")
+decrement = NodePath("../PipeVatValves/controls/TempButtonLeftP/TempButtonLeft/Decrement")
+target_label = NodePath("../PipeVatValves/ValveConsole2/ValveConsole/TargetLabel")
+current_label = NodePath("../PipeVatValves/ValveConsole2/ValveConsole/CurrentLabel")
+
+[node name="PhScaleLeverPanel" type="Node3D" parent="." unique_id=1948631008 node_paths=PackedStringArray("ph_scale_lever", "curr_location_path_follow", "target_location_path_follow", "curr_location_mesh", "target_location_mesh")]
+script = ExtResource("2_34rbp")
+ph_scale_lever = NodePath("../PipeVatValves/controls/PhScaleLever/PhScaleLever")
+curr_location_path_follow = NodePath("../PipeVatValves/controls/phDialP/Path3D/CurrLocationPathFollow")
+target_location_path_follow = NodePath("../PipeVatValves/controls/phDialP/Path3D/TargetLocationPathFollow")
+curr_location_mesh = NodePath("../PipeVatValves/controls/phDialP/Path3D/CurrLocationPathFollow/phDial")
+target_location_mesh = NodePath("../PipeVatValves/controls/phDialP/Path3D/TargetLocationPathFollow/phDial")
+
 [node name="PipeVatValves" type="Node3D" parent="." unique_id=309984907]
 
 [node name="controls" type="Node3D" parent="PipeVatValves" unique_id=1800504193]
@@ -329,10 +370,33 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 1, 0, 0, 0)
 material_override = ExtResource("1_whxrb")
 mesh = SubResource("ArrayMesh_dhlpj")
 
-[node name="Cylinder_045" type="MeshInstance3D" parent="PipeVatValves/controls" unique_id=1282760291]
+[node name="PhScaleLever" type="MeshInstance3D" parent="PipeVatValves/controls" unique_id=1282760291]
 transform = Transform3D(0.8103997, 0.5858774, 0, -0.5858774, 0.8103997, 0, 0, 0, 1, 14.198, 5.419997, -10.904201)
 material_override = ExtResource("1_whxrb")
 mesh = SubResource("ArrayMesh_xkawl")
+
+[node name="PhScaleLever" type="Area3D" parent="PipeVatValves/controls/PhScaleLever" unique_id=1265122815 node_paths=PackedStringArray("audio_stream_player_3d", "parent_mesh")]
+unique_name_in_owner = true
+transform = Transform3D(0.8103997, -0.5858774, 0, 0.5858774, 0.8103997, 0, 0, 0, 1, 0, 0, 0)
+collision_layer = 8
+collision_mask = 8
+script = ExtResource("4_f8dfx")
+audio_stream_player_3d = NodePath("AudioStreamPlayer3D")
+parent_mesh = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PipeVatValves/controls/PhScaleLever/PhScaleLever" unique_id=98050261]
+transform = Transform3D(0.82511353, 0.564967, 0, -0.564967, 0.82511353, 0, 0, 0, 1, 0.1257267, 0.1661005, 0)
+shape = SubResource("CapsuleShape3D_3ri5n")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="PipeVatValves/controls/PhScaleLever/PhScaleLever" unique_id=1330540120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17871094, 0)
+visible = false
+mesh = SubResource("CylinderMesh_g4v7s")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="PipeVatValves/controls/PhScaleLever/PhScaleLever" unique_id=1358061381]
+unique_name_in_owner = true
+stream = ExtResource("5_wf8ru")
+pitch_scale = 1.22
 
 [node name="RadialDialP" type="Node3D" parent="PipeVatValves/controls" unique_id=1134580654]
 transform = Transform3D(0.41786703, 0.9085082, 0, -0.9085082, 0.41786703, 0, 0, 0, 1, 14.281302, 5.7580633, -10.23045)
@@ -344,9 +408,28 @@ mesh = SubResource("ArrayMesh_t7trg")
 [node name="phDialP" type="Node3D" parent="PipeVatValves/controls" unique_id=252873794]
 transform = Transform3D(0.42893517, 0.9033353, 0, -0.9033353, 0.42893517, 0, 0, 0, 2.3641207, 14.213253, 5.6815634, -10.8613615)
 
-[node name="phDial" type="MeshInstance3D" parent="PipeVatValves/controls/phDialP" unique_id=1052099167]
-transform = Transform3D(-2.0544352e-08, 0, 1.909, 0, 1, 0, -0.47, 0, -8.3445045e-08, -0.193, 0, 0)
+[node name="Path3D" type="Path3D" parent="PipeVatValves/controls/phDialP" unique_id=1714207275]
+transform = Transform3D(-2.9802322e-08, -0.99999154, 0.0007385655, 0.999932, -2.9802322e-08, 0, 7.628553e-11, 0.0017453161, 0.42316645, 0.0010023117, 0.002111435, 0)
+curve = SubResource("Curve3D_34rbp")
+
+[node name="CurrLocationPathFollow" type="PathFollow3D" parent="PipeVatValves/controls/phDialP/Path3D" unique_id=1037789900]
+transform = Transform3D(0.999988, 0, 0, 0, 0.99999046, 0, 0, 0, 0.99998844, -0.001162529, 0.19250745, 6.0081482e-05)
+progress = 0.19372816
+rotation_mode = 0
+
+[node name="phDial" type="MeshInstance3D" parent="PipeVatValves/controls/phDialP/Path3D/CurrLocationPathFollow" unique_id=745228689]
+transform = Transform3D(-4.8548426e-08, 1.0000051, -1.1920952e-07, -5.820766e-11, -5.963693e-08, -1.9090164, -1.1111455, -4.3711538e-08, -9.313226e-10, 0, 0, 0)
 mesh = SubResource("ArrayMesh_yhxo1")
+
+[node name="TargetLocationPathFollow" type="PathFollow3D" parent="PipeVatValves/controls/phDialP/Path3D" unique_id=196012113]
+transform = Transform3D(0.999987, 0, 0, 0, 0.99999017, 0, 0, 0, 0.9999885, -0.001162529, 0.19250745, 6.0081482e-05)
+progress = 0.64350003
+rotation_mode = 0
+
+[node name="phDial" type="MeshInstance3D" parent="PipeVatValves/controls/phDialP/Path3D/TargetLocationPathFollow" unique_id=1052099167]
+transform = Transform3D(-4.8541953e-08, 1.0000069, 2.2917402e-13, -5.820766e-11, -2.9834606e-08, -1.9090173, -1.1111454, -4.3595115e-08, 9.313226e-10, 0, 0, 0)
+mesh = SubResource("ArrayMesh_yhxo1")
+surface_material_override/0 = SubResource("StandardMaterial3D_d272e")
 
 [node name="TempButtonRightP" type="Node3D" parent="PipeVatValves/controls" unique_id=1478621328]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.290357, 5.476774, -10.663881)
@@ -684,13 +767,6 @@ material_override = SubResource("StandardMaterial3D_46c3x")
 
 [node name="NutrientFlow_001" parent="PipeVatValves/ValveConsole2" index="3" unique_id=992958604]
 material_override = SubResource("StandardMaterial3D_fqwas")
-
-[node name="TempGaugeControls" type="Node3D" parent="." unique_id=167998769 node_paths=PackedStringArray("increment", "decrement", "target_label", "current_label")]
-script = ExtResource("16_7jfgw")
-increment = NodePath("../PipeVatValves/controls/TempButtonRightP/TempButtonRight/Increment")
-decrement = NodePath("../PipeVatValves/controls/TempButtonLeftP/TempButtonLeft/Decrement")
-target_label = NodePath("../PipeVatValves/ValveConsole2/ValveConsole/TargetLabel")
-current_label = NodePath("../PipeVatValves/ValveConsole2/ValveConsole/CurrentLabel")
 
 [connection signal="pressed" from="PipeVatValves/controls/TempButtonRightP/TempButtonRight/Increment" to="TempGaugeControls" method="_on_increment_pressed"]
 [connection signal="pressed" from="PipeVatValves/controls/TempButtonLeftP/TempButtonLeft/Decrement" to="TempGaugeControls" method="_on_decrement_pressed"]
