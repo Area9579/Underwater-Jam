@@ -1,17 +1,25 @@
 class_name PhScaleLeverPanel extends ValveControl
 
-@onready var increment: TempControlButton = %Increment as TempControlButton
-@onready var decrement: TempControlButton = %Decrement as TempControlButton
+# for translating to rotational values
+const MIN_ROTATION : float = 0.0
+const MAX_ROTATION : float = 45.0
+const ROT_OFFSET : float = 0.0
+
+const MIN : float = 0.0
+const MAX : float = 14.0
+const VALUE_CHANGE_AMOUNT : float = 1.0
+
+@onready var ph_scale_lever: PhScaleLever = %PhScaleLever
 @onready var target_label: Label3D = %TargetLabel
 @onready var current_label: Label3D = %CurrentLabel
 
-# these are min/max values based on celcius temps, 22.0*C is abt room temp
-const MIN : float = 0.0
-const MAX : float = 112.0
-const VALUE_CHANGE_AMOUNT : float = (MAX - MIN) / 15
-
 var curr_value : float = 0.0
 var target_value : float = 0.0
+
+func get_rotation_from_curr_value() -> float:
+	return Utils.remap_with_clamp(curr_value, 0.0, 1.0, MIN_ROTATION + ROT_OFFSET, MAX_ROTATION + ROT_OFFSET)
+
+
 
 func _ready() -> void:
 	setup_values()
@@ -19,8 +27,7 @@ func _ready() -> void:
 
 
 func connect_signals() -> void:
-	increment.pressed.connect(_on_increment_pressed)
-	decrement.pressed.connect(_on_decrement_pressed)
+	ph_scale_lever.value_changed.connect(_on_lever_dragged)
 
 
 func get_rand_value_in_range() -> float:
@@ -39,20 +46,10 @@ func setup_values() -> void:
 	update_text()
 
 
-func _on_increment_pressed() -> void:
-	if player_won:
-		return
-	curr_value = clampf(curr_value + VALUE_CHANGE_AMOUNT, MIN, MAX)
-	check_for_success()
+func _on_lever_dragged(value : float) -> void:
+	curr_value = clampf(curr_value - (value * VALUE_CHANGE_AMOUNT), MIN, MAX)
 	update_text()
-
-
-func _on_decrement_pressed() -> void:
-	if player_won:
-		return
-	curr_value = clampf(curr_value - VALUE_CHANGE_AMOUNT, MIN, MAX)
 	check_for_success()
-	update_text()
 
 
 func update_text() -> void:
@@ -63,14 +60,13 @@ func update_text() -> void:
 func check_for_success() -> void:
 	if player_won:
 		return
-	if Utils.nearly_equal(curr_value, target_value, VALUE_CHANGE_AMOUNT):
+	if Utils.nearly_equal(curr_value, target_value, 0.05):
 		finish()
 
 
 func finish() -> void:
 	super()
-	increment.interaction_handler.is_enabled = false
-	decrement.interaction_handler.is_enabled = false
+	ph_scale_lever.interaction_handler.is_enabled = false
 	target_label.modulate = Color.GREEN
 	current_label.modulate = Color.GREEN
 	

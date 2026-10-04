@@ -1,6 +1,6 @@
-class_name PhScaleLeverInteractionHandler extends AbstractHoldInteractionHandler
+class_name PhScaleLeverInteractionHandler extends AbstractInteractionHandler
 
-var panel_slider : PhScaleLever
+var lever : PhScaleLever
 
 var interacting_entity : FirstPersonEntityController
 
@@ -11,7 +11,7 @@ func _init(interactable_node : PhScaleLever) -> void:
 		printerr("%s: Interactable node: %s is not a PanelSlider" % [self, interactable_node])
 		return
 	
-	panel_slider = interactable_node
+	lever = interactable_node
 
 
 func _input(event: InputEvent) -> void:
@@ -26,8 +26,10 @@ func _input(event: InputEvent) -> void:
 	
 	if event is not InputEventMouseMotion:
 		return
+	if !is_enabled:
+		return
 	
-	panel_slider.follow_mouse_relative_motion(event as InputEventMouseMotion)
+	lever.follow_mouse_relative_motion(event as InputEventMouseMotion)
 
 
 func is_correct_input_given() -> bool:
