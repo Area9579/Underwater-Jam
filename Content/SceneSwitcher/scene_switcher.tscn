@@ -14,6 +14,16 @@ script = ExtResource("2_rywws")
 end_modulate = Color(1, 1, 1, 0)
 metadata/_custom_type_script = "uid://dby7depabb4fv"
 
+[sub_resource type="Resource" id="Resource_rywws"]
+script = ExtResource("2_rywws")
+start_modulate = Color(1, 1, 1, 0)
+metadata/_custom_type_script = "uid://dby7depabb4fv"
+
+[sub_resource type="Resource" id="Resource_53kpd"]
+script = ExtResource("2_rywws")
+end_modulate = Color(1, 1, 1, 0)
+metadata/_custom_type_script = "uid://dby7depabb4fv"
+
 [node name="SceneSwitcher" type="CanvasLayer" unique_id=1800317572]
 script = ExtResource("1_rywws")
 
@@ -44,4 +54,31 @@ canvas_item_tween = SubResource("Resource_g4v7s")
 trans_type = 4
 ease_type = 2
 tween_duration = 0.5
+metadata/_custom_type_script = "uid://c0eq70gyg7rhf"
+
+[node name="WhiteScreen" type="ColorRect" parent="." unique_id=1767816448]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FadeToWhite" type="Node" parent="WhiteScreen" unique_id=1460383331 node_paths=PackedStringArray("affected_node")]
+unique_name_in_owner = true
+script = ExtResource("1_u23h8")
+affected_node = NodePath("..")
+canvas_item_tween = SubResource("Resource_rywws")
+trans_type = 4
+ease_type = 2
+metadata/_custom_type_script = "uid://c0eq70gyg7rhf"
+
+[node name="FadeFromWhite" type="Node" parent="WhiteScreen" unique_id=1505260482 node_paths=PackedStringArray("affected_node")]
+unique_name_in_owner = true
+script = ExtResource("1_u23h8")
+affected_node = NodePath("..")
+canvas_item_tween = SubResource("Resource_53kpd")
+trans_type = 4
+ease_type = 2
+tween_duration = 2.0
 metadata/_custom_type_script = "uid://c0eq70gyg7rhf"

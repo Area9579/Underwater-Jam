@@ -61,9 +61,3 @@ bones/14/rotation = Quaternion(-0.49456555, -0.0029648321, 0.09802105, 0.8635903
 
 [node name="Sphere_004" parent="Armature_001/Skeleton3D" index="0" unique_id=232584996]
 surface_material_override/0 = SubResource("ShaderMaterial_s45ob")
-
-[node name="Sphere_009" parent="Armature_001/Skeleton3D" index="1" unique_id=1640348019]
-surface_material_override/0 = SubResource("ShaderMaterial_s45ob")
-
-[node name="Sphere_010" parent="Armature_001/Skeleton3D" index="2" unique_id=1033859828]
-surface_material_override/0 = SubResource("ShaderMaterial_s45ob")

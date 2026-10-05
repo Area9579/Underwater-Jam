@@ -2,6 +2,8 @@ extends CanvasLayer
 
 @onready var fade_to_black: ControlTween = %FadeToBlack
 @onready var fade_from_black: ControlTween = %FadeFromBlack
+@onready var fade_to_white: ControlTween = %FadeToWhite
+@onready var fade_from_white: ControlTween = %FadeFromWhite
 
 var is_switching : bool = false
 
