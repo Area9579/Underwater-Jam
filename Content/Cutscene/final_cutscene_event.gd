@@ -7,7 +7,8 @@ class_name FinalCutsceneEvent extends Event
 @export var glass_shattering : AudioStreamPlayer3D
 @export var light_hum : AudioStreamPlayer3D
 @export var tween_player_to_vat : Node3DTween
-
+@export var glass_shattered : Node3D
+@export var glass_whole : Node3D
 @export var vat : Specimen_Controller
 
 @export var all_tasks : EventStage
@@ -49,6 +50,8 @@ func play_anim() -> void:
 	await get_tree().create_timer(0.5).timeout
 	# TODO: switch to broken
 	wrench_hit_on_glass.play()
+	glass_whole.hide()
+	glass_shattered.show()
 	await wrench_hit_on_glass.finished
 	glass_shattering.play()
 	light_hum.play()

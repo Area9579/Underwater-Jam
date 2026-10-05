@@ -41,7 +41,7 @@ uv1_offset = Vector3(0.5, 0.205, 0)
 [node name="Day5" unique_id=1228570231 instance=ExtResource("1_icxki")]
 script = ExtResource("2_u3ed6")
 
-[node name="FinalCutsceneEvent" type="Node" parent="." index="0" unique_id=1445694335 node_paths=PackedStringArray("player", "its_gonna_break_the_glass", "ear_ringing", "wrench_hit_on_glass", "glass_shattering", "light_hum", "tween_player_to_vat", "vat", "all_tasks")]
+[node name="FinalCutsceneEvent" type="Node" parent="." index="0" unique_id=1445694335 node_paths=PackedStringArray("player", "its_gonna_break_the_glass", "ear_ringing", "wrench_hit_on_glass", "glass_shattering", "light_hum", "tween_player_to_vat", "glass_shattered", "glass_whole", "vat", "all_tasks")]
 script = ExtResource("3_3wphl")
 player = NodePath("../Player")
 its_gonna_break_the_glass = NodePath("../Player/VanceItsGonnaBreakTheGlass")
@@ -50,6 +50,8 @@ wrench_hit_on_glass = NodePath("../SequentialDialogue/SFXWrenchHitOnGlass/SFXWre
 glass_shattering = NodePath("../SequentialDialogue/SFXGlassShatter/SFXGlassShatter")
 light_hum = NodePath("../Player/SFXIndustrialLightHum")
 tween_player_to_vat = NodePath("TweenPlayerToVat")
+glass_shattered = NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glassshattered")
+glass_whole = NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glass")
 vat = NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController")
 all_tasks = NodePath("EventStage")
 metadata/_custom_type_script = "uid://bs2q15byk8hvj"
@@ -251,6 +253,9 @@ stream = ExtResource("12_u3ed6")
 [editable path="Computer"]
 [editable path="ValveControlPanel"]
 [editable path="ValveControlPanel/PipeVatValves/Pipe And Vat"]
+[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glass"]
+[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glassshattered"]
+[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/BackGlass"]
 [editable path="ValveControlPanel/PipeVatValves/ValveConsole2"]
 [editable path="Player"]
 [editable path="Player/EYES"]
