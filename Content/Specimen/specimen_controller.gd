@@ -12,8 +12,8 @@ const TWEEN_DURATION: float = 1.0
 
 @onready var _specimen_timer: Timer = $Timer
 @onready var _door_button: Door = $DoorButton
-@onready var _specimen: MeshInstance3D = $Specimen
 
+var _specimen: Node3D
 ## Surface material override on the specimen, set in _ready
 var material: ShaderMaterial
 ## True after the first timer cycle completes
@@ -39,10 +39,18 @@ var bad_color_one: Color = Color(0.973, 0.459, 0.459, 1.0)
 var bad_color_four: Color = Color(0.459, 0.2, 0.209, 1.0)
 
 func _ready() -> void:
+	if has_node("Specimen2"):
+		## Prod
+		_specimen = $Specimen2
+		material = _find_mesh_material(_specimen)
+	else:
+		## Gym
+		_specimen = $Specimen
+		material = _specimen.get_surface_override_material(0)
+	
 	_door_button.light_status.connect(_light_changed)
 	_specimen_timer.timeout.connect(_timer_finished)
 	
-	material = _specimen.get_surface_override_material(0)
 	## Start the timer, then pause it so it only counts down while the light is on
 	_specimen_timer.start(5.0)
 	_specimen_timer.paused = true
@@ -57,6 +65,14 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	#print(_specimen_timer.time_left)
 	pass
+
+func _find_mesh_material(node: Node) -> Material:
+	if node.get_child_count() == 0:
+		return null
+	var child := node.get_child(0)
+	if child is MeshInstance3D:
+		return child.get_surface_override_material(0)
+	return _find_mesh_material(child)
 
 ## Light on resumes the timer, light off pauses it (time left is kept)
 func _light_changed(new_light_status: bool):
