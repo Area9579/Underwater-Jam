@@ -10,18 +10,19 @@
 [ext_resource type="Script" uid="uid://braj1wqtyaoli" path="res://Content/AudioSystems/AudioEventSystem/audio_event_player.gd" id="5_m5y6d"]
 [ext_resource type="AudioStream" uid="uid://dagcowq6ob4l1" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_20.wav" id="5_qxrku"]
 [ext_resource type="AudioStream" uid="uid://dc2rle6wgahcd" path="res://AUDIO/SFX/SPECIMEN/Heartbeat_Fast.wav" id="5_u3ed6"]
+[ext_resource type="PackedScene" uid="uid://ch7ur6eft1frj" path="res://3D Assets/Creature/creatureday_5.tscn" id="6_u3ed6"]
 [ext_resource type="AudioStream" uid="uid://dp065htgsdql5" path="res://AUDIO/SFX/SPECIMEN/Creature_Thump_05.wav" id="9_ifyg8"]
 [ext_resource type="AudioStream" uid="uid://chsgp1vcr0dmr" path="res://AUDIO/SFX/GLASS SFX/Wrench_vs_Glass.wav" id="11_lsvvd"]
 [ext_resource type="AudioStream" uid="uid://b42v5kynma0bi" path="res://AUDIO/SFX/GLASS SFX/Glass_Shattering.wav" id="12_u3ed6"]
 [ext_resource type="AudioStream" uid="uid://c6ijfcf0fingl" path="res://AUDIO/SFX/FACILITY AMBIENCE/AMB_fluorescent_light_01.wav" id="13_oq4sq"]
 [ext_resource type="Script" uid="uid://5r2mrh1rpl2e" path="res://Content/AudioSystems/AudioEventSystem/Continueous Audio Events/end_continuous_audio_event.gd" id="14_u3ed6"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_lsvvd"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_oq4sq"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u3ed6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2xba"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_lsvvd")
+albedo_texture = SubResource("ViewportTexture_oq4sq")
 uv1_scale = Vector3(6.12, 6.12, 6.12)
 uv1_offset = Vector3(0.5, 0.205, 0)
 
@@ -29,7 +30,7 @@ uv1_offset = Vector3(0.5, 0.205, 0)
 script = ExtResource("2_u3ed6")
 
 [node name="Glass" parent="Computer/VDUTerminal/VDUTerminal" parent_id_path=PackedInt32Array(1318926826, 1018499832) index="1" unique_id=480455911]
-surface_material_override/0 = SubResource("StandardMaterial3D_u3ed6")
+surface_material_override/0 = SubResource("StandardMaterial3D_g2xba")
 
 [node name="TargetRadialDial" parent="ValveControlPanel/PipeVatValves/controls/RadialDialP" parent_id_path=PackedInt32Array(616365444, 1134580654) index="1" unique_id=1358226458]
 surface_material_override/0 = null
@@ -46,11 +47,14 @@ stream = ExtResource("9_ifyg8")
 [node name="TerminalAudioOxyPurge" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="2" unique_id=833253724]
 stream = ExtResource("3_lsvvd")
 
-[node name="Specimen" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="0" unique_id=1234053442]
+[node name="Specimen2" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="0" unique_id=1809903521 instance=ExtResource("6_u3ed6")]
+transform = Transform3D(3.3760872, 0, -1.1135783, 0, 3.5549998, 0, 1.1135786, 0, 3.376088, 2.791833, -4.7193747, 1.4077835)
+
+[node name="Specimen" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="1" unique_id=1234053442]
 visible = false
 
 [node name="EventQueue" parent="." index="5" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
-event_queue = [NodePath("../SequentialDialogue/StartContinuousAudioEventPlayer/StartContinuousAudioEventPlayer"), NodePath("../SequentialDialogue/VanceICantBreathe/VanceICantBreatheEvent"), NodePath("../SequentialDialogue/VanceTurnOffPurge/VanceTurnOffPurgeEvent"), NodePath("../SequentialDialogue/BigMetallicSlam/BigMetallicSlamEvent"), NodePath("../SequentialDialogue/VanceItsGonnaBreakTheGlass/VanceItsGonnaBreakTheGlassEvent"), NodePath("../SequentialDialogue/SFXWrenchHitOnGlass/SFXWrenchHitOnGlassEvent"), NodePath("../SequentialDialogue/EndContinueousAudioEvent/EndContinueousAudioEvent"), NodePath("../SequentialDialogue/SFXIndustrialLightHum2/SFXIndustrialLightHum2"), NodePath("../SequentialDialogue/SFXGlassShatter/SFXGlassShatterEvent")]
+event_queue = [NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker"), NodePath("../SequentialDialogue/StartContinuousAudioEventPlayer/StartContinuousAudioEventPlayer"), NodePath("../SequentialDialogue/VanceICantBreathe/VanceICantBreatheEvent"), NodePath("../SequentialDialogue/VanceTurnOffPurge/VanceTurnOffPurgeEvent"), NodePath("../SequentialDialogue/BigMetallicSlam/BigMetallicSlamEvent"), NodePath("../SequentialDialogue/VanceItsGonnaBreakTheGlass/VanceItsGonnaBreakTheGlassEvent"), NodePath("../SequentialDialogue/SFXWrenchHitOnGlass/SFXWrenchHitOnGlassEvent"), NodePath("../SequentialDialogue/EndContinueousAudioEvent/EndContinueousAudioEvent"), NodePath("../SequentialDialogue/SFXIndustrialLightHum2/SFXIndustrialLightHum2"), NodePath("../SequentialDialogue/SFXGlassShatter/SFXGlassShatterEvent")]
 
 [node name="VanceTurnOffPurge" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="7" unique_id=1069698647]
 stream = ExtResource("4_jhbkv")

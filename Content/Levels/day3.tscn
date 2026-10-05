@@ -16,15 +16,6 @@
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="13_5wmqf"]
 [ext_resource type="PackedScene" uid="uid://ca8y62frkjjkh" path="res://3D Assets/Creature/creatureday_Day3.tscn" id="13_e724c"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_1cg11"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w8mtr"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_1cg11")
-uv1_scale = Vector3(6.12, 6.12, 6.12)
-uv1_offset = Vector3(0.5, 0.205, 0)
-
 [node name="Day3" unique_id=1228570231 instance=ExtResource("1_op3j2")]
 script = ExtResource("2_54h6r")
 
@@ -37,8 +28,11 @@ stream = ExtResource("5_v3g70")
 [node name="RadioShutsOffPlayer" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="3" unique_id=443787723]
 stream = ExtResource("9_bxxkf")
 
-[node name="Glass" parent="Computer/VDUTerminal/VDUTerminal" parent_id_path=PackedInt32Array(1318926826, 1018499832) index="1" unique_id=480455911]
-surface_material_override/0 = SubResource("StandardMaterial3D_w8mtr")
+[node name="VDUTerminal" parent="Computer/VDUTerminal" parent_id_path=PackedInt32Array(1318926826, 1664232102) index="0" unique_id=1018499832]
+surface_material_override/0 = null
+
+[node name="Glass" parent="Computer/VDUTerminal/VDUTerminal" index="1" unique_id=480455911]
+surface_material_override/0 = null
 
 [node name="TargetRadialDial" parent="ValveControlPanel/PipeVatValves/controls/RadialDialP" parent_id_path=PackedInt32Array(616365444, 1134580654) index="1" unique_id=1358226458]
 surface_material_override/0 = null
@@ -57,7 +51,7 @@ stream = ExtResource("9_2u7jj")
 [node name="SpecimentHeartbeatPlayer" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="3" unique_id=1202974228]
 stream = ExtResource("8_1cg11")
 
-[node name="creatureday3" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="0" unique_id=1322044866 instance=ExtResource("13_e724c")]
+[node name="Specimen2" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="0" unique_id=1322044866 instance=ExtResource("13_e724c")]
 transform = Transform3D(1.816099, 0, -0.35253987, 0, 1.85, 0, 0.35253987, 0, 1.816099, -0.06926037, -3.0606375, -0.013444775)
 
 [node name="Specimen" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="1" unique_id=1234053442]
