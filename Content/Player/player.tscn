@@ -8,7 +8,86 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbsyd"]
 
+[sub_resource type="Animation" id="Animation_wt837"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.6479641, 0.7408377, -2.0885644)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.5707964, 3.1415925, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tg5l2"]
+resource_name = "Waking Up"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(10.033334, 12),
+"transitions": PackedFloat32Array(1.8660663, 2.1435473),
+"update": 0,
+"values": [Vector3(-1.6479641, 0.7408377, -2.0885644), Vector3(-3.0975215, 1.1077248, -2.0885644)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.0333333, 0.5, 3.6333334, 5.9333334, 10.066667, 11.1, 12),
+"transitions": PackedFloat32Array(1, 2.0000007, 3, 2, 1, 1, 1),
+"update": 0,
+"values": [Vector3(1.5707964, 3.1415927, 0), Vector3(1.5707964, 3.1415927, 0), Vector3(0, 3.1415927, 0), Vector3(0, 4.070108, 0), Vector3(0, 1.5707964, 0), Vector3(-1.4782939, 1.5707964, 0), Vector3(0, 1.5707964, 0)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.1, 11.733334),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"input_disabled"
+}, {
+"args": [],
+"method": &"input_true"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rn1qw"]
+_data = {
+&"RESET": SubResource("Animation_wt837"),
+&"Waking Up": SubResource("Animation_tg5l2")
+}
+
 [node name="Player" unique_id=1495724798 instance=ExtResource("1_thq5r")]
+transform = Transform3D(-1, 1.509958e-07, -6.600236e-15, 0, -4.371139e-08, -1, -1.509958e-07, -1, 4.371139e-08, -1.6479641, 0.7408377, -2.0885644)
 
 [node name="SheetMarker" type="Marker3D" parent="Head/Camera3D" parent_id_path=PackedInt32Array(584939132) index="1" unique_id=1722558729]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.249)
@@ -61,4 +140,6 @@ bus = &"FACILITY BUS"
 script = ExtResource("4_7d8p2")
 player = NodePath("../..")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5" unique_id=1129047215]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5" unique_id=477071854]
+libraries/ = SubResource("AnimationLibrary_rn1qw")
+autoplay = &"Waking Up"
