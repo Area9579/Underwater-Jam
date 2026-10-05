@@ -53,6 +53,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(1.5707964, 3.1415925, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CollisionShape3D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_tg5l2"]
 resource_name = "Waking Up"
@@ -88,15 +100,33 @@ tracks/2/path = NodePath(".")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.1, 11.733334),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0.1, 0.2, 11.066667, 11.733334),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
 "values": [{
 "args": [],
 "method": &"input_disabled"
 }, {
 "args": [],
+"method": &"disable_physics"
+}, {
+"args": [],
+"method": &"enable_physics"
+}, {
+"args": [],
 "method": &"input_true"
 }]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CollisionShape3D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 11.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jpvo4"]
@@ -151,7 +181,7 @@ event_queue = [NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), Node
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10372496, 0)
 
 [node name="Player" parent="." index="8" unique_id=1495724798]
-transform = Transform3D(-1, 1.509958e-07, -6.600237e-15, 0, -4.371139e-08, -1.0000001, -1.509958e-07, -1, 4.3711392e-08, -1.6479641, 0.7408377, -2.0885644)
+is_debug = false
 
 [node name="VanceImAwake2" type="AudioStreamPlayer3D" parent="Player" index="0" unique_id=1885120268]
 stream = ExtResource("3_27u4b")
@@ -319,7 +349,11 @@ metadata/_custom_type_script = "uid://r70s6flykuow"
 [editable path="Computer"]
 [editable path="ValveControlPanel"]
 [editable path="ValveControlPanel/PipeVatValves/Pipe And Vat"]
+[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glass"]
+[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glassshattered"]
+[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/BackGlass"]
 [editable path="ValveControlPanel/PipeVatValves/ValveConsole2"]
+[editable path="LevelLayout"]
 [editable path="Player"]
 [editable path="Player/EYES"]
 [editable path="Printer"]

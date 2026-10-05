@@ -13,7 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://dagcowq6ob4l1" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_20.wav" id="5_qxrku"]
 [ext_resource type="AudioStream" uid="uid://dc2rle6wgahcd" path="res://AUDIO/SFX/SPECIMEN/Heartbeat_Fast.wav" id="5_u3ed6"]
 [ext_resource type="PackedScene" uid="uid://ch7ur6eft1frj" path="res://3D Assets/Creature/creatureday_5.tscn" id="6_u3ed6"]
-[ext_resource type="Shader" uid="uid://b1fhre1ohnqgt" path="res://3D Assets/Pipe Vat and Valve/Glass/blob.gdshader" id="7_iwo3b"]
+[ext_resource type="Shader" uid="uid://b1fhre1ohnqgt" path="res://3D Assets/Pipe Vat and Valve/Glass/glass.gdshader" id="7_iwo3b"]
 [ext_resource type="AudioStream" uid="uid://d2wefqsmiifvl" path="res://Content/Cutscene/freesound_community-052165_ear-ringing-long-extended-falloff-46090.mp3" id="8_g3uua"]
 [ext_resource type="AudioStream" uid="uid://dp065htgsdql5" path="res://AUDIO/SFX/SPECIMEN/Creature_Thump_05.wav" id="9_ifyg8"]
 [ext_resource type="AudioStream" uid="uid://c2vn1yf7gcqnj" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_18.wav" id="9_oq4sq"]
@@ -238,6 +238,7 @@ event_queue = [NodePath("../SequentialDialogue/StartContinuousAudioEventPlayer/S
 
 [node name="Player" parent="." index="9" unique_id=1495724798]
 transform = Transform3D(-1, 1.5099579e-07, -6.6002357e-15, 0, -4.3711385e-08, -0.99999994, -1.509958e-07, -0.99999994, 4.3711385e-08, -1.6479641, 0.7408377, -2.0885644)
+is_debug = false
 
 [node name="EarRinging" type="AudioStreamPlayer3D" parent="Player" index="0" unique_id=475554444]
 stream = ExtResource("8_g3uua")
@@ -395,6 +396,7 @@ stream = ExtResource("12_u3ed6")
 [editable path="ValveControlPanel"]
 [editable path="ValveControlPanel/PipeVatValves/Pipe And Vat"]
 [editable path="ValveControlPanel/PipeVatValves/ValveConsole2"]
+[editable path="LevelLayout"]
 [editable path="Player"]
 [editable path="Player/EYES"]
 [editable path="Printer"]
