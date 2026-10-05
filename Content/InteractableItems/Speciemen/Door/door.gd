@@ -3,8 +3,11 @@ class_name Door extends Area3D
 @warning_ignore("unused_signal")
 signal light_status
 
+const LIGHT_ON_ENERGY: float = 16.0
+
 @onready var hover_text: Label3D = $HoverText
 @onready var uv_light: SpotLight3D = $"../UVLight"
+@onready var vat_lever: MeshInstance3D = %VatLever
 
 var interaction_handler : SpecimenInteractionHandler = SpecimenInteractionHandler.new(self)
 
@@ -14,10 +17,26 @@ func _ready() -> void:
 ## Garb door status from Interaction handler signal being emitted on input
 func door_changed(new_door_status: bool):
 	hover_text.text = str(new_door_status)
+	var lever_tween: Tween = create_tween()
 	
 	if new_door_status:
-		uv_light.light_energy = 16
+		lever_tween.tween_property(vat_lever, "rotation:z", deg_to_rad(-37.7), 1.0)
+		await lever_tween.finished 
+		await flicker_light(LIGHT_ON_ENERGY)
 		light_status.emit(true)
 	elif not new_door_status:
-		uv_light.light_energy = 0
+		lever_tween.tween_property(vat_lever, "rotation:z", deg_to_rad(-133.5), 1.0)
+		await lever_tween.finished
+		await flicker_light(0.0)
 		light_status.emit(false)
+
+## Flickers the UV light on/off, then settles on final_energy
+func flicker_light(final_energy: float, flicker_count: int = 4) -> void:
+	var flicker_tween: Tween = create_tween()
+	for i in flicker_count:
+		flicker_tween.tween_callback(func(): uv_light.light_energy = LIGHT_ON_ENERGY)
+		flicker_tween.tween_interval(randf_range(0.03, 0.1))
+		flicker_tween.tween_callback(func(): uv_light.light_energy = 0.0)
+		flicker_tween.tween_interval(randf_range(0.03, 0.1))
+	flicker_tween.tween_callback(func(): uv_light.light_energy = final_energy)
+	await flicker_tween.finished
