@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://duqqc07ub3xhu" path="res://Content/Levels/Base Map/base_map.tscn" id="1_ax01y"]
 [ext_resource type="Script" uid="uid://c1kigegy377e0" path="res://Content/Levels/day_1.gd" id="2_ite6a"]
-[ext_resource type="PackedScene" uid="uid://cmuk8q4nj8nd" path="res://Content/InteractableItems/Computer/computer.tscn" id="2_wt837"]
 [ext_resource type="AudioStream" uid="uid://c0wwc4bldrq4y" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_01.wav" id="3_27u4b"]
 [ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="3_pf1uq"]
 [ext_resource type="AudioStream" uid="uid://p6sylje18bqs" path="res://AUDIO/SFX/Radio/Radio_On_Sfx.wav" id="4_8hs4d"]
@@ -18,12 +17,12 @@
 [ext_resource type="AudioStream" uid="uid://jpxlldu4uunb" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_09.wav" id="13_j5c48"]
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="18_tg5l2"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ite6a"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_64ylx"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wt837"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ite6a"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ite6a")
+albedo_texture = SubResource("ViewportTexture_64ylx")
 uv1_scale = Vector3(6.12, 6.12, 6.12)
 uv1_offset = Vector3(0.5, 0.205, 0)
 
@@ -48,13 +47,10 @@ stream = ExtResource("11_jpvo4")
 [node name="RadioShutsOff2" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="6" unique_id=1345015375]
 stream = ExtResource("12_ka3wr")
 
-[node name="Computer" parent="LevelLayout" parent_id_path=PackedInt32Array(1577965459) index="97" unique_id=1318926826 instance=ExtResource("2_wt837")]
-transform = Transform3D(-1.2710856, 0, -6.778415, 0, 6.8965664, 0, 6.778415, 0, -1.2710856, 102.397835, 9.028236, -14.372993)
+[node name="Glass" parent="Computer/VDUTerminal/VDUTerminal" parent_id_path=PackedInt32Array(1318926826, 1018499832) index="1" unique_id=480455911]
+surface_material_override/0 = SubResource("StandardMaterial3D_ite6a")
 
-[node name="Glass" parent="LevelLayout/Computer/VDUTerminal/VDUTerminal" parent_id_path=PackedInt32Array(1318926826, 1018499832) index="1" unique_id=480455911]
-surface_material_override/0 = SubResource("StandardMaterial3D_wt837")
-
-[node name="EventQueue" parent="." index="4" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
+[node name="EventQueue" parent="." index="5" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceImAwake/VanceImAwake"), NodePath("../SequentialDialogue/HQWelcome/HQWelcome"), NodePath("../SequentialDialogue/VanceReady/VanceReady"), NodePath("../SequentialDialogue/HQOperationalDirective/HQOperationalDirective"), NodePath("../SequentialDialogue/VanceIncredible/VanceIncredible"), NodePath("../SequentialDialogue/HQSpecimenExplanation/HQSpecimenExplanation"), NodePath("../SequentialDialogue/VanceUnderstand30Days/VanceUnderstand30Days"), NodePath("../SequentialDialogue/HQExcellent/HQExcellent"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceItsOnly30Days/VanceItsOnly30Days"), NodePath("../SequentialDialogue/TaskEventStage")]
 
 [node name="VanceImAwake2" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="0" unique_id=1885120268]
@@ -173,7 +169,7 @@ metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
 [node name="TaskEventStage" type="Node" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="11" unique_id=986682077 node_paths=PackedStringArray("events_in_stage")]
 script = ExtResource("18_tg5l2")
-events_in_stage = [NodePath("../../LevelLayout/Computer/ComputerEvent"), NodePath("../../ValveControlPanel/TempGaugeControls/TempGaugeControlsEvent"), NodePath("../../ValveControlPanel/PhScaleLeverPanel/PhScaleLeverPanelEvent"), NodePath("../../ValveControlPanel/NutrientFlowCrankPanel/NutrientFlowCrankPanelEvent")]
+events_in_stage = [NodePath("../../Computer/ComputerEvent"), NodePath("../../ValveControlPanel/TempGaugeControls/TempGaugeControlsEvent"), NodePath("../../ValveControlPanel/PhScaleLeverPanel/PhScaleLeverPanelEvent"), NodePath("../../ValveControlPanel/NutrientFlowCrankPanel/NutrientFlowCrankPanelEvent")]
 metadata/_custom_type_script = "uid://r70s6flykuow"
 
 [connection signal="event_queue_finished" from="EventQueue" to="." method="_on_event_queue_event_queue_finished"]
@@ -211,8 +207,5 @@ metadata/_custom_type_script = "uid://r70s6flykuow"
 [connection signal="event_enabled" from="SequentialDialogue/VanceItsOnly30Days/VanceItsOnly30Days" to="SequentialDialogue/VanceItsOnly30Days" method="_on_event_enabled"]
 [connection signal="event_finished" from="SequentialDialogue/VanceItsOnly30Days/VanceItsOnly30Days" to="SequentialDialogue/VanceItsOnly30Days" method="_on_event_finished"]
 
-[editable path="ValveControlPanel"]
-[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat"]
-[editable path="ValveControlPanel/PipeVatValves/ValveConsole2"]
-[editable path="LevelLayout/Computer"]
+[editable path="Computer"]
 [editable path="DailyOrderSheet"]

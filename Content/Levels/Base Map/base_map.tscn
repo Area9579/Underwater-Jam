@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bkj28qpfl2n7k" path="res://Content/InteractableItems/DailyOrder/daily_order_sheet.tscn" id="5_y24es"]
 [ext_resource type="AudioStream" uid="uid://cd3dxombwav1r" path="res://AUDIO/SFX/FACILITY AMBIENCE/AMB_Air_drone_02.wav" id="6_12dd5"]
 [ext_resource type="AudioStream" uid="uid://c1xpadt2ly1ov" path="res://AUDIO/SFX/FACILITY AMBIENCE/AMB_ocean_drone_01.wav" id="7_77dgn"]
+[ext_resource type="PackedScene" uid="uid://cmuk8q4nj8nd" path="res://Content/InteractableItems/Computer/computer.tscn" id="10_n06nk"]
 
 [sub_resource type="Environment" id="Environment_o3k8e"]
 ambient_light_source = 3
@@ -33,6 +34,9 @@ albedo_texture = ExtResource("1_pwexk")
 
 [node name="Speaker" parent="." unique_id=1877486404 instance=ExtResource("1_n06nk")]
 transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.4279053, 2.8522594, 6.5624704)
+
+[node name="Computer" parent="." unique_id=1318926826 instance=ExtResource("10_n06nk")]
+transform = Transform3D(0.61420304, 0, 0.19692534, 0, 0.6449999, 0, -0.19692534, 0, 0.61420304, -4.6534677, 1.0760441, -1.5194575)
 
 [node name="ValveControlPanel" parent="." unique_id=616365444 instance=ExtResource("1_ou68s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.811306, -4.372, 12.717174)
