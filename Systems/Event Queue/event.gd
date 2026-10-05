@@ -12,8 +12,8 @@ var enabled : bool = false
 
 
 func finish() -> void:
-	if post_task_wait_time != 0.0:
-		await get_tree().create_timer(post_task_wait_time).timeout
+	#if post_task_wait_time != 0.0:
+		#await get_tree().create_timer(post_task_wait_time).timeout
 	event_finished.emit(self)
 
 

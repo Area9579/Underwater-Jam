@@ -34,7 +34,7 @@ func start() -> void:
 
 func advance_to_next_stage() -> void:
 	# grab stages in-order
-	var current_stage : Event = event_queue.pop_front()
+	var current_stage : Event = event_queue.pop_front() as Event
 	
 	# check if no more stages exist
 	if current_stage == null:
@@ -69,4 +69,6 @@ func _on_event_finished(event : Event) -> void:
 	if event != null:
 		disconnect_signals_from(event)
 		event.disable()
+		if event.post_task_wait_time != 0.0:
+			await get_tree().create_timer(event.post_task_wait_time).timeout
 	advance_to_next_stage()
