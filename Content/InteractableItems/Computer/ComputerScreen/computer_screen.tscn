@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://ce252750qyntk" path="res://UI/ArrowLeft.png" id="3_grham"]
 [ext_resource type="Script" uid="uid://cbrntoax56ix8" path="res://Addons/Tween Components/Scripts/Effect Sequencers/control_tween_sequencer.gd" id="5_ls0to"]
 [ext_resource type="Script" uid="uid://c0eq70gyg7rhf" path="res://Addons/Tween Components/Scripts/Components/control_tween.gd" id="6_b5hre"]
-[ext_resource type="Texture2D" uid="uid://dgfpofreertcu" path="res://Content/InteractableItems/Computer/ComputerScreen/DNASegment/Assets/dnaBar_orange.png" id="7_grham"]
+[ext_resource type="Texture2D" uid="uid://djj4p65gqvltm" path="res://Content/InteractableItems/Computer/ComputerScreen/DNASegment/Assets/dnaBar_red.png" id="7_grham"]
 [ext_resource type="Script" uid="uid://cdere083tmmuo" path="res://Addons/Tween Components/Scripts/TweenResources/offset_transform_tween.gd" id="7_xvu28"]
 [ext_resource type="Texture2D" uid="uid://ch6nw7iy4owoh" path="res://UI/ArrowRight.png" id="8_h6toj"]
 
