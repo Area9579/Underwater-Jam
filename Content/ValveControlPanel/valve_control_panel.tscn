@@ -622,89 +622,89 @@ stream = SubResource("AudioStreamRandomizer_g4v7s")
 
 [node name="Pipe And Vat" parent="PipeVatValves" unique_id=1669105872 instance=ExtResource("8_mji5f")]
 
-[node name=" " parent="PipeVatValves/Pipe And Vat" index="0" unique_id=1812911613]
+[node name=" " parent="PipeVatValves/Pipe And Vat" index="0" unique_id=1885117392]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="VatDoorPlate" parent="PipeVatValves/Pipe And Vat/ " index="0" unique_id=309024821]
+[node name="VatDoorPlate" parent="PipeVatValves/Pipe And Vat/ " index="0" unique_id=252796012]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 script = ExtResource("19_qe0lb")
 
-[node name="Plane_001" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate" index="0" unique_id=38657771]
+[node name="Plane_001" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate" index="0" unique_id=1655895737]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_002" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001" index="0" unique_id=1076826205]
+[node name="Plane_002" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001" index="0" unique_id=1944850989]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_003" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002" index="0" unique_id=1697866347]
+[node name="Plane_003" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002" index="0" unique_id=1122095351]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_004" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003" index="0" unique_id=952142705]
+[node name="Plane_004" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003" index="0" unique_id=57980768]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_005" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004" index="0" unique_id=743016278]
+[node name="Plane_005" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004" index="0" unique_id=1746458209]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_006" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005" index="0" unique_id=1834586014]
+[node name="Plane_006" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005" index="0" unique_id=1170904254]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_007" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006" index="0" unique_id=1659250279]
+[node name="Plane_007" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006" index="0" unique_id=616097700]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_008" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007" index="0" unique_id=448211544]
+[node name="Plane_008" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007" index="0" unique_id=1818615165]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_009" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008" index="0" unique_id=487146801]
+[node name="Plane_009" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008" index="0" unique_id=1138391402]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_010" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009" index="0" unique_id=258545404]
+[node name="Plane_010" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009" index="0" unique_id=1946013067]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_011" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010" index="0" unique_id=1490804980]
+[node name="Plane_011" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010" index="0" unique_id=1903525615]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_012" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011" index="0" unique_id=203210950]
+[node name="Plane_012" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011" index="0" unique_id=867230403]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_013" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012" index="0" unique_id=1152486689]
+[node name="Plane_013" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012" index="0" unique_id=959117386]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_014" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013" index="0" unique_id=275906607]
+[node name="Plane_014" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013" index="0" unique_id=792205456]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_015" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014" index="0" unique_id=818094377]
+[node name="Plane_015" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014" index="0" unique_id=167748380]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_016" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015" index="0" unique_id=2008006072]
+[node name="Plane_016" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015" index="0" unique_id=1222974779]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_017" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016" index="0" unique_id=508734966]
+[node name="Plane_017" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016" index="0" unique_id=1376893147]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_018" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017" index="0" unique_id=1117465428]
+[node name="Plane_018" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017" index="0" unique_id=264537828]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_019" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018" index="0" unique_id=1366536355]
+[node name="Plane_019" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018" index="0" unique_id=760506225]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_020" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019" index="0" unique_id=1422661461]
+[node name="Plane_020" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019" index="0" unique_id=841912917]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_021" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020" index="0" unique_id=1741151467]
+[node name="Plane_021" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020" index="0" unique_id=878068869]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_022" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021" index="0" unique_id=429779390]
+[node name="Plane_022" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021" index="0" unique_id=341424906]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_023" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022" index="0" unique_id=304638066]
+[node name="Plane_023" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022" index="0" unique_id=959938471]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_024" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022/Plane_023" index="0" unique_id=1228369728]
+[node name="Plane_024" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022/Plane_023" index="0" unique_id=2080726167]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_025" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022/Plane_023/Plane_024" index="0" unique_id=117045974]
+[node name="Plane_025" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022/Plane_023/Plane_024" index="0" unique_id=350122139]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
-[node name="Plane_026" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022/Plane_023/Plane_024/Plane_025" index="0" unique_id=718897350]
+[node name="Plane_026" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022/Plane_023/Plane_024/Plane_025" index="0" unique_id=1278270161]
 material_override = SubResource("StandardMaterial3D_v3dxv")
 
 [node name="SpecimenController" type="Node3D" parent="PipeVatValves/Pipe And Vat/ " index="1" unique_id=174937618]
@@ -745,117 +745,117 @@ spot_angle = 37.261505
 [node name="Timer" type="Timer" parent="PipeVatValves/Pipe And Vat/ /SpecimenController" unique_id=1258383490]
 one_shot = true
 
-[node name="Cylinder" parent="PipeVatValves/Pipe And Vat" index="1" unique_id=601003391]
+[node name="Cylinder" parent="PipeVatValves/Pipe And Vat" index="1" unique_id=1101992180]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_002" parent="PipeVatValves/Pipe And Vat" index="2" unique_id=1679607741]
+[node name="Cylinder_002" parent="PipeVatValves/Pipe And Vat" index="2" unique_id=1838423151]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_003" parent="PipeVatValves/Pipe And Vat" index="3" unique_id=169506695]
+[node name="Cylinder_003" parent="PipeVatValves/Pipe And Vat" index="3" unique_id=575757463]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_004" parent="PipeVatValves/Pipe And Vat" index="4" unique_id=1027305017]
+[node name="Cylinder_004" parent="PipeVatValves/Pipe And Vat" index="4" unique_id=1052862422]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_005" parent="PipeVatValves/Pipe And Vat" index="5" unique_id=260570523]
+[node name="Cylinder_005" parent="PipeVatValves/Pipe And Vat" index="5" unique_id=1836343212]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_006" parent="PipeVatValves/Pipe And Vat" index="6" unique_id=581221488]
+[node name="Cylinder_006" parent="PipeVatValves/Pipe And Vat" index="6" unique_id=284268361]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_007" parent="PipeVatValves/Pipe And Vat" index="7" unique_id=975464000]
+[node name="Cylinder_007" parent="PipeVatValves/Pipe And Vat" index="7" unique_id=1802960001]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_008" parent="PipeVatValves/Pipe And Vat" index="8" unique_id=1059095502]
+[node name="Cylinder_008" parent="PipeVatValves/Pipe And Vat" index="8" unique_id=1275870903]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_009" parent="PipeVatValves/Pipe And Vat" index="9" unique_id=1827136642]
+[node name="Cylinder_009" parent="PipeVatValves/Pipe And Vat" index="9" unique_id=2063015667]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_010" parent="PipeVatValves/Pipe And Vat" index="10" unique_id=2087242463]
+[node name="Cylinder_010" parent="PipeVatValves/Pipe And Vat" index="10" unique_id=1040490009]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_011" parent="PipeVatValves/Pipe And Vat" index="11" unique_id=1921664375]
+[node name="Cylinder_011" parent="PipeVatValves/Pipe And Vat" index="11" unique_id=907110604]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_012" parent="PipeVatValves/Pipe And Vat" index="12" unique_id=1707986777]
+[node name="Cylinder_012" parent="PipeVatValves/Pipe And Vat" index="12" unique_id=696640143]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_013" parent="PipeVatValves/Pipe And Vat" index="13" unique_id=245002460]
+[node name="Cylinder_013" parent="PipeVatValves/Pipe And Vat" index="13" unique_id=1787394976]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_014" parent="PipeVatValves/Pipe And Vat" index="14" unique_id=868250366]
+[node name="Cylinder_014" parent="PipeVatValves/Pipe And Vat" index="14" unique_id=1437257279]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_015" parent="PipeVatValves/Pipe And Vat" index="15" unique_id=1335724494]
+[node name="Cylinder_015" parent="PipeVatValves/Pipe And Vat" index="15" unique_id=1847840612]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_016" parent="PipeVatValves/Pipe And Vat" index="16" unique_id=1104977204]
+[node name="Cylinder_016" parent="PipeVatValves/Pipe And Vat" index="16" unique_id=511576843]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_017" parent="PipeVatValves/Pipe And Vat" index="17" unique_id=356071988]
+[node name="Cylinder_017" parent="PipeVatValves/Pipe And Vat" index="17" unique_id=536999752]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_018" parent="PipeVatValves/Pipe And Vat" index="18" unique_id=2087998845]
+[node name="Cylinder_018" parent="PipeVatValves/Pipe And Vat" index="18" unique_id=1311069124]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_019" parent="PipeVatValves/Pipe And Vat" index="19" unique_id=454127625]
+[node name="Cylinder_019" parent="PipeVatValves/Pipe And Vat" index="19" unique_id=1720949516]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cube_002" parent="PipeVatValves/Pipe And Vat" index="20" unique_id=1675240300]
+[node name="Cube_002" parent="PipeVatValves/Pipe And Vat" index="20" unique_id=658328479]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_024" parent="PipeVatValves/Pipe And Vat" index="21" unique_id=1949288338]
+[node name="Cylinder_024" parent="PipeVatValves/Pipe And Vat" index="21" unique_id=1459603155]
 material_override = ExtResource("12_81jtx")
 
-[node name="Cylinder_028" parent="PipeVatValves/Pipe And Vat" index="22" unique_id=1006085903]
+[node name="Cylinder_028" parent="PipeVatValves/Pipe And Vat" index="22" unique_id=383550658]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_029" parent="PipeVatValves/Pipe And Vat" index="23" unique_id=1984729819]
+[node name="Cylinder_029" parent="PipeVatValves/Pipe And Vat" index="23" unique_id=838176577]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_030" parent="PipeVatValves/Pipe And Vat" index="24" unique_id=1958536627]
+[node name="Cylinder_030" parent="PipeVatValves/Pipe And Vat" index="24" unique_id=2087517497]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_031" parent="PipeVatValves/Pipe And Vat" index="25" unique_id=2065559626]
+[node name="Cylinder_031" parent="PipeVatValves/Pipe And Vat" index="25" unique_id=20323243]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_032" parent="PipeVatValves/Pipe And Vat" index="26" unique_id=343663060]
+[node name="Cylinder_032" parent="PipeVatValves/Pipe And Vat" index="26" unique_id=1307027357]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_033" parent="PipeVatValves/Pipe And Vat" index="27" unique_id=1900801554]
+[node name="Cylinder_033" parent="PipeVatValves/Pipe And Vat" index="27" unique_id=488688280]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_034" parent="PipeVatValves/Pipe And Vat" index="28" unique_id=1049502145]
+[node name="Cylinder_034" parent="PipeVatValves/Pipe And Vat" index="28" unique_id=2038363435]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_035" parent="PipeVatValves/Pipe And Vat" index="29" unique_id=2015939785]
+[node name="Cylinder_035" parent="PipeVatValves/Pipe And Vat" index="29" unique_id=486546033]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_036" parent="PipeVatValves/Pipe And Vat" index="30" unique_id=782314782]
+[node name="Cylinder_036" parent="PipeVatValves/Pipe And Vat" index="30" unique_id=929996709]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_025" parent="PipeVatValves/Pipe And Vat" index="31" unique_id=685801422]
+[node name="Cylinder_025" parent="PipeVatValves/Pipe And Vat" index="31" unique_id=239901516]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_037" parent="PipeVatValves/Pipe And Vat" index="32" unique_id=236312259]
+[node name="Cylinder_037" parent="PipeVatValves/Pipe And Vat" index="32" unique_id=146833212]
 material_override = ExtResource("7_3ri5n")
 
-[node name="Cylinder_039" parent="PipeVatValves/Pipe And Vat" index="33" unique_id=1515560582]
+[node name="Cylinder_039" parent="PipeVatValves/Pipe And Vat" index="33" unique_id=416064054]
 material_override = ExtResource("7_3ri5n")
 
-[node name="NurbsPath_006" parent="PipeVatValves/Pipe And Vat" index="34" unique_id=519608005]
+[node name="NurbsPath_006" parent="PipeVatValves/Pipe And Vat" index="34" unique_id=1799406089]
 material_override = ExtResource("12_81jtx")
 
-[node name="Cylinder_026" parent="PipeVatValves/Pipe And Vat" index="35" unique_id=1175619048]
+[node name="Cylinder_026" parent="PipeVatValves/Pipe And Vat" index="35" unique_id=1310784869]
 material_override = ExtResource("7_3ri5n")
 
 [node name="ValveConsole2" parent="PipeVatValves" unique_id=217254844 instance=ExtResource("13_qe0lb")]
 
-[node name="Cylinder_052" parent="PipeVatValves/ValveConsole2" index="0" unique_id=2022938648]
+[node name="Cylinder_052" parent="PipeVatValves/ValveConsole2" index="0" unique_id=1792908702]
 material_override = ExtResource("1_whxrb")
 
-[node name="ValveConsole" parent="PipeVatValves/ValveConsole2" index="1" unique_id=59679121]
+[node name="ValveConsole" parent="PipeVatValves/ValveConsole2" index="1" unique_id=84549176]
 material_override = ExtResource("1_whxrb")
 
 [node name="TargetLabel" type="Label3D" parent="PipeVatValves/ValveConsole2/ValveConsole" index="0" unique_id=955796310]
@@ -875,10 +875,10 @@ text = "Temp: "
 font = ExtResource("14_whxrb")
 font_size = 24
 
-[node name="PhScale_001" parent="PipeVatValves/ValveConsole2" index="2" unique_id=870126007]
+[node name="PhScale_001" parent="PipeVatValves/ValveConsole2" index="2" unique_id=1626823663]
 material_override = SubResource("StandardMaterial3D_46c3x")
 
-[node name="NutrientFlow_001" parent="PipeVatValves/ValveConsole2" index="3" unique_id=490038030]
+[node name="NutrientFlow_001" parent="PipeVatValves/ValveConsole2" index="3" unique_id=1080529259]
 material_override = SubResource("StandardMaterial3D_fqwas")
 
 [connection signal="event_disabled" from="TempGaugeControls/TempGaugeControlsEvent" to="TempGaugeControls" method="_on_event_event_disabled"]

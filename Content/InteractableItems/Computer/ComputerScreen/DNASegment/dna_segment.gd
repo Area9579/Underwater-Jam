@@ -1,5 +1,6 @@
 class_name DNASegment extends Control
 
+const DNA_BAR_RED = preload("uid://djj4p65gqvltm")
 const DNA_BAR_CYAN = preload("uid://clwmkwelv25wn")
 const DNA_BAR_GREEN = preload("uid://b4s0sl550ras5")
 const DNA_BAR_ORANGE = preload("uid://dgfpofreertcu")
@@ -47,6 +48,8 @@ func reset_right_segments() -> void:
 
 func match_char_to_dna(character : String, texture : TextureRect) -> void:
 	match character:
+		"R":
+			texture.texture = DNA_BAR_RED
 		"O":
 			texture.texture = DNA_BAR_ORANGE
 		"Y":
