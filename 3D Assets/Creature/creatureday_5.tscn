@@ -1,24 +1,29 @@
-[gd_scene format=3 uid="uid://cw6w2o2upy5hm"]
+[gd_scene format=3 uid="uid://ch7ur6eft1frj"]
 
-[ext_resource type="PackedScene" uid="uid://c0ldhdv4dblft" path="res://3D Assets/Creature/GLB/creatureday5.glb" id="1_qpsjo"]
-[ext_resource type="Shader" uid="uid://cunvmsic2t2a6" path="res://3D Assets/Shaders/blob.gdshader" id="2_altm0"]
+[ext_resource type="PackedScene" uid="uid://c0ldhdv4dblft" path="res://3D Assets/Creature/GLB/creatureday5.glb" id="1_c28ih"]
+[ext_resource type="Shader" uid="uid://cunvmsic2t2a6" path="res://3D Assets/Shaders/blob.gdshader" id="2_xn7p7"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xpoqu"]
+noise_type = 3
+frequency = 0.0014
+fractal_octaves = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_joc4e"]
+noise = SubResource("FastNoiseLite_xpoqu")
+seamless = true
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_stf7q"]
 noise_type = 3
 frequency = 0.0014
 fractal_octaves = 3
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_altm0"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dfvm1"]
 noise = SubResource("FastNoiseLite_stf7q")
 seamless = true
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xpoqu"]
-noise = SubResource("FastNoiseLite_stf7q")
-seamless = true
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5c4ns"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s45ob"]
 render_priority = 0
-shader = ExtResource("2_altm0")
+shader = ExtResource("2_xn7p7")
 shader_parameter/time_speed = 0.05
 shader_parameter/surface_speed = 1.0
 shader_parameter/spin = 7.4
@@ -28,8 +33,8 @@ shader_parameter/horizontal_frequency = 1.0
 shader_parameter/vertical_frequency = 1.0
 shader_parameter/size = 3.0
 shader_parameter/banding_bias = 0.6
-shader_parameter/wave_texture = SubResource("NoiseTexture2D_xpoqu")
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_altm0")
+shader_parameter/wave_texture = SubResource("NoiseTexture2D_dfvm1")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_joc4e")
 shader_parameter/wave_height = -0.205
 shader_parameter/texture_height = 0.256
 shader_parameter/color1 = Color(0.972549, 0.45882353, 0.45882353, 1)
@@ -37,11 +42,9 @@ shader_parameter/color2 = Color(0.53333336, 0.44705883, 0.79607844, 1)
 shader_parameter/color3 = Color(0.003921569, 0.11764706, 0.3019608, 1)
 shader_parameter/color4 = Color(0.45882353, 0.2, 0.20784314, 1)
 
-[node name="Creatrue_Day5" type="Node3D" unique_id=282409343]
+[node name="creatureday5" unique_id=1809903521 instance=ExtResource("1_c28ih")]
 
-[node name="creatureday5" parent="." unique_id=1150312967 instance=ExtResource("1_qpsjo")]
-
-[node name="Skeleton3D" parent="creatureday5/Armature_001" parent_id_path=PackedInt32Array(1150312967, 1822464874) index="0" unique_id=947869879]
+[node name="Skeleton3D" parent="Armature_001" parent_id_path=PackedInt32Array(504919475) index="0" unique_id=406153196]
 bones/1/position = Vector3(-0.68108004, 1.3358998, 0.54281366)
 bones/2/rotation = Quaternion(-0.54492354, -0.12381799, 0.15288082, 0.8150797)
 bones/4/rotation = Quaternion(-0.5297918, 0.006141256, -0.17077635, 0.83073366)
@@ -53,13 +56,14 @@ bones/9/rotation = Quaternion(-0.43574923, -0.04591494, -0.008745976, 0.8988537)
 bones/10/rotation = Quaternion(-0.051365245, -4.6778712e-08, 0.05271534, 0.9972877)
 bones/11/rotation = Quaternion(0.18072739, -0.0006130669, -0.08191293, 0.98011607)
 bones/12/rotation = Quaternion(-0.67760915, 0.005054361, 0.29188257, 0.675)
-bones/13/rotation = Quaternion(0.92461485, 0.054678738, -0.11230374, -0.35984108)
-bones/14/rotation = Quaternion(-0.49456558, -0.0029648358, 0.09802105, 0.86359024)
+bones/13/rotation = Quaternion(0.9262288, 0.0015676618, -0.091484234, -0.3656889)
+bones/14/rotation = Quaternion(-0.49456555, -0.0029648321, 0.09802105, 0.8635903)
 
-[node name="Sphere_004" parent="creatureday5/Armature_001/Skeleton3D" index="0" unique_id=513866189]
-surface_material_override/0 = SubResource("ShaderMaterial_5c4ns")
+[node name="Sphere_004" parent="Armature_001/Skeleton3D" index="0" unique_id=232584996]
+surface_material_override/0 = SubResource("ShaderMaterial_s45ob")
 
-[node name="AnimationPlayer" parent="creatureday5" index="1" unique_id=589675840]
-autoplay = &"Armature_001Action_002"
+[node name="Sphere_009" parent="Armature_001/Skeleton3D" index="1" unique_id=1640348019]
+surface_material_override/0 = SubResource("ShaderMaterial_s45ob")
 
-[editable path="creatureday5"]
+[node name="Sphere_010" parent="Armature_001/Skeleton3D" index="2" unique_id=1033859828]
+surface_material_override/0 = SubResource("ShaderMaterial_s45ob")
