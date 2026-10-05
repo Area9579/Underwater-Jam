@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dv2vmmln3ln3y"]
 
 [ext_resource type="PackedScene" uid="uid://duqqc07ub3xhu" path="res://Content/Levels/Base Map/base_map.tscn" id="1_ax01y"]
+[ext_resource type="Script" uid="uid://c1kigegy377e0" path="res://Content/Levels/day_1.gd" id="2_ite6a"]
 [ext_resource type="PackedScene" uid="uid://cmuk8q4nj8nd" path="res://Content/InteractableItems/Computer/computer.tscn" id="2_wt837"]
 [ext_resource type="AudioStream" uid="uid://c0wwc4bldrq4y" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_01.wav" id="3_27u4b"]
 [ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="3_pf1uq"]
@@ -17,22 +18,23 @@
 [ext_resource type="AudioStream" uid="uid://jpxlldu4uunb" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_09.wav" id="13_j5c48"]
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="18_tg5l2"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_64ylx"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_wt837"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ite6a"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tg5l2"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_64ylx")
+albedo_texture = SubResource("ViewportTexture_wt837")
 uv1_scale = Vector3(6.12, 6.12, 6.12)
 uv1_offset = Vector3(0.5, 0.205, 0)
 
 [node name="Day1" unique_id=1228570231 instance=ExtResource("1_ax01y")]
+script = ExtResource("2_ite6a")
 
 [node name="Computer" parent="LevelLayout" parent_id_path=PackedInt32Array(1577965459) index="97" unique_id=1318926826 instance=ExtResource("2_wt837")]
 transform = Transform3D(-1.2710856, 0, -6.778415, 0, 6.8965664, 0, 6.778415, 0, -1.2710856, 102.397835, 9.028236, -14.372993)
 
 [node name="Glass" parent="LevelLayout/Computer/VDUTerminal/VDUTerminal" parent_id_path=PackedInt32Array(1318926826, 1018499832) index="1" unique_id=480455911]
-surface_material_override/0 = SubResource("StandardMaterial3D_ite6a")
+surface_material_override/0 = SubResource("StandardMaterial3D_tg5l2")
 
 [node name="EventQueue" parent="." index="3" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceImAwake/VanceImAwake"), NodePath("../SequentialDialogue/HQWelcome/HQWelcome"), NodePath("../SequentialDialogue/VanceReady/VanceReady"), NodePath("../SequentialDialogue/HQOperationalDirective/HQOperationalDirective"), NodePath("../SequentialDialogue/VanceIncredible/VanceIncredible"), NodePath("../SequentialDialogue/HQSpecimenExplanation/HQSpecimenExplanation"), NodePath("../SequentialDialogue/VanceUnderstand30Days/VanceUnderstand30Days"), NodePath("../SequentialDialogue/HQExcellent/HQExcellent"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceItsOnly30Days/VanceItsOnly30Days"), NodePath("../SequentialDialogue/TaskEventStage")]
@@ -174,6 +176,7 @@ script = ExtResource("18_tg5l2")
 events_in_stage = [NodePath("../../LevelLayout/Computer/ComputerEvent"), NodePath("../../ValveControlPanel/TempGaugeControls/TempGaugeControlsEvent"), NodePath("../../ValveControlPanel/PhScaleLeverPanel/PhScaleLeverPanelEvent"), NodePath("../../ValveControlPanel/NutrientFlowCrankPanel/NutrientFlowCrankPanelEvent")]
 metadata/_custom_type_script = "uid://r70s6flykuow"
 
+[connection signal="event_queue_finished" from="EventQueue" to="." method="_on_event_queue_event_queue_finished"]
 [connection signal="event_disabled" from="SequentialDialogue/RadioTurnsOn/RadioTurnsOn" to="SequentialDialogue/RadioTurnsOn" method="_on_event_disabled"]
 [connection signal="event_enabled" from="SequentialDialogue/RadioTurnsOn/RadioTurnsOn" to="SequentialDialogue/RadioTurnsOn" method="_on_event_enabled"]
 [connection signal="event_finished" from="SequentialDialogue/RadioTurnsOn/RadioTurnsOn" to="SequentialDialogue/RadioTurnsOn" method="_on_event_finished"]

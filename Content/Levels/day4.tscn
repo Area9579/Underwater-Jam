@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://duqqc07ub3xhu" path="res://Content/Levels/Base Map/base_map.tscn" id="1_qo1rx"]
 [ext_resource type="Script" uid="uid://braj1wqtyaoli" path="res://Content/AudioSystems/AudioEventSystem/audio_event_player.gd" id="2_em17x"]
+[ext_resource type="Script" uid="uid://br5od52w86b2f" path="res://Content/Levels/day_4.gd" id="2_xx5gq"]
 [ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="3_d4h4s"]
 [ext_resource type="AudioStream" uid="uid://iibu4jg4qep6" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_16.wav" id="4_aumic"]
 [ext_resource type="Script" uid="uid://yivgoqoh0s4g" path="res://Content/AudioSystems/AudioEventSystem/Continueous Audio Events/start_continuous_audio_event.gd" id="4_kkchr"]
@@ -12,6 +13,7 @@
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="10_p50eg"]
 
 [node name="Day4" unique_id=1228570231 instance=ExtResource("1_qo1rx")]
+script = ExtResource("2_xx5gq")
 
 [node name="EventQueue" parent="." index="3" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceWakingUpDay15/VanceWakingUpDay15Event"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceAmILosingMyMind/VanceAmILosingMyMind"), NodePath("../SequentialDialogue/TaskEventStage")]
@@ -83,6 +85,7 @@ script = ExtResource("10_p50eg")
 events_in_stage = [NodePath("../../ValveControlPanel/TempGaugeControls/TempGaugeControlsEvent"), NodePath("../../ValveControlPanel/PhScaleLeverPanel/PhScaleLeverPanelEvent"), NodePath("../../ValveControlPanel/NutrientFlowCrankPanel/NutrientFlowCrankPanelEvent")]
 metadata/_custom_type_script = "uid://r70s6flykuow"
 
+[connection signal="event_queue_finished" from="EventQueue" to="." method="_on_event_queue_event_queue_finished"]
 [connection signal="event_disabled" from="SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat" to="SequentialDialogue/StartSpecimenHeartbeat" method="_on_event_disabled"]
 [connection signal="event_enabled" from="SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat" to="SequentialDialogue/StartSpecimenHeartbeat" method="_on_event_enabled"]
 [connection signal="event_disabled" from="SequentialDialogue/RadioTurnsOn/RadioTurnsOn" to="SequentialDialogue/RadioTurnsOn" method="_on_event_disabled"]

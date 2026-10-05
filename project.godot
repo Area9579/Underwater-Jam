@@ -21,7 +21,7 @@ buses/default_bus_layout="uid://cdl4pwl5jeu23"
 
 [autoload]
 
-SceneSwitcher="*uid://dhkfnd50dxgiv"
+SceneSwitcher="*uid://cgtrvafeqww42"
 
 [display]
 
@@ -45,6 +45,7 @@ folder_colors={
 "res://Content/Player/": "red",
 "res://Content/Player/Assets/": "purple",
 "res://Content/Porthole/": "purple",
+"res://Content/SceneSwitcher/": "gray",
 "res://Debug Character/": "gray",
 "res://Gym/": "yellow",
 "res://Gym/Assets/": "purple",
