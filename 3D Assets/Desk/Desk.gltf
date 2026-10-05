@@ -1,0 +1,209 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v3.1.223738405)"
+    },
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2799,
+            "type": "VEC3",
+            "max": [
+                554.5170288085938,
+                251.1297149658203,
+                -1.77044677734375
+            ],
+            "min": [
+                -587.8316650390625,
+                -321.07342529296877,
+                -711.38671875
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2799,
+            "type": "VEC3",
+            "max": [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2799,
+            "type": "VEC4",
+            "max": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0,
+                -1.0
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2799,
+            "type": "VEC2",
+            "max": [
+                0.9954989552497864,
+                0.9882419109344482
+            ],
+            "min": [
+                0.0012851282954216004,
+                0.010837674140930176
+            ]
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 6120,
+            "type": "SCALAR",
+            "max": [
+                2798.0
+            ],
+            "min": [
+                0.0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 146592,
+            "uri": "Desk.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 33588,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 33588,
+            "byteLength": 33588,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 67176,
+            "byteLength": 44784,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 111960,
+            "byteLength": 22392,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 134352,
+            "byteLength": 12240,
+            "target": 34963
+        }
+    ],
+    "materials": [
+        {
+            "name": "fallback Material",
+            "pbrMetallicRoughness": {
+                "metallicFactor": 0.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "Desk000",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 4,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TANGENT": 2,
+                        "TEXCOORD_0": 3
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "RootNode",
+            "matrix": [
+                0.009999999776482582,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.009999999776482582,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.009999999776482582,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "children": [
+                1
+            ]
+        },
+        {
+            "name": "Desk000",
+            "matrix": [
+                0.7223929762840271,
+                5.053092506492511e-17,
+                -0.8252326250076294,
+                0.0,
+                -0.8252326250076294,
+                4.4233814128518179e-17,
+                -0.7223929762840271,
+                0.0,
+                0.0,
+                1.096750020980835,
+                6.715657047169378e-17,
+                0.0,
+                1257.743896484375,
+                773.8673095703125,
+                -5586.8974609375,
+                1.0
+            ],
+            "mesh": 0
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0
+}

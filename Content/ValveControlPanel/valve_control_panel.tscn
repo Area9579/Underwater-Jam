@@ -29,6 +29,9 @@
 [ext_resource type="ArrayMesh" uid="uid://cvwcipxyyfx16" path="res://3D Assets/BLOB.obj" id="20_qe0lb"]
 [ext_resource type="Shader" uid="uid://cunvmsic2t2a6" path="res://3D Assets/Shaders/blob.gdshader" id="21_djvyw"]
 [ext_resource type="Script" uid="uid://de0rtrqtincso" path="res://Content/InteractableItems/Speciemen/Door/door.gd" id="22_paj08"]
+[ext_resource type="PackedScene" uid="uid://bd35fe31hjmwr" path="res://3D Assets/Pipe Vat and Valve/Glass/glass.glb" id="25_7jfgw"]
+[ext_resource type="Shader" uid="uid://b1fhre1ohnqgt" path="res://3D Assets/Pipe Vat and Valve/Glass/blob.gdshader" id="26_rqej3"]
+[ext_resource type="PackedScene" uid="uid://xqjjb2ppsq7e" path="res://3D Assets/Pipe Vat and Valve/Glass/glassshattered.glb" id="27_0x7y6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxfqv"]
 resource_name = "ConsoleSide"
@@ -381,6 +384,25 @@ shadow_mesh = SubResource("ArrayMesh_msmvf")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7jfgw"]
 size = Vector3(0.7482117, 3.6712906, 1.3949707)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qvy3w"]
+render_priority = 0
+shader = ExtResource("26_rqej3")
+shader_parameter/time_speed = 0.0
+shader_parameter/surface_speed = 0.0
+shader_parameter/spin = 0.0
+shader_parameter/brightness = 0.6
+shader_parameter/color_intensity = 0.0
+shader_parameter/horizontal_frequency = 2.0
+shader_parameter/vertical_frequency = 2.0
+shader_parameter/size = 3.0
+shader_parameter/banding_bias = 0.6
+shader_parameter/wave_height = 0.0
+shader_parameter/texture_height = 0.0
+shader_parameter/color1 = Color(0.99936146, 0.8434027, 0.7959367, 1)
+shader_parameter/color2 = Color(0.94642955, 0.691087, 0.91716754, 1)
+shader_parameter/color3 = Color(0.64988166, 0.9353515, 0.964153, 1)
+shader_parameter/color4 = Color(0.064514056, 0.37941557, 0.4259206, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46c3x"]
 albedo_texture = ExtResource("14_djvyw")
@@ -740,6 +762,25 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
 visible = false
 text = "false"
 
+[node name="glass" parent="PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton" unique_id=1368547278 instance=ExtResource("25_7jfgw")]
+transform = Transform3D(-2.7271667, 0, 0.05193265, 0, 3.0808022, 0, -0.04597805, 0, -3.0803642, 71.571884, -17.467749, -8.8758545)
+
+[node name="Glass" parent="PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glass" index="0" unique_id=176455744]
+surface_material_override/0 = SubResource("ShaderMaterial_qvy3w")
+
+[node name="glassshattered" parent="PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton" unique_id=891380592 instance=ExtResource("27_0x7y6")]
+transform = Transform3D(-2.7271667, 0, 0.05193265, 0, 3.0808022, 0, -0.045978043, 0, -3.0803642, 71.571884, -17.467749, -8.8758545)
+visible = false
+
+[node name="Glass shattered" parent="PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glassshattered" index="0" unique_id=549700448]
+surface_material_override/0 = SubResource("ShaderMaterial_qvy3w")
+
+[node name="BackGlass" parent="PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton" unique_id=1837586263 instance=ExtResource("25_7jfgw")]
+transform = Transform3D(-2.7271667, 0, 0.05193265, 0, 3.0808022, 0, -0.04597805, 0, -3.0803642, 71.64946, -17.467749, -13.477252)
+
+[node name="Glass" parent="PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/BackGlass" index="0" unique_id=176455744]
+surface_material_override/0 = SubResource("ShaderMaterial_qvy3w")
+
 [node name="UVLight" type="SpotLight3D" parent="PipeVatValves/Pipe And Vat/ /SpecimenController" unique_id=1420702930]
 transform = Transform3D(1, 0, 0, 0, -0.03073603, 0.99952763, 0, -0.99952763, -0.03073603, -0.22869778, 4.610814, -0.2966593)
 light_color = Color(0.5019608, 0, 0.5019608, 1)
@@ -903,4 +944,7 @@ material_override = SubResource("StandardMaterial3D_fqwas")
 [connection signal="event_enabled" from="PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker" to="PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton" method="_on_event_event_enabled"]
 
 [editable path="PipeVatValves/Pipe And Vat"]
+[editable path="PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glass"]
+[editable path="PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glassshattered"]
+[editable path="PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/BackGlass"]
 [editable path="PipeVatValves/ValveConsole2"]
