@@ -188,6 +188,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o3k8e")
 
 [node name="Player" parent="." unique_id=1495724798 instance=ExtResource("2_5e2fw")]
 unique_name_in_owner = true
+is_debug = true
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Player" unique_id=658117881]
 light_color = Color(0.9264652, 0.7131488, 0.54608184, 1)
