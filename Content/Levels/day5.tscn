@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://duqqc07ub3xhu" path="res://Content/Levels/Base Map/base_map.tscn" id="1_icxki"]
 [ext_resource type="Script" uid="uid://yivgoqoh0s4g" path="res://Content/AudioSystems/AudioEventSystem/Continueous Audio Events/start_continuous_audio_event.gd" id="2_lsvvd"]
+[ext_resource type="Script" uid="uid://bkes7ftaxxesl" path="res://Content/Levels/day_5.gd" id="2_u3ed6"]
 [ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="3_cddaa"]
 [ext_resource type="AudioStream" uid="uid://cnd5ck7v5qqsk" path="res://AUDIO/SFX/VALVE MINI GAME/O2_VENTING_SFX.wav" id="3_lsvvd"]
 [ext_resource type="AudioStream" uid="uid://c2vn1yf7gcqnj" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_18.wav" id="3_ngw52"]
@@ -17,8 +18,18 @@
 [ext_resource type="Script" uid="uid://5r2mrh1rpl2e" path="res://Content/AudioSystems/AudioEventSystem/Continueous Audio Events/end_continuous_audio_event.gd" id="14_u3ed6"]
 
 [node name="Day5" unique_id=1228570231 instance=ExtResource("1_icxki")]
+script = ExtResource("2_u3ed6")
 
-[node name="EventQueue" parent="." index="3" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
+[node name="TerminalAudioOxyPurge" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="0" unique_id=1936061937]
+stream = ExtResource("3_lsvvd")
+
+[node name="SpecimenHeartbeat" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="1" unique_id=1122537521]
+stream = ExtResource("5_u3ed6")
+
+[node name="BigMetallicSlam" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="2" unique_id=2088185695]
+stream = ExtResource("9_ifyg8")
+
+[node name="EventQueue" parent="." index="4" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/StartContinuousAudioEventPlayer/StartContinuousAudioEventPlayer"), NodePath("../SequentialDialogue/VanceICantBreathe/VanceICantBreatheEvent"), NodePath("../SequentialDialogue/VanceTurnOffPurge/VanceTurnOffPurgeEvent"), NodePath("../SequentialDialogue/BigMetallicSlam/BigMetallicSlamEvent"), NodePath("../SequentialDialogue/VanceItsGonnaBreakTheGlass/VanceItsGonnaBreakTheGlassEvent"), NodePath("../SequentialDialogue/SFXWrenchHitOnGlass/SFXWrenchHitOnGlassEvent"), NodePath("../SequentialDialogue/EndContinueousAudioEvent/EndContinueousAudioEvent"), NodePath("../SequentialDialogue/SFXIndustrialLightHum2/SFXIndustrialLightHum2"), NodePath("../SequentialDialogue/SFXGlassShatter/SFXGlassShatterEvent")]
 
 [node name="VanceICantBreathe" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="6" unique_id=796755007]
@@ -35,21 +46,15 @@ stream = ExtResource("13_oq4sq")
 
 [node name="StartContinuousAudioEventPlayer" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="0" unique_id=943645032 node_paths=PackedStringArray("audio_players", "event")]
 script = ExtResource("2_lsvvd")
-audio_players = [NodePath("TerminalAudioOxyPurge"), NodePath("EmergencyAlarm2"), NodePath("SpecimenHeartbeat")]
+audio_players = [NodePath("../../ValveControlPanel/PipeVatValves/Pipe And Vat/ /TerminalAudioOxyPurge"), NodePath("EmergencyAlarm2"), NodePath("../../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenHeartbeat")]
 event = NodePath("StartContinuousAudioEventPlayer")
 
 [node name="StartContinuousAudioEventPlayer" type="Node" parent="SequentialDialogue/StartContinuousAudioEventPlayer" index="0" unique_id=1424440509]
 script = ExtResource("3_cddaa")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
-[node name="TerminalAudioOxyPurge" type="AudioStreamPlayer3D" parent="SequentialDialogue/StartContinuousAudioEventPlayer" index="1" unique_id=1936061937]
-stream = ExtResource("3_lsvvd")
-
-[node name="EmergencyAlarm2" type="AudioStreamPlayer3D" parent="SequentialDialogue/StartContinuousAudioEventPlayer" index="2" unique_id=389123051]
+[node name="EmergencyAlarm2" type="AudioStreamPlayer3D" parent="SequentialDialogue/StartContinuousAudioEventPlayer" index="1" unique_id=389123051]
 stream = ExtResource("4_7vpia")
-
-[node name="SpecimenHeartbeat" type="AudioStreamPlayer3D" parent="SequentialDialogue/StartContinuousAudioEventPlayer" index="3" unique_id=1122537521]
-stream = ExtResource("5_u3ed6")
 
 [node name="VanceICantBreathe" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="1" unique_id=780597930 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("5_m5y6d")
@@ -71,15 +76,12 @@ metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
 [node name="BigMetallicSlam" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="3" unique_id=2064342938 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("5_m5y6d")
-audio_player = NodePath("BigMetallicSlam")
+audio_player = NodePath("../../ValveControlPanel/PipeVatValves/Pipe And Vat/ /BigMetallicSlam")
 event = NodePath("BigMetallicSlamEvent")
 
 [node name="BigMetallicSlamEvent" type="Node" parent="SequentialDialogue/BigMetallicSlam" index="0" unique_id=642058519]
 script = ExtResource("3_cddaa")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
-
-[node name="BigMetallicSlam" type="AudioStreamPlayer3D" parent="SequentialDialogue/BigMetallicSlam" index="1" unique_id=2088185695]
-stream = ExtResource("9_ifyg8")
 
 [node name="VanceItsGonnaBreakTheGlass" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="4" unique_id=1728580346 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("5_m5y6d")
@@ -117,7 +119,7 @@ stream = ExtResource("12_u3ed6")
 
 [node name="EndContinueousAudioEvent" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="7" unique_id=683267936 node_paths=PackedStringArray("audio_players", "event", "corresponding_start_audio_player")]
 script = ExtResource("14_u3ed6")
-audio_players = [NodePath("../StartContinuousAudioEventPlayer/TerminalAudioOxyPurge"), NodePath("../StartContinuousAudioEventPlayer/EmergencyAlarm2"), NodePath("../StartContinuousAudioEventPlayer/SpecimenHeartbeat")]
+audio_players = [NodePath("../../ValveControlPanel/PipeVatValves/Pipe And Vat/ /TerminalAudioOxyPurge"), NodePath("../StartContinuousAudioEventPlayer/EmergencyAlarm2"), NodePath("../../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenHeartbeat")]
 event = NodePath("EndContinueousAudioEvent")
 corresponding_start_audio_player = NodePath("../StartContinuousAudioEventPlayer")
 
@@ -145,6 +147,7 @@ metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
 [node name="SFXGlassShartsTinkling" type="AudioStreamPlayer3D" parent="SequentialDialogue/SFXGlassShartsTinkling" index="1" unique_id=1962371969]
 
+[connection signal="event_queue_finished" from="EventQueue" to="." method="_on_event_queue_event_queue_finished"]
 [connection signal="event_disabled" from="SequentialDialogue/StartContinuousAudioEventPlayer/StartContinuousAudioEventPlayer" to="SequentialDialogue/StartContinuousAudioEventPlayer" method="_on_event_disabled"]
 [connection signal="event_enabled" from="SequentialDialogue/StartContinuousAudioEventPlayer/StartContinuousAudioEventPlayer" to="SequentialDialogue/StartContinuousAudioEventPlayer" method="_on_event_enabled"]
 [connection signal="event_disabled" from="SequentialDialogue/VanceICantBreathe/VanceICantBreatheEvent" to="SequentialDialogue/VanceICantBreathe" method="_on_event_disabled"]
@@ -172,3 +175,7 @@ metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 [connection signal="event_disabled" from="SequentialDialogue/SFXGlassShartsTinkling/SFXGlassShartsTinklingEvent" to="SequentialDialogue/SFXGlassShartsTinkling" method="_on_event_disabled"]
 [connection signal="event_enabled" from="SequentialDialogue/SFXGlassShartsTinkling/SFXGlassShartsTinklingEvent" to="SequentialDialogue/SFXGlassShartsTinkling" method="_on_event_enabled"]
 [connection signal="event_finished" from="SequentialDialogue/SFXGlassShartsTinkling/SFXGlassShartsTinklingEvent" to="SequentialDialogue/SFXGlassShartsTinkling" method="_on_event_finished"]
+
+[editable path="ValveControlPanel"]
+[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat"]
+[editable path="ValveControlPanel/PipeVatValves/ValveConsole2"]

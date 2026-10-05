@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://duqqc07ub3xhu" path="res://Content/Levels/Base Map/base_map.tscn" id="1_qo1rx"]
 [ext_resource type="Script" uid="uid://braj1wqtyaoli" path="res://Content/AudioSystems/AudioEventSystem/audio_event_player.gd" id="2_em17x"]
+[ext_resource type="Script" uid="uid://br5od52w86b2f" path="res://Content/Levels/day_4.gd" id="2_xx5gq"]
 [ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="3_d4h4s"]
 [ext_resource type="AudioStream" uid="uid://iibu4jg4qep6" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_16.wav" id="4_aumic"]
 [ext_resource type="Script" uid="uid://yivgoqoh0s4g" path="res://Content/AudioSystems/AudioEventSystem/Continueous Audio Events/start_continuous_audio_event.gd" id="4_kkchr"]
@@ -12,8 +13,18 @@
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="10_p50eg"]
 
 [node name="Day4" unique_id=1228570231 instance=ExtResource("1_qo1rx")]
+script = ExtResource("2_xx5gq")
 
-[node name="EventQueue" parent="." index="3" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
+[node name="RadioTurnsOnPlayer" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="1" unique_id=862525748]
+stream = ExtResource("6_d4h4s")
+
+[node name="RadioShutsOffPlayer" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="2" unique_id=529396552]
+stream = ExtResource("7_aumic")
+
+[node name="SpecimentHeartbeatPlayer" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="0" unique_id=478655979]
+stream = ExtResource("6_p50eg")
+
+[node name="EventQueue" parent="." index="4" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceWakingUpDay15/VanceWakingUpDay15Event"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceAmILosingMyMind/VanceAmILosingMyMind"), NodePath("../SequentialDialogue/TaskEventStage")]
 
 [node name="VanceWakingUpDay15Player" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="6" unique_id=1032853425]
@@ -26,27 +37,21 @@ stream = ExtResource("6_kkchr")
 
 [node name="StartSpecimenHeartbeat" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="0" unique_id=273921291 node_paths=PackedStringArray("audio_players", "event")]
 script = ExtResource("4_kkchr")
-audio_players = [NodePath("SpecimentHeartbeatPlayer")]
+audio_players = [NodePath("../../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimentHeartbeatPlayer")]
 event = NodePath("SpecimentHeartbeat")
 
 [node name="SpecimentHeartbeat" type="Node" parent="SequentialDialogue/StartSpecimenHeartbeat" index="0" unique_id=1512659597]
 script = ExtResource("3_d4h4s")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
-[node name="SpecimentHeartbeatPlayer" type="AudioStreamPlayer3D" parent="SequentialDialogue/StartSpecimenHeartbeat" index="1" unique_id=478655979]
-stream = ExtResource("6_p50eg")
-
 [node name="RadioTurnsOn" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="1" unique_id=146521580 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("2_em17x")
-audio_player = NodePath("RadioTurnsOnPlayer")
+audio_player = NodePath("../../Speaker/RadioTurnsOnPlayer")
 event = NodePath("RadioTurnsOn")
 
 [node name="RadioTurnsOn" type="Node" parent="SequentialDialogue/RadioTurnsOn" index="0" unique_id=1499096024]
 script = ExtResource("3_d4h4s")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
-
-[node name="RadioTurnsOnPlayer" type="AudioStreamPlayer3D" parent="SequentialDialogue/RadioTurnsOn" index="1" unique_id=862525748]
-stream = ExtResource("6_d4h4s")
 
 [node name="VanceWakingUpDay15" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="2" unique_id=447693708 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("2_em17x")
@@ -59,15 +64,12 @@ metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
 [node name="RadioShutsOff" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="3" unique_id=1468266447 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("2_em17x")
-audio_player = NodePath("RadioShutsOffPlayer")
+audio_player = NodePath("../../Speaker/RadioShutsOffPlayer")
 event = NodePath("RadioShutsOff")
 
 [node name="RadioShutsOff" type="Node" parent="SequentialDialogue/RadioShutsOff" index="0" unique_id=918759827]
 script = ExtResource("3_d4h4s")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
-
-[node name="RadioShutsOffPlayer" type="AudioStreamPlayer3D" parent="SequentialDialogue/RadioShutsOff" index="1" unique_id=529396552]
-stream = ExtResource("7_aumic")
 
 [node name="VanceAmILosingMyMind" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="4" unique_id=1279943772 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("2_em17x")
@@ -83,6 +85,7 @@ script = ExtResource("10_p50eg")
 events_in_stage = [NodePath("../../ValveControlPanel/TempGaugeControls/TempGaugeControlsEvent"), NodePath("../../ValveControlPanel/PhScaleLeverPanel/PhScaleLeverPanelEvent"), NodePath("../../ValveControlPanel/NutrientFlowCrankPanel/NutrientFlowCrankPanelEvent")]
 metadata/_custom_type_script = "uid://r70s6flykuow"
 
+[connection signal="event_queue_finished" from="EventQueue" to="." method="_on_event_queue_event_queue_finished"]
 [connection signal="event_disabled" from="SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat" to="SequentialDialogue/StartSpecimenHeartbeat" method="_on_event_disabled"]
 [connection signal="event_enabled" from="SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat" to="SequentialDialogue/StartSpecimenHeartbeat" method="_on_event_enabled"]
 [connection signal="event_disabled" from="SequentialDialogue/RadioTurnsOn/RadioTurnsOn" to="SequentialDialogue/RadioTurnsOn" method="_on_event_disabled"]
