@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="3_d4h4s"]
 [ext_resource type="AudioStream" uid="uid://iibu4jg4qep6" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_16.wav" id="4_aumic"]
 [ext_resource type="Script" uid="uid://yivgoqoh0s4g" path="res://Content/AudioSystems/AudioEventSystem/Continueous Audio Events/start_continuous_audio_event.gd" id="4_kkchr"]
+[ext_resource type="PackedScene" uid="uid://bfnfs3gul3euv" path="res://3D Assets/Creature/creatureday_Day4.tscn" id="6_15qo7"]
 [ext_resource type="AudioStream" uid="uid://p6sylje18bqs" path="res://AUDIO/SFX/Radio/Radio_On_Sfx.wav" id="6_d4h4s"]
 [ext_resource type="AudioStream" uid="uid://v0fg8f23ispw" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_17.wav" id="6_kkchr"]
 [ext_resource type="AudioStream" uid="uid://brr18fgkrr5kv" path="res://AUDIO/SFX/SPECIMEN/Heartbeat_Medium.wav" id="6_p50eg"]
@@ -21,8 +22,14 @@ stream = ExtResource("6_d4h4s")
 [node name="RadioShutsOffPlayer" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="2" unique_id=529396552]
 stream = ExtResource("7_aumic")
 
-[node name="SpecimentHeartbeatPlayer" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="0" unique_id=478655979]
+[node name="SpecimentHeartbeatPlayer" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 1812911613) index="0" unique_id=478655979]
 stream = ExtResource("6_p50eg")
+
+[node name="Specimen2" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="0" unique_id=232900906 instance=ExtResource("6_15qo7")]
+transform = Transform3D(1.9439663, 0, -0.83319867, 0, 2.115, 0, 0.83319867, 0, 1.9439663, 0.66709095, -1.7846878, 0.88594395)
+
+[node name="Specimen" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="1" unique_id=1234053442]
+visible = false
 
 [node name="EventQueue" parent="." index="4" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceWakingUpDay15/VanceWakingUpDay15Event"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceAmILosingMyMind/VanceAmILosingMyMind"), NodePath("../SequentialDialogue/TaskEventStage")]

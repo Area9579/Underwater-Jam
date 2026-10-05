@@ -1,0 +1,201 @@
+{
+    "asset": {
+        "version": "2.0",
+        "generator": "Open Asset Import Library (assimp v3.1.223738405)"
+    },
+    "accessors": [
+        {
+            "bufferView": 0,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2775,
+            "type": "VEC3",
+            "max": [
+                7257.40771484375,
+                1586.9931640625,
+                -4669.70068359375
+            ],
+            "min": [
+                6616.11669921875,
+                751.5819702148438,
+                -5288.62109375
+            ]
+        },
+        {
+            "bufferView": 1,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2775,
+            "type": "VEC3",
+            "max": [
+                0.9718757271766663,
+                0.9999999403953552,
+                0.9969218373298645
+            ],
+            "min": [
+                -0.9998195171356201,
+                -0.9999999403953552,
+                -0.9856842160224915
+            ]
+        },
+        {
+            "bufferView": 2,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2775,
+            "type": "VEC4",
+            "max": [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min": [
+                -1.0,
+                -1.0,
+                -1.0,
+                -1.0
+            ]
+        },
+        {
+            "bufferView": 3,
+            "byteOffset": 0,
+            "componentType": 5126,
+            "count": 2775,
+            "type": "VEC2",
+            "max": [
+                0.9990000128746033,
+                0.9990000128746033
+            ],
+            "min": [
+                0.0010000020265579224,
+                0.009107768535614014
+            ]
+        },
+        {
+            "bufferView": 4,
+            "byteOffset": 0,
+            "componentType": 5123,
+            "count": 9399,
+            "type": "SCALAR",
+            "max": [
+                2774.0
+            ],
+            "min": [
+                0.0
+            ]
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 151998,
+            "uri": "PillDispenser.bin"
+        }
+    ],
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteOffset": 0,
+            "byteLength": 33300,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 33300,
+            "byteLength": 33300,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 66600,
+            "byteLength": 44400,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 111000,
+            "byteLength": 22200,
+            "target": 34962
+        },
+        {
+            "buffer": 0,
+            "byteOffset": 133200,
+            "byteLength": 18798,
+            "target": 34963
+        }
+    ],
+    "materials": [
+        {
+            "name": "DefaultMaterial",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    0.6000000238418579,
+                    1.0
+                ],
+                "metallicFactor": 0.0
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "PillDispenser",
+            "primitives": [
+                {
+                    "mode": 4,
+                    "material": 0,
+                    "indices": 4,
+                    "attributes": {
+                        "POSITION": 0,
+                        "NORMAL": 1,
+                        "TANGENT": 2,
+                        "TEXCOORD_0": 3
+                    }
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "name": "PillDispenser.obj",
+            "matrix": [
+                0.009999999776482582,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.009999999776482582,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.009999999776482582,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                1.0
+            ],
+            "children": [
+                1,
+                2
+            ]
+        },
+        {
+            "name": "PillDispenser"
+        },
+        {
+            "name": "PillDispenser_node",
+            "mesh": 0
+        }
+    ],
+    "scenes": [
+        {
+            "nodes": [
+                0
+            ]
+        }
+    ],
+    "scene": 0
+}

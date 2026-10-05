@@ -9,9 +9,26 @@
 [ext_resource type="AudioStream" uid="uid://ddc7wxwvbujv6" path="res://AUDIO/SFX/SPECIMEN/Heartbeat_Slow.wav" id="4_aqbd0"]
 [ext_resource type="AudioStream" uid="uid://kwcg2q2ptcjy" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_10.wav" id="5_3m53c"]
 [ext_resource type="AudioStream" uid="uid://c4dftrudxvoxw" path="res://AUDIO/DIALOGUE/HQ/HQ_Voiceline_11.wav" id="6_aqbd0"]
+[ext_resource type="Texture2D" uid="uid://c814xp7f3v7r6" path="res://3D Assets/Pipe Vat and Valve/Texture/Main_Color.png" id="7_idhdj"]
 [ext_resource type="AudioStream" uid="uid://x4ukrd3dxwp2" path="res://AUDIO/SFX/Radio/Radio_Off_Sfx.wav" id="7_ms8ji"]
 [ext_resource type="AudioStream" uid="uid://xnpdk4lp4bya" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_12.wav" id="8_2coo7"]
+[ext_resource type="Texture2D" uid="uid://dhvvh2sgmtyad" path="res://3D Assets/Pipe Vat and Valve/Texture/Main_AORoughMetal.png" id="8_addl6"]
+[ext_resource type="Texture2D" uid="uid://bqm67u3stpmtr" path="res://3D Assets/Pipe Vat and Valve/Texture/Main_Normal.png" id="9_c1asf"]
+[ext_resource type="Script" uid="uid://bp3k2gikta5ge" path="res://Content/Specimen/vat_door_anim.gd" id="10_q3vog"]
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="11_3m53c"]
+[ext_resource type="PackedScene" uid="uid://csf3fsjqcfhnw" path="res://3D Assets/Creature/Creature_Day2.tscn" id="11_idhdj"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v3dxv"]
+albedo_texture = ExtResource("7_idhdj")
+metallic = 1.0
+metallic_texture = ExtResource("8_addl6")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("8_addl6")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("9_c1asf")
+ao_enabled = true
+ao_texture = ExtResource("8_addl6")
 
 [node name="Day2" unique_id=1228570231 instance=ExtResource("1_diosg")]
 script = ExtResource("2_aqbd0")
@@ -25,9 +42,97 @@ stream = ExtResource("6_aqbd0")
 [node name="RadioShutsOff2" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="3" unique_id=967970028]
 stream = ExtResource("7_ms8ji")
 
-[node name="SpecimentHeartbeatPlayer" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="0" unique_id=83258106]
+[node name="SpecimentHeartbeatPlayer" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 1812911613) index="0" unique_id=83258106]
 transform = Transform3D(3.080802, 0, 0, 0, 3.080802, 0, 0, 0, 2.7275538, 2.1568928, 0, 0)
 stream = ExtResource("4_aqbd0")
+
+[node name="VatDoorPlate" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard" parent_id_path=PackedInt32Array(616365444, 1669105872, 1814431721) index="0" unique_id=309024821]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+script = ExtResource("10_q3vog")
+
+[node name="Plane_001" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate" index="0" unique_id=38657771]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_002" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001" index="0" unique_id=1076826205]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_003" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002" index="0" unique_id=1697866347]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_004" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003" index="0" unique_id=952142705]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_005" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004" index="0" unique_id=743016278]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_006" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005" index="0" unique_id=1834586014]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_007" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006" index="0" unique_id=1659250279]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_008" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007" index="0" unique_id=448211544]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_009" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008" index="0" unique_id=487146801]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_010" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009" index="0" unique_id=258545404]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_011" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010" index="0" unique_id=1490804980]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_012" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011" index="0" unique_id=203210950]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_013" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012" index="0" unique_id=1152486689]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_014" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013" index="0" unique_id=275906607]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_015" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014" index="0" unique_id=818094377]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_016" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015" index="0" unique_id=2008006072]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_017" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016" index="0" unique_id=508734966]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_018" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017" index="0" unique_id=1117465428]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_019" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018" index="0" unique_id=1366536355]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_020" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019" index="0" unique_id=1422661461]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_021" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020" index="0" unique_id=1741151467]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_022" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021" index="0" unique_id=429779390]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_023" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022" index="0" unique_id=304638066]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_024" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022/Plane_023" index="0" unique_id=1228369728]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_025" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022/Plane_023/Plane_024" index="0" unique_id=117045974]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Plane_026" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /VatDoorFullPlate_Standard/VatDoorPlate/Plane_001/Plane_002/Plane_003/Plane_004/Plane_005/Plane_006/Plane_007/Plane_008/Plane_009/Plane_010/Plane_011/Plane_012/Plane_013/Plane_014/Plane_015/Plane_016/Plane_017/Plane_018/Plane_019/Plane_020/Plane_021/Plane_022/Plane_023/Plane_024/Plane_025" index="0" unique_id=718897350]
+material_override = SubResource("StandardMaterial3D_v3dxv")
+
+[node name="Specimen2" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="0" unique_id=497407904 instance=ExtResource("11_idhdj")]
+transform = Transform3D(2.636519, 0, -0.78929865, 0, 3.080802, 0, 0.698797, 0, 2.9779773, -0.83284116, -18.043343, 0.8027139)
+
+[node name="Specimen" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="1" unique_id=1234053442]
+visible = false
 
 [node name="EventQueue" parent="." index="4" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceExternalHullDiagnostic/VanceExternalHullDiagnostic"), NodePath("../SequentialDialogue/HQExternalScansNormal/HQExternalScansNormal"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceSoundsLikePulse/VanceSoundsLikePulse"), NodePath("../SequentialDialogue/TaskEventStage")]
