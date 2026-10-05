@@ -59,7 +59,6 @@ func play_anim() -> void:
 	
 	await SceneSwitcher.fade_to_white.do_tween()
 	await get_tree().create_timer(0.5).timeout
-	# TODO: switch to broken
 	wrench_hit_on_glass.play()
 	glass_whole.hide()
 	glass_shattered.show()
