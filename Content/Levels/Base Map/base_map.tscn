@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://duqqc07ub3xhu"]
 
 [ext_resource type="PackedScene" uid="uid://0h3bkwj45wb6" path="res://3D Assets/LevelLayout.glb" id="1_2vlr6"]
-[ext_resource type="PackedScene" uid="uid://c75ceqrjafian" path="res://Content/ValveControlPanel/valve_control_panel.tscn" id="1_ou68s"]
+[ext_resource type="PackedScene" uid="uid://cunnbqjgjkbqn" path="res://Content/ValveControlPanel/valve_control_panel.tscn" id="1_ou68s"]
 [ext_resource type="Texture2D" uid="uid://cn4p5lf82faki" path="res://Gym/Assets/Horror_Floor_12-128x128.png" id="1_pwexk"]
 [ext_resource type="Script" uid="uid://r2c5y3hynqcf" path="res://Content/Levels/Base Map/base_map_orchestrator.gd" id="1_y24es"]
 [ext_resource type="PackedScene" uid="uid://c7fwgmmrjf53x" path="res://Content/Player/player.tscn" id="2_5e2fw"]
@@ -61,7 +61,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_o3k8e")
 
 [node name="Player" parent="." unique_id=1495724798 instance=ExtResource("2_5e2fw")]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12999058, 1.7968879, 0.1994425)
+transform = Transform3D(-0.37289464, 0, 0.9278737, 0, 1, 0, -0.9278737, 0, -0.37289464, -3.236841, 1.1137532, -1.8083845)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="Player" unique_id=658117881]
 light_color = Color(0.9264652, 0.7131488, 0.54608184, 1)

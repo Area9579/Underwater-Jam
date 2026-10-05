@@ -31,6 +31,9 @@ unique_name_in_owner = true
 script = ExtResource("1_u23h8")
 affected_node = NodePath("..")
 canvas_item_tween = SubResource("Resource_yf5fn")
+trans_type = 4
+ease_type = 2
+tween_duration = 0.5
 metadata/_custom_type_script = "uid://c0eq70gyg7rhf"
 
 [node name="FadeFromBlack" type="Node" parent="BlackScreen" unique_id=1951004200 node_paths=PackedStringArray("affected_node")]
@@ -38,4 +41,7 @@ unique_name_in_owner = true
 script = ExtResource("1_u23h8")
 affected_node = NodePath("..")
 canvas_item_tween = SubResource("Resource_g4v7s")
+trans_type = 4
+ease_type = 2
+tween_duration = 0.5
 metadata/_custom_type_script = "uid://c0eq70gyg7rhf"
