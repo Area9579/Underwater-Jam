@@ -2,21 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxoibghi0v3al"
-path.s3tc="res://.godot/imported/BaseColour.png-ee2ce5ab4abc37aa6d3a78802104061d.s3tc.ctex"
+uid="uid://bdyr2p2aty8u2"
+path="res://.godot/imported/telexOrder_3.png-c9038c2cde2fa5147e5c9db7e39b57f3.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
-source_file="res://3D Assets/Terminal/BaseColour.png"
-dest_files=["res://.godot/imported/BaseColour.png-ee2ce5ab4abc37aa6d3a78802104061d.s3tc.ctex"]
+source_file="res://3D Assets/Order Sheet/telexOrder_3.png"
+dest_files=["res://.godot/imported/telexOrder_3.png-c9038c2cde2fa5147e5c9db7e39b57f3.ctex"]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/uastc_level=0
@@ -24,7 +23,7 @@ compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=true
+mipmaps/generate=false
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -38,4 +37,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=0
+detect_3d/compress_to=1

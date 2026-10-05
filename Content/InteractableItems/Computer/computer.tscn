@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dp6xydwjwsx0y" path="res://Content/InteractableItems/Computer/computer.gd" id="1_nwl00"]
 [ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="3_47qs5"]
+[ext_resource type="Texture2D" uid="uid://7el7hfrcr0mi" path="res://3D Assets/Terminal/BaseColour.png" id="3_oxpca"]
 [ext_resource type="Script" uid="uid://dw3rgqw7ff4qf" path="res://Content/InteractableItems/Computer/computer_interactable.gd" id="4_oxpca"]
 [ext_resource type="PackedScene" uid="uid://cedmc3r84232b" path="res://Content/InteractableItems/Computer/ComputerScreen/computer_screen.tscn" id="4_xmc6x"]
 
@@ -44,6 +45,9 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bhc1l")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wwv2d"]
+albedo_texture = ExtResource("3_oxpca")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_6vv67"]
 _surfaces = [{
@@ -450,6 +454,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.87152255)
 [node name="VDUTerminal" type="MeshInstance3D" parent="VDUTerminal" unique_id=1018499832]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36494, 0.01604187)
 mesh = SubResource("ArrayMesh_236qr")
+surface_material_override/0 = SubResource("StandardMaterial3D_wwv2d")
 
 [node name="Inputs" type="Node3D" parent="VDUTerminal/VDUTerminal" unique_id=1071420658]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.36494, -0.01604187)

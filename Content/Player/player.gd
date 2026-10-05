@@ -45,12 +45,19 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("equip") and interaction_enabled and has_sheet:
 		change_sheet_equip()
 
+func input_disabled():
+	interaction_enabled = false
+
+func input_true():
+	interaction_enabled = true
 
 func change_sheet_equip() -> void:
 	match sheet_equiped:
 		true:
 			sheet_equiped = false
-			sheet_marker.visible = false
+			#sheet_marker.visible = false
+			(sheet_marker.get_child(0) as DailyOrderSheet).put_down.do_tween()
 		false:
 			sheet_equiped = true
-			sheet_marker.visible = true
+			#sheet_marker.visible = true
+			(sheet_marker.get_child(0) as DailyOrderSheet).pull_up.do_tween()

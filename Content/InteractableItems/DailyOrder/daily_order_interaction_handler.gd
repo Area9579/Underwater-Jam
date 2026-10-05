@@ -11,10 +11,13 @@ func _init(interactable_node : DailyOrderSheet) -> void:
 func do_interaction(player : FirstPersonEntityController) -> void:
 	is_interacting = true
 	daily_order_sheet.reparent((player as Player).sheet_marker)
-	daily_order_sheet.position = Vector3(0, 0, 0)
+	daily_order_sheet.position = Vector3(0, -0.5, 0)
 	daily_order_sheet.rotation_degrees = Vector3(0, 0, 0)
 	(player as Player).has_sheet = true
 	(player as Player).sheet_equiped = true
+	daily_order_sheet.pull_up.do_tween()
+	daily_order_sheet.daily_order_event.finish()
+	is_interacting = false
 
 
 func is_correct_input_given() -> bool:
@@ -24,8 +27,8 @@ func is_correct_input_given() -> bool:
 
 
 func fade_in_hover_effect() -> void:
-	daily_order_sheet.test_label.visible = true
+	pass
 
 
 func fade_out_hover_effect() -> void:
-	daily_order_sheet.test_label.visible = false
+	pass
