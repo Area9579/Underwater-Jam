@@ -13,12 +13,12 @@
 [ext_resource type="AudioStream" uid="uid://x4ukrd3dxwp2" path="res://AUDIO/SFX/Radio/Radio_Off_Sfx.wav" id="7_aumic"]
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="10_p50eg"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_xx5gq"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_15qo7"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_15qo7"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rwhkp"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_xx5gq")
+albedo_texture = SubResource("ViewportTexture_15qo7")
 uv1_scale = Vector3(6.12, 6.12, 6.12)
 uv1_offset = Vector3(0.5, 0.205, 0)
 
@@ -32,14 +32,9 @@ stream = ExtResource("6_d4h4s")
 stream = ExtResource("7_aumic")
 
 [node name="Glass" parent="Computer/VDUTerminal/VDUTerminal" parent_id_path=PackedInt32Array(1318926826, 1018499832) index="1" unique_id=480455911]
-surface_material_override/0 = SubResource("StandardMaterial3D_15qo7")
+surface_material_override/0 = SubResource("StandardMaterial3D_rwhkp")
 
 [node name="SpecimentHeartbeatPlayer" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="0" unique_id=478655979]
-stream = ExtResource("6_p50eg")
-
-[node name="EventQueue" parent="." index="5" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
-event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceWakingUpDay15/VanceWakingUpDay15Event"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceAmILosingMyMind/VanceAmILosingMyMind"), NodePath("../DailyOrderSheet/DailyOrdertEvent"), NodePath("../SequentialDialogue/TaskEventStage")]
-[node name="SpecimentHeartbeatPlayer" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 1812911613) index="0" unique_id=478655979]
 stream = ExtResource("6_p50eg")
 
 [node name="Specimen2" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="0" unique_id=232900906 instance=ExtResource("6_15qo7")]
@@ -48,7 +43,7 @@ transform = Transform3D(1.9439663, 0, -0.83319867, 0, 2.115, 0, 0.83319867, 0, 1
 [node name="Specimen" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="1" unique_id=1234053442]
 visible = false
 
-[node name="EventQueue" parent="." index="4" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
+[node name="EventQueue" parent="." index="5" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceWakingUpDay15/VanceWakingUpDay15Event"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceAmILosingMyMind/VanceAmILosingMyMind"), NodePath("../SequentialDialogue/TaskEventStage")]
 
 [node name="VanceWakingUpDay15Player" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="6" unique_id=1032853425]
