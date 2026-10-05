@@ -3,7 +3,7 @@
     {
       "bufferView": 0,
       "componentType": 5126,
-      "count": 11629,
+      "count": 10572,
       "max": [
         221.92080688476563,
         176.3612823486328,
@@ -20,13 +20,13 @@
       "bufferView": 0,
       "byteOffset": 12,
       "componentType": 5126,
-      "count": 11629,
+      "count": 10572,
       "type": "VEC3"
     },
     {
       "bufferView": 1,
       "componentType": 5125,
-      "count": 28845,
+      "count": 27327,
       "type": "SCALAR"
     }
   ],
@@ -36,33 +36,35 @@
   "bufferViews": [
     {
       "buffer": 0,
-      "byteLength": 372128,
+      "byteLength": 338304,
       "byteStride": 32,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteLength": 115380,
-      "byteOffset": 372128,
+      "byteLength": 109308,
+      "byteOffset": 338304,
       "target": 34963
     }
   ],
   "buffers": [
     {
-      "byteLength": 487508,
+      "byteLength": 447612,
       "uri": "Telex.bin"
     }
   ],
   "materials": [
     {
-      "name": "fallback Material",
+      "name": "DefaultMaterial",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          0.0,
-          0.0,
-          0.0,
+          0.6000000238418579,
+          0.6000000238418579,
+          0.6000000238418579,
           1.0
-        ]
+        ],
+        "metallicFactor": 0.0,
+        "roughnessFactor": 0.5678070187568665
       }
     }
   ],
@@ -110,17 +112,17 @@
         0
       ],
       "matrix": [
-        -0.08715588599443437,
-        0.0,
-        -0.9961946606636046,
-        0.0,
-        4.354505023229649e-08,
         1.0,
-        -3.809704995916263e-09,
         0.0,
-        0.9961946606636046,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        4.371138828673793e-08,
+        0.0,
+        0.0,
         -4.371138828673793e-08,
-        -0.08715588599443437,
+        1.0,
         0.0,
         0.0,
         0.0,
