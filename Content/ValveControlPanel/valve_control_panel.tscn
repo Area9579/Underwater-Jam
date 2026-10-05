@@ -752,6 +752,7 @@ one_shot = true
 
 [node name="SpecimenChecker" type="Node" parent="PipeVatValves/Pipe And Vat/ /SpecimenController" unique_id=1169210151]
 script = ExtResource("2_mji5f")
+post_task_wait_time = 10.0
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
 [node name="Cylinder" parent="PipeVatValves/Pipe And Vat" index="1" unique_id=1542653781]

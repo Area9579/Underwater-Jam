@@ -18,8 +18,6 @@ func _ready() -> void:
 	interaction_handler.door_change.connect(door_changed)
 
 
-
-
 ## Garb door status from Interaction handler signal being emitted on input
 func door_changed(new_door_status: bool):
 	hover_text.text = str(new_door_status)
