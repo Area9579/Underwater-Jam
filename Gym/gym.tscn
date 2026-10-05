@@ -14,9 +14,7 @@
 [ext_resource type="Script" uid="uid://cua2uk64ok3vg" path="res://Systems/Event Queue/event_queue.gd" id="10_frjl4"]
 [ext_resource type="Environment" uid="uid://6372adp05a4k" path="res://Content/Porthole/baseFog.tres" id="11_frjl4"]
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="14_j07sc"]
-[ext_resource type="PackedScene" uid="uid://bvm5ljkf31yqn" path="res://Content/Specimen/speciemen.tscn" id="17_0i5pg"]
 [ext_resource type="PackedScene" uid="uid://77lx1f7kihkn" path="res://Content/InteractableItems/Pill Dispenser/pill_dispenser.tscn" id="18_cos24"]
-[ext_resource type="PackedScene" uid="uid://bbjy0l63rcy3q" path="res://3D Assets/VDUTerminal.fbx" id="18_7nik5"]
 [ext_resource type="PackedScene" uid="uid://cunnbqjgjkbqn" path="res://Content/ValveControlPanel/valve_control_panel.tscn" id="21_pnf3o"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
@@ -68,12 +66,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_hvni5")
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_0i5pg"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_fgf5g"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7nik5"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0i5pg"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_0i5pg")
+albedo_texture = SubResource("ViewportTexture_fgf5g")
 uv1_scale = Vector3(6.12, 6.12, 6.12)
 uv1_offset = Vector3(0.5, 0.205, 0)
 
@@ -144,7 +142,7 @@ transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 1
 
 [node name="Glass" parent="Computer/VDUTerminal/VDUTerminal" parent_id_path=PackedInt32Array(1318926826, 1018499832) index="1" unique_id=480455911]
 mesh = SubResource("ArrayMesh_0i5pg")
-surface_material_override/0 = SubResource("StandardMaterial3D_7nik5")
+surface_material_override/0 = SubResource("StandardMaterial3D_0i5pg")
 
 [node name="EventQueue" type="Node" parent="." unique_id=1180674234 node_paths=PackedStringArray("event_queue")]
 script = ExtResource("10_frjl4")
@@ -305,9 +303,6 @@ environment = ExtResource("11_frjl4")
 
 [node name="ValveControlPanel" parent="." unique_id=616365444 instance=ExtResource("21_pnf3o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.783218, -4.076112, 10.648075)
-
-[node name="Speciemen" parent="." unique_id=174937618 instance=ExtResource("17_0i5pg")]
-transform = Transform3D(0.2561991, 0, -0.966624, 0, 1, 0, 0.966624, 0, 0.2561991, -12.637952, 2.9638014, 2.483758)
 
 [node name="PillDispenser" parent="." unique_id=1487610789 instance=ExtResource("18_cos24")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 6.4273705, 0.7865087, 4.5725226)
