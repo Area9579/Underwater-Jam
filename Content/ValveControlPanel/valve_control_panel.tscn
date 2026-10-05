@@ -30,7 +30,7 @@
 [ext_resource type="Shader" uid="uid://cunvmsic2t2a6" path="res://3D Assets/Shaders/blob.gdshader" id="21_djvyw"]
 [ext_resource type="Script" uid="uid://de0rtrqtincso" path="res://Content/InteractableItems/Speciemen/Door/door.gd" id="22_paj08"]
 [ext_resource type="PackedScene" uid="uid://bd35fe31hjmwr" path="res://3D Assets/Pipe Vat and Valve/Glass/glass.glb" id="25_7jfgw"]
-[ext_resource type="Shader" uid="uid://b1fhre1ohnqgt" path="res://3D Assets/Pipe Vat and Valve/Glass/blob.gdshader" id="26_rqej3"]
+[ext_resource type="Shader" uid="uid://b1fhre1ohnqgt" path="res://3D Assets/Pipe Vat and Valve/Glass/glass.gdshader" id="26_rqej3"]
 [ext_resource type="PackedScene" uid="uid://xqjjb2ppsq7e" path="res://3D Assets/Pipe Vat and Valve/Glass/glassshattered.glb" id="27_0x7y6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxfqv"]
