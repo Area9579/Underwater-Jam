@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://duqqc07ub3xhu"]
 
 [ext_resource type="PackedScene" uid="uid://0h3bkwj45wb6" path="res://3D Assets/LevelLayout.glb" id="1_2vlr6"]
+[ext_resource type="PackedScene" uid="uid://bdp4i0gkpl485" path="res://3D Assets/Speaker/speaker.tscn" id="1_n06nk"]
 [ext_resource type="PackedScene" uid="uid://cunnbqjgjkbqn" path="res://Content/ValveControlPanel/valve_control_panel.tscn" id="1_ou68s"]
 [ext_resource type="Texture2D" uid="uid://cn4p5lf82faki" path="res://Gym/Assets/Horror_Floor_12-128x128.png" id="1_pwexk"]
 [ext_resource type="Script" uid="uid://r2c5y3hynqcf" path="res://Content/Levels/Base Map/base_map_orchestrator.gd" id="1_y24es"]
@@ -29,6 +30,9 @@ albedo_color = Color(0.67481464, 0.67481464, 0.6748146, 1)
 albedo_texture = ExtResource("1_pwexk")
 
 [node name="BaseMap" type="Node3D" unique_id=1228570231]
+
+[node name="Speaker" parent="." unique_id=1877486404 instance=ExtResource("1_n06nk")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, -1.4279053, 2.8522594, 6.5624704)
 
 [node name="ValveControlPanel" parent="." unique_id=616365444 instance=ExtResource("1_ou68s")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.811306, -4.372, 12.717174)

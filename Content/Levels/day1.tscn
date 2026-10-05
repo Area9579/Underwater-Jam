@@ -30,13 +30,31 @@ uv1_offset = Vector3(0.5, 0.205, 0)
 [node name="Day1" unique_id=1228570231 instance=ExtResource("1_ax01y")]
 script = ExtResource("2_ite6a")
 
+[node name="RadioTurnsOn2" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="1" unique_id=1162073888]
+stream = ExtResource("4_8hs4d")
+
+[node name="HQWelcome2" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="2" unique_id=1020870366]
+stream = ExtResource("5_8hs4d")
+
+[node name="HQOperationalDirective2" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="3" unique_id=816859439]
+stream = ExtResource("7_64ylx")
+
+[node name="HQSpecimenExplanation2" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="4" unique_id=1509632093]
+stream = ExtResource("9_wt837")
+
+[node name="HQExcellent2" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="5" unique_id=24286466]
+stream = ExtResource("11_jpvo4")
+
+[node name="RadioShutsOff2" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="6" unique_id=1345015375]
+stream = ExtResource("12_ka3wr")
+
 [node name="Computer" parent="LevelLayout" parent_id_path=PackedInt32Array(1577965459) index="97" unique_id=1318926826 instance=ExtResource("2_wt837")]
 transform = Transform3D(-1.2710856, 0, -6.778415, 0, 6.8965664, 0, 6.778415, 0, -1.2710856, 102.397835, 9.028236, -14.372993)
 
 [node name="Glass" parent="LevelLayout/Computer/VDUTerminal/VDUTerminal" parent_id_path=PackedInt32Array(1318926826, 1018499832) index="1" unique_id=480455911]
 surface_material_override/0 = SubResource("StandardMaterial3D_wt837")
 
-[node name="EventQueue" parent="." index="3" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
+[node name="EventQueue" parent="." index="4" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceImAwake/VanceImAwake"), NodePath("../SequentialDialogue/HQWelcome/HQWelcome"), NodePath("../SequentialDialogue/VanceReady/VanceReady"), NodePath("../SequentialDialogue/HQOperationalDirective/HQOperationalDirective"), NodePath("../SequentialDialogue/VanceIncredible/VanceIncredible"), NodePath("../SequentialDialogue/HQSpecimenExplanation/HQSpecimenExplanation"), NodePath("../SequentialDialogue/VanceUnderstand30Days/VanceUnderstand30Days"), NodePath("../SequentialDialogue/HQExcellent/HQExcellent"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceItsOnly30Days/VanceItsOnly30Days"), NodePath("../SequentialDialogue/TaskEventStage")]
 
 [node name="VanceImAwake2" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="0" unique_id=1885120268]
@@ -56,15 +74,12 @@ stream = ExtResource("13_j5c48")
 
 [node name="RadioTurnsOn" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="0" unique_id=447693708 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("6_8hs4d")
-audio_player = NodePath("AudioStreamPlayer3D")
+audio_player = NodePath("../../Speaker/RadioTurnsOn2")
 event = NodePath("RadioTurnsOn")
 
 [node name="RadioTurnsOn" type="Node" parent="SequentialDialogue/RadioTurnsOn" index="0" unique_id=1825350162]
 script = ExtResource("3_pf1uq")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SequentialDialogue/RadioTurnsOn" index="1" unique_id=1162073888]
-stream = ExtResource("4_8hs4d")
 
 [node name="VanceImAwake" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="1" unique_id=2138084144 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("6_8hs4d")
@@ -77,15 +92,12 @@ metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
 [node name="HQWelcome" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="2" unique_id=1787956900 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("6_8hs4d")
-audio_player = NodePath("AudioStreamPlayer3D")
+audio_player = NodePath("../../Speaker/HQWelcome2")
 event = NodePath("HQWelcome")
 
 [node name="HQWelcome" type="Node" parent="SequentialDialogue/HQWelcome" index="0" unique_id=404597076]
 script = ExtResource("3_pf1uq")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SequentialDialogue/HQWelcome" index="1" unique_id=1020870366]
-stream = ExtResource("5_8hs4d")
 
 [node name="VanceReady" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="3" unique_id=335863928 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("6_8hs4d")
@@ -98,15 +110,12 @@ metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
 [node name="HQOperationalDirective" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="4" unique_id=1554572041 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("6_8hs4d")
-audio_player = NodePath("AudioStreamPlayer3D")
+audio_player = NodePath("../../Speaker/HQOperationalDirective2")
 event = NodePath("HQOperationalDirective")
 
 [node name="HQOperationalDirective" type="Node" parent="SequentialDialogue/HQOperationalDirective" index="0" unique_id=1889970872]
 script = ExtResource("3_pf1uq")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SequentialDialogue/HQOperationalDirective" index="1" unique_id=816859439]
-stream = ExtResource("7_64ylx")
 
 [node name="VanceIncredible" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="5" unique_id=694607214 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("6_8hs4d")
@@ -119,15 +128,12 @@ metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
 [node name="HQSpecimenExplanation" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="6" unique_id=1773141776 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("6_8hs4d")
-audio_player = NodePath("AudioStreamPlayer3D")
+audio_player = NodePath("../../Speaker/HQSpecimenExplanation2")
 event = NodePath("HQSpecimenExplanation")
 
 [node name="HQSpecimenExplanation" type="Node" parent="SequentialDialogue/HQSpecimenExplanation" index="0" unique_id=673795891]
 script = ExtResource("3_pf1uq")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SequentialDialogue/HQSpecimenExplanation" index="1" unique_id=1509632093]
-stream = ExtResource("9_wt837")
 
 [node name="VanceUnderstand30Days" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="7" unique_id=1298448028 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("6_8hs4d")
@@ -140,27 +146,21 @@ metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
 [node name="HQExcellent" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="8" unique_id=1615530749 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("6_8hs4d")
-audio_player = NodePath("AudioStreamPlayer3D")
+audio_player = NodePath("../../Speaker/HQExcellent2")
 event = NodePath("HQExcellent")
 
 [node name="HQExcellent" type="Node" parent="SequentialDialogue/HQExcellent" index="0" unique_id=1639923669]
 script = ExtResource("3_pf1uq")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SequentialDialogue/HQExcellent" index="1" unique_id=24286466]
-stream = ExtResource("11_jpvo4")
-
 [node name="RadioShutsOff" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="9" unique_id=363783371 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("6_8hs4d")
-audio_player = NodePath("AudioStreamPlayer3D")
+audio_player = NodePath("../../Speaker/RadioShutsOff2")
 event = NodePath("RadioShutsOff")
 
 [node name="RadioShutsOff" type="Node" parent="SequentialDialogue/RadioShutsOff" index="0" unique_id=867735512]
 script = ExtResource("3_pf1uq")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="SequentialDialogue/RadioShutsOff" index="1" unique_id=1345015375]
-stream = ExtResource("12_ka3wr")
 
 [node name="VanceItsOnly30Days" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="10" unique_id=996508192 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("6_8hs4d")
