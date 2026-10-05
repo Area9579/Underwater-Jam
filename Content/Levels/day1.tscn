@@ -128,6 +128,12 @@ stream = ExtResource("12_ka3wr")
 [node name="Glass" parent="Computer/VDUTerminal/VDUTerminal" parent_id_path=PackedInt32Array(1318926826, 1018499832) index="1" unique_id=480455911]
 surface_material_override/0 = SubResource("StandardMaterial3D_ite6a")
 
+[node name="TargetRadialDial" parent="ValveControlPanel/PipeVatValves/controls/RadialDialP" parent_id_path=PackedInt32Array(616365444, 1134580654) index="1" unique_id=1358226458]
+surface_material_override/0 = null
+
+[node name="phDial" parent="ValveControlPanel/PipeVatValves/controls/phDialP/Path3D/TargetLocationPathFollow" parent_id_path=PackedInt32Array(616365444, 196012113) index="0" unique_id=1052099167]
+surface_material_override/0 = null
+
 [node name="EventQueue" parent="." index="5" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceImAwake/VanceImAwake"), NodePath("../SequentialDialogue/HQWelcome/HQWelcome"), NodePath("../SequentialDialogue/VanceReady/VanceReady"), NodePath("../SequentialDialogue/HQOperationalDirective/HQOperationalDirective"), NodePath("../SequentialDialogue/VanceIncredible/VanceIncredible"), NodePath("../SequentialDialogue/HQSpecimenExplanation/HQSpecimenExplanation"), NodePath("../SequentialDialogue/VanceUnderstand30Days/VanceUnderstand30Days"), NodePath("../SequentialDialogue/HQExcellent/HQExcellent"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceItsOnly30Days/VanceItsOnly30Days"), NodePath("../DailyOrderSheet/DailyOrdertEvent"), NodePath("../SequentialDialogue/TaskEventStage")]
 
