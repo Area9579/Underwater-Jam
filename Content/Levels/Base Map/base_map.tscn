@@ -7,11 +7,13 @@
 [ext_resource type="Script" uid="uid://r2c5y3hynqcf" path="res://Content/Levels/Base Map/base_map_orchestrator.gd" id="1_y24es"]
 [ext_resource type="PackedScene" uid="uid://c7fwgmmrjf53x" path="res://Content/Player/player.tscn" id="2_5e2fw"]
 [ext_resource type="Script" uid="uid://cua2uk64ok3vg" path="res://Systems/Event Queue/event_queue.gd" id="3_lul3p"]
+[ext_resource type="PackedScene" uid="uid://bs4uuxw686aq0" path="res://3D Assets/Door/empty_door.tscn" id="5_jkcc1"]
 [ext_resource type="PackedScene" uid="uid://bkj28qpfl2n7k" path="res://Content/InteractableItems/DailyOrder/daily_order_sheet.tscn" id="5_y24es"]
 [ext_resource type="AudioStream" uid="uid://cd3dxombwav1r" path="res://AUDIO/SFX/FACILITY AMBIENCE/AMB_Air_drone_02.wav" id="6_12dd5"]
 [ext_resource type="AudioStream" uid="uid://c1xpadt2ly1ov" path="res://AUDIO/SFX/FACILITY AMBIENCE/AMB_ocean_drone_01.wav" id="7_77dgn"]
 [ext_resource type="PackedScene" uid="uid://cmuk8q4nj8nd" path="res://Content/InteractableItems/Computer/computer.tscn" id="10_n06nk"]
 [ext_resource type="Texture2D" uid="uid://dvbrnnwontn2j" path="res://2DAssets/poster.png" id="12_t1cjl"]
+[ext_resource type="PackedScene" uid="uid://b5bgv4iytoqp3" path="res://3D Assets/Door/door.tscn" id="13_5ww7r"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mitgq"]
 emission_enabled = true
@@ -55,6 +57,18 @@ transform = Transform3D(0.855, 0, 0, 0, 0.855, 0, 0, 0, 0.855, -22.507818, -3.85
 
 [node name="LevelLayout" parent="." unique_id=1577965459 instance=ExtResource("1_2vlr6")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -6.994794, -0.083275795, 6.666717)
+
+[node name="door(Export" parent="LevelLayout/Node15" parent_id_path=PackedInt32Array(1577965459, 897383989) index="1" unique_id=1972249084 instance=ExtResource("5_jkcc1")]
+transform = Transform3D(3.6919997, 0, 0, 0, -1.7012471e-07, -5.042, 0, 3.8919997, -2.2039279e-07, -0.18646145, -39.4329, 10.006835)
+
+[node name="door(Export2" parent="LevelLayout/Node15" parent_id_path=PackedInt32Array(1577965459, 897383989) index="2" unique_id=2086014951 instance=ExtResource("5_jkcc1")]
+transform = Transform3D(-0.10430894, -1.7005678e-07, -5.0399866, -3.6905262, 4.8065165e-09, 0.14245012, 0, 3.891999, -2.2039279e-07, -36.247917, -8.706606, 10.006835)
+
+[node name="door(Export3" parent="LevelLayout/Node15" parent_id_path=PackedInt32Array(1577965459, 897383989) index="3" unique_id=1776874571 instance=ExtResource("5_jkcc1")]
+transform = Transform3D(2.89, 0, 0, 0, -1.7510783e-07, -4.602, 0, 4.006, -2.0115982e-07, -51.59717, 6.6891527, 10.006835)
+
+[node name="door(Export4" parent="LevelLayout/Node15" parent_id_path=PackedInt32Array(1577965459, 897383989) index="4" unique_id=1089642288 instance=ExtResource("5_jkcc1")]
+transform = Transform3D(2.1740732, -7.635368e-08, -3.8003356, -3.1834621, -1.4460419e-07, -2.595353, -7.347564e-08, 4.006, -1.6611794e-07, 33.26171, -53.4963, 10.006835)
 
 [node name="Cylinder010" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 2053737834) index="0" unique_id=547657105]
 surface_material_override/0 = SubResource("StandardMaterial3D_mitgq")
@@ -309,5 +323,17 @@ autoplay = true
 [node name="Poster2" type="Sprite3D" parent="." unique_id=1068747312]
 transform = Transform3D(0.01697917, 0, 0.0395058, 0, 0.043, 0, -0.0395058, 0, 0.01697917, -6.4899335, 1.8005048, -0.44621885)
 texture = ExtResource("12_t1cjl")
+
+[node name="door(Export2" parent="." unique_id=1533636877 instance=ExtResource("13_5ww7r")]
+transform = Transform3D(0.625, 0, 0, 0, 0.625, 0, 0, 0, 0.625, 6.345109, 1.3701096, -0.13645744)
+
+[node name="door(Export3" parent="." unique_id=1170166273 instance=ExtResource("13_5ww7r")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -9.242386, 1.6183891, -4.706173)
+
+[node name="door(Export" parent="." unique_id=1550021670 instance=ExtResource("13_5ww7r")]
+transform = Transform3D(-3.0379415e-08, 0, -0.695, 0, 0.695, 0, 0.695, 0, -3.0379415e-08, 4.321864, 1.507802, 2.21128)
+
+[node name="door(Export4" parent="." unique_id=464951202 instance=ExtResource("13_5ww7r")]
+transform = Transform3D(-3.0379415e-08, 0, -0.695, 0, 0.695, 0, 0.695, 0, -3.0379415e-08, 4.5641, 1.507802, 2.21128)
 
 [editable path="LevelLayout"]
