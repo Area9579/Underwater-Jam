@@ -1,7 +1,10 @@
 class_name Computer extends Node3D
 
 @export var event : Event
+@export var object_material_categorizers : Array[ObjectMaterialCategorizer]
+@export var glass_material_holder : MaterialHolder
 
+@onready var glass: MeshInstance3D = %Glass
 @onready var computer_screen: ComputerScreen = $SubViewport/ComputerScreen as ComputerScreen
 @onready var marker_3d: Marker3D = $Marker3D
 @onready var area_3d: ComputerInteractable = $Area3D
@@ -45,10 +48,13 @@ func _on_event_event_disabled() -> void:
 	computer_enabled = false
 	area_3d.interaction_handler.puter_is_active = false
 	area_3d.interaction_handler.disable()
+	ObjectMaterialCategorizer.set_to_default(object_material_categorizers)
+	
 	pass
 
 
 func _on_event_event_enabled() -> void:
+	ObjectMaterialCategorizer.set_to_xray(object_material_categorizers)
 	computer_enabled = true
 	area_3d.interaction_handler.puter_is_active = true
 	area_3d.interaction_handler.enable()
