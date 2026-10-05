@@ -66,10 +66,10 @@ func play_anim() -> void:
 	await wrench_hit_on_glass.finished
 	glass_shattering.play()
 	light_hum.play()
-	Engine.time_scale = 0.2
+	Engine.time_scale = 0.1
 	particles.emitting = true
 	SceneSwitcher.fade_from_white.do_tween()
-	SceneSwitcher.fade_from_white.tween.set_speed_scale(1.2)
+	SceneSwitcher.fade_from_white.tween.set_speed_scale(1.5)
 	await SceneSwitcher.fade_from_white.tween_finished
 	await get_tree().create_timer(1.0, true, false, true).timeout
 	finish()

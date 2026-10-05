@@ -154,12 +154,12 @@ _data = {
 &"player_to_vat": SubResource("Animation_7buyb")
 }
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_7buyb"]
+[sub_resource type="ViewportTexture" id="ViewportTexture_mitgq"]
 viewport_path = NodePath("SubViewport")
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iwo3b"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7buyb"]
 resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_7buyb")
+albedo_texture = SubResource("ViewportTexture_mitgq")
 uv1_scale = Vector3(6.12, 6.12, 6.12)
 uv1_offset = Vector3(0.5, 0.205, 0)
 
@@ -212,7 +212,7 @@ scale_amount_max = 2.0
 libraries/ = SubResource("AnimationLibrary_iwo3b")
 
 [node name="Glass" parent="Computer/VDUTerminal/VDUTerminal" parent_id_path=PackedInt32Array(1318926826, 1018499832) index="1" unique_id=480455911]
-surface_material_override/0 = SubResource("StandardMaterial3D_iwo3b")
+surface_material_override/0 = SubResource("StandardMaterial3D_7buyb")
 
 [node name="TargetRadialDial" parent="ValveControlPanel/PipeVatValves/controls/RadialDialP" parent_id_path=PackedInt32Array(616365444, 1134580654) index="1" unique_id=1358226458]
 surface_material_override/0 = null
@@ -234,6 +234,15 @@ transform = Transform3D(3.3760872, 0, -1.1135783, 0, 3.5549998, 0, 1.1135786, 0,
 
 [node name="Specimen" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="1" unique_id=1234053442]
 visible = false
+
+[node name="Glass" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glass" parent_id_path=PackedInt32Array(616365444, 1368547278) index="0" unique_id=176455744]
+surface_material_override/0 = SubResource("ShaderMaterial_qvy3w")
+
+[node name="Glass shattered" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glassshattered" parent_id_path=PackedInt32Array(616365444, 891380592) index="0" unique_id=549700448]
+surface_material_override/0 = SubResource("ShaderMaterial_qvy3w")
+
+[node name="Glass" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/BackGlass" parent_id_path=PackedInt32Array(616365444, 1837586263) index="0" unique_id=176455744]
+surface_material_override/0 = SubResource("ShaderMaterial_qvy3w")
 
 [node name="EventQueue" parent="." index="6" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/StartContinuousAudioEventPlayer/StartContinuousAudioEventPlayer"), NodePath("../SequentialDialogue/VanceICantBreathe/VanceICantBreatheEvent"), NodePath("../SequentialDialogue/VanceTurnOffPurge/VanceTurnOffPurgeEvent"), NodePath("../SequentialDialogue/BigMetallicSlam/BigMetallicSlamEvent"), NodePath("../FinalCutsceneEvent")]
