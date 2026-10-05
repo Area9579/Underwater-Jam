@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://behilqytfb3fh"]
 
 [ext_resource type="PackedScene" uid="uid://duqqc07ub3xhu" path="res://Content/Levels/Base Map/base_map.tscn" id="1_op3j2"]
+[ext_resource type="Script" uid="uid://bb2mcpsan87dy" path="res://Content/Levels/day_3.gd" id="2_54h6r"]
 [ext_resource type="Script" uid="uid://braj1wqtyaoli" path="res://Content/AudioSystems/AudioEventSystem/audio_event_player.gd" id="2_gy4p3"]
 [ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="3_onl7l"]
 [ext_resource type="Script" uid="uid://yivgoqoh0s4g" path="res://Content/AudioSystems/AudioEventSystem/Continueous Audio Events/start_continuous_audio_event.gd" id="4_bxxkf"]
@@ -15,8 +16,30 @@
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="13_5wmqf"]
 
 [node name="Day3" unique_id=1228570231 instance=ExtResource("1_op3j2")]
+script = ExtResource("2_54h6r")
 
-[node name="EventQueue" parent="." index="3" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
+[node name="RadioTurnsOn2" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="1" unique_id=2061239625]
+stream = ExtResource("7_87jao")
+
+[node name="HQStayCalmPlayer" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="2" unique_id=1978935953]
+stream = ExtResource("5_v3g70")
+
+[node name="RadioShutsOffPlayer" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="3" unique_id=443787723]
+stream = ExtResource("9_bxxkf")
+
+[node name="SpecimentHeartbeatPlayer" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="1" unique_id=1202974228]
+transform = Transform3D(3.080802, 0, 0, 0, 3.080802, 0, 0, 0, 2.7275538, 2.361292, 0, 0)
+stream = ExtResource("6_2u7jj")
+
+[node name="OxygenVentSoundPlayer" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="2" unique_id=1734504257]
+transform = Transform3D(3.080802, 0, 0, 0, 3.080802, 0, 0, 0, 2.7275538, 2.361292, 0, 0)
+stream = ExtResource("6_v3g70")
+
+[node name="MetallicThudPlayer" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="3" unique_id=344062922]
+transform = Transform3D(3.080802, 0, 0, 0, 3.080802, 0, 0, 0, 2.7275538, 2.361292, 0, 0)
+stream = ExtResource("9_2u7jj")
+
+[node name="EventQueue" parent="." index="4" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/OxygenVentSound/OxygenVentSound"), NodePath("../SequentialDialogue/MetallicThud/MetallicThud"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceFlushedOxygen/VanceFlushedOxygen"), NodePath("../SequentialDialogue/HQStayCalm/HQStayCalm"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceAreTheyCrazy/VanceAreTheyCrazy"), NodePath("../SequentialDialogue/TaskEventStage")]
 
 [node name="VanceFlushedOxygenPlayer" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="0" unique_id=578791406]
@@ -29,51 +52,39 @@ stream = ExtResource("6_87jao")
 
 [node name="StartSpecimenHeartbeat" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="0" unique_id=1632182212 node_paths=PackedStringArray("audio_players", "event")]
 script = ExtResource("4_bxxkf")
-audio_players = [NodePath("SpecimentHeartbeatPlayer")]
+audio_players = [NodePath("../../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimentHeartbeatPlayer")]
 event = NodePath("SpecimentHeartbeat")
 
 [node name="SpecimentHeartbeat" type="Node" parent="SequentialDialogue/StartSpecimenHeartbeat" index="0" unique_id=309985169]
 script = ExtResource("3_onl7l")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
-[node name="SpecimentHeartbeatPlayer" type="AudioStreamPlayer3D" parent="SequentialDialogue/StartSpecimenHeartbeat" index="1" unique_id=1202974228]
-stream = ExtResource("6_2u7jj")
-
 [node name="OxygenVentSound" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="1" unique_id=447693708 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("2_gy4p3")
-audio_player = NodePath("OxygenVentSoundPlayer")
+audio_player = NodePath("../../ValveControlPanel/PipeVatValves/Pipe And Vat/ /OxygenVentSoundPlayer")
 event = NodePath("OxygenVentSound")
 
 [node name="OxygenVentSound" type="Node" parent="SequentialDialogue/OxygenVentSound" index="0" unique_id=1825350162]
 script = ExtResource("3_onl7l")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
-[node name="OxygenVentSoundPlayer" type="AudioStreamPlayer3D" parent="SequentialDialogue/OxygenVentSound" index="1" unique_id=1734504257]
-stream = ExtResource("6_v3g70")
-
 [node name="MetallicThud" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="2" unique_id=1855504078 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("2_gy4p3")
-audio_player = NodePath("MetallicThudPlayer")
+audio_player = NodePath("../../ValveControlPanel/PipeVatValves/Pipe And Vat/ /MetallicThudPlayer")
 event = NodePath("MetallicThud")
 
 [node name="MetallicThud" type="Node" parent="SequentialDialogue/MetallicThud" index="0" unique_id=1999303894]
 script = ExtResource("3_onl7l")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
-[node name="MetallicThudPlayer" type="AudioStreamPlayer3D" parent="SequentialDialogue/MetallicThud" index="1" unique_id=344062922]
-stream = ExtResource("9_2u7jj")
-
 [node name="RadioTurnsOn" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="3" unique_id=300262116 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("2_gy4p3")
-audio_player = NodePath("RadioTurnsOn2")
+audio_player = NodePath("../../Speaker/RadioTurnsOn2")
 event = NodePath("RadioTurnsOn")
 
 [node name="RadioTurnsOn" type="Node" parent="SequentialDialogue/RadioTurnsOn" index="0" unique_id=1739396216]
 script = ExtResource("3_onl7l")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
-
-[node name="RadioTurnsOn2" type="AudioStreamPlayer3D" parent="SequentialDialogue/RadioTurnsOn" index="1" unique_id=2061239625]
-stream = ExtResource("7_87jao")
 
 [node name="VanceFlushedOxygen" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="4" unique_id=30362579 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("2_gy4p3")
@@ -86,27 +97,21 @@ metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
 [node name="HQStayCalm" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="5" unique_id=250111104 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("2_gy4p3")
-audio_player = NodePath("HQStayCalmPlayer")
+audio_player = NodePath("../../Speaker/HQStayCalmPlayer")
 event = NodePath("HQStayCalm")
 
 [node name="HQStayCalm" type="Node" parent="SequentialDialogue/HQStayCalm" index="0" unique_id=1878961292]
 script = ExtResource("3_onl7l")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
-[node name="HQStayCalmPlayer" type="AudioStreamPlayer3D" parent="SequentialDialogue/HQStayCalm" index="1" unique_id=1978935953]
-stream = ExtResource("5_v3g70")
-
 [node name="RadioShutsOff" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="6" unique_id=1555902158 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("2_gy4p3")
-audio_player = NodePath("RadioShutsOffPlayer")
+audio_player = NodePath("../../Speaker/RadioShutsOffPlayer")
 event = NodePath("RadioShutsOff")
 
 [node name="RadioShutsOff" type="Node" parent="SequentialDialogue/RadioShutsOff" index="0" unique_id=664993995]
 script = ExtResource("3_onl7l")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
-
-[node name="RadioShutsOffPlayer" type="AudioStreamPlayer3D" parent="SequentialDialogue/RadioShutsOff" index="1" unique_id=443787723]
-stream = ExtResource("9_bxxkf")
 
 [node name="VanceAreTheyCrazy" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="7" unique_id=461650459 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("2_gy4p3")
@@ -122,6 +127,7 @@ script = ExtResource("13_5wmqf")
 events_in_stage = [NodePath("../../ValveControlPanel/TempGaugeControls/TempGaugeControlsEvent"), NodePath("../../ValveControlPanel/PhScaleLeverPanel/PhScaleLeverPanelEvent"), NodePath("../../ValveControlPanel/NutrientFlowCrankPanel/NutrientFlowCrankPanelEvent")]
 metadata/_custom_type_script = "uid://r70s6flykuow"
 
+[connection signal="event_queue_finished" from="EventQueue" to="." method="_on_event_queue_event_queue_finished"]
 [connection signal="event_disabled" from="SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat" to="SequentialDialogue/StartSpecimenHeartbeat" method="_on_event_disabled"]
 [connection signal="event_enabled" from="SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat" to="SequentialDialogue/StartSpecimenHeartbeat" method="_on_event_enabled"]
 [connection signal="event_disabled" from="SequentialDialogue/OxygenVentSound/OxygenVentSound" to="SequentialDialogue/OxygenVentSound" method="_on_event_disabled"]

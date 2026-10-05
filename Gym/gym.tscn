@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="14_j07sc"]
 [ext_resource type="PackedScene" uid="uid://bvm5ljkf31yqn" path="res://Content/Specimen/speciemen.tscn" id="17_0i5pg"]
 [ext_resource type="PackedScene" uid="uid://77lx1f7kihkn" path="res://Content/InteractableItems/Pill Dispenser/pill_dispenser.tscn" id="18_cos24"]
+[ext_resource type="PackedScene" uid="uid://bbjy0l63rcy3q" path="res://3D Assets/VDUTerminal.fbx" id="18_7nik5"]
 [ext_resource type="PackedScene" uid="uid://cunnbqjgjkbqn" path="res://Content/ValveControlPanel/valve_control_panel.tscn" id="21_pnf3o"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_g4v7s"]
