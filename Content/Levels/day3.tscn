@@ -52,7 +52,7 @@ transform = Transform3D(3.080802, 0, 0, 0, 3.080802, 0, 0, 0, 2.7275538, 2.36129
 stream = ExtResource("9_2u7jj")
 
 [node name="EventQueue" parent="." index="5" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
-event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/OxygenVentSound/OxygenVentSound"), NodePath("../SequentialDialogue/MetallicThud/MetallicThud"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceFlushedOxygen/VanceFlushedOxygen"), NodePath("../SequentialDialogue/HQStayCalm/HQStayCalm"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceAreTheyCrazy/VanceAreTheyCrazy"), NodePath("../SequentialDialogue/TaskEventStage")]
+event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/OxygenVentSound/OxygenVentSound"), NodePath("../SequentialDialogue/MetallicThud/MetallicThud"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceFlushedOxygen/VanceFlushedOxygen"), NodePath("../SequentialDialogue/HQStayCalm/HQStayCalm"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceAreTheyCrazy/VanceAreTheyCrazy"), NodePath("../DailyOrderSheet/DailyOrdertEvent"), NodePath("../SequentialDialogue/TaskEventStage")]
 
 [node name="VanceFlushedOxygenPlayer" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="0" unique_id=578791406]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9592443, -1.9033041, 5.0399218)
@@ -168,3 +168,4 @@ metadata/_custom_type_script = "uid://r70s6flykuow"
 [editable path="ValveControlPanel"]
 [editable path="ValveControlPanel/PipeVatValves/Pipe And Vat"]
 [editable path="ValveControlPanel/PipeVatValves/ValveConsole2"]
+[editable path="DailyOrderSheet"]

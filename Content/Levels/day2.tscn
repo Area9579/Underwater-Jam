@@ -42,7 +42,7 @@ transform = Transform3D(3.080802, 0, 0, 0, 3.080802, 0, 0, 0, 2.7275538, 2.15689
 stream = ExtResource("4_aqbd0")
 
 [node name="EventQueue" parent="." index="5" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
-event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceExternalHullDiagnostic/VanceExternalHullDiagnostic"), NodePath("../SequentialDialogue/HQExternalScansNormal/HQExternalScansNormal"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceSoundsLikePulse/VanceSoundsLikePulse"), NodePath("../SequentialDialogue/TaskEventStage")]
+event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../DailyOrderSheet/DailyOrdertEvent"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceExternalHullDiagnostic/VanceExternalHullDiagnostic"), NodePath("../SequentialDialogue/HQExternalScansNormal/HQExternalScansNormal"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceSoundsLikePulse/VanceSoundsLikePulse"), NodePath("../SequentialDialogue/TaskEventStage")]
 
 [node name="VanceExternalHullDiagnostic2" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="6" unique_id=588439606]
 stream = ExtResource("5_3m53c")
@@ -132,3 +132,4 @@ metadata/_custom_type_script = "uid://r70s6flykuow"
 [editable path="ValveControlPanel"]
 [editable path="ValveControlPanel/PipeVatValves/Pipe And Vat"]
 [editable path="ValveControlPanel/PipeVatValves/ValveConsole2"]
+[editable path="DailyOrderSheet"]
