@@ -60,11 +60,14 @@ visible = false
 [node name="EventQueue" parent="." index="5" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/OxygenVentSound/OxygenVentSound"), NodePath("../SequentialDialogue/MetallicThud/MetallicThud"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceFlushedOxygen/VanceFlushedOxygen"), NodePath("../SequentialDialogue/HQStayCalm/HQStayCalm"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceAreTheyCrazy/VanceAreTheyCrazy"), NodePath("../SequentialDialogue/TaskEventStage"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker")]
 
-[node name="VanceFlushedOxygenPlayer" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="0" unique_id=578791406]
+[node name="Player" parent="." index="8" unique_id=1495724798]
+is_debug = false
+
+[node name="VanceFlushedOxygenPlayer" type="AudioStreamPlayer3D" parent="Player" index="0" unique_id=578791406]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9592443, -1.9033041, 5.0399218)
 stream = ExtResource("4_olr3t")
 
-[node name="VanceAreTheyCrazyPlayer" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="1" unique_id=1062274524]
+[node name="VanceAreTheyCrazyPlayer" type="AudioStreamPlayer3D" parent="Player" index="1" unique_id=1062274524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9592443, -1.9033041, 5.0399218)
 stream = ExtResource("6_87jao")
 

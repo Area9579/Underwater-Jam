@@ -18,8 +18,8 @@ var sheet_equiped : bool = false
 
 func _ready() -> void:
 	super()
-	#if is_debug:
-		#animation_player.speed_scale = 5.0
+	if is_debug:
+		animation_player.speed_scale = 5.0
 	
 
 func enable_physics() -> void:
