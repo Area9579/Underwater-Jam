@@ -80,5 +80,4 @@ affected_node = NodePath("..")
 canvas_item_tween = SubResource("Resource_53kpd")
 trans_type = 4
 ease_type = 2
-tween_duration = 2.0
 metadata/_custom_type_script = "uid://c0eq70gyg7rhf"
