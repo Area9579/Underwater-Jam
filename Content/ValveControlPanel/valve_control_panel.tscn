@@ -718,11 +718,12 @@ script = ExtResource("19_81jtx")
 mesh = ExtResource("20_qe0lb")
 surface_material_override/0 = SubResource("ShaderMaterial_n475g")
 
-[node name="DoorButton" type="Area3D" parent="PipeVatValves/Pipe And Vat/ /SpecimenController" unique_id=719386855]
+[node name="DoorButton" type="Area3D" parent="PipeVatValves/Pipe And Vat/ /SpecimenController" unique_id=719386855 node_paths=PackedStringArray("event")]
 transform = Transform3D(-0.9708054, 0, 0.23986843, 0, 1, 0, -0.23986843, 0, -0.9708054, 3.9373748, -1.4611355, -1.6011083)
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("22_paj08")
+event = NodePath("../SpecimenChecker")
 
 [node name="VatLever" type="MeshInstance3D" parent="PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton" unique_id=352750081]
 unique_name_in_owner = true
@@ -736,6 +737,7 @@ shape = SubResource("BoxShape3D_7jfgw")
 
 [node name="HoverText" type="Label3D" parent="PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton" unique_id=304380719]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+visible = false
 text = "false"
 
 [node name="UVLight" type="SpotLight3D" parent="PipeVatValves/Pipe And Vat/ /SpecimenController" unique_id=1420702930]
@@ -747,6 +749,10 @@ spot_angle = 37.261505
 
 [node name="Timer" type="Timer" parent="PipeVatValves/Pipe And Vat/ /SpecimenController" unique_id=1258383490]
 one_shot = true
+
+[node name="SpecimenChecker" type="Node" parent="PipeVatValves/Pipe And Vat/ /SpecimenController" unique_id=1169210151]
+script = ExtResource("2_mji5f")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
 [node name="Cylinder" parent="PipeVatValves/Pipe And Vat" index="1" unique_id=1542653781]
 material_override = ExtResource("7_3ri5n")
@@ -892,6 +898,8 @@ material_override = SubResource("StandardMaterial3D_fqwas")
 [connection signal="event_enabled" from="NutrientFlowCrankPanel/NutrientFlowCrankPanelEvent" to="NutrientFlowCrankPanel" method="_on_event_event_enabled"]
 [connection signal="pressed" from="PipeVatValves/controls/TempButtonRightP/TempButtonRight/Increment" to="TempGaugeControls" method="_on_increment_pressed"]
 [connection signal="pressed" from="PipeVatValves/controls/TempButtonLeftP/TempButtonLeft/Decrement" to="TempGaugeControls" method="_on_decrement_pressed"]
+[connection signal="event_disabled" from="PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker" to="PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton" method="_on_event_event_disabled"]
+[connection signal="event_enabled" from="PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker" to="PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton" method="_on_event_event_enabled"]
 
 [editable path="PipeVatValves/Pipe And Vat"]
 [editable path="PipeVatValves/ValveConsole2"]
