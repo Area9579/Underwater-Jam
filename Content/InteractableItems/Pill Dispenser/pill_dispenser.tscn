@@ -70,6 +70,7 @@ metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
 [node name="Pill" type="MeshInstance3D" parent="." unique_id=1416960529]
 transform = Transform3D(-4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0, 1, 0.034256905, 0.2581916, 0.6581076)
+visible = false
 mesh = SubResource("CapsuleMesh_yf5fn")
 
 [node name="PillDispenser_node" type="MeshInstance3D" parent="." unique_id=493895677]

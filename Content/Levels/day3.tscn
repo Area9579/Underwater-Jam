@@ -67,7 +67,7 @@ transform = Transform3D(1.816099, 0, -0.35253987, 0, 1.85, 0, 0.35253987, 0, 1.8
 visible = false
 
 [node name="EventQueue" parent="." index="5" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
-event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/OxygenVentSound/OxygenVentSound"), NodePath("../SequentialDialogue/MetallicThud/MetallicThud"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceFlushedOxygen/VanceFlushedOxygen"), NodePath("../SequentialDialogue/HQStayCalm/HQStayCalm"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceAreTheyCrazy/VanceAreTheyCrazy"), NodePath("../Printer/PrinterEvent"), NodePath("../Printer/DailyOrderSheet/DailyOrdertEvent"), NodePath("../SequentialDialogue/TaskEventStage"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker")]
+event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/OxygenVentSound/OxygenVentSound"), NodePath("../SequentialDialogue/MetallicThud/MetallicThud"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceFlushedOxygen/VanceFlushedOxygen"), NodePath("../SequentialDialogue/HQStayCalm/HQStayCalm"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceAreTheyCrazy/VanceAreTheyCrazy"), NodePath("../Printer/PrinterEvent"), NodePath("../Printer/DailyOrderSheet/DailyOrdertEvent"), NodePath("../SequentialDialogue/TaskEventStage"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker"), NodePath("../PillDispenser/PillEvent")]
 
 [node name="Player" parent="." index="8" unique_id=1495724798]
 is_debug = false
@@ -185,9 +185,8 @@ metadata/_custom_type_script = "uid://r70s6flykuow"
 [editable path="Computer"]
 [editable path="ValveControlPanel"]
 [editable path="ValveControlPanel/PipeVatValves/Pipe And Vat"]
-[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glass"]
-[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glassshattered"]
-[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/BackGlass"]
 [editable path="ValveControlPanel/PipeVatValves/ValveConsole2"]
+[editable path="LevelLayout"]
 [editable path="Printer"]
 [editable path="Printer/DailyOrderSheet"]
+[editable path="PillDispenser"]

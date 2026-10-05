@@ -53,7 +53,7 @@ transform = Transform3D(1.9439663, 0, -0.83319867, 0, 2.115, 0, 0.83319867, 0, 1
 visible = false
 
 [node name="EventQueue" parent="." index="5" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
-event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceWakingUpDay15/VanceWakingUpDay15Event"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceAmILosingMyMind/VanceAmILosingMyMind"), NodePath("../Printer/PrinterEvent"), NodePath("../Printer/DailyOrderSheet/DailyOrdertEvent"), NodePath("../SequentialDialogue/TaskEventStage"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker")]
+event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceWakingUpDay15/VanceWakingUpDay15Event"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceAmILosingMyMind/VanceAmILosingMyMind"), NodePath("../Printer/PrinterEvent"), NodePath("../Printer/DailyOrderSheet/DailyOrdertEvent"), NodePath("../SequentialDialogue/TaskEventStage"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker"), NodePath("../PillDispenser/PillEvent")]
 
 [node name="Player" parent="." index="8" unique_id=1495724798]
 is_debug = false
@@ -135,9 +135,8 @@ metadata/_custom_type_script = "uid://r70s6flykuow"
 [editable path="Computer"]
 [editable path="ValveControlPanel"]
 [editable path="ValveControlPanel/PipeVatValves/Pipe And Vat"]
-[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glass"]
-[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glassshattered"]
-[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/BackGlass"]
 [editable path="ValveControlPanel/PipeVatValves/ValveConsole2"]
+[editable path="LevelLayout"]
 [editable path="Printer"]
 [editable path="Printer/DailyOrderSheet"]
+[editable path="PillDispenser"]
