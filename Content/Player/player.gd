@@ -50,7 +50,9 @@ func change_sheet_equip() -> void:
 	match sheet_equiped:
 		true:
 			sheet_equiped = false
-			sheet_marker.visible = false
+			#sheet_marker.visible = false
+			(sheet_marker.get_child(0) as DailyOrderSheet).put_down.do_tween()
 		false:
 			sheet_equiped = true
-			sheet_marker.visible = true
+			#sheet_marker.visible = true
+			(sheet_marker.get_child(0) as DailyOrderSheet).pull_up.do_tween()

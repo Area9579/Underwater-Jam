@@ -1,6 +1,8 @@
 class_name PillDispenserInteractionHandler extends AbstractInteractionHandler
 
 
+signal we_done_here
+
 var pill_dispenser : PillDispenserInteractable
 
 func _init(interactable_node : PillDispenserInteractable) -> void:
@@ -11,6 +13,7 @@ func _init(interactable_node : PillDispenserInteractable) -> void:
 
 func do_interaction(_player : FirstPersonEntityController) -> void:
 	is_interacting = true
+	we_done_here.emit()
 	is_interacting = false
 
 

@@ -1,25 +1,56 @@
 [gd_scene format=3 uid="uid://bkj28qpfl2n7k"]
 
 [ext_resource type="Script" uid="uid://bucf6g0tnsjlp" path="res://Content/InteractableItems/DailyOrder/daily_order_sheet.gd" id="1_h6vgs"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
-size = Vector3(0.2, 0.3, 0.01)
+[ext_resource type="Texture2D" uid="uid://cwdmfove3sqv" path="res://3D Assets/Order Sheet/telexOrder_1.png" id="2_druut"]
+[ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="2_rhsfp"]
+[ext_resource type="Script" uid="uid://dk6ci6cn8li37" path="res://Addons/Tween Components/Scripts/Components/node3D_tween.gd" id="4_20k8o"]
+[ext_resource type="Script" uid="uid://bvekgf6tgcfay" path="res://Addons/Tween Components/Scripts/TweenResources/transform3d_tween.gd" id="5_wcpjy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_h6vgs"]
-size = Vector3(0.2, 0.3, 0.01)
+size = Vector3(0.5, 0.31, 0.001)
+
+[sub_resource type="Resource" id="Resource_g4v7s"]
+script = ExtResource("5_wcpjy")
+start_position = Vector3(inf, 0, inf)
+end_position = Vector3(inf, -0.5, inf)
+metadata/_custom_type_script = "uid://bvekgf6tgcfay"
+
+[sub_resource type="Resource" id="Resource_yf5fn"]
+script = ExtResource("5_wcpjy")
+start_position = Vector3(inf, -0.5, inf)
+end_position = Vector3(inf, 0, inf)
+metadata/_custom_type_script = "uid://bvekgf6tgcfay"
 
 [node name="DailyOrderSheet" type="Area3D" unique_id=1554151595]
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("1_h6vgs")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=289898352]
-mesh = SubResource("BoxMesh_g4v7s")
-
-[node name="TestLabel" type="Label3D" parent="." unique_id=1685602336]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
-visible = false
-text = "Click to pick me up :3"
+[node name="DailyOrdertEvent" type="Node" parent="." unique_id=529957519]
+script = ExtResource("2_rhsfp")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=277848381]
 shape = SubResource("BoxShape3D_h6vgs")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=2031912869]
+transform = Transform3D(0.055, 0, 0, 0, 0.055, 0, 0, 0, 0.055, 0, 0, 0)
+texture = ExtResource("2_druut")
+
+[node name="PutDown" type="Node" parent="." unique_id=678684069 node_paths=PackedStringArray("affected_node")]
+script = ExtResource("4_20k8o")
+affected_node = NodePath("..")
+transform3D_tween = SubResource("Resource_g4v7s")
+trans_type = 10
+ease_type = 2
+tween_duration = 0.4
+metadata/_custom_type_script = "uid://dk6ci6cn8li37"
+
+[node name="PullUp" type="Node" parent="." unique_id=1517423405 node_paths=PackedStringArray("affected_node")]
+script = ExtResource("4_20k8o")
+affected_node = NodePath("..")
+transform3D_tween = SubResource("Resource_yf5fn")
+trans_type = 10
+ease_type = 2
+tween_duration = 0.4
+metadata/_custom_type_script = "uid://dk6ci6cn8li37"
