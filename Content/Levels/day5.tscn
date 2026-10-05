@@ -12,6 +12,7 @@
 [ext_resource type="AudioStream" uid="uid://dc2rle6wgahcd" path="res://AUDIO/SFX/SPECIMEN/Heartbeat_Fast.wav" id="5_u3ed6"]
 [ext_resource type="PackedScene" uid="uid://ch7ur6eft1frj" path="res://3D Assets/Creature/creatureday_5.tscn" id="6_u3ed6"]
 [ext_resource type="AudioStream" uid="uid://dp065htgsdql5" path="res://AUDIO/SFX/SPECIMEN/Creature_Thump_05.wav" id="9_ifyg8"]
+[ext_resource type="AudioStream" uid="uid://c2vn1yf7gcqnj" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_18.wav" id="9_oq4sq"]
 [ext_resource type="AudioStream" uid="uid://chsgp1vcr0dmr" path="res://AUDIO/SFX/GLASS SFX/Wrench_vs_Glass.wav" id="11_lsvvd"]
 [ext_resource type="AudioStream" uid="uid://b42v5kynma0bi" path="res://AUDIO/SFX/GLASS SFX/Glass_Shattering.wav" id="12_u3ed6"]
 [ext_resource type="AudioStream" uid="uid://c6ijfcf0fingl" path="res://AUDIO/SFX/FACILITY AMBIENCE/AMB_fluorescent_light_01.wav" id="13_oq4sq"]
@@ -54,7 +55,7 @@ transform = Transform3D(3.3760872, 0, -1.1135783, 0, 3.5549998, 0, 1.1135786, 0,
 visible = false
 
 [node name="EventQueue" parent="." index="5" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
-event_queue = [NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker"), NodePath("../SequentialDialogue/StartContinuousAudioEventPlayer/StartContinuousAudioEventPlayer"), NodePath("../SequentialDialogue/VanceICantBreathe/VanceICantBreatheEvent"), NodePath("../SequentialDialogue/VanceTurnOffPurge/VanceTurnOffPurgeEvent"), NodePath("../SequentialDialogue/BigMetallicSlam/BigMetallicSlamEvent"), NodePath("../SequentialDialogue/VanceItsGonnaBreakTheGlass/VanceItsGonnaBreakTheGlassEvent"), NodePath("../SequentialDialogue/SFXWrenchHitOnGlass/SFXWrenchHitOnGlassEvent"), NodePath("../SequentialDialogue/EndContinueousAudioEvent/EndContinueousAudioEvent"), NodePath("../SequentialDialogue/SFXIndustrialLightHum2/SFXIndustrialLightHum2"), NodePath("../SequentialDialogue/SFXGlassShatter/SFXGlassShatterEvent")]
+event_queue = [NodePath("../SequentialDialogue/StartContinuousAudioEventPlayer/StartContinuousAudioEventPlayer"), NodePath("../SequentialDialogue/VanceICantBreathe/VanceICantBreatheEvent"), NodePath("../SequentialDialogue/VanceTurnOffPurge/VanceTurnOffPurgeEvent"), NodePath("../SequentialDialogue/BigMetallicSlam/BigMetallicSlamEvent"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker"), NodePath("../SequentialDialogue/VanceItsGonnaBreakTheGlass/VanceItsGonnaBreakTheGlassEvent"), NodePath("../SequentialDialogue/SFXWrenchHitOnGlass/SFXWrenchHitOnGlassEvent"), NodePath("../SequentialDialogue/EndContinueousAudioEvent/EndContinueousAudioEvent"), NodePath("../SequentialDialogue/SFXIndustrialLightHum2/SFXIndustrialLightHum2"), NodePath("../SequentialDialogue/SFXGlassShatter/SFXGlassShatterEvent")]
 
 [node name="VanceTurnOffPurge" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="7" unique_id=1069698647]
 stream = ExtResource("4_jhbkv")
@@ -62,7 +63,10 @@ stream = ExtResource("4_jhbkv")
 [node name="VanceItsGonnaBreakTheGlass" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="8" unique_id=1005788304]
 stream = ExtResource("5_qxrku")
 
-[node name="SFXIndustrialLightHum" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="9" unique_id=1520460161]
+[node name="VanceICantBreathe" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="9" unique_id=1248295591]
+stream = ExtResource("9_oq4sq")
+
+[node name="SFXIndustrialLightHum" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="10" unique_id=1520460161]
 stream = ExtResource("13_oq4sq")
 
 [node name="StartContinuousAudioEventPlayer" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="0" unique_id=943645032 node_paths=PackedStringArray("audio_players", "event")]
@@ -77,8 +81,9 @@ metadata/_custom_type_script = "uid://bk14m7ayml7wg"
 [node name="EmergencyAlarm2" type="AudioStreamPlayer3D" parent="SequentialDialogue/StartContinuousAudioEventPlayer" index="1" unique_id=389123051]
 stream = ExtResource("4_7vpia")
 
-[node name="VanceICantBreathe" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="1" unique_id=780597930 node_paths=PackedStringArray("event")]
+[node name="VanceICantBreathe" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="1" unique_id=780597930 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("5_m5y6d")
+audio_player = NodePath("../../Player/VanceICantBreathe")
 event = NodePath("VanceICantBreatheEvent")
 
 [node name="VanceICantBreatheEvent" type="Node" parent="SequentialDialogue/VanceICantBreathe" index="0" unique_id=377986079]
