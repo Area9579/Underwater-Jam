@@ -47,9 +47,13 @@ func _input(event: InputEvent) -> void:
 
 func input_disabled():
 	interaction_enabled = false
+	look_enabled = false
+	movement_enabled = false
 
 func input_true():
 	interaction_enabled = true
+	look_enabled = false
+	movement_enabled = false
 
 func change_sheet_equip() -> void:
 	match sheet_equiped:

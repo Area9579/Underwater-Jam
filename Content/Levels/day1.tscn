@@ -131,7 +131,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ite6a")
 [node name="EventQueue" parent="." index="5" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceImAwake/VanceImAwake"), NodePath("../SequentialDialogue/HQWelcome/HQWelcome"), NodePath("../SequentialDialogue/VanceReady/VanceReady"), NodePath("../SequentialDialogue/HQOperationalDirective/HQOperationalDirective"), NodePath("../SequentialDialogue/VanceIncredible/VanceIncredible"), NodePath("../SequentialDialogue/HQSpecimenExplanation/HQSpecimenExplanation"), NodePath("../SequentialDialogue/VanceUnderstand30Days/VanceUnderstand30Days"), NodePath("../SequentialDialogue/HQExcellent/HQExcellent"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceItsOnly30Days/VanceItsOnly30Days"), NodePath("../SequentialDialogue/TaskEventStage")]
 
-[node name="Player" parent="." index="6" unique_id=1495724798]
+[node name="Player" parent="." index="8" unique_id=1495724798]
 transform = Transform3D(-1, 1.509958e-07, -6.600237e-15, 0, -4.371139e-08, -1.0000001, -1.509958e-07, -1, 4.3711392e-08, -1.6479641, 0.7408377, -2.0885644)
 
 [node name="VanceImAwake2" type="AudioStreamPlayer3D" parent="Player" index="0" unique_id=1885120268]
@@ -149,9 +149,14 @@ stream = ExtResource("10_tg5l2")
 [node name="VanceItsOnly30Days2" type="AudioStreamPlayer3D" parent="Player" index="4" unique_id=1340820165]
 stream = ExtResource("13_j5c48")
 
-[node name="AnimationPlayer" parent="Player" index="10" unique_id=1129047215]
+[node name="Head" parent="Player" index="6" unique_id=37865752]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.74862194, 0)
+
+[node name="AudioListener3D" parent="Player/Head/Camera3D" parent_id_path=PackedInt32Array(1495724798, 584939132) index="2" unique_id=1687763466]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="AnimationPlayer" parent="Player" index="10" unique_id=477071854]
 libraries/ = SubResource("AnimationLibrary_jpvo4")
-autoplay = &"Waking Up"
 
 [node name="RadioTurnsOn" type="Node3D" parent="SequentialDialogue" parent_id_path=PackedInt32Array(1378434186) index="0" unique_id=447693708 node_paths=PackedStringArray("audio_player", "event")]
 script = ExtResource("6_8hs4d")
@@ -296,6 +301,5 @@ metadata/_custom_type_script = "uid://r70s6flykuow"
 [editable path="ValveControlPanel"]
 [editable path="ValveControlPanel/PipeVatValves/Pipe And Vat"]
 [editable path="ValveControlPanel/PipeVatValves/ValveConsole2"]
-[editable path="LevelLayout/Computer"]
 [editable path="Player"]
 [editable path="DailyOrderSheet"]
