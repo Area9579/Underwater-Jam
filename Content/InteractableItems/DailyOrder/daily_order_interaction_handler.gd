@@ -13,6 +13,7 @@ func do_interaction(player : FirstPersonEntityController) -> void:
 	daily_order_sheet.reparent((player as Player).sheet_marker)
 	daily_order_sheet.position = Vector3(0, -0.5, 0)
 	daily_order_sheet.rotation_degrees = Vector3(0, 0, 0)
+	daily_order_sheet.scale = Vector3(1, 1, 1)
 	(player as Player).has_sheet = true
 	(player as Player).sheet_equiped = true
 	daily_order_sheet.pull_up.do_tween()

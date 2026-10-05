@@ -105,3 +105,7 @@ libraries/ = SubResource("AnimationLibrary_h5urf")
 [node name="PrinterEvent" type="Node" parent="." unique_id=535589933]
 script = ExtResource("4_4vtu2")
 metadata/_custom_type_script = "uid://bk14m7ayml7wg"
+
+[connection signal="event_enabled" from="PrinterEvent" to="." method="_on_event_enable"]
+
+[editable path="DailyOrderSheet"]
