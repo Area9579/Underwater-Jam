@@ -14,15 +14,6 @@
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="11_3m53c"]
 [ext_resource type="PackedScene" uid="uid://csf3fsjqcfhnw" path="res://3D Assets/Creature/Creature_Day2.tscn" id="11_idhdj"]
 
-[sub_resource type="ViewportTexture" id="ViewportTexture_ms8ji"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2coo7"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_ms8ji")
-uv1_scale = Vector3(6.12, 6.12, 6.12)
-uv1_offset = Vector3(0.5, 0.205, 0)
-
 [node name="Day2" unique_id=1228570231 instance=ExtResource("1_diosg")]
 script = ExtResource("2_aqbd0")
 
@@ -35,8 +26,11 @@ stream = ExtResource("6_aqbd0")
 [node name="RadioShutsOff2" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="3" unique_id=967970028]
 stream = ExtResource("7_ms8ji")
 
-[node name="Glass" parent="Computer/VDUTerminal/VDUTerminal" parent_id_path=PackedInt32Array(1318926826, 1018499832) index="1" unique_id=480455911]
-surface_material_override/0 = SubResource("StandardMaterial3D_2coo7")
+[node name="VDUTerminal" parent="Computer/VDUTerminal" parent_id_path=PackedInt32Array(1318926826, 1664232102) index="0" unique_id=1018499832]
+surface_material_override/0 = null
+
+[node name="Glass" parent="Computer/VDUTerminal/VDUTerminal" index="1" unique_id=480455911]
+surface_material_override/0 = null
 
 [node name="TargetRadialDial" parent="ValveControlPanel/PipeVatValves/controls/RadialDialP" parent_id_path=PackedInt32Array(616365444, 1134580654) index="1" unique_id=1358226458]
 surface_material_override/0 = null
@@ -58,10 +52,10 @@ transform = Transform3D(2.636519, 0, -0.78929865, 0, 3.080802, 0, 0.698797, 0, 2
 visible = false
 
 [node name="VatLever" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton" parent_id_path=PackedInt32Array(616365444, 719386855) index="0" unique_id=352750081]
-transform = Transform3D(-5.198958e-10, -5.5703344e-09, 0.018313749, -0.011200367, 0.1325919, 1.6364833e-10, -0.014489489, -0.102493435, -7.836137e-10, 26.168528, 5.5483475, -3.1184568)
+transform = Transform3D(0.0006778723, -0.006535588, -0.04994413, -0.04092294, -0.35543305, -6.10658e-11, -0.038835395, 0.3744248, -0.00087177526, 0.03100586, -0.37438393, -0.65084934)
 
 [node name="EventQueue" parent="." index="5" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
-event_queue = [NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceExternalHullDiagnostic/VanceExternalHullDiagnostic"), NodePath("../SequentialDialogue/HQExternalScansNormal/HQExternalScansNormal"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceSoundsLikePulse/VanceSoundsLikePulse"), NodePath("../SequentialDialogue/TaskEventStage"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker")]
+event_queue = [NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker"), NodePath("../SequentialDialogue/StartSpecimenHeartbeat/SpecimentHeartbeat"), NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceExternalHullDiagnostic/VanceExternalHullDiagnostic"), NodePath("../SequentialDialogue/HQExternalScansNormal/HQExternalScansNormal"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceSoundsLikePulse/VanceSoundsLikePulse"), NodePath("../SequentialDialogue/TaskEventStage")]
 
 [node name="VanceExternalHullDiagnostic2" type="AudioStreamPlayer3D" parent="Player" parent_id_path=PackedInt32Array(1495724798) index="6" unique_id=588439606]
 stream = ExtResource("5_3m53c")

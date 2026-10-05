@@ -10,21 +10,13 @@
 [ext_resource type="Script" uid="uid://braj1wqtyaoli" path="res://Content/AudioSystems/AudioEventSystem/audio_event_player.gd" id="6_8hs4d"]
 [ext_resource type="AudioStream" uid="uid://dsn4qsonbdk6k" path="res://AUDIO/DIALOGUE/HQ/HQ_Voiceline_04.wav" id="7_64ylx"]
 [ext_resource type="AudioStream" uid="uid://g0bqtl2f25hw" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_05.wav" id="8_ite6a"]
+[ext_resource type="PackedScene" uid="uid://csf3fsjqcfhnw" path="res://3D Assets/Creature/Creature_Day2.tscn" id="9_ite6a"]
 [ext_resource type="AudioStream" uid="uid://yh24n7cfq8cs" path="res://AUDIO/DIALOGUE/HQ/HQ_Voiceline_06.wav" id="9_wt837"]
 [ext_resource type="AudioStream" uid="uid://xb0bg7jboegl" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_07.wav" id="10_tg5l2"]
 [ext_resource type="AudioStream" uid="uid://cl02ag5b1brqa" path="res://AUDIO/DIALOGUE/HQ/HQ_Voiceline_08.wav" id="11_jpvo4"]
 [ext_resource type="AudioStream" uid="uid://x4ukrd3dxwp2" path="res://AUDIO/SFX/Radio/Radio_Off_Sfx.wav" id="12_ka3wr"]
 [ext_resource type="AudioStream" uid="uid://jpxlldu4uunb" path="res://AUDIO/DIALOGUE/DR. VANCE/DR VANCE_voiceline_09.wav" id="13_j5c48"]
 [ext_resource type="Script" uid="uid://r70s6flykuow" path="res://Systems/Event Queue/event_stage.gd" id="18_tg5l2"]
-
-[sub_resource type="ViewportTexture" id="ViewportTexture_64ylx"]
-viewport_path = NodePath("SubViewport")
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ite6a"]
-resource_local_to_scene = true
-albedo_texture = SubResource("ViewportTexture_64ylx")
-uv1_scale = Vector3(6.12, 6.12, 6.12)
-uv1_offset = Vector3(0.5, 0.205, 0)
 
 [sub_resource type="Animation" id="Animation_wt837"]
 length = 0.001
@@ -125,8 +117,11 @@ stream = ExtResource("11_jpvo4")
 [node name="RadioShutsOff2" type="AudioStreamPlayer3D" parent="Speaker" parent_id_path=PackedInt32Array(1877486404) index="6" unique_id=1345015375]
 stream = ExtResource("12_ka3wr")
 
-[node name="Glass" parent="Computer/VDUTerminal/VDUTerminal" parent_id_path=PackedInt32Array(1318926826, 1018499832) index="1" unique_id=480455911]
-surface_material_override/0 = SubResource("StandardMaterial3D_ite6a")
+[node name="VDUTerminal" parent="Computer/VDUTerminal" parent_id_path=PackedInt32Array(1318926826, 1664232102) index="0" unique_id=1018499832]
+surface_material_override/0 = null
+
+[node name="Glass" parent="Computer/VDUTerminal/VDUTerminal" index="1" unique_id=480455911]
+surface_material_override/0 = null
 
 [node name="TargetRadialDial" parent="ValveControlPanel/PipeVatValves/controls/RadialDialP" parent_id_path=PackedInt32Array(616365444, 1134580654) index="1" unique_id=1358226458]
 surface_material_override/0 = null
@@ -134,8 +129,17 @@ surface_material_override/0 = null
 [node name="phDial" parent="ValveControlPanel/PipeVatValves/controls/phDialP/Path3D/TargetLocationPathFollow" parent_id_path=PackedInt32Array(616365444, 196012113) index="0" unique_id=1052099167]
 surface_material_override/0 = null
 
+[node name="Specimen" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="0" unique_id=1234053442]
+visible = false
+
+[node name="Specimen2" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="1" unique_id=497407904 instance=ExtResource("9_ite6a")]
+transform = Transform3D(1.9749999, 0, -2.9802322e-08, 0, 1.975, 0, 0, 0, 1.975, 0, -11.544844, 0)
+
 [node name="EventQueue" parent="." index="5" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/RadioTurnsOn/RadioTurnsOn"), NodePath("../SequentialDialogue/VanceImAwake/VanceImAwake"), NodePath("../SequentialDialogue/HQWelcome/HQWelcome"), NodePath("../SequentialDialogue/VanceReady/VanceReady"), NodePath("../SequentialDialogue/HQOperationalDirective/HQOperationalDirective"), NodePath("../SequentialDialogue/VanceIncredible/VanceIncredible"), NodePath("../SequentialDialogue/HQSpecimenExplanation/HQSpecimenExplanation"), NodePath("../SequentialDialogue/VanceUnderstand30Days/VanceUnderstand30Days"), NodePath("../SequentialDialogue/HQExcellent/HQExcellent"), NodePath("../SequentialDialogue/RadioShutsOff/RadioShutsOff"), NodePath("../SequentialDialogue/VanceItsOnly30Days/VanceItsOnly30Days"), NodePath("../DailyOrderSheet/DailyOrdertEvent"), NodePath("../SequentialDialogue/TaskEventStage"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker"), NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/SpecimenChecker")]
+
+[node name="Floor" parent="." index="7" unique_id=1485311813]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.10372496, 0)
 
 [node name="Player" parent="." index="8" unique_id=1495724798]
 transform = Transform3D(-1, 1.509958e-07, -6.600237e-15, 0, -4.371139e-08, -1.0000001, -1.509958e-07, -1, 4.3711392e-08, -1.6479641, 0.7408377, -2.0885644)
