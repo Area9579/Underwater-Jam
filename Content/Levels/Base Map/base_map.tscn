@@ -22,6 +22,9 @@ emission_energy_multiplier = 4.14
 clearcoat_enabled = true
 refraction_scale = 0.69
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jkcc1"]
+albedo_color = Color(0.23683193, 0.63444716, 0.39491817, 1)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1cjl"]
 emission_enabled = true
 emission = Color(0.54357237, 0.09786565, 0.10952882, 1)
@@ -102,6 +105,9 @@ light_color = Color(0.8362536, 0.34300402, 0.055374354, 1)
 [node name="OmniLight3D7" type="OmniLight3D" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 2053737834) index="7" unique_id=260837386]
 transform = Transform3D(1, 0, 0, 0, 1, -6.09499e-15, 0, 6.09499e-15, 1, -6.9738007, 12.635849, 0)
 light_color = Color(0.8362536, 0.34300402, 0.055374354, 1)
+
+[node name="Desk014" parent="LevelLayout/Node45" parent_id_path=PackedInt32Array(1577965459, 2070617774) index="0" unique_id=1867007853]
+surface_material_override/0 = SubResource("StandardMaterial3D_jkcc1")
 
 [node name="Object034" parent="LevelLayout/Node100" parent_id_path=PackedInt32Array(1577965459, 1859892000) index="0" unique_id=418565293]
 surface_material_override/0 = SubResource("StandardMaterial3D_t1cjl")
