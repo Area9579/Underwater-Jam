@@ -218,13 +218,13 @@ surface_material_override/0 = null
 [node name="phDial" parent="ValveControlPanel/PipeVatValves/controls/phDialP/Path3D/TargetLocationPathFollow" parent_id_path=PackedInt32Array(616365444, 196012113) index="0" unique_id=1052099167]
 surface_material_override/0 = null
 
-[node name="SpecimenHeartbeat" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 1885117392) index="0" unique_id=1122537521]
+[node name="SpecimenHeartbeat" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="0" unique_id=1122537521]
 stream = ExtResource("5_u3ed6")
 
-[node name="BigMetallicSlam" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 1885117392) index="1" unique_id=2088185695]
+[node name="BigMetallicSlam" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="1" unique_id=2088185695]
 stream = ExtResource("9_ifyg8")
 
-[node name="TerminalAudioOxyPurge" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 1885117392) index="2" unique_id=833253724]
+[node name="TerminalAudioOxyPurge" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="2" unique_id=833253724]
 stream = ExtResource("3_lsvvd")
 
 [node name="Specimen2" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="0" unique_id=1809903521 instance=ExtResource("6_u3ed6")]
@@ -395,6 +395,9 @@ stream = ExtResource("12_u3ed6")
 [editable path="Computer"]
 [editable path="ValveControlPanel"]
 [editable path="ValveControlPanel/PipeVatValves/Pipe And Vat"]
+[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glass"]
+[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glassshattered"]
+[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/BackGlass"]
 [editable path="ValveControlPanel/PipeVatValves/ValveConsole2"]
 [editable path="LevelLayout"]
 [editable path="Player"]
