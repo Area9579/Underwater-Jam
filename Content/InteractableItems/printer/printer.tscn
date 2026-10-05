@@ -1,7 +1,9 @@
 [gd_scene format=4 uid="uid://ccu2g68hk383i"]
 
 [ext_resource type="Texture2D" uid="uid://c3ws2kw4h7g3m" path="res://3D Assets/TelexPrinter/BaseColour.png" id="1_3kwdu"]
+[ext_resource type="Script" uid="uid://bxv6r8jn2g87x" path="res://Content/InteractableItems/printer/printer.gd" id="1_e3fb4"]
 [ext_resource type="PackedScene" uid="uid://bkj28qpfl2n7k" path="res://Content/InteractableItems/DailyOrder/daily_order_sheet.tscn" id="2_x5gvr"]
+[ext_resource type="Script" uid="uid://bk14m7ayml7wg" path="res://Systems/Event Queue/event.gd" id="4_4vtu2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e3fb4"]
 albedo_texture = ExtResource("1_3kwdu")
@@ -75,7 +77,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [Vector3(0.04137791, 0.08450628, -0.2777954), Vector3(0.04137791, 0.10186364, -0.2966357), Vector3(0.04137791, 0.119221, -0.31547597), Vector3(0.04137791, 0.13657837, -0.33431625), Vector3(0.04137791, 0.15393573, -0.35315654), Vector3(0.04137791, 0.1712931, -0.37199682), Vector3(0.04137791, 0.18865046, -0.3908371), Vector3(0.04137791, 0.20600781, -0.4096774), Vector3(0.04137791, 0.22336516, -0.42851767), Vector3(0.04137791, 0.2407225, -0.44735795), Vector3(0.04137791, 0.2580799, -0.46619824), Vector3(0.04137791, 0.27543724, -0.4850385), Vector3(0.04137791, 0.29279462, -0.5038788), Vector3(0.04137791, 0.310152, -0.5227191), Vector3(0.04137791, 0.32750934, -0.54155934), Vector3(0.04137791, 0.34486672, -0.56039965), Vector3(0.04137791, 0.36222407, -0.5792399), Vector3(0.04137791, 0.37958145, -0.5980802), Vector3(0.04137791, 0.3969388, -0.6169205), Vector3(0.04137791, 0.41429615, -0.6357608), Vector3(0.04137791, 0.4316535, -0.65460104)]
+"values": [Vector3(0.04137791, 0.04938643, -0.33192587), Vector3(0.04137791, 0.06036754, -0.30878633), Vector3(0.04137791, 0.07134865, -0.2856468), Vector3(0.04137791, 0.082329765, -0.26250726), Vector3(0.04137791, 0.09331088, -0.23936772), Vector3(0.04137791, 0.10429199, -0.21622819), Vector3(0.04137791, 0.1152731, -0.19308864), Vector3(0.04137791, 0.12625422, -0.1699491), Vector3(0.04137791, 0.13723533, -0.14680955), Vector3(0.04137791, 0.14821644, -0.12367001), Vector3(0.04137791, 0.15919755, -0.10053046), Vector3(0.04137791, 0.17017867, -0.07739091), Vector3(0.04137791, 0.18115978, -0.054251373), Vector3(0.04137791, 0.19214088, -0.031111836), Vector3(0.04137791, 0.20312199, -0.00797227), Vector3(0.04137791, 0.2141031, 0.015167266), Vector3(0.04137791, 0.22508422, 0.038306803), Vector3(0.04137791, 0.23606533, 0.06144634), Vector3(0.04137791, 0.24704641, 0.084585875), Vector3(0.04137791, 0.25802752, 0.10772544), Vector3(0.04137791, 0.26900864, 0.13086498)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_h5urf"]
@@ -86,6 +88,7 @@ _data = {
 
 [node name="Printer" type="Node3D" unique_id=156082904]
 transform = Transform3D(0.245, 0, 0, 0, 0.245, 0, 0, 0, 0.245, 0, 0, 0)
+script = ExtResource("1_e3fb4")
 
 [node name="TelexPrinter2" type="MeshInstance3D" parent="." unique_id=731316392]
 transform = Transform3D(0.445, 0, 0, 0, 0.445, 0, 0, 0, 0.445, 0, 0, 0)
@@ -93,7 +96,12 @@ material_override = SubResource("StandardMaterial3D_e3fb4")
 mesh = SubResource("ArrayMesh_x2e7t")
 
 [node name="DailyOrderSheet" parent="." unique_id=1554151595 instance=ExtResource("2_x5gvr")]
-transform = Transform3D(1.505, 0, 0, 0, 1.008519, 1.1171007, 0, -1.1171007, 1.008519, 0.04137791, 0.08450628, -0.2777954)
+unique_name_in_owner = true
+transform = Transform3D(1.505, 0, 0, 0, -0.6442272, 1.3601465, 0, -1.3601465, -0.6442272, 0.04137791, 0.08450628, -0.2777954)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1586395159]
 libraries/ = SubResource("AnimationLibrary_h5urf")
+
+[node name="PrinterEvent" type="Node" parent="." unique_id=535589933]
+script = ExtResource("4_4vtu2")
+metadata/_custom_type_script = "uid://bk14m7ayml7wg"
