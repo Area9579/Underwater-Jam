@@ -20,14 +20,6 @@ emission_energy_multiplier = 4.14
 clearcoat_enabled = true
 refraction_scale = 0.69
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1cjl"]
-emission_enabled = true
-emission = Color(0.9930249, 0.35423237, 0.29905376, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g4v7s"]
-emission_enabled = true
-emission = Color(0, 0.4432038, 0.830136, 1)
-
 [sub_resource type="Environment" id="Environment_o3k8e"]
 ambient_light_source = 3
 ambient_light_color = Color(0.32605332, 0.4300073, 0.84994644, 1)
@@ -60,108 +52,102 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.811306, -4.372, 12.717174
 [node name="LevelLayout" parent="." unique_id=1577965459 instance=ExtResource("1_2vlr6")]
 transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, -6.994794, -0.083275795, 6.666717)
 
-[node name="Cylinder010" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 1447357943) index="0" unique_id=1866643976]
+[node name="Cylinder010" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 527534971) index="0" unique_id=43202973]
 surface_material_override/0 = SubResource("StandardMaterial3D_mitgq")
 
-[node name="OmniLight3D" type="OmniLight3D" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 1447357943) index="1" unique_id=2031629648]
+[node name="OmniLight3D" type="OmniLight3D" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 527534971) index="1" unique_id=2031629648]
 transform = Transform3D(1, 0, 0, 0, 1, -6.09499e-15, 0, 6.09499e-15, 1, 0, 0, -0.33532524)
 light_color = Color(0.20332426, 0.24060705, 0.67988765, 1)
 light_energy = 3.462
 omni_range = 8.501512
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 1447357943) index="2" unique_id=269320791]
+[node name="OmniLight3D2" type="OmniLight3D" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 527534971) index="2" unique_id=269320791]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3679485, -12.0713625, 1.9073486e-06)
 light_color = Color(0.8362536, 0.34300402, 0.055374354, 1)
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 1447357943) index="3" unique_id=430149840]
+[node name="OmniLight3D3" type="OmniLight3D" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 527534971) index="3" unique_id=430149840]
 transform = Transform3D(1, 0, 0, 0, 1, -1.218998e-14, 0, 1.218998e-14, 1, 14.459956, 0.44788456, 0)
 light_color = Color(0.8362536, 0.34300402, 0.055374354, 1)
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 1447357943) index="4" unique_id=1802524868]
+[node name="OmniLight3D4" type="OmniLight3D" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 527534971) index="4" unique_id=1802524868]
 transform = Transform3D(1, 0, 0, 0, 1, -6.09499e-15, 0, 6.09499e-15, 1, 7.3830395, 12.483469, 0)
 light_color = Color(0.8362536, 0.34300402, 0.055374354, 1)
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 1447357943) index="5" unique_id=145253553]
+[node name="OmniLight3D5" type="OmniLight3D" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 527534971) index="5" unique_id=145253553]
 transform = Transform3D(1, 0, 0, 0, 1, -6.09499e-15, 0, 6.09499e-15, 1, 7.185586, -12.331315, 1.9073486e-06)
 light_color = Color(0.8362536, 0.34300402, 0.055374354, 1)
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 1447357943) index="6" unique_id=1844883373]
+[node name="OmniLight3D6" type="OmniLight3D" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 527534971) index="6" unique_id=1844883373]
 transform = Transform3D(1, 0, 0, 0, 1, -6.09499e-15, 0, 6.09499e-15, 1, -14.494888, 0.41609287, 0)
 light_color = Color(0.8362536, 0.34300402, 0.055374354, 1)
 
-[node name="OmniLight3D7" type="OmniLight3D" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 1447357943) index="7" unique_id=260837386]
+[node name="OmniLight3D7" type="OmniLight3D" parent="LevelLayout/Node18" parent_id_path=PackedInt32Array(1577965459, 527534971) index="7" unique_id=260837386]
 transform = Transform3D(1, 0, 0, 0, 1, -6.09499e-15, 0, 6.09499e-15, 1, -6.9738007, 12.635849, 0)
 light_color = Color(0.8362536, 0.34300402, 0.055374354, 1)
 
-[node name="Object034" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="0" unique_id=236945837]
-surface_material_override/0 = SubResource("StandardMaterial3D_t1cjl")
-
-[node name="OmniLight3D" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="1" unique_id=1415706083]
+[node name="OmniLight3D" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="1" unique_id=1415706083]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -0.21266937, -37.790894, -0.43917274)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="2" unique_id=312493873]
+[node name="OmniLight3D2" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="2" unique_id=312493873]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -0.31012726, -52.058907, -0.43917274)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="3" unique_id=946667453]
+[node name="OmniLight3D3" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="3" unique_id=946667453]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -2.0459862, -65.626724, -0.43917274)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="4" unique_id=1707114253]
+[node name="OmniLight3D4" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="4" unique_id=1707114253]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -8.65089, -77.85254, -0.43917274)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="5" unique_id=500574584]
+[node name="OmniLight3D5" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="5" unique_id=500574584]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -18.740784, -87.13289, -0.43917274)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
 
-[node name="OmniLight3D6" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="6" unique_id=767911406]
+[node name="OmniLight3D6" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="6" unique_id=767911406]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -31.357609, -92.83255, -0.43917274)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
 
-[node name="OmniLight3D7" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="7" unique_id=122724365]
+[node name="OmniLight3D7" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="7" unique_id=122724365]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -45.326637, -93.16574, -0.5446243)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
 
-[node name="OmniLight3D8" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="8" unique_id=796214176]
+[node name="OmniLight3D8" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="8" unique_id=796214176]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -59.235985, -93.06525, -0.3597927)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
 
-[node name="OmniLight3D9" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="9" unique_id=1246328576]
+[node name="OmniLight3D9" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="9" unique_id=1246328576]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -73.01727, -92.20099, -0.35647392)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
 
-[node name="OmniLight3D10" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="10" unique_id=20209353]
+[node name="OmniLight3D10" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="10" unique_id=20209353]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -85.68733, -87.06116, -0.35647392)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
 
-[node name="OmniLight3D11" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="11" unique_id=1585223996]
+[node name="OmniLight3D11" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="11" unique_id=1585223996]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -97.07413, -79.0837, -0.35647392)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
 
-[node name="OmniLight3D12" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="12" unique_id=1318143827]
+[node name="OmniLight3D12" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="12" unique_id=1318143827]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -103.79746, -66.630554, -0.35647392)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
 
-[node name="OmniLight3D13" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="13" unique_id=291429062]
+[node name="OmniLight3D13" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="13" unique_id=291429062]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -105.53487, -53.300194, -0.35647392)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
 
-[node name="OmniLight3D14" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="14" unique_id=1812654655]
+[node name="OmniLight3D14" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="14" unique_id=1812654655]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -105.97626, -39.437824, -0.35647392)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
 
-[node name="OmniLight3D15" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="15" unique_id=809966285]
+[node name="OmniLight3D15" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="15" unique_id=809966285]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -105.873764, -25.636948, -0.35647392)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
 
-[node name="OmniLight3D16" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 219073189) index="16" unique_id=1432083892]
+[node name="OmniLight3D16" type="OmniLight3D" parent="LevelLayout/Node102" parent_id_path=PackedInt32Array(1577965459, 631790530) index="16" unique_id=1432083892]
 transform = Transform3D(6.666666, 0, 0, 0, 6.666666, 0, 0, 0, 6.666666, -105.93617, -11.663372, -0.35647392)
 light_color = Color(0.46218467, 0.023024993, 0.010613384, 1)
-
-[node name="Object038" parent="LevelLayout/Node108" parent_id_path=PackedInt32Array(1577965459, 1610548912) index="0" unique_id=300315074]
-surface_material_override/0 = SubResource("StandardMaterial3D_g4v7s")
 
 [node name="BaseMapOrchestrator" type="Node3D" parent="." unique_id=43420996]
 script = ExtResource("1_y24es")
