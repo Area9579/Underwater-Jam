@@ -44,10 +44,12 @@ func call_finished() -> void:
 func _on_event_event_disabled() -> void:
 	computer_enabled = false
 	area_3d.interaction_handler.puter_is_active = false
+	area_3d.interaction_handler.disable()
 	pass
 
 
 func _on_event_event_enabled() -> void:
 	computer_enabled = true
 	area_3d.interaction_handler.puter_is_active = true
+	area_3d.interaction_handler.enable()
 	pass

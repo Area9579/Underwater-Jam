@@ -38,6 +38,7 @@ func _ready() -> void:
 	left_move.tween_finished.connect(play_squoosh)
 	right_move.tween_finished.connect(play_squoosh)
 	
+	generate_sequence()
 	dna_segment.set_dna_password(sequence)
 
 
@@ -60,6 +61,45 @@ func _process(_delta: float) -> void:
 		play_squoosh()
 
 
+func generate_sequence() -> void:
+	sequence = ''
+	
+	for i in range(0, 4):
+		var random_char_int : int = randi_range(0,5)
+		match random_char_int:
+			0:
+				sequence += "R"
+			1:
+				sequence += "O"
+			2:
+				sequence += "Y"
+			3:
+				sequence += "G"
+			4:
+				sequence += "B"
+			5:
+				sequence += "P"
+	generate_password()
+
+func generate_password() -> void:
+	password = ''
+	for i in range(0, sequence.length()):
+		var character : String = sequence[i]
+		match character:
+			"R":
+				password += "O"
+			"O":
+				password += "R"
+			"Y":
+				password += "G"
+			"G":
+				password += "Y"
+			"B":
+				password += "P"
+			"P":
+				password += "B"
+	dna_segment.set_dna_password(sequence)
+	
 
 func password_check() -> void:
 	if texture_to_pass_conversion() == "" : return
