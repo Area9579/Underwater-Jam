@@ -1,5 +1,6 @@
 class_name ComputerScreen extends Control
 
+const DNA_BAR_RED = preload("uid://djj4p65gqvltm")
 const DNA_BAR_ORANGE = preload("uid://dgfpofreertcu")
 const DNA_BAR_YELLOW = preload("uid://ckgeog8y5n6ak")
 const DNA_BAR_GREEN = preload("uid://b4s0sl550ras5")
@@ -23,8 +24,8 @@ var enabled : bool = false
 @onready var dna_segment: DNASegment = $HBoxContainer/ColorRect2/HBoxContainer/DNASegment
 
 
-@onready var color_arr : Array[Texture2D] = [DNA_BAR_ORANGE, DNA_BAR_YELLOW,DNA_BAR_GREEN, DNA_BAR_CYAN, DNA_BAR_PURPLE]
-@onready var current_color : Texture2D = DNA_BAR_ORANGE
+@onready var color_arr : Array[Texture2D] = [DNA_BAR_RED, DNA_BAR_ORANGE, DNA_BAR_YELLOW,DNA_BAR_GREEN, DNA_BAR_CYAN, DNA_BAR_PURPLE]
+@onready var current_color : Texture2D = DNA_BAR_RED
 
 var sequence : String = 'OYGB'
 var password : String = "BPGO"
@@ -77,6 +78,8 @@ func password_check() -> void:
 
 func texture_to_pass_conversion() -> String:
 	match current_color:
+		DNA_BAR_RED:
+			return "R"
 		DNA_BAR_ORANGE:
 			return "O"
 		DNA_BAR_YELLOW:
