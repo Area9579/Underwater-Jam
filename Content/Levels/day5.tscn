@@ -166,7 +166,7 @@ uv1_offset = Vector3(0.5, 0.205, 0)
 [node name="Day5" unique_id=1228570231 instance=ExtResource("1_icxki")]
 script = ExtResource("2_u3ed6")
 
-[node name="FinalCutsceneEvent" type="Node" parent="." index="0" unique_id=1445694335 node_paths=PackedStringArray("player", "its_gonna_break_the_glass", "ear_ringing", "wrench_hit_on_glass", "glass_shattering", "light_hum", "emergency_alarm", "heartbeat", "animate_player_to_vat", "glass_shattered", "glass_whole", "vat", "particles", "all_tasks")]
+[node name="FinalCutsceneEvent" type="Node" parent="." index="0" unique_id=1445694335 node_paths=PackedStringArray("player", "its_gonna_break_the_glass", "ear_ringing", "wrench_hit_on_glass", "glass_shattering", "light_hum", "emergency_alarm", "heartbeat", "animate_player_to_vat", "vat", "particles", "all_tasks")]
 script = ExtResource("3_3wphl")
 player = NodePath("../Player")
 its_gonna_break_the_glass = NodePath("../Player/VanceItsGonnaBreakTheGlass")
@@ -177,8 +177,6 @@ light_hum = NodePath("../Player/SFXIndustrialLightHum")
 emergency_alarm = NodePath("../SequentialDialogue/StartContinuousAudioEventPlayer/EmergencyAlarm2")
 heartbeat = NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenHeartbeat")
 animate_player_to_vat = NodePath("AnimationPlayer")
-glass_shattered = NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glassshattered")
-glass_whole = NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glass")
 vat = NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController")
 particles = NodePath("CPUParticles3D")
 all_tasks = NodePath("EventStage")
@@ -220,13 +218,13 @@ surface_material_override/0 = null
 [node name="phDial" parent="ValveControlPanel/PipeVatValves/controls/phDialP/Path3D/TargetLocationPathFollow" parent_id_path=PackedInt32Array(616365444, 196012113) index="0" unique_id=1052099167]
 surface_material_override/0 = null
 
-[node name="SpecimenHeartbeat" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="0" unique_id=1122537521]
+[node name="SpecimenHeartbeat" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 1885117392) index="0" unique_id=1122537521]
 stream = ExtResource("5_u3ed6")
 
-[node name="BigMetallicSlam" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="1" unique_id=2088185695]
+[node name="BigMetallicSlam" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 1885117392) index="1" unique_id=2088185695]
 stream = ExtResource("9_ifyg8")
 
-[node name="TerminalAudioOxyPurge" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="2" unique_id=833253724]
+[node name="TerminalAudioOxyPurge" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 1885117392) index="2" unique_id=833253724]
 stream = ExtResource("3_lsvvd")
 
 [node name="Specimen2" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="0" unique_id=1809903521 instance=ExtResource("6_u3ed6")]
@@ -234,15 +232,6 @@ transform = Transform3D(3.3760872, 0, -1.1135783, 0, 3.5549998, 0, 1.1135786, 0,
 
 [node name="Specimen" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="1" unique_id=1234053442]
 visible = false
-
-[node name="Glass" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glass" parent_id_path=PackedInt32Array(616365444, 1368547278) index="0" unique_id=176455744]
-surface_material_override/0 = SubResource("ShaderMaterial_qvy3w")
-
-[node name="Glass shattered" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glassshattered" parent_id_path=PackedInt32Array(616365444, 891380592) index="0" unique_id=549700448]
-surface_material_override/0 = SubResource("ShaderMaterial_qvy3w")
-
-[node name="Glass" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/BackGlass" parent_id_path=PackedInt32Array(616365444, 1837586263) index="0" unique_id=176455744]
-surface_material_override/0 = SubResource("ShaderMaterial_qvy3w")
 
 [node name="EventQueue" parent="." index="6" unique_id=1831471164 node_paths=PackedStringArray("event_queue")]
 event_queue = [NodePath("../SequentialDialogue/StartContinuousAudioEventPlayer/StartContinuousAudioEventPlayer"), NodePath("../SequentialDialogue/VanceICantBreathe/VanceICantBreatheEvent"), NodePath("../SequentialDialogue/VanceTurnOffPurge/VanceTurnOffPurgeEvent"), NodePath("../SequentialDialogue/BigMetallicSlam/BigMetallicSlamEvent"), NodePath("../FinalCutsceneEvent")]
@@ -406,10 +395,9 @@ stream = ExtResource("12_u3ed6")
 [editable path="Computer"]
 [editable path="ValveControlPanel"]
 [editable path="ValveControlPanel/PipeVatValves/Pipe And Vat"]
-[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glass"]
-[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glassshattered"]
-[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/BackGlass"]
 [editable path="ValveControlPanel/PipeVatValves/ValveConsole2"]
 [editable path="LevelLayout"]
 [editable path="Player"]
 [editable path="Player/EYES"]
+[editable path="Printer"]
+[editable path="Printer/DailyOrderSheet"]
