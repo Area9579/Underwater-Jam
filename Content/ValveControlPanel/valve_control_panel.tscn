@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://7wn4wigi3oen" path="res://3D Assets/Pipe Vat and Valve/Texture/Presuure Guage (2).png" id="15_paj08"]
 [ext_resource type="Script" uid="uid://pgoo4mjk0so0" path="res://Content/ValveControlPanel/TempGaugeButtons/temp_gauge_controls.gd" id="16_7jfgw"]
 [ext_resource type="Script" uid="uid://d1i1org4ftgce" path="res://Content/Specimen/specimen_controller.gd" id="19_81jtx"]
+[ext_resource type="Script" uid="uid://bp3k2gikta5ge" path="res://Content/Specimen/vat_door_anim.gd" id="19_qe0lb"]
 [ext_resource type="ArrayMesh" uid="uid://cvwcipxyyfx16" path="res://3D Assets/BLOB.obj" id="20_qe0lb"]
 [ext_resource type="Shader" uid="uid://cunvmsic2t2a6" path="res://3D Assets/Shaders/blob.gdshader" id="21_djvyw"]
 [ext_resource type="Script" uid="uid://de0rtrqtincso" path="res://Content/InteractableItems/Speciemen/Door/door.gd" id="22_paj08"]
@@ -626,6 +627,7 @@ material_override = SubResource("StandardMaterial3D_v3dxv")
 
 [node name="VatDoorPlate" parent="PipeVatValves/Pipe And Vat/ " index="0" unique_id=252796012]
 material_override = SubResource("StandardMaterial3D_v3dxv")
+script = ExtResource("19_qe0lb")
 
 [node name="Plane_001" parent="PipeVatValves/Pipe And Vat/ /VatDoorPlate" index="0" unique_id=1655895737]
 material_override = SubResource("StandardMaterial3D_v3dxv")

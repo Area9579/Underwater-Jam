@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dxg38q6bwdd60"
-path="res://.godot/imported/PillDispenser.glb-21374366aeceb7b37b0230b04604dcdb.scn"
+uid="uid://b8uscpvae2adg"
+path="res://.godot/imported/glassshattered.glb-ba3dd78012da8693d0d13a98c5c3b1f5.scn"
 
 [deps]
 
-source_file="res://3D Assets/PillDispenser.glb"
-dest_files=["res://.godot/imported/PillDispenser.glb-21374366aeceb7b37b0230b04604dcdb.scn"]
+source_file="res://3D Assets/Pipe Vat and Valve/glassshattered.glb"
+dest_files=["res://.godot/imported/glassshattered.glb-ba3dd78012da8693d0d13a98c5c3b1f5.scn"]
 
 [params]
 
