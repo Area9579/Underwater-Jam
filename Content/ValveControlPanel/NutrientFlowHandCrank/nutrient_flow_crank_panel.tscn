@@ -25,13 +25,9 @@ emission_energy_multiplier = 0.2
 [sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
 size = Vector3(0.14361572, 0.95458984, 0.14544678)
 
-[node name="NutrientFlowCrankPanel" type="Node3D" unique_id=118694957 node_paths=PackedStringArray("nutrient_flow_crank", "curr_location_path_follow", "target_location_path_follow", "curr_location_mesh", "target_location_mesh")]
+[node name="NutrientFlowCrankPanel" type="Node3D" unique_id=118694957 node_paths=PackedStringArray("nutrient_flow_crank")]
 script = ExtResource("1_h2u0f")
 nutrient_flow_crank = NodePath("RotationHelper/NutrientFlowCrank")
-curr_location_path_follow = NodePath("Path3D/CurrLocationPathFollow")
-target_location_path_follow = NodePath("Path3D/TargetLocationPathFollow")
-curr_location_mesh = NodePath("Path3D/CurrLocationPathFollow/CurrLocationMesh")
-target_location_mesh = NodePath("Path3D/TargetLocationPathFollow/TargetLocationMesh")
 
 [node name="RotationHelper" type="Node3D" parent="." unique_id=1653929392]
 transform = Transform3D(0.32919097, 0.94426334, 0, -0.94426334, 0.32919097, 0, 0, 0, 1, 0, 0, 0)
