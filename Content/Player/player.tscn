@@ -60,3 +60,5 @@ stream = ExtResource("4_rn1qw")
 bus = &"FACILITY BUS"
 script = ExtResource("4_7d8p2")
 player = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5" unique_id=1129047215]
