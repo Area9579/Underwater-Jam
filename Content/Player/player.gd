@@ -7,6 +7,7 @@ class_name Player extends FirstPersonEntityController
 @onready var camera_3d: Camera3D = %Camera3D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+
 const HAND_OPEN = preload("uid://d1bht2p36xbyw")
 const HAND_CLOSED = preload("uid://disykxjnkewfx")
 
@@ -20,6 +21,14 @@ func _ready() -> void:
 	if is_debug:
 		animation_player.speed_scale = 5.0
 	
+
+func enable_physics() -> void:
+	physics_enabled = true
+
+
+func disable_physics() -> void:
+	physics_enabled = false
+
 
 
 func _physics_process(_delta: float) -> void:

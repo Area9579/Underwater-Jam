@@ -17,3 +17,15 @@ func setup_states() -> void:
 		state.state_machine = self
 	
 	curr_state = get_first_state_of_type(IdleEntityState)
+
+
+func _process(delta: float) -> void:
+	if !entity.physics_enabled:
+		return
+	super(delta)
+
+
+func _physics_process(delta: float) -> void:
+	if !entity.physics_enabled:
+		return
+	super(delta)

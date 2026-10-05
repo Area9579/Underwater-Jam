@@ -13,6 +13,7 @@ class_name FirstPersonEntityController extends CharacterBody3D
 
 ## Rotation helper to make head rotation not break :)
 @onready var head: Node3D = %Head
+var physics_enabled : bool = true
 
 
 func _ready() -> void:
