@@ -17,6 +17,15 @@ func _ready() -> void:
 	setup_values()
 	#connect_signals()
 
+func _on_event_event_disabled() -> void:
+	increment.interaction_handler.disable()
+	decrement.interaction_handler.disable()
+
+
+func _on_event_event_enabled() -> void:
+	increment.interaction_handler.enable()
+	decrement.interaction_handler.enable()
+
 
 func connect_signals() -> void:
 	increment.pressed.connect(_on_increment_pressed)
