@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://c814xp7f3v7r6"
 path.s3tc="res://.godot/imported/Main_Color.png-260b09c9775e408800d60510514a282d.s3tc.ctex"
+path.etc2="res://.godot/imported/Main_Color.png-260b09c9775e408800d60510514a282d.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://3D Assets/Pipe Vat and Valve/Texture/Main_Color.png"
-dest_files=["res://.godot/imported/Main_Color.png-260b09c9775e408800d60510514a282d.s3tc.ctex"]
+dest_files=["res://.godot/imported/Main_Color.png-260b09c9775e408800d60510514a282d.s3tc.ctex", "res://.godot/imported/Main_Color.png-260b09c9775e408800d60510514a282d.etc2.ctex"]
 
 [params]
 

@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dxs3458od7mpo"
 path.s3tc="res://.godot/imported/PH SCALE.png-d00f4d99d04ca67c2f085e788bae47d7.s3tc.ctex"
+path.etc2="res://.godot/imported/PH SCALE.png-d00f4d99d04ca67c2f085e788bae47d7.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://3D Assets/Pipe Vat and Valve/Texture/PH SCALE.png"
-dest_files=["res://.godot/imported/PH SCALE.png-d00f4d99d04ca67c2f085e788bae47d7.s3tc.ctex"]
+dest_files=["res://.godot/imported/PH SCALE.png-d00f4d99d04ca67c2f085e788bae47d7.s3tc.ctex", "res://.godot/imported/PH SCALE.png-d00f4d99d04ca67c2f085e788bae47d7.etc2.ctex"]
 
 [params]
 

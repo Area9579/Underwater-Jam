@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqm67u3stpmtr"
 path.s3tc="res://.godot/imported/Main_Normal.png-cc5572628e9948ec801a77662a50ef57.s3tc.ctex"
+path.etc2="res://.godot/imported/Main_Normal.png-cc5572628e9948ec801a77662a50ef57.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://3D Assets/Pipe Vat and Valve/Texture/Main_Normal.png"
-dest_files=["res://.godot/imported/Main_Normal.png-cc5572628e9948ec801a77662a50ef57.s3tc.ctex"]
+dest_files=["res://.godot/imported/Main_Normal.png-cc5572628e9948ec801a77662a50ef57.s3tc.ctex", "res://.godot/imported/Main_Normal.png-cc5572628e9948ec801a77662a50ef57.etc2.ctex"]
 
 [params]
 

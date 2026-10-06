@@ -50,26 +50,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("%Player:position")
+tracks/0/path = NodePath("%Player/Head/Camera3D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.255, 1.104, 7.486)]
+"values": [Vector3(-0.014575684, 5.58609e-10, 1.5352798e-08)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("%Player:rotation")
+tracks/1/path = NodePath("%Player/Head/Camera3D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 3.1415925, 0)]
+"values": [Vector3(0.096767604, -0.006937504, -0.08067274)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -86,14 +86,26 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("%Player/Head/Camera3D:rotation")
+tracks/3/path = NodePath("%Player:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.08726646, 0, 0)]
+"values": [Vector3(-0.8247361, 1.104, 7.486)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%Player:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.1415925, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_7buyb"]
@@ -102,26 +114,26 @@ length = 0.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("%Player:position")
+tracks/0/path = NodePath("%Player/Head/Camera3D:rotation")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.255, 1.104, 7.486)]
+"values": [Vector3(-0.014575684, 5.58609e-10, 1.5352798e-08)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("%Player:rotation")
+tracks/1/path = NodePath("%Player/Head/Camera3D:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 3.1415925, 0)]
+"values": [Vector3(0.096767604, -0.006937504, -0.08067274)]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -130,7 +142,7 @@ tracks/2/path = NodePath("%Player/Head:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
@@ -138,14 +150,26 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("%Player/Head/Camera3D:rotation")
+tracks/3/path = NodePath("%Player:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0),
+"times": PackedFloat32Array(0.1),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.08726646, 0, 0)]
+"values": [Vector3(-0.8247361, 1.104, 7.486)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("%Player:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 3.1415925, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iwo3b"]
@@ -166,7 +190,7 @@ uv1_offset = Vector3(0.5, 0.205, 0)
 [node name="Day5" unique_id=1228570231 instance=ExtResource("1_icxki")]
 script = ExtResource("2_u3ed6")
 
-[node name="FinalCutsceneEvent" type="Node" parent="." index="0" unique_id=1445694335 node_paths=PackedStringArray("player", "its_gonna_break_the_glass", "ear_ringing", "wrench_hit_on_glass", "glass_shattering", "light_hum", "emergency_alarm", "heartbeat", "animate_player_to_vat", "vat", "particles", "all_tasks")]
+[node name="FinalCutsceneEvent" type="Node" parent="." index="0" unique_id=1445694335 node_paths=PackedStringArray("player", "its_gonna_break_the_glass", "ear_ringing", "wrench_hit_on_glass", "glass_shattering", "light_hum", "emergency_alarm", "heartbeat", "animate_player_to_vat", "glass_shattered", "glass_whole", "vat", "particles", "all_tasks")]
 script = ExtResource("3_3wphl")
 player = NodePath("../Player")
 its_gonna_break_the_glass = NodePath("../Player/VanceItsGonnaBreakTheGlass")
@@ -177,6 +201,8 @@ light_hum = NodePath("../Player/SFXIndustrialLightHum")
 emergency_alarm = NodePath("../SequentialDialogue/StartContinuousAudioEventPlayer/EmergencyAlarm2")
 heartbeat = NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenHeartbeat")
 animate_player_to_vat = NodePath("AnimationPlayer")
+glass_shattered = NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glassshattered")
+glass_whole = NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glass")
 vat = NodePath("../ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController")
 particles = NodePath("CPUParticles3D")
 all_tasks = NodePath("EventStage")
@@ -218,13 +244,13 @@ surface_material_override/0 = null
 [node name="phDial" parent="ValveControlPanel/PipeVatValves/controls/phDialP/Path3D/TargetLocationPathFollow" parent_id_path=PackedInt32Array(616365444, 196012113) index="0" unique_id=1052099167]
 surface_material_override/0 = null
 
-[node name="SpecimenHeartbeat" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 1885117392) index="0" unique_id=1122537521]
+[node name="SpecimenHeartbeat" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="0" unique_id=1122537521]
 stream = ExtResource("5_u3ed6")
 
-[node name="BigMetallicSlam" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 1885117392) index="1" unique_id=2088185695]
+[node name="BigMetallicSlam" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="1" unique_id=2088185695]
 stream = ExtResource("9_ifyg8")
 
-[node name="TerminalAudioOxyPurge" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 1885117392) index="2" unique_id=833253724]
+[node name="TerminalAudioOxyPurge" type="AudioStreamPlayer3D" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ " parent_id_path=PackedInt32Array(616365444, 1669105872, 976270614) index="2" unique_id=833253724]
 stream = ExtResource("3_lsvvd")
 
 [node name="Specimen2" parent="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController" parent_id_path=PackedInt32Array(616365444, 174937618) index="0" unique_id=1809903521 instance=ExtResource("6_u3ed6")]
@@ -245,7 +271,7 @@ stream = ExtResource("8_g3uua")
 volume_db = -17.707
 
 [node name="Camera3D" parent="Player/Head" parent_id_path=PackedInt32Array(1495724798, 37865752) index="0" unique_id=584939132]
-transform = Transform3D(1, 0, 0, 0, 0.99619466, -0.08715573, 0, 0.08715573, 0.99619466, -0.24064845, -0.006937504, -0.08067274)
+transform = Transform3D(1, -1.536094e-08, 5.5854965e-10, 1.5351167e-08, 0.9998938, 0.0145751685, -7.823786e-10, -0.0145751685, 0.9998938, 0.096767604, -0.006937504, -0.08067274)
 
 [node name="VanceTurnOffPurge" type="AudioStreamPlayer3D" parent="Player" index="8" unique_id=1069698647]
 stream = ExtResource("4_jhbkv")
@@ -395,9 +421,13 @@ stream = ExtResource("12_u3ed6")
 [editable path="Computer"]
 [editable path="ValveControlPanel"]
 [editable path="ValveControlPanel/PipeVatValves/Pipe And Vat"]
+[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glass"]
+[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/glassshattered"]
+[editable path="ValveControlPanel/PipeVatValves/Pipe And Vat/ /SpecimenController/DoorButton/BackGlass"]
 [editable path="ValveControlPanel/PipeVatValves/ValveConsole2"]
 [editable path="LevelLayout"]
 [editable path="Player"]
 [editable path="Player/EYES"]
 [editable path="Printer"]
 [editable path="Printer/DailyOrderSheet"]
+[editable path="PillDispenser"]

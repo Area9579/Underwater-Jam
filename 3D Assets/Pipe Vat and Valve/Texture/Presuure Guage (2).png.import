@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://7wn4wigi3oen"
 path.s3tc="res://.godot/imported/Presuure Guage (2).png-28f33abd83e562efd48c769434b81d2b.s3tc.ctex"
+path.etc2="res://.godot/imported/Presuure Guage (2).png-28f33abd83e562efd48c769434b81d2b.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://3D Assets/Pipe Vat and Valve/Texture/Presuure Guage (2).png"
-dest_files=["res://.godot/imported/Presuure Guage (2).png-28f33abd83e562efd48c769434b81d2b.s3tc.ctex"]
+dest_files=["res://.godot/imported/Presuure Guage (2).png-28f33abd83e562efd48c769434b81d2b.s3tc.ctex", "res://.godot/imported/Presuure Guage (2).png-28f33abd83e562efd48c769434b81d2b.etc2.ctex"]
 
 [params]
 

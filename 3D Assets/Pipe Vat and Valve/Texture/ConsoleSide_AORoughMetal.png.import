@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cingj75c16ar1"
 path.s3tc="res://.godot/imported/ConsoleSide_AORoughMetal.png-b8a09640a042dd947cf22b484830c1a1.s3tc.ctex"
+path.etc2="res://.godot/imported/ConsoleSide_AORoughMetal.png-b8a09640a042dd947cf22b484830c1a1.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://3D Assets/Pipe Vat and Valve/Texture/ConsoleSide_AORoughMetal.png"
-dest_files=["res://.godot/imported/ConsoleSide_AORoughMetal.png-b8a09640a042dd947cf22b484830c1a1.s3tc.ctex"]
+dest_files=["res://.godot/imported/ConsoleSide_AORoughMetal.png-b8a09640a042dd947cf22b484830c1a1.s3tc.ctex", "res://.godot/imported/ConsoleSide_AORoughMetal.png-b8a09640a042dd947cf22b484830c1a1.etc2.ctex"]
 
 [params]
 
